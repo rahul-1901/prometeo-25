@@ -39,7 +39,7 @@ const Stars = () => {
               area: 540
             },
             limit: 0,
-            value: 700
+            value: 1000
           },
           opacity: {
             value: {
@@ -81,7 +81,7 @@ const Stars = () => {
             y: 30
           },
           rate: {
-            delay: { min: 1, max: 3 },
+            delay: { min: 3, max: 6 },
             quantity: 1
           },
           particles: {
