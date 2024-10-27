@@ -1,33 +1,33 @@
-import { useEffect, useRef, useState } from "react";
+
 //import Loader from "./pages/loader.jsx";
 // import BGmusic from "./assets/coming-soon/bg-music.mp3";
 import Stars from "./components/stars.jsx";
+import React, { useEffect, useRef, useState } from "react";
+import Modal from "./components/modal.jsx";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6"; // import { HiMiniSpeakerWave, HiMiniSpeakerXMark } from "react-icons/hi2";
+import { FaXTwitter } from "react-icons/fa6";
 import "./Home.css";
-import "regenerator-runtime/runtime";
-// import { IKImage } from 'imagekitio-react';
-
-// const urlEndpoint = import.meta.env.VITE_REACT_APP_IMAGEKIT_URL_ENDPOINT;
-// const publicKey = import.meta.env.VITE_REACT_APP_IMAGEKIT_PUBLIC_KEY;
-import logo from "./assets/coming-soon/logo-new.svg"; // Adjust the path as needed
+import logo from "./assets/coming-soon/logo-new.svg";
 import title from "./assets/coming-soon/main_heading.svg";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal
   const starsRef = useRef(null); // Ref to store the stars container
 
+  const handlePreRegisterClick = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
+  // Star creation effect
+  // useEffect(() => {
+  //   if (!loading) {
+  //     const starsWrapper = starsRef.current;
+  //     if (!starsWrapper) return;
 
-  // Simulate a loading delay
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false); // Set loading to false after a delay
-    }, 1000); // 1000 ms delay (1 second)
-
-    return () => clearTimeout(timer); // Cleanup on unmount
-  }, []);
+      // const stars = new Array(1500).fill(0).map(() => {
+      //   const star = document.createElement("div");
+      //   star.className = "star"; // Add a class for styling
+      //   starsWrapper.append(star);
 
   // useEffect(() => {
   //   if (!loading ) {
@@ -92,17 +92,20 @@ const Home = () => {
     },
   ];
 
+  // Preload images before rendering
   useEffect(() => {
+    const IMAGES = [
+      {
+        id: "1",
+        url: "https://s3-alpha-sig.figma.com/img/5913/49db/a11a9df23f11a4616a33f42eb7785aff?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=M-tENTWoDmOQ2j6c8wkJXsi9WQqogzhPVrOQg034svt0kZ13rXmmDxUn~oDA4Tvet219pV9tWlHAj4b3POHM3r7LfUqzD-KHQVUcThrBLX62fH8~PjOK18cZWBY-jqzeui~HYTyT6tEParOd2hztF-pP3zyR5IF2GqWIKIYa9GGAobBk7Yb5G9hgob96rWBc-st2nytQ-l5bmA2lbLbbVbk5Sp8hxT9tVSKGs3dWtugy3yGESQMjPexTh6FoatFux34pVCNlLwNyY1X9246d~aDgb6jKUk0cT0Iqv5YDVU5u0BPiPuAXOOcUJYnYYlS1HV4NG7vO87045jNt4b~wbQ__",
+      },
+    ];
+
     const loadImage = (image) => {
       return new Promise((resolve, reject) => {
         const loadImg = new Image();
         loadImg.src = image.url;
-        // wait 2 seconds to simulate loading time
-        loadImg.onload = () =>
-          setTimeout(() => {
-            resolve(image.url);
-          }, 2000);
-
+        loadImg.onload = () => setTimeout(() => resolve(image.url), 100);
         loadImg.onerror = (err) => reject(err);
       });
     };
@@ -111,18 +114,6 @@ const Home = () => {
       .then(() => setLoading(false))
       .catch((err) => console.log("Failed to load images", err));
   }, []);
-
-  setTimeout(() => {
-    setLoading(false);
-  }, 3000);
-
-  const handlePreRegisterClick = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
 
   return (
     <>
@@ -172,24 +163,35 @@ const Home = () => {
               </div>
               
             </div>
-            {/* <audio src={BGmusic} loop ref={audioRef}></audio> */}
           </div>
-          {/* Modal for Pre-registration */}
-          {isModalOpen && (
-            <div className="modal-back">
-              <div className="modal-overlay" onClick={closeModal}>
-                <button className="close-button" onClick={closeModal}>
-                  X
-                </button>
-                <div className="modal" onClick={(e) => e.stopPropagation()}>
-                  <h2>Pre-register for Updates</h2>
-                  <p>Enter your details to stay informed about our launch.</p>
-                </div>
-              </div>
+          <div className="home-footer">
+            <div className="home-socialmedia">
+              <a
+                href="https://www.linkedin.com/company/prometeo2023/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaLinkedinIn size={40} color="#FFFFFF" />
+              </a>
+              <a
+                href="https://twitter.com/IITJ_Prometeo?t=RAvD5KTW1SQD1772wsIIsw&s=08"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaXTwitter size={35} color="#FFFFFF" />
+              </a>
+              <a
+                href="https://www.instagram.com/prometeo.iitj"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaInstagram size={40} color="#FFFFFF" />
+              </a>
             </div>
-          )}
           
-        </div>
+          
+          </div>
+          </div>  
       )}
     </>
   );
