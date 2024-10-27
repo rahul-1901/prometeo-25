@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import Loader from "./pages/loader.jsx";
+//import Loader from "./pages/loader.jsx";
 // import BGmusic from "./assets/coming-soon/bg-music.mp3";
-import FadeIn from "./components/fadein.jsx";
+import Stars from "./components/stars.jsx";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6"; // import { HiMiniSpeakerWave, HiMiniSpeakerXMark } from "react-icons/hi2";
 import "./Home.css";
@@ -29,76 +29,61 @@ const Home = () => {
     return () => clearTimeout(timer); // Cleanup on unmount
   }, []);
 
-  useEffect(() => {
-    if (!loading ) {
-      // Use setTimeout to ensure this runs after rendering
-      const timer = setTimeout(() => {
-        const starsWrapper = starsRef.current;
-        console.log(starsWrapper.clientHeight)
-        if (!starsWrapper) {
-          console.log('starsWrapper is null');
-          return;
-        }
+  // useEffect(() => {
+  //   if (!loading ) {
+  //     // Use setTimeout to ensure this runs after rendering
+  //     const timer = setTimeout(() => {
+  //       const starsWrapper = starsRef.current;
+  //       console.log(starsWrapper.clientHeight)
+  //       if (!starsWrapper) {
+  //         console.log('starsWrapper is null');
+  //         return;
+  //       }
   
-        const stars = new Array(500).fill(0).map(() => {
-          const star = document.createElement("div");
-          star.className = "star"; // Optional: add a class for styling
-          starsWrapper.append(star);
+  //       const stars = new Array(500).fill(0).map(() => {
+  //         const star = document.createElement("div");
+  //         star.className = "star"; // Optional: add a class for styling
+  //         starsWrapper.append(star);
   
-          return {
-            star,
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * starsWrapper.clientHeight, // Y position within stars div
-            r: Math.random() * 2,
-            twinkle: Math.random() * 0.5 + 0.5, // Random initial opacity
-          };
-        });
+  //         return {
+  //           star,
+  //           x: Math.random() * window.innerWidth,
+  //           y: Math.random() * starsWrapper.clientHeight, // Y position within stars div
+  //           r: Math.random() * 2,
+  //           twinkle: Math.random() * 0.5 + 0.5, // Random initial opacity
+  //         };
+  //       });
   
-        function update() {
-          stars.forEach((star) => {
-            // Move the star
-            star.x += star.r*0.2; // Increase x position by its speed/radius
-            if (star.x > window.innerWidth) {
-              star.x = 0; // Reset position to the left side if it goes off screen
-            }
+  //       function update() {
+  //         stars.forEach((star) => {
+  //           // Move the star
+  //           star.x += star.r*0.2; // Increase x position by its speed/radius
+  //           if (star.x > window.innerWidth) {
+  //             star.x = 0; // Reset position to the left side if it goes off screen
+  //           }
         
-            // Update star position and size
-            star.star.style.transform = `translate(${star.x}px, ${star.y}px) scale(${star.r})`;
+  //           // Update star position and size
+  //           star.star.style.transform = `translate(${star.x}px, ${star.y}px) scale(${star.r})`;
             
-            // Ensure the star is positioned within the stars wrapper
-            star.star.style.opacity = star.twinkle; // Apply the opacity
-          });
-          requestAnimationFrame(update);
-        }
+  //           // Ensure the star is positioned within the stars wrapper
+  //           star.star.style.opacity = star.twinkle; // Apply the opacity
+  //         });
+  //         requestAnimationFrame(update);
+  //       }
           
-        requestAnimationFrame(update);
+  //       requestAnimationFrame(update);
   
-        // Cleanup function to remove stars on unmount
-        return () => {
-          starsWrapper.innerHTML = ""; // Clear stars when component unmounts
-        };
-      }, 0); // Set timeout to 0 to defer to the next event loop cycle
+  //       // Cleanup function to remove stars on unmount
+  //       return () => {
+  //         starsWrapper.innerHTML = ""; // Clear stars when component unmounts
+  //       };
+  //     }, 0); // Set timeout to 0 to defer to the next event loop cycle
   
-      // Cleanup timer if component unmounts
-      return () => clearTimeout(timer);
-    }
-  }, [loading]); // Run this effect after loading completes
-  
-
-  // const [music, setMusic] = useState(false);
-  // const audioRef = useRef();
-
-  // const handleBGmusic = () => {
-  //   if (music) {
-  //     audioRef.current.pause();
-  //     setMusic(false);
-  //   } else {
-  //     audioRef.current.play();
-  //     audioRef.current.volume = audioRef.current.volume * 0.1;
-  //     audioRef.current.speed = 0.1;
-  //     setMusic(true);
+  //     // Cleanup timer if component unmounts
+  //     return () => clearTimeout(timer);
   //   }
-  // };
+  // }, [loading]); // Run this effect after loading completes
+  
 
   const IMAGES = [
     {
@@ -142,11 +127,13 @@ const Home = () => {
   return (
     <>
       {loading ? (
-        <Loader />
+        <></>
       ) : (
-        <FadeIn duration={500}>
+        <div >
           <div  className="home-body">
-            <div ref={starsRef} className="stars"></div>
+            <div ref={starsRef} className="stars">
+              <Stars/>
+            </div>
             <div className="home-main-container">
               <div className="logo">
                 <img src={logo} alt="Logo" />
@@ -183,21 +170,7 @@ const Home = () => {
                   <FaInstagram size={40} color="#FFFFFF" />
                 </a>
               </div>
-              {/* <div className="home-music">
-                {music ? (
-                  <HiMiniSpeakerWave
-                    size={40}
-                    color="#FFCB15"
-                    onClick={handleBGmusic}
-                  />
-                ) : (
-                  <HiMiniSpeakerXMark
-                    size={40}
-                    color="#FFCB15"
-                    onClick={handleBGmusic}
-                  />
-                )}
-              </div> */}
+              
             </div>
             {/* <audio src={BGmusic} loop ref={audioRef}></audio> */}
           </div>
@@ -215,8 +188,8 @@ const Home = () => {
               </div>
             </div>
           )}
-          )
-        </FadeIn>
+          
+        </div>
       )}
     </>
   );
