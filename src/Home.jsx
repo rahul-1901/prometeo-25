@@ -191,7 +191,8 @@ const Home = () => {
           
           
           </div>
-          </div>  
+          <Modal isModalOpen={isModalOpen} closeModal={closeModal} />
+        </div>  
       )}
     </>
   );
