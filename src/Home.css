@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap");
 
 :root {
-  --back-image-url: url('https://s3-alpha-sig.figma.com/img/5913/49db/a11a9df23f11a4616a33f42eb7785aff?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=M-tENTWoDmOQ2j6c8wkJXsi9WQqogzhPVrOQg034svt0kZ13rXmmDxUn~oDA4Tvet219pV9tWlHAj4b3POHM3r7LfUqzD-KHQVUcThrBLX62fH8~PjOK18cZWBY-jqzeui~HYTyT6tEParOd2hztF-pP3zyR5IF2GqWIKIYa9GGAobBk7Yb5G9hgob96rWBc-st2nytQ-l5bmA2lbLbbVbk5Sp8hxT9tVSKGs3dWtugy3yGESQMjPexTh6FoatFux34pVCNlLwNyY1X9246d~aDgb6jKUk0cT0Iqv5YDVU5u0BPiPuAXOOcUJYnYYlS1HV4NG7vO87045jNt4b~wbQ__');
+  --back-image-url: url('./assets/coming-soon/bg-nostars.png');
 }
 
 .home-body {
@@ -42,6 +42,10 @@
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.677);
 }
 
+#tsparticles {
+  height: 100%;
+}
+
 .home-main-container {
   position: absolute;
   height: 40vh;
@@ -51,6 +55,18 @@
   align-items: flex-start; /* Align items to the left */
   z-index: 20;
   background-color: #ffffff00;
+}
+
+.fog-svg {
+  width: 100%;
+  transform: scale(2);
+  filter: invert() blur(1px);
+  opacity: 0.4;
+}
+
+.fogMid .st0 {
+  /* fill: rgba(247, 244, 244, 0.5);  */
+  /* scale: 1.5; */
 }
 
 .logo {
