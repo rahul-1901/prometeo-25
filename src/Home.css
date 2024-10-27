@@ -20,26 +20,26 @@
 }
 
 .stars {
-  position: absolute; /* Ensure it's positioned relative to the parent */
+  position: absolute; 
   top: 0;
   left: 0;
-  width: 100vw; /* Full width */
-  height: 35vh; /* Full height to accommodate stars */
-  overflow: hidden; /* Prevent stars from being visible outside */
-  pointer-events:visible; /* Prevent interaction with stars */
-  z-index: 1; /* Ensure it sits behind other content */
+  width: 100vw;
+  height: 35vh;
+  overflow: hidden;
+  pointer-events:visible;
+  z-index: 1; 
 }
 
 .star {
   position: absolute;
-  background-color: rgba(197, 194, 194, 0.792); /* Color of the stars */
-  border-radius: 50%; /* Make them circular */
-  width: 2px; /* Width of the star */
-  height: 2px; /* Height of the star */
-  opacity: 0.8; /* Base opacity */
-  transition: opacity 0.3s ease; /* Smooth opacity change for twinkling */
+  background-color: rgba(197, 194, 194, 0.792);
+  border-radius: 50%; 
+  width: 2px; 
+  height: 2px; 
+  opacity: 0.8; 
+  transition: opacity 0.3s ease;
   /* Optional: Add a small glowing effect */
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.677);
 }
 
 .home-main-container {
@@ -55,25 +55,25 @@
 
 .logo {
   box-sizing: border-box;
-  width: auto; /* Adjust width if necessary */
+  width: auto; 
   margin: 1.2rem;
   height: auto !important; /* Reset height */
   padding: 0 !important;
 }
 
 .logo img {
-  max-width: 100%; /* Ensure the logo is responsive */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 100%;
+  height: auto; 
 }
 
 .home-title {
   text-align: center; /* Center title text */
-  width: 85%; /* Full width for the title */
+  width: 85%; 
   padding-left: 16%;
 }
 .home-title img {
-  max-width: 100%; /* Ensure the logo is responsive */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; 
+  height: auto;
 }
 
 .pre-register {
@@ -81,16 +81,16 @@
 }
 
 .pre-register span {
-  text-align: center; /* Center text */
-  font-family: 'LEMON MILK', sans-serif; /* Font family */
+  text-align: center;
+  font-family: 'LEMON MILK', sans-serif;
   font-style: normal;
-  font-weight: 500; /* Increased font weight for bolder text */
-  font-size: 1.5em; /* Default size */
-  line-height: 35px; /* Default line height */
-  color: #FFFFFF; /* Text color */
-  white-space: nowrap; /* Prevent text wrapping */
-  border-bottom: 2px solid transparent; /* Start with transparent border */
-  transition: border-color 0.3s ease; /* Smooth transition for the hover effect */
+  font-weight: 500; 
+  font-size: 1.5em; 
+  line-height: 35px; 
+  color: #FFFFFF; 
+  white-space: nowrap; 
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
   padding: 0px 3px 0px 3px ;
 }
 
@@ -115,7 +115,6 @@
 }
 
 .home-socialmedia {
-  /* width: 100%; */
   display: flex;
   justify-content: end;
   align-items: center;
