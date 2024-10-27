@@ -1,13 +1,13 @@
 import  { useEffect, useState } from 'react';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
+import { loadAll } from "@tsparticles/all";
 
 const Stars = () => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
+      await loadAll(engine);
     }).then(() => {
       setInit(true);
     });
@@ -63,7 +63,7 @@ const Stars = () => {
             },
             value: {
                 min: 0.5,
-                max: 2
+                max: 2.5
             }
           },
           move: {
@@ -71,62 +71,54 @@ const Stars = () => {
           }
           
         },
-        // emitters: {
-        //   size: {
-        //     width: 0,
-        //     height: 15
-        //   },
-        //   position: {
-        //     x: {
-        //       random: {
-        //         enable: true
-        //       },
-        //       value : {
-        //         min: 10,
-        //         max: 70
-        //       }
-        //     },
-        //     y: 0
-        //   },
-        //   rate: {
-        //     delay: { min: 1, max: 3 },
-        //     quantity: 1
-        //   },
-        //   particles: {
-        //     move: {
-        //       enable: true,
-        //       speed: 10,
-        //       angle: {
-        //         value: 10,
-        //         offset: -10
-        //       },
-        //       gravity: {
-        //         enable: true,
-        //         acceleration: 5
-        //       },
-        //       direction: "left",
-        //       outModes: "destroy"
-        //     },
-        //     opacity: {
-        //       value: 0.7,
-        //       animation: {
-        //         enable: false
-        //       }
-        //     },
-        //     effect: {
-        //       type: "trail",
-        //       options: {
-        //         trail: {
-        //           fade: true,
-        //           length: {
-        //             min: 10,
-        //             max: 30
-        //           }
-        //         }
-        //       }
-        //     }
-        //   }
-        // }
+        emitters: {
+          size: {
+            width: 0,
+            height: 15
+          },
+          position: {
+            x: 0,
+            y: 30
+          },
+          rate: {
+            delay: { min: 1, max: 3 },
+            quantity: 1
+          },
+          particles: {
+            move: {
+              enable: true,
+              speed: 10,
+              angle: {
+                value: 10,
+                offset: -10
+              },
+              gravity: {
+                enable: true,
+                acceleration: 5
+              },
+              direction: "right",
+              outModes: "destroy"
+            },
+            opacity: {
+              value: 0.7,
+              animation: {
+                enable: false
+              }
+            },
+            effect: {
+              type: "trail",
+              options: {
+                trail: {
+                  fade: true,
+                  length: {
+                    min: 10,
+                    max: 30
+                  }
+                }
+              }
+            }
+          }
+        }
       }}
     />
   );
