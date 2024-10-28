@@ -2,7 +2,7 @@ import  { useEffect, useState } from 'react';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadAll } from "@tsparticles/all";
 
-const Stars = () => {
+const Stars = ({number}) => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const Stars = () => {
               area: 540
             },
             limit: 0,
-            value: 4000
+            value: number
           },
           opacity: {
             value: {

@@ -95,7 +95,8 @@ const Home = () => {
         <div>
           <div className="home-body">
             <div ref={starsRef} className="stars">
-              <Stars />
+              
+              <Stars number={700}/>
             </div>
             <div className="home-main-container">
               <div className="logo">
