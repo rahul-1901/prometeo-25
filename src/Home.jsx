@@ -19,50 +19,50 @@ const Home = () => {
   const handlePreRegisterClick = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  useEffect(() => {
-    if (!loading) {
-      const starsWrapper = starsRef.current;
-      if (!starsWrapper) return;
-      // Determine number of stars based on screen size
-      const isMobile = window.innerWidth <= 400; // Example mobile breakpoint
-      const numStars = isMobile ? 200 : 400;
+  // useEffect(() => {
+  //   if (!loading) {
+  //     const starsWrapper = starsRef.current;
+  //     if (!starsWrapper) return;
+  //     // Determine number of stars based on screen size
+  //     const isMobile = window.innerWidth <= 450; // Example mobile breakpoint
+  //     const numStars = isMobile ? 100 : 400;
 
-      const stars = new Array(numStars).fill(0).map(() => {
-        const star = document.createElement("div");
-        star.className = "star"; // Add a class for styling
-        starsWrapper.append(star);
+  //     const stars = new Array(numStars).fill(0).map(() => {
+  //       const star = document.createElement("div");
+  //       star.className = "star"; // Add a class for styling
+  //       starsWrapper.append(star);
 
-        return {
-          star,
-          x: Math.random() * window.innerWidth,
-          y: Math.random() * starsWrapper.clientHeight,
-          r: Math.random() * 2,
-          twinkle: Math.random() * 0.5 + 0.5,
-        };
-      });
+  //       return {
+  //         star,
+  //         x: Math.random() * window.innerWidth,
+  //         y: Math.random() * starsWrapper.clientHeight,
+  //         r: Math.random() * 2,
+  //         twinkle: Math.random() * 1 + 0.1,
+  //       };
+  //     });
 
-      function update() {
-        const speedMultiplier = isMobile ? 0.5 : 1;
-        stars.forEach((star) => {
-          star.x += star.r * speedMultiplier;
-          if (star.x > window.innerWidth) {
-            star.x = 0;
-          }
-          // Position and style stars within the wrapper
-          star.star.style.transform = `translate(${star.x}px, ${star.y}px) scale(${star.r})`;
-          star.star.style.opacity = star.twinkle;
-        });
-        requestAnimationFrame(update);
-      }
+  //     function update() {
+  //       const speedMultiplier = isMobile ? 0.05 : 0.9;
+  //       stars.forEach((star) => {
+  //         star.x += star.r * speedMultiplier;
+  //         if (star.x > window.innerWidth) {
+  //           star.x = 0;
+  //         }
+  //         // Position and style stars within the wrapper
+  //         star.star.style.transform = `translate(${star.x}px, ${star.y}px) scale(${star.r})`;
+  //         star.star.style.opacity = star.twinkle;
+  //       });
+  //       requestAnimationFrame(update);
+  //     }
 
-      requestAnimationFrame(update);
+  //     requestAnimationFrame(update);
 
-      // Cleanup on unmount
-      return () => {
-        starsWrapper.innerHTML = "";
-      };
-    }
-  }, [loading]);
+  //     // Cleanup on unmount
+  //     return () => {
+  //       starsWrapper.innerHTML = "";
+  //     };
+  //   }
+  // }, [loading]);
 
   // Preload images before rendering
   useEffect(() => {
@@ -107,7 +107,6 @@ const Home = () => {
               <div className="pre-register">
                 <span onClick={handlePreRegisterClick}>Pre-register now</span>
               </div>
-              <div>
               {/* <svg className="fog-svg" viewBox="0 0 800 600">
                 <g ref={fogRef} className="fogGroup">
                   <g ref={fogMidRef} className="st22 fog fogMid">
@@ -283,7 +282,6 @@ const Home = () => {
                 </path>
                 </g>
               </g> */}
-              </div>
             </div>
             <div className="home-footer">
               <div className="home-socialmedia">
@@ -312,7 +310,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="home-footer">
+          {/* <div className="home-footer">
             <div className="home-socialmedia">
               <a
                 href="https://www.linkedin.com/company/prometeo2023/"
@@ -336,7 +334,7 @@ const Home = () => {
                 <FaInstagram size={40} color="#FFFFFF" />
               </a>
             </div>
-          </div>
+          </div> */}
           <Modal isModalOpen={isModalOpen} closeModal={closeModal} />
         </div>
       )}

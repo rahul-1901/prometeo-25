@@ -32,8 +32,8 @@
 
 .star {
   position: absolute;
-  background-color: rgba(197, 194, 194, 0.792);
-  border-radius: 50%; 
+  background-color: rgba(214, 212, 212, 0.949);
+  border-radius:50%; 
   width: 2px; 
   height: 2px; 
   opacity: 0.8; 
@@ -49,7 +49,7 @@
 .home-main-container {
   position: absolute;
   height: 40vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column; /* Stack items vertically */
   align-items: flex-start; /* Align items to the left */

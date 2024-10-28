@@ -39,7 +39,7 @@ const Stars = () => {
               area: 540
             },
             limit: 0,
-            value: 1000
+            value: 4000
           },
           opacity: {
             value: {
@@ -63,7 +63,7 @@ const Stars = () => {
             },
             value: {
                 min: 0.5,
-                max: 2.5
+                max: 1.5
             }
           },
           move: {
@@ -94,7 +94,7 @@ const Stars = () => {
               },
               gravity: {
                 enable: true,
-                acceleration: 5
+                acceleration: 2
               },
               direction: "right",
               outModes: "destroy"
