@@ -10,9 +10,15 @@ const Modal = ({ isModalOpen, closeModal }) => {
               X
             </button>
             <div className="modal" onClick={(e) => e.stopPropagation()}>
-              <h2>Pre-register for Updates</h2>
-              <p>Enter your details to stay informed about our launch.</p>
-              {/* Include form inputs or additional modal content here if needed */}
+              <div className="ice-top"></div>
+              <h2 className="modal-title">PRE-REGISTER </h2>
+              <form>
+                <input type="text" placeholder="Name" className="modal-input" />
+                <input type="email" placeholder="Email" className="modal-input" />
+                <input type="tel" placeholder="Phone" className="modal-input" />
+                <button type="submit" className="modal-button">SUBMIT</button>
+              </form>
+              <p className="contact-link">Contact Us</p>
             </div>
           </div>
         </div>
