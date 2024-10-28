@@ -63,7 +63,7 @@ const Stars = ({number}) => {
             },
             value: {
                 min: 0.5,
-                max: 2.5
+                max: 1.5
             }
           },
           move: {
@@ -94,7 +94,7 @@ const Stars = ({number}) => {
               },
               gravity: {
                 enable: true,
-                acceleration: 5
+                acceleration: 2
               },
               direction: "right",
               outModes: "destroy"
