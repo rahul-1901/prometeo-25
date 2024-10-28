@@ -1,6 +1,3 @@
-
-//import Loader from "./pages/loader.jsx";
-// import BGmusic from "./assets/coming-soon/bg-music.mp3";
 import Stars from "./components/stars.jsx";
 import React, { useEffect, useRef, useState } from "react";
 import Modal from "./components/modal.jsx";
@@ -9,157 +6,63 @@ import { FaXTwitter } from "react-icons/fa6";
 import "./Home.css";
 import logo from "./assets/coming-soon/logo-new.svg";
 import title from "./assets/coming-soon/main_heading.svg";
-import { gsap, Power2 } from 'gsap';
+// import { gsap, Power2 } from 'gsap';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal
   const starsRef = useRef(null); // Ref to store the stars container
-  const fogRef = useRef([]);
-  const fogMidRef = useRef(null);
-  const fogBottomRef = useRef(null);
-  const fogTopRef = useRef(null);
+  // const fogRef = useRef([]);
+  // const fogMidRef = useRef(null);
+  // const fogBottomRef = useRef(null);
+  // const fogTopRef = useRef(null);
   const handlePreRegisterClick = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  // Star creation effect
-  // useEffect(() => {
-  //   if (!loading) {
-  //     const starsWrapper = starsRef.current;
-  //     if (!starsWrapper) return;
-
-      // const stars = new Array(1500).fill(0).map(() => {
-      //   const star = document.createElement("div");
-      //   star.className = "star"; // Add a class for styling
-      //   starsWrapper.append(star);
-
-  // useEffect(() => {
-  //   if (!loading ) {
-  //     // Use setTimeout to ensure this runs after rendering
-  //     const timer = setTimeout(() => {
-  //       const starsWrapper = starsRef.current;
-  //       console.log(starsWrapper.clientHeight)
-  //       if (!starsWrapper) {
-  //         console.log('starsWrapper is null');
-  //         return;
-  //       }
-  
-  //       const stars = new Array(500).fill(0).map(() => {
-  //         const star = document.createElement("div");
-  //         star.className = "star"; // Optional: add a class for styling
-  //         starsWrapper.append(star);
-  
-  //         return {
-  //           star,
-  //           x: Math.random() * window.innerWidth,
-  //           y: Math.random() * starsWrapper.clientHeight, // Y position within stars div
-  //           r: Math.random() * 2,
-  //           twinkle: Math.random() * 0.5 + 0.5, // Random initial opacity
-  //         };
-  //       });
-  
-  //       function update() {
-  //         stars.forEach((star) => {
-  //           // Move the star
-  //           star.x += star.r*0.2; // Increase x position by its speed/radius
-  //           if (star.x > window.innerWidth) {
-  //             star.x = 0; // Reset position to the left side if it goes off screen
-  //           }
-        
-  //           // Update star position and size
-  //           star.star.style.transform = `translate(${star.x}px, ${star.y}px) scale(${star.r})`;
-            
-  //           // Ensure the star is positioned within the stars wrapper
-  //           star.star.style.opacity = star.twinkle; // Apply the opacity
-  //         });
-  //         requestAnimationFrame(update);
-  //       }
-          
-  //       requestAnimationFrame(update);
-  
-  //       // Cleanup function to remove stars on unmount
-  //       return () => {
-  //         starsWrapper.innerHTML = ""; // Clear stars when component unmounts
-  //       };
-  //     }, 0); // Set timeout to 0 to defer to the next event loop cycle
-  
-  //     // Cleanup timer if component unmounts
-  //     return () => clearTimeout(timer);
-  //   }
-  // }, [loading]); // Run this effect after loading completes
   useEffect(() => {
-    const tlfog = gsap.timeline({ repeat: -1, yoyo: true });
-    
-    // Check fogRef is not null before animating
-    if (fogRef.current) {
-      tlfog.to(fogRef.current, {
-        duration: 8,
-        transformOrigin: '0% 50%',
-        x: -17,
-        scaleY: 0.95,
-        ease: Power2.easeInOut,
-        stagger: 1,
-      });
-    }
+    if (!loading) {
+      const starsWrapper = starsRef.current;
+      if (!starsWrapper) return;
+      // Determine number of stars based on screen size
+      const isMobile = window.innerWidth <= 400; // Example mobile breakpoint
+      const numStars = isMobile ? 200 : 400;
 
-    // Animate fogBottomRef if it's available
-    if (fogBottomRef.current) {
-      gsap.to(fogBottomRef.current, {
-        duration: 8,
-        y: -6,
-        repeat: -1,
-        yoyo: true,
-        ease: Power2.easeInOut,
-      });
-    }
+      const stars = new Array(numStars).fill(0).map(() => {
+        const star = document.createElement("div");
+        star.className = "star"; // Add a class for styling
+        starsWrapper.append(star);
 
-    // Animate fogTopRef if it's available
-    if (fogTopRef.current) {
-      gsap.to(fogTopRef.current, {
-        duration: 5,
-        y: -5,
-        repeat: -1,
-        yoyo: true,
-        ease: Power2.easeInOut,
+        return {
+          star,
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * starsWrapper.clientHeight,
+          r: Math.random() * 2,
+          twinkle: Math.random() * 0.5 + 0.5,
+        };
       });
-    }
 
-    const tlfogMid = gsap.timeline({ repeat: -1, yoyo: true, delay: 1 });
-    
-    // Animate fogMidRef if it's available
-    if (fogMidRef.current) {
-      tlfogMid.to(fogMidRef.current, {
-        duration: 8,
-        transformOrigin: '70% 50%',
-        x: 22,
-        y: 8,
-        rotation: '-1deg',
-        scaleY: 0.97,
-        opacity: 0.55,
-        ease: Power2.easeInOut,
-      });
-    }
+      function update() {
+        const speedMultiplier = isMobile ? 0.5 : 1;
+        stars.forEach((star) => {
+          star.x += star.r * speedMultiplier;
+          if (star.x > window.innerWidth) {
+            star.x = 0;
+          }
+          // Position and style stars within the wrapper
+          star.star.style.transform = `translate(${star.x}px, ${star.y}px) scale(${star.r})`;
+          star.star.style.opacity = star.twinkle;
+        });
+        requestAnimationFrame(update);
+      }
 
-    // Apply animation to multiple refs only if they are not null
-    const elements = [fogBottomRef.current, fogMidRef.current, fogTopRef.current].filter(Boolean);
-    if (elements.length) {
-      gsap.to(elements, {
-        duration: 4.5,
-        opacity: 0.45,
-        repeat: -1,
-        yoyo: true,
-        ease: Power2.easeInOut,
-        stagger: 0.35,
-      });
-    }
-  }, [fogRef, fogBottomRef, fogTopRef, fogMidRef]);
+      requestAnimationFrame(update);
 
-  const IMAGES = [
-    {
-      id: "1",
-      url: "https://ik.imagekit.io/nrcvcirqj/assets/coming-soon/logo%20(2).svg?updatedAt=1699094086033",
-    },
-  ];
+      // Cleanup on unmount
+      return () => {
+        starsWrapper.innerHTML = "";
+      };
+    }
+  }, [loading]);
 
   // Preload images before rendering
   useEffect(() => {
@@ -189,10 +92,10 @@ const Home = () => {
       {loading ? (
         <></>
       ) : (
-        <div >
-          <div  className="home-body">
+        <div>
+          <div className="home-body">
             <div ref={starsRef} className="stars">
-              <Stars/>
+              <Stars />
             </div>
             <div className="home-main-container">
               <div className="logo">
@@ -204,6 +107,7 @@ const Home = () => {
               <div className="pre-register">
                 <span onClick={handlePreRegisterClick}>Pre-register now</span>
               </div>
+              <div>
               {/* <svg className="fog-svg" viewBox="0 0 800 600">
                 <g ref={fogRef} className="fogGroup">
                   <g ref={fogMidRef} className="st22 fog fogMid">
@@ -279,8 +183,8 @@ const Home = () => {
                     </path>
                   </g>
                 </g>
-              </svg> */}
-              {/* <g className="fogGroup">
+              </svg> 
+              <g className="fogGroup">
                 <g className="st22 fog fogMid">
                   <path className="st0">
                   <animate 
@@ -379,6 +283,7 @@ const Home = () => {
                 </path>
                 </g>
               </g> */}
+              </div>
             </div>
             <div className="home-footer">
               <div className="home-socialmedia">
@@ -405,7 +310,6 @@ const Home = () => {
                   <FaInstagram size={40} color="#FFFFFF" />
                 </a>
               </div>
-              
             </div>
           </div>
           <div className="home-footer">
@@ -432,11 +336,9 @@ const Home = () => {
                 <FaInstagram size={40} color="#FFFFFF" />
               </a>
             </div>
-          
-          
           </div>
           <Modal isModalOpen={isModalOpen} closeModal={closeModal} />
-        </div>  
+        </div>
       )}
     </>
   );
