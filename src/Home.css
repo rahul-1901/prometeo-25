@@ -3,6 +3,7 @@
 
 :root {
   --back-image-url: url('./assets/coming-soon/bg-nostars.png');
+  --back-image-url-phone:url('./assets/coming-soon/bg-mobile-nostars.png')
 }
 
 .home-body {
@@ -138,46 +139,7 @@
   gap: 2vw;
 }
 
-@media screen and (min-width: 320px) {
-  .home-main-container {
-    /* background: url('https://ik.imagekit.io/nrcvcirqj/assets/coming-soon/bg-forest-small.png') no-repeat center center; */
 
-    /* background-size: cover; */
-    height: 40vh;
-  }
-
-  .home-title {
-    /* font-size: 3vh; */
-  }
-
-  .home-footer {
-    bottom: 7vh;
-  }
-}
-
-
-@media screen and (min-width: 720px) {
-  .home-main-container {
-    /* background: var(--back-image-url) no-repeat center center;
-    background-size: cover; */
-    height: 40vh;
-  }
-
-
-  .home-footer {
-    width: 100%;
-    position: absolute;
-    bottom: 3vh;
-    height: 10vh;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    padding: 5vw;
-    margin: auto;
-  }
-}
 .modal-back {
   position: fixed;
   top: 0;
@@ -280,7 +242,6 @@
   width: 100%;
   height: 20px;
 }
-
 @media screen and (min-width: 1280px) {
   .home-main-container {
     /* background: var(--back-image-url) no-repeat center center fixed;
@@ -296,6 +257,67 @@
     /* font-size: 3em; */
   }
 }
+@media screen and (min-width: 720px) {
+  .home-main-container {
+    /* background: var(--back-image-url) no-repeat center center;
+    background-size: cover; */
+    height: 40vh;
+  }
+
+
+  .home-footer {
+    width: 100%;
+    position: absolute;
+    bottom: 3vh;
+    height: 10vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 5vw;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-main-container {
+    height: 40vh;
+  }
+  .home-body {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background: var(--back-image-url-phone) no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+  }
+  .home-footer {
+    bottom: 7vh;
+    width: 100%;
+  /* position: absolute; */
+  bottom: 0px !important;
+  height: 7vh !important;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 0px 18px 0px 0px !important;
+  margin: auto;
+
+  }
+}
+
+
+
+
+
 
 
 
