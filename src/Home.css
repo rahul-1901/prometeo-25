@@ -69,7 +69,7 @@
   position: absolute;
   width: 50vw;
   height: 52vh;
-  top: 45vh;
+  top: 30vh;
 }
 
 .fogMid .st0 {
@@ -327,6 +327,7 @@
   text-align: center;
   padding: 0px 18px 0px 0px !important;
   margin: auto;
+  top:80%
 
   }
   .fogLeftContainer{
