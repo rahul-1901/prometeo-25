@@ -30,6 +30,7 @@
 // export default Modal;
 
 import React, { useState } from "react";
+import axios from "axios";
 
 const Modal = ({ isModalOpen, closeModal }) => {
   const [formData, setFormData] = useState({
@@ -49,16 +50,17 @@ const Modal = ({ isModalOpen, closeModal }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbwrf36IJRN-JD3fYxoMatPzpsWrp0Y8ZRtSfNPr_aOhin7gt8BQzRzQi_C1z1ehUrN9/exec", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post(
+        "https://script.google.com/macros/s/AKfycbwrf36IJRN-JD3fYxoMatPzpsWrp0Y8ZRtSfNPr_aOhin7gt8BQzRzQi_C1z1ehUrN9/exec",
+        formData, // This is the JSON data being sent
+        {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
 
-      const result = await response.json();
-      if (result.status === "success") {
+      if (response.data.status === "success") {
         alert("Form submitted successfully!");
       } else {
         alert("There was an error submitting the form.");
