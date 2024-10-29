@@ -65,6 +65,13 @@
   opacity: 0.4;
 }
 
+.fogLeftContainer{
+  position: absolute;
+  width: 50vw;
+  height: 52vh;
+  top: 45vh;
+}
+
 .fogMid .st0 {
   /* fill: rgba(247, 244, 244, 0.5);  */
   /* scale: 1.5; */
@@ -242,7 +249,7 @@
   width: 100%;
   height: 20px;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (max-width: 1280px) {
   .home-main-container {
     /* background: var(--back-image-url) no-repeat center center fixed;
     height: 100vh; */
@@ -252,9 +259,18 @@
     margin: auto 0px;
     width: 100%;
   } */
-
+  .fogLeftContainer{
+    top: 55vh;
+  }
   .home-title {
     /* font-size: 3em; */
+  }
+}
+@media screen and (max-width: 720px) {
+  .fogLeftContainer{
+    top: 65vh;
+    width: 60vw;
+    height: 62.4vh;
   }
 }
 @media screen and (min-width: 720px) {

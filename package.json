@@ -9,6 +9,7 @@
     "@tsparticles/all": "^3.5.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.5.0",
+    "framer-motion": "^11.11.10",
     "gsap": "^3.12.5",
     "imagekitio-react": "^4.2.0",
     "react": "^18.3.1",

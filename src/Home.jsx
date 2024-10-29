@@ -6,6 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import "./Home.css";
 import logo from "./assets/coming-soon/logo-new.svg";
 import title from "./assets/coming-soon/main_heading.svg";
+import FogLeft from "./components/fogLeft.jsx";
 // import { gsap, Power2 } from 'gsap';
 
 const Home = () => {
@@ -283,6 +284,10 @@ const Home = () => {
                 </path>
                 </g>
               </g> */}
+              <div className="fogLeftContainer">
+              <FogLeft/>
+              </div>
+              
             </div>
             <div className="home-footer">
               <div className="home-socialmedia">
