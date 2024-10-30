@@ -78,9 +78,12 @@
   top: 30vh;
 }
 
-.fogMid .st0 {
-  /* fill: rgba(247, 244, 244, 0.5);  */
-  /* scale: 1.5; */
+.fogRightContainer{
+  position: absolute;
+  width: 50vw;
+  height: 52vh;
+  top: 30vh;
+  right: -5vw;
 }
 
 .logo {
@@ -304,7 +307,11 @@
     width: 100%;
   } */
   .fogLeftContainer{
-    top: 55vh;
+    top: 400px;
+  }
+  .fogRightContainer{
+    right: 0vw;
+    height: 40vh;
   }
   .home-title {
     /* font-size: 3em; */
@@ -313,9 +320,16 @@
 }
 @media screen and (max-width: 720px) {
   .fogLeftContainer{
-    top: 65vh;
+    top: 55vh;
+    left: -5vw;
     width: 60vw;
     height: 62.4vh;
+  }
+  .fogRightContainer{
+    width: 30vw;
+    height: 34vh;
+    right: 30vw;
+    top: 20vh;
   }
 }
 @media screen and (min-width: 720px) {
@@ -381,6 +395,10 @@
   }
   .fogLeftContainer{
     top: 70vh;
+  }
+  .fogRightContainer{
+    top: 0vh;
+    right: 50vw;
   }
 }
 
