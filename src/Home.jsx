@@ -107,7 +107,7 @@ const Home = () => {
                 <img src={title} alt="Comming Sooon" />{" "}
               </div>
               <div className="pre-register">
-                <span onClick={handlePreRegisterClick}>Pre-register now</span>
+                <span onClick={handlePreRegisterClick}>PRE-REGISTER NOW</span>
               </div>
               {/* <svg className="fog-svg" viewBox="0 0 800 600">
                 <g ref={fogRef} className="fogGroup">
