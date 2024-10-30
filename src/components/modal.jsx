@@ -1,36 +1,7 @@
-// import React from "react";
-
-// const Modal = ({ isModalOpen, closeModal }) => {
-//   return (
-//     <>
-//       {isModalOpen && (
-//         <div className="modal-back">
-//           <div className="modal-overlay" onClick={closeModal}>
-//             <button className="close-button" onClick={closeModal}>
-//               X
-//             </button>
-//             <div className="modal" onClick={(e) => e.stopPropagation()}>
-//               <div className="ice-top"></div>
-//               <h2 className="modal-title">PRE-REGISTER </h2>
-//               <form>
-//                 <input type="text" placeholder="Name" className="modal-input" />
-//                 <input type="email" placeholder="Email" className="modal-input" />
-//                 <input type="tel" placeholder="Phone" className="modal-input" />
-//                 <button type="submit" className="modal-button">SUBMIT</button>
-//               </form>
-//               <p className="contact-link">Contact Us</p>
-//             </div>
-//           </div>
-//         </div>
-//       )}
-//     </>
-//   );
-// };
-
-// export default Modal;
-
 import React, { useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Modal = ({ isModalOpen, closeModal }) => {
   const [formData, setFormData] = useState({
@@ -38,6 +9,7 @@ const Modal = ({ isModalOpen, closeModal }) => {
     email: "",
     phone: ""
   });
+  const [isLoading, setIsLoading] = useState(false); // New loading state
 
   const handleChange = (e) => {
     setFormData({
@@ -49,10 +21,41 @@ const Modal = ({ isModalOpen, closeModal }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validation checks
+    const { name, email, phone } = formData;
+
+    // Check for empty fields
+    if (!name || !email || !phone) {
+      toast.error("All fields are required.");
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    // Validate phone number (10 digits, not starting with 0)
+    const phoneRegex = /^[1-9][0-9]{9}$/;
+    if (!phoneRegex.test(phone)) {
+      toast.error("Please enter a valid phone number.");
+      return;
+    }
+
+    // Validate name (should not contain numbers)
+    const nameRegex = /^[A-Za-z\s]+$/;
+    if (!nameRegex.test(name)) {
+      toast.error("Name should not contain numbers or special characters.");
+      return;
+    }
+    setIsLoading(true); // Set loading to true
+
     try {
-      const response = await axios.post(
-        "https://script.google.com/macros/s/AKfycbwrf36IJRN-JD3fYxoMatPzpsWrp0Y8ZRtSfNPr_aOhin7gt8BQzRzQi_C1z1ehUrN9/exec",
-        formData, // This is the JSON data being sent
+      // Make the POST request using Fetch API
+      const response = await axios.post("https://google-script-dusky.vercel.app/proxy",
+        formData,
         {
           headers: {
             "Content-Type": "application/json"
@@ -61,29 +64,25 @@ const Modal = ({ isModalOpen, closeModal }) => {
       );
 
       if (response.data.status === "success") {
-        alert("Form submitted successfully!");
+        toast.success("Form submitted successfully!");
+        setFormData({ name: "", email: "", phone: "" });
       } else {
-        alert("There was an error submitting the form.");
+        toast.error("There was an error submitting the form. Please try again.");
       }
     } catch (error) {
-      // Log error details for debugging
       console.error("Error submitting form:", error);
       if (error.response) {
-        // Server responded with a status other than 200 range
-        console.error("Response data:", error.response.data);
-        alert("Error: " + error.response.data);
+        toast.error("Error: " + error.response.data);
       } else if (error.request) {
-        // Request was made but no response received
-        console.error("Request details:", error.request);
-        alert("Network error: No response received.");
+        console.log("Request details:", error.request);
+        toast.error("Network error:", error.request.data);
       } else {
-        // Something happened in setting up the request
-        console.error("Error message:", error.message);
-        alert("Error: " + error.message);
+        toast.error("Error: " + error.message);
       }
+    } finally {
+      setIsLoading(false); // Reset loading state regardless of success or error
+      closeModal();
     }
-  
-    closeModal();
   };
 
   return (
@@ -96,7 +95,7 @@ const Modal = ({ isModalOpen, closeModal }) => {
             </button>
             <div className="modal" onClick={(e) => e.stopPropagation()}>
               <div className="ice-top"></div>
-              <h2 className="modal-title">PRE-REGISTER </h2>
+              <h2 className="modal-title">PRE-REGISTER</h2>
               <form onSubmit={handleSubmit}>
                 <input
                   type="text"
@@ -122,15 +121,19 @@ const Modal = ({ isModalOpen, closeModal }) => {
                   value={formData.phone}
                   onChange={handleChange}
                 />
-                <button type="submit" className="modal-button">SUBMIT</button>
+                <button type="submit" className="modal-button" disabled={isLoading}>
+                  {isLoading ? "Submitting..." : "SUBMIT"}
+                </button>
               </form>
               <p className="contact-link">Contact Us</p>
             </div>
           </div>
         </div>
       )}
+      <ToastContainer />
     </>
   );
 };
 
 export default Modal;
+

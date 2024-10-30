@@ -1,7 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import "./NotFound.css"
-import sadPenguinImage from '../assets/sad-penguin.png';
 import Stars from '../components/stars';
 import notfound from '../assets/not-found.png'
 import logo from "../assets/coming-soon/logo-new.svg";
@@ -31,4 +29,4 @@ const NotFound = () => {
   );
 }
 
-export default NotFound
+export default NotFound;
