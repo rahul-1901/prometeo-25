@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap");
-
 @font-face {
   font-family: "Lemon-Milk-Bold";   
   src: local("LEMONMILK-Bold"),
     url("./fonts/LEMONMILK-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "LEMON-MILK";   
+  src: local("LEMONMILK-Bold"),
+    url("./assets/LemonMilkLight-owxMq.otf") format("truetype");
 }
 
 :root {
@@ -21,43 +26,43 @@
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
-  /* background: var(--back-image-url) no-repeat center center fixed; */
-  /* background-size: cover; */
+  /* background: url("./assets/bg/1.webp") no-repeat center center fixed;
+  background-size: cover; */
   overflow: hidden;
-  animation: 5s infinite alternate backwardschange;
+  animation: 1.5s infinite alternate backwardschange;
 }
 
 @keyframes backwardschange {
   0% {
-    background: url('./assets/bg/1.png') no-repeat center center fixed;
+    background: url('./assets/bg/1.webp') no-repeat center center fixed;
     background-size: cover;
   }
   15% {
-    background: url('./assets/bg/2.png') no-repeat center center fixed;
+    background: url('./assets/bg/2.webp') no-repeat center center fixed;
     background-size: cover;
   }
   30% {
-    background: url('./assets/bg/3.png') no-repeat center center fixed;
+    background: url('./assets/bg/3.webp') no-repeat center center fixed;
     background-size: cover;
   }
   45% {
-    background: url('./assets/bg/4.png') no-repeat center center fixed;
+    background: url('./assets/bg/4.webp') no-repeat center center fixed;
     background-size: cover;
   }
   60% {
-    background: url('./assets/bg/5.png') no-repeat center center fixed;
+    background: url('./assets/bg/5.webp') no-repeat center center fixed;
     background-size: cover;
   }
   75% {
-    background: url('./assets/bg/6.png') no-repeat center center fixed;
+    background: url('./assets/bg/6.webp') no-repeat center center fixed;
     background-size: cover;
   }
   90% {
-    background: url('./assets/bg/7.png') no-repeat center center fixed;
+    background: url('./assets/bg/7.webp') no-repeat center center fixed;
     background-size: cover;
   }
   100% {
-    background: url('./assets/bg/8.png') no-repeat center center fixed;
+    background: url('./assets/bg/8.webp') no-repeat center center fixed;
     background-size: cover;
   }
 }
@@ -133,18 +138,26 @@
 }
 
 .logo img {
-  max-width: 100%;
+  /* max-width: 40%; */
   height: auto; 
+  width: 100px;
 }
+
 
 .home-title {
   text-align: center; /* Center title text */
-  width: 85%; 
-  padding-left: 16%;
+  width: 100%; 
+  /* padding-left: 16%; */
 }
 .home-title img {
   max-width: 100%; 
   height: auto;
+}
+.home-title h1{
+  color: white;
+  font-weight: 900;
+  font-size: 180px;
+  margin-bottom: 30px;
 }
 
 .pre-register {
@@ -193,7 +206,7 @@
   z-index: 100;
 }
 .home-music{
-  width: 100%;
+  width: 10%;
   position: absolute;
   bottom: 0px !important;
   height: 7vh !important;
@@ -205,7 +218,9 @@
   padding: 0px 18px 0px 18px !important;
   margin: auto;
   z-index: 1000;
-  /* cursor: pointer; */
+  font-size: 40px;
+  /* top: 80%; */
+
 }
 
 .home-socialmedia {
@@ -255,7 +270,7 @@
 
 .modal {
   position: relative;
-  background: rgba(255, 255, 255, 0.15); /* Frosted effect */
+  background: rgba(255, 255, 255, 0.15); 
   backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 2rem;
@@ -263,8 +278,8 @@
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: #fff;
-  opacity: 0; /* Start hidden */
-  animation: modalFadeIn 0.4s ease forwards; /* Animation settings */
+  opacity: 0;
+  animation: modalFadeIn 0.4s ease forwards; 
 }
 
 .ice-top {
@@ -365,6 +380,11 @@
   .home-main-container {
     height: 40vh;
   }
+  .home-title h1{
+    color: white;
+    font-weight: 900;
+    font-size: 100px;
+  }
 
 
   .home-footer {
@@ -379,6 +399,7 @@
     text-align: center;
     padding: 5vw;
     margin: auto;
+    z-index: 100;
   }
   .pre-register span {
     text-align: center;
@@ -418,9 +439,7 @@
     animation:none;
 
   }
-  .pre-register span {
-    font-size: 1.1em;
-  }
+  
   .home-footer {
     bottom: 7vh;
     width: 100%;
@@ -435,14 +454,13 @@
     margin: auto;
     top:80%;
     z-index: 100;
-
   }
   .pre-register span {
     text-align: center;
     font-family: 'Lemon-Milk', sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 1.2em; 
+    font-size: 0.8em; 
     line-height: 1.2; 
     color: #000000;
     /* text-decoration: underline;  */
@@ -455,8 +473,11 @@
     box-shadow: 2px 3px 5px black;
   }
   .home-music{
-  top:80%;
-
+  position: relative;
+  flex-direction: row-reverse;
+  top:6%;
+  width: 100%;
+  font-size: 30px;
   }
   
   .fogLeftContainer{
@@ -466,6 +487,25 @@
     top: 0vh;
     right: 50vw;
   }
+  .logo img {
+    height: auto; 
+    width: 60px;
+  }
+  .home-title h1{
+    color: white;
+    font-weight: 900;
+    font-size: 40px;
+  }
+  
+}
+
+@media screen and (max-width: 300px) {
+  .home-title h1{
+    color: white;
+    font-weight: 900;
+    font-size: 30px;
+  }
+  
 }
 
 
