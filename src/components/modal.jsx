@@ -125,7 +125,7 @@ const Modal = ({ isModalOpen, closeModal }) => {
                   {isLoading ? "Submitting..." : "SUBMIT"}
                 </button>
               </form>
-              <p className="contact-link">Contact Us</p>
+              {/* <p className="contact-link">Contact Us</p> */}
             </div>
           </div>
         </div>

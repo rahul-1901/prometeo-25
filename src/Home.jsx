@@ -8,11 +8,16 @@ import logo from "./assets/coming-soon/logo-new.svg";
 import title from "./assets/coming-soon/main_heading.svg";
 import FogLeft from "./components/fogLeft.jsx";
 import FogRight from "./components/fogRight.jsx";
+import BGmusic from "./assets/coming-soon/bg-music.mp3";
+import { HiMiniSpeakerWave, HiMiniSpeakerXMark } from "react-icons/hi2";
+
 // import { gsap, Power2 } from 'gsap';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal
+  const [music, setMusic] = useState(false);
+  const audioRef = useRef();
   const starsRef = useRef(null); // Ref to store the stars container
   // const fogRef = useRef([]);
   // const fogMidRef = useRef(null);
@@ -20,6 +25,18 @@ const Home = () => {
   // const fogTopRef = useRef(null);
   const handlePreRegisterClick = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
+  const handleBGmusic = () => {
+    if (music) {
+      audioRef.current.pause();
+      setMusic(false);
+    } else {
+      audioRef.current.play();
+      audioRef.current.volume = audioRef.current.volume * 0.1;
+      audioRef.current.speed = 0.1;
+      setMusic(true);
+    }
+  };
 
   // useEffect(() => {
   //   if (!loading) {
@@ -92,7 +109,9 @@ const Home = () => {
   return (
     <>
       {loading ? (
-        <></>
+        <>
+        <h1>Loading...</h1>
+        </>
       ) : (
         <div>
           <div className="home-body">
@@ -119,6 +138,22 @@ const Home = () => {
                 <FogRight/>
               </div>
             </div>
+            <div className="home-music">
+                {music ? (
+                  <HiMiniSpeakerWave
+                    size={40}
+                    color="#FFFFFF"
+                    onClick={handleBGmusic}
+                  />
+                ) : (
+                  <HiMiniSpeakerXMark
+                    size={40}
+                    color="#FFFFFF"
+                    onClick={handleBGmusic}
+                  />
+                )}
+              </div>
+              <audio src={BGmusic} loop ref={audioRef}></audio>
             <div className="home-footer">
               <div className="home-socialmedia">
                 <a
@@ -143,8 +178,10 @@ const Home = () => {
                 >
                   <FaInstagram size={40} color="#FFFFFF" />
                 </a>
+                
               </div>
             </div>
+            
           </div>
           {/* <div className="home-footer">
             <div className="home-socialmedia">
@@ -171,6 +208,7 @@ const Home = () => {
               </a>
             </div>
           </div> */}
+          
           <Modal isModalOpen={isModalOpen} closeModal={closeModal} />
         </div>
       )}
