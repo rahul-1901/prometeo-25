@@ -313,6 +313,16 @@
   transition: border-color 0.3s ease; 
 }
 
+.modal-input::placeholder{
+  color: white;
+  opacity: 0.8;
+}
+
+.modal-input::-ms-input-placeholder{
+  color: white;
+  opacity: 0.8;
+}
+
 .modal-input:focus {
   border-bottom: 1px solid rgba(255, 255, 255, 0.8); 
 }
