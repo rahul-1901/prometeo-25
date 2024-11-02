@@ -79,7 +79,6 @@ const Home = () => {
                 <Link to="/"><img src={logo} alt="Logo" /></Link>
               </div>
               <div className="home-title">
-                {/* <img src={title} alt="Comming Sooon" />{" "} */}
                 <h1>COMING SOON</h1>
               </div>
               <div className="pre-register">
