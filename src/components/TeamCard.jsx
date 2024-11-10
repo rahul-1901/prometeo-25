@@ -7,7 +7,7 @@ import {
 } from "react-icons/ai";
 import DefaultIMG from "../assets/defaultIMG.jpg";
 import "./TeamCard.css";
-
+import imagebox from "../assets/team/Image_Box.png"
 const TeamCard = ({
   name,
   position,
@@ -19,10 +19,14 @@ const TeamCard = ({
 }) => {
   return (
     <>
-      <div className="wrapper bg-cyan-300">
+      <div className="wrapper ">
         {/* image */}
-        <div className="member-img bg-slate-800">
-
+        <div className="member-img" style={{ backgroundImage: `url(${imgURL})` }}>
+          <img src={imagebox} alt="" />
+        </div>
+        {/* text */}
+        <div className="member-nm flex justify-center items-center w-full h-full">
+          {name}
         </div>
       </div>
     </>

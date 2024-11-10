@@ -1,10 +1,27 @@
-.wrapper{
+.wrapper {
   width: 328.72px;
   min-height: 27.185rem; 
   height: auto; 
+  display: flex;
+  flex-direction: column; /* Stack the child divs vertically */
+  justify-content: space-between;
 }
-.member-img{
+
+.member-img {
   width: 100%;
-  height: 23.437rem;
-  
+  height: 23.437rem; /* Fixed height for image */
+  background-size: cover;
+  background-position: center;
+  /* background-image: url('../assets/team/Image_Box.png'); */
+}
+
+.member-nm {
+  font-family: 'Gemunu Libre', sans-serif; /* Font family */
+  font-weight: 700;                       /* Font weight */
+  font-size: 3vh;                        /* Font size */
+  line-height: 41.19px;                   /* Line height */
+  letter-spacing: 7%;                     /* Letter spacing */
+  text-align: center;
+  word-wrap: break-word;                  
+  overflow-wrap: break-word;              
 }
