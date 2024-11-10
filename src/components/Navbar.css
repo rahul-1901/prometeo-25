@@ -1,0 +1,232 @@
+/* a{
+    list-style: none;
+} */
+
+.home-img {
+  width: 70px;
+  margin-top: 10px;
+}
+
+#navbar {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  align-items: center;
+  /* width:100%; */
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.033);
+  font-family: "Share Tech", sans-serif;
+  z-index: 999;
+  opacity: 0;
+  margin: 0 auto;
+  padding: 0 5vh;
+  /* max-width: 1440px; */
+  backdrop-filter: blur(3px);
+  transition: 0.5s ease-in-out;
+}
+
+.nav-links-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  /* margin-left:50px; */
+  color: white;
+  gap: 20px;
+}
+
+.nav-links {
+  color: white;
+  list-style: none;
+  display: inline-block;
+  position: relative;
+  /* margin-right: 20px; */
+  cursor: pointer;
+
+}
+
+.nav-links:hover,
+.highlight {
+  color: rgb(129, 9, 135);
+  transition: 0.5s;
+}
+
+.highlight::after {
+  color: rgb(129, 9, 135);
+  content: "";
+  width: 60%;
+  height: 2px;
+  background: rgb(129, 9, 135);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-links::after {
+  content: "";
+  width: 60%;
+  height: 2px;
+  background: rgb(129, 9, 135);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.2s ease;
+}
+
+.nav-links:hover::after {
+  transform: scaleX(1);
+}
+
+/* .buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+} */
+
+.login {
+  background: transparent;
+  border-style: solid;
+  border-color: white;
+}
+
+.login:hover {
+  background-color: aliceblue;
+  color: black;
+  transition: 0.5s;
+}
+
+.register:hover {
+  background: transparent;
+  transition: 0.5s;
+  border-color: white;
+}
+
+.nav-mobile-links-container .nav-links {
+  color: white;
+  font-size: 26px;
+  padding: 1.8vh 0;
+}
+
+.nav-mobile-container {
+  flex: 1;
+  align-items: center;
+  justify-content: end;
+}
+
+.nav-mobile-container img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  object-position: center;
+  margin-right: 15px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.nav-mobile-links-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  /* gap: 60px; */
+  align-items: center;
+  flex: 1;
+  color: aliceblue;
+  margin-top: 85px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1250px) {
+  #navbar {
+    padding: 0px;
+  }
+  .nav-mobile {
+    display: flex;
+    font-size: 22px;
+    position: fixed;
+    top: 0px;
+    right: -250px;
+    width: 250px;
+    height: fit-content;
+    min-height: 100vh;
+    background-color: rgba(13, 13, 13);
+    overflow: scroll;
+
+    transition: 0.5s ease-in-out;
+  }
+  .nav-mobile.active {
+    right: 0px;
+  }
+  .nav-mobile-container {
+    display: flex;
+  }
+  .nav-links-container {
+    display: none;
+  }
+  .buttons {
+    display: none;
+  }
+  .mobile-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 30px;
+  }
+  .login,
+  .register {
+    font-size: 16px;
+    /* width: 90px; */
+    height: 40px;
+  }
+  .register {
+    background-color: rgb(129, 9, 135);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-links {
+    font-size: 26px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .nav-mobile-container {
+    display: none;
+  }
+  .nav-links-container {
+    display: flex;
+    /* width: 50%; */
+    /* margin: 0px 50px; */
+  }
+  .buttons {
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .register {
+    background-color: rgb(129, 9, 135);
+    margin-left: 20px;
+  }
+  .nav-links {
+    font-size: 22px;
+  }
+  .buttons {
+    margin-left: 70px;
+    margin-right: 50px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .nav-links-container {
+    /* width: 50%; */
+  }
+  .buttons {
+    margin-left: 100px;
+    width: 15%;
+  }
+}

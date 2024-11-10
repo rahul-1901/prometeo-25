@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&:wght@700display=swap");
+.event-card {
+  padding: 13px;
+  max-width: 300px;
+  width: 100%;
+  /* background-color: #663dff;
+  background-image: linear-gradient(319deg, #663dff 0%, #aa00ff 37%, #cc4499 100%); */
+  /* border: red; */
+  /* border-color: gold; */
+  /* border-radius: 13px; */
+  border: 1px solid gold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 2s ease;
+  cursor: pointer;
+}
+
+/* .workshop{
+  min-height: 45em;
+} */
+
+.event-card__filter {
+  /* height: 222px; */
+  overflow: hidden;
+  position: relative;
+  -o-object-fit: cover;
+  object-fit: cover;
+  transition: all 2s ease;
+}
+.event-card__filter::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  mix-blend-mode: multiply;
+  /* background: linear-gradient(-150deg, #eb0ec7 0%, #e1189e 100%); */
+  z-index: 1;
+  transition: all 2s ease;
+}
+.event-card__photo {
+  width: 100%;
+  /* filter: grayscale(100%); */
+}
+.event-card__container {
+  /* background: #fff; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  /* padding: 5px 0; */
+  box-sizing: border-box;
+}
+.event-card h2 {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+
+  text-align: center;
+  height: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #9aa9e6;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  margin: 0;
+}
+@media screen and (max-width: 1200px){
+.event-card__container {
+    padding: 10px 0;
+  }
+  .event-card h2 {
+    padding: 10px 0;
+  }
+}
+.event-card time,
+.event-card p,
+.event-card .event-card__location {
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0.18em;
+}
+.event-card__location {
+  text-decoration-color: #eb0ec7;
+  -webkit-text-decoration-color: #eb0ec7;
+  transition: all 250ms ease;
+  max-width: 13.3em;
+}
+.event-card__location:hover {
+  background-color: rgba(235, 14, 199, 0.2);
+  -webkit-text-decoration-color: rgba(235, 14, 199, 0.2);
+  text-decoration-color: rgba(235, 14, 199, 0.2);
+}
+.event-card__buttons {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0.5em 0 0.5em 0;
+  flex-direction: row;
+}
+.event-card__buttons .btn {
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: regular;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-align: center;
+  display: block;
+  flex: 1 1 100%;
+  color: #fff;
+  padding: 1em;
+}
+.event-card__buttons .btn:hover {
+  -webkit-animation: gradient 1.3s ease infinite;
+  animation: gradient 1.3s ease infinite;
+}
+.event-card__buttons .btn:hover i {
+  -webkit-animation: levitate 1.3s ease infinite;
+  animation: levitate 1.3s ease infinite;
+}
+.event-card__buttons .secondary {
+  position: relative;
+  background-image: linear-gradient(to right, #1897e1, #3022ad);
+  background-size: 150% 150%;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+/* .event-card__buttons .secondary {
+  position: relative;
+  background-image: linear-gradient(to right, #cc19bf, #7623a2);
+  background-size: 150% 150%;
+  transition: all 0.4s ease;
+  z-index: 1;
+} */
+.event-prize {
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.event-prize p {
+  font-family: "Orbitron", sans-serif;
+  color: gray;
+  font-size: 3vh;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.event-prize span {
+  color: #fff;
+  font-size: 5vh;
+  font-weight: 700;
+  margin-top: 0;
+}
+.register-btn-div {
+  position: absolute;
+  z-index: 9;
+  display: none;
+}
+.event-card:hover .register-btn-div {
+  display: block;
+}
+.register-btn-div button{
+  background-color: #A4201E;
+  padding: 2vh 4vh;
+}
+.event-card:hover .event-card__filter::before {
+  background: linear-gradient(-150deg, #eb0ec7 0%, #e1189e 100%);
+  backdrop-filter: blur(5px);
+}
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-webkit-keyframes levitate {
+  0% {
+    padding-left: 0px;
+  }
+  50% {
+    padding-left: 5px;
+  }
+  100% {
+    padding-left: 0px;
+  }
+}
+@keyframes levitate {
+  0% {
+    padding-left: 0px;
+  }
+  50% {
+    padding-left: 5px;
+  }
+  100% {
+    padding-left: 0px;
+  }
+}
+@media (max-width: 400px) {
+  .fas {
+    display: none;
+  }
+
+  .event-card__buttons {
+    /* display: inline; */
+  }
+}
