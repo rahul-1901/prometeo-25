@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto Mono");
+
+.login-container-right {
+  /* position: relative; */
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20vh auto;
+  width: 80%;
+}
+.login-container-right-title{
+  font-family: 'Roboto Mono', monospace;
+  font-size: 5vh;
+}
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container-right-title,
+.login-form {
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.login-form input {
+  width: 100%;
+}
+
+.login-form input {
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.8vmin;
+  font-family: "Roboto Mono", monospace;
+}
+
+.login-form input::placeholder {
+  /* color: #3c3b3b; */
+}
+
+#login-form-submit,
+#google-login-form-submit {
+  width: 40%;
+  height: 5vh;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 2vmin;
+  font-family: "Roboto Mono", monospace;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+#google-login-form-submit {
+  margin: 0;
+  border-radius: inherit;
+}
+
+#login-form-submit:hover {
+  background-color: #810987;
+  cursor: pointer;
+}
+
+.google-button {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  /* border: 2px solid red; */
+  border-radius: 20px !important;
+  /* margin-left:0% !important; */
+}
+
+.form-google-signin {
+  width: 240px !important;
+  height: 5vh !important;
+  margin: 15px 0 5px;
+  padding: 5px;
+  border: none;
+  font-weight: 700;
+  font-size: 2vmin;
+  font-family: "Roboto Mono", monospace;
+  background-color: #ffffff !important;
+  color: #101c27;
+}
+
+.form-google-signin:hover {
+  /* background: yellow !important; */
+  background-color: rgb(233, 233, 233) !important;
+  cursor: pointer;
+}
+
+.google-img {
+  position: absolute;
+  width: 10%;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  /* border: 2px solid red; */
+  transition: all 0.2s ease;
+}
+
+#googleOAuth-login {
+  color: #84f4eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5vh auto;
+  z-index: 9;
+  cursor: pointer;
+}
+
+.parent:hover .child {
+  transform: scale(1.1) translateY(-50%);
+  top: 52%;
+}
+
+.login-noaccount {
+  /* color: #84f4eb; */
+  /* font-family: 'Kanit', sans-serif; */
+  font-weight: 300;
+  font-size: 2vmin;
+  text-decoration: none;
+}
+
+.login-noaccount > a {
+  font-weight: 700;
+  color: #63ccf5;
+  text-decoration: none;
+}
+
+.login-noaccount > a:hover {
+  color: #63ccf5e4;
+}
+
+@media (max-width: 1000px) {
+  .login-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 700px) {
+  .login-container {
+    width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  .login-container-right {
+    height: auto;
+    margin: 0 auto;
+  }
+  .login-noaccount,
+  #login-form-submit,
+  #google-login-form-submit {
+    font-size: 2vh;
+  }
+}
+/* @media (orientation: portrait) {
+  .login-container {
+    flex-direction: column;
+    height: min-content;
+    width: 90%;
+  }
+
+  .login-container-left {
+    width: 100%;
+    height: 20vh;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .login-container-right {
+    width: 100%;
+    flex-grow: 1;
+    height: fit-content;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .login-container-right-title {
+    font-size: max(26px, 4vmin);
+  }
+
+  .login-form input {
+    font-size: max(12px, 1.8vmin);
+  }
+
+  #login-form-submit,
+  #google-login-form-submit {
+    font-size: max(13px, 2vmin);
+  }
+
+  .login-noaccount {
+    font-size: max(12px, 2vmin);
+  }
+} */
