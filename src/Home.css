@@ -9,7 +9,7 @@
 @font-face {
   font-family: "LEMON-MILK";   
   src: local("LEMONMILK-Bold"),
-    url("./assets/LemonMilkLight-owxMq.otf") format("truetype");
+    url("./fonts/LemonMilkLight.otf") format("truetype");
 }
 
 :root {
@@ -154,6 +154,7 @@
   height: auto;
 }
 .home-title h1{
+  font-family: 'Lemon-Milk-Bold';
   color: white;
   font-weight: 900;
   font-size: 180px;
@@ -164,6 +165,11 @@
   margin-top: 10px;
   width: 100%;
   z-index: 100;
+  transition: transform 0.3s ease, scale 0.3s ease;
+}
+
+.pre-register:hover {
+  transform: translateY(-2px) scale(1.05); 
 }
 
 
@@ -219,8 +225,6 @@
   margin: auto;
   z-index: 1000;
   font-size: 40px;
-  /* top: 80%; */
-
 }
 
 .home-socialmedia {
@@ -311,6 +315,16 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.5); 
   outline: none;
   transition: border-color 0.3s ease; 
+}
+
+.modal-input::placeholder{
+  color: white;
+  opacity: 0.8;
+}
+
+.modal-input::-ms-input-placeholder{
+  color: white;
+  opacity: 0.8;
 }
 
 .modal-input:focus {
