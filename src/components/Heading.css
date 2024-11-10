@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
+
+.heading-main {
+  width: 100%;
+  /* width: 90%; */
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  margin: 15vh 0 0;
+  /* padding-left: 5%;
+  padding-right: 0vh; */
+}
+
+.heading-main h1 {
+  margin-bottom: 0px;
+  font-size: 5.75rem;
+  color: #ED9340;
+}
+.heading-main p {
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 0.1rem;
+  /* padding-left: 2vh;
+  padding-right: 2vh; */
+}
+
+/* @media only screen and (max-width: 440px) {
+  .heading-main {
+    width: 90%;
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
+    margin: 15vh 0 0;
+    padding-left: 15%;
+    padding-right: 0vh;
+  }
+  
+  .heading-main h1 {
+    margin-bottom: 0px;
+    font-size: 3.75rem;
+    color: #ED9340;
+  }
+  
+  .heading-main p {
+    font-size: 1.2rem;
+    color: #fff;
+    padding-left: 2vh;
+    padding-right: 2vh;
+  }
+} */
+@media screen and (max-width: 580px){
+    .heading-main h1{
+        font-size: 6vh;
+    }
+    .heading-main p{
+        font-size: 1.8vh;
+    }
+}
+@media screen and (max-width: 520px){
+    .heading-main h1{
+        font-size: 5.5vh;
+    }
+    .heading-main p{
+        font-size: 1.4vh;
+    }
+}
+@media screen and (max-width: 380px){
+    .heading-main h1{
+        font-size: 4.2vh;
+    }
+    .heading-main p{
+        font-size: 1.2vh;
+    }
+}
+/* 
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
+
+.heading-main {
+  width: 100%;
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  margin: 15vh 0 0;
+}
+
+.heading-main h1 {
+  margin-bottom: 0px;
+  font-size: 3.75rem;
+  color: #ED9340;
+}
+.heading-main p {
+  font-size: 1.2rem;
+  color: #fff;
+}
+@media screen and (max-width: 500px){
+    .heading-main h1{
+        font-size: 5vh;
+    }
+    .heading-main p{
+        font-size: 1.8vh;
+    }
+} */

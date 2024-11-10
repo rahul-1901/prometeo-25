@@ -1,46 +1,42 @@
-.notfound{
-    
-    color:white;
+.notfound {
+  color: white;
+  text-align: center;
 }
-.back {
-    background-color: rgb(21, 18, 18);
-    margin-top:20px;
-    padding:20px 10px 20px 10px;
-    border-radius:15px;
+.notFound-back-btn {
+  notfound-back-btnground-color: rgb(21, 18, 18);
+  margin-top: 20px;
+  padding: 20px 10px 20px 10px;
+  border-radius: 15px;
 }
-.back:hover{
-    border-color: white;
+.notFound-back-btn:hover {
+  border-color: white;
 }
-.container{
-    font-family: 'Share Tech', sans-serif;
-
-}
-
-.container img{
-    width:90px;
-
+.notFound-container {
+  font-family: "Share Tech", sans-serif;
 }
 
-@media screen and (min-width: 460px){
-    .container{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-    .container img{
-        margin-left:20px;
-    }
-}
-@media screen and (min-width: 1280px){
-    .container{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        
-    }
-    .container img{
-        margin-top:20px;
-    }
+.notFound-container img {
+  width: 90px;
 }
 
+@media screen and (min-width: 460px) {
+  .notFound-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .notFound-container img {
+    margin-left: 20px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .notFound-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .notFound-container img {
+    margin-top: 20px;
+  }
+}

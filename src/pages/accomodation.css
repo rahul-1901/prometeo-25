@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin Sans");
+@import url("https://fonts.googleapis.com/css?family=Orbitron");
+@import url("https://fonts.googleapis.com/css?family=Roboto Mono");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.accomodation-main {
+  width: 100%;
+  padding: 0 0vh;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.acc-header {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  padding-top: 20vh;
+}
+.acc-header h1 {
+  font-size: 8vw;
+  font-family: "Orbitron", sans-serif;
+  color: #ed9340;
+  margin: 0;
+}
+.acc-header p {
+  font-size: 2vw;
+  font-weight: 100;
+  font-family: "Roboto Mono", sans-serif;
+  color: #ffffff;
+  margin: 0;
+}
+.acc-button {
+  background-color: #000000;
+  padding: 3vh 7vh;
+  box-sizing: border-box;
+  align-items: center;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 3vh;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+
+.acc-content {
+  /* margin: auto; */
+  position: relative;
+  /* width: 100%; */
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: justify;
+  /* border: 2px solid red; */
+  padding: 0 5vh;
+  backdrop-filter: blur(5px);
+  /* margin-bottom: 5vmin; */
+  /* padding-bottom: 5vmin;
+    padding-left: 20vmin;
+    padding-right: 20vmin; */
+}
+
+.acc-content-title {
+  width: 100%;
+  font-family: "Orbitron", sans-serif;
+  font-size: min(50px, 10vmin);
+  text-shadow: 0 3px 5px #000000;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  color: #ed9340;
+  margin-top: 7vh;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+.acc-content-text {
+  font-family: "Roboto Mono", sans-serif;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2vmin;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1.4;
+  margin-bottom: 2vmin;
+  /* margin-left: 5%;
+    margin-right: 5%; */
+}
+.acc-content-list {
+  font-family: "Roboto Mono", sans-serif;
+  /* width: 80%; */
+  color: white;
+  /* margin-left: 10px; */
+  /* align-content: center; */
+  font-size: larger;
+  display: flex;
+  flex-direction: column;
+  gap: 2vmin;
+  justify-content: center;
+  line-height: 1.5;
+  /* margin-left: 5%; */
+  /* margin-right: 5%; */
+}
+
+.acc-content-faq {
+  font-family: "Roboto Mono", sans-serif;
+  width: 80%;
+  color: white;
+  font-size: larger;
+  display: contents;
+  flex-direction: column;
+  gap: 2vmin;
+  justify-content: center;
+  line-height: 2;
+  margin: 5%;
+}
+.hostel-images-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.hostel-image {
+  width: calc(50% - 10px);
+  max-width: 100px; 
+  height: auto;
+  zoom: 2.5;
+}
+
+.acc-passes {
+  position: relative;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: justify;
+  padding: 10px;
+  backdrop-filter: blur(5px);
+}
+
+@media screen and (max-width: 425px) {
+  .acc-passes {
+    flex-direction: column;
+  }
+}
+.acc-faq > li {
+  display: flex;
+  flex-direction: column;
+  gap: 1vmin;
+}
+.acc-faq-questions {
+  margin-bottom: 20vh;
+}
+@media screen and (max-width: 900px) {
+  .acc-header h1 {
+    font-size: 7.5vw;
+  }
+  .acc-header p {
+    font-size: 2.8vw;
+  }
+}
+@media screen and (max-width: 670px) {
+  .acc-content {
+    padding: 0 2vh;
+  }
+}
+@media screen and (max-width: 600px) {
+  .acc-header {
+    padding-top: 12vh;
+  }
+  .acc-content-title {
+    font-size: 7.8vw;
+  }
+  .acc-button {
+    margin-bottom: 5vh;
+  }
+  .acc-content-text {
+    font-size: 3.4vw;
+  }
+  .acc-content-list {
+    font-size: 3.4vw;
+  }
+  .acc-faq-questions {
+    margin-bottom: 10vh;
+  }
+}
+@media screen and (max-width: 500px) {
+  .acc-content {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .acc-button {
+    padding: 2vh 5vh;
+    font-size: 2vh;
+  }
+  .acc-button {
+    margin-bottom: 0;
+  }
+}
