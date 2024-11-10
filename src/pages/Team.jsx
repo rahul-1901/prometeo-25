@@ -5,10 +5,11 @@ import { useState } from "react";
 import FadeIn from "../components/FadeIn";
 import TeamCard from "../components/TeamCard";
 import FadeInContent from "../components/FadeInContent";
-import bg from "../assets/blue-bg.jpg";
+import bg from "../assets/team/Background.png";
+import PageLoader from "../components/PageLoader";
+import banner from "../assets/team/banner.png"
 import PageTitle from "../components/PageTitle";
 import blueStone2 from "../assets/blue-bottle.webp";
-import PageLoader from "../components/PageLoader";
 import DefaultIMG from "../assets/defaultIMG.jpg";
 
 const Team = () => {
@@ -99,22 +100,26 @@ const Team = () => {
         <PageLoader />
       ) : (
         <FadeIn>
-          <div className="team-main" style={{ backgroundImage: `url(${bg})` }}>
-            <div className="team-title">
-              <PageTitle
+          <div className="team-main" >
+            <div className="animation h-svh w-full ">
+              {/* <PageTitle
                 title="Organizing Team"
                 stone="Wisdom Elixir"
                 bgImg={blueStone2}
                 subheading="Meet the masterminds propelling our techno festival to new heights!"
                 color="14,53,177"
-              />
+              /> */}
+           
+              {/* animation here */}
             </div>
-            <div className="team-section">
+
+
+            <div className="team-section" style={{ backgroundImage: `url(${bg})` }}>
               {team24.map((member) => (
                 <FadeInContent key={member.id}>
                   <div className="team-position-section">
-                    <div className="team-verticle">
-                      <h1>{member.name}</h1>
+                    <div className="team-verticle w-full flex justify-center">
+                      <h1 className=" flex items-center justify-center">{member.name}</h1>
                     </div>
                     <div className="team-cards-container">
                       {member.members.map((team) => (
@@ -130,18 +135,7 @@ const Team = () => {
                         />
                       ))}
                     </div>
-                    {/* <div className="team-cards-container">
-                      <TeamCard
-                        key={member.id}
-                        name={member.name}
-                        position={member.vertical_name}
-                        imgURL={member.image}
-                        phone={member.phoneNo}
-                        email={member.email}
-                        linkedin={member.linkedin_link}
-                        instagram={member.instagram_link}
-                      />
-                    </div> */}
+                   
                   </div>
                 </FadeInContent>
               ))}
