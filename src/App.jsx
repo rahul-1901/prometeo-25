@@ -32,7 +32,7 @@ function App() {
         <AuthProvider>
           <Navbar />
           <Routes>
-            {/* <Route path="/" element={<Home />} /> */}
+            {/* <Route path="/" element={<Home />} />  */}
             <Route path="/ca" element={<CA />} />
             <Route path="/past-speakers" element={<Speakers />} />
             <Route path="/sponsors" element={<Sponsors />} />
