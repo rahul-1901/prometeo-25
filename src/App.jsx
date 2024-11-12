@@ -24,6 +24,8 @@ import PreregiClosed from "./pages/PreregiClosed.jsx";
 import Workshop from "./pages/Workshop.jsx";
 import Edit_profile from "./pages/Edit_profile.jsx";
 import Informals from "./pages/informals.jsx";
+import Home from "./pages/Home.jsx";
+import { PlayProvider } from "./components/landing/Play.jsx";
 
 function App() {
   return (
@@ -32,7 +34,7 @@ function App() {
         <AuthProvider>
           <Navbar />
           <Routes>
-            {/* <Route path="/" element={<Home />} /> */}
+            <Route path="/" element={<PlayProvider> <Home/> </PlayProvider>} />
             <Route path="/ca" element={<CA />} />
             <Route path="/past-speakers" element={<Speakers />} />
             <Route path="/sponsors" element={<Sponsors />} />
@@ -50,7 +52,7 @@ function App() {
             <Route path="/workshop" element={<Workshop />} />
             <Route path="/informals" element={<Informals />} />
             <Route path="/dashboard" element={<PrivateRoute />}>
-              <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             </Route>
             <Route path="/edit-profile" element={<Edit_profile />} />
             <Route path="/business-darbar" element={<Darbar />} />
