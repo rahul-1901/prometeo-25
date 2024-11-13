@@ -2,7 +2,7 @@
 .team-main {
   /* padding: 0 5vh 10vh; */
   margin: 0 auto;
-  width: calc(100vw - 6px);
+  width: 100vw;
   text-align: left;
   box-sizing: border-box;
   text-transform: uppercase;

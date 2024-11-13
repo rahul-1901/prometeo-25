@@ -54,7 +54,7 @@ const Team = () => {
     setMembers(verticles.members);
     setLoading(false);
   }, []);
-
+// TODO:replace png images
   return (
     <>
       {loading ? (

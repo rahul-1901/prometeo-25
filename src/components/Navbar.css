@@ -6,7 +6,27 @@
   width: 70px;
   margin-top: 10px;
 }
+.navbar{
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  right: 0;
+  left: 0;
 
+  align-items: center;
+  
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.033);
+  font-family: "Share Tech", sans-serif;
+  
+  /* opacity: 0; */
+  margin: 0 auto;
+  padding: 0 5vh;
+  
+  backdrop-filter: blur(3px);
+  transition: 0.5s ease-in-out;
+}
 #navbar {
   position: fixed;
   display: flex;
