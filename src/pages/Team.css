@@ -10,6 +10,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  overflow: hidden;
 }
 .animation{
   padding: 0 5vh 10vh;

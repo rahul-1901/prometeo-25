@@ -5,20 +5,46 @@
   display: flex;
   flex-direction: column; /* Stack the child divs vertically */
   justify-content: space-between;
+  
 }
+
 
 .member-img {
   width: 100%;
-  height: 23.437rem; /* Fixed height for image */
-  background-size: cover;
-  background-position: center;
-  /* background-image: url('../assets/team/Image_Box.png'); */
+  /* height: 23.437rem; Fixed height for image */
+ 
+  width: 279.5px;
+  height: 327.55px;
+  top: 32.34px;
+  
+  /* left: 26.72px; */
+ 
+
 }
 .member-img img{
-  transform: translate(-10px, -10px);
-  scale: 1.01;
+  /* transform: translate(-10px, -10px);
+  scale: 1.01; */
+  /* z-index: -1; */
+  position: absolute;
+  transform: scale(0.9);   /* Scales the image to 80% of its original size */
+    transform-origin: center; 
+    transition: filter 0.3s ease; 
+}
+.wrapper:hover .member-img img {
+  filter: blur(5px); /* Apply blur effect on hover */
 }
 
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:center/cover no-repeat;
+  z-index: 2;       /* Ensures overlay is above the image */
+  pointer-events: none; /* Prevents overlay from interfering with clicks */
+  overflow: hidden;
+}
 .member-nm {
   font-family: 'Gemunu Libre', sans-serif; /* Font family */
   font-weight: 700;                       /* Font weight */
@@ -29,3 +55,77 @@
   word-wrap: break-word;                  
   overflow-wrap: break-word;              
 }
+.membre{
+  width: 328.72px;                      /* Fixed width */
+  height: 375px;                         /* Fixed height */
+  /* background: url("../assets/team/yellowboxsvg.svg") center/cover no-repeat; */
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
+}
+
+.membre .overly {
+  height: 0;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  display: block;
+  transition: all 0.5s ease-in;
+}
+
+.membre .left {
+  top: 60%;
+  right: -100%;
+  height: 50px;
+}
+.membre .social-icones {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  bottom: 0;
+  padding-bottom: 5px;
+  gap: 25px;
+  width: 100%;
+}
+.membre .social-icones .icon {
+  /* width: 40px; */
+  /* height: 40px; */
+  /* line-height: 40px; */
+  /* background-color: #fff; */
+  display: block;
+  text-align: center;
+  /* margin-right: 5px; */
+  /* color: #000; */
+}
+.membre .to-top {
+  bottom: 0;
+  transition: all 0.5s ease-in;
+}
+
+
+.membre:hover .membre-info {
+  position: absolute;
+  bottom: -80px;
+  padding: 0;
+  transition: all 0.5s ease-in;
+}
+.membre:hover .top {
+  top: 0;
+  bottom: 0px;
+}
+.membre:hover .bottom {
+  bottom: 0;
+}
+.membre:hover .left {
+  right: 0;
+}
+.membre:hover .to-top {
+  bottom: 100% !important;
+  transition: all 0.5s ease-in;
+}
+
