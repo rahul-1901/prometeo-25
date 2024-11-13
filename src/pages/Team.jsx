@@ -93,6 +93,7 @@ const Team = () => {
                           email={team.email}
                           linkedin={team.linkedin_link}
                           instagram={team.instagram_link}
+                          yellow={member.id}
                         />
                       ))}
                     </div>
