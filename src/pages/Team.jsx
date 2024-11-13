@@ -7,10 +7,7 @@ import TeamCard from "../components/TeamCard";
 import FadeInContent from "../components/FadeInContent";
 import bg from "../assets/team/Background.png";
 import PageLoader from "../components/PageLoader";
-import banner from "../assets/team/banner.png"
-import PageTitle from "../components/PageTitle";
-import blueStone2 from "../assets/blue-bottle.webp";
-import DefaultIMG from "../assets/defaultIMG.jpg";
+
 
 const Team = () => {
   const [team24, setTeam24] = useState([]);
@@ -79,7 +76,7 @@ const Team = () => {
               {team24.map((member) => (
                 <FadeInContent key={member.id}>
                   <div className="team-position-section">
-                    <div className="team-verticle w-full flex justify-center">
+                    <div className="team-verticle w-full flex justify-center ">
                       <h1 className=" flex items-center justify-center">{member.name}</h1>
                     </div>
                     <div className="team-cards-container">

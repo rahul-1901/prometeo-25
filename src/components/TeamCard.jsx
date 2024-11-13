@@ -45,21 +45,21 @@ const TeamCard = ({
                   <></>
                 )}
                 {email ? (
-                  <a href={`mailto:${email}`} className="icon">
+                  <a href={`mailto:${email}`} className="icon" >
                     <AiOutlineMail size={30} color="white" />
                   </a>
                 ) : (
                   <></>
                 )}
                 {linkedin ? (
-                  <a href={linkedin} className="icon">
+                  <a href={linkedin} className="icon" target="_blank" rel="noopener noreferrer">
                     <AiOutlineLinkedin size={30} color="white" />
                   </a>
                 ) : (
                   <></>
                 )}
                 {instagram ? (
-                  <a href={instagram} className="icon">
+                  <a href={instagram} className="icon" target="_blank" rel="noopener noreferrer">
                     <AiOutlineInstagram size={30} color="white" />
                   </a>
                 ) : (
