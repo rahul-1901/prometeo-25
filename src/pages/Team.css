@@ -16,20 +16,6 @@
 .animation{
   padding: 0 5vh 10vh;
 }
-/* .team-title{
-    text-align: left;
-    font-size: 1.2rem;
-    
-    font-weight: 700;
-    text-transform: uppercase;
-    font-family: 'Orbitron';
-}
-.team-title h1{
-    font-size: 3.75rem;
-    color: #ED9340;
-    font-family: 'Orbitron';
-    margin: 0px;
-} */
 .team-section {
   padding: 0 5vh 10vh;
   display: flex;
@@ -43,14 +29,12 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  background-position-y:bottom ;
 }
 .team-position-section {
   margin: 50px auto;
   text-align: center;
 }
-/* .team-verticle{
- 
-} */
 .team-verticle h1 {
   padding-top: 0.625rem;
   width: 32.17rem;

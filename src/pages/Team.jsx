@@ -71,7 +71,6 @@ const Team = () => {
               {/* animation here */}
             </div>
 
-
             <div className="team-section" style={{ backgroundImage: `url(${bg})` }}>
               {team24.map((member) => (
                 <FadeInContent key={member.id}>
@@ -98,13 +97,6 @@ const Team = () => {
                   </div>
                 </FadeInContent>
               ))}
-            </div>
-            <div className="past-team-main">
-              <Link to="/team23">
-                <button className="past-team-btn">
-                  Checkout Team Prometeo'23
-                </button>
-              </Link>
             </div>
           </div>
         </FadeIn>
