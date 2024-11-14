@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import "./theme.css";
 import purpleStone from "../assets/purple-bottle.webp";
-import bg from "../assets/purple-bg.webp";
-import PageTitle from "../components/PageTitle";
+import bg from "../assets/themeBg.webp";
+import bgBottom from "../assets/bgBottom.webp";
+import textBg from "../assets/textBg.jpeg";
 import PageLoader from "../components/PageLoader";
 import FadeIn from "../components/FadeIn";
 
@@ -34,6 +35,14 @@ const Theme = () => {
       id: "2",
       url: bg,
     },
+    {
+      id: "3",
+      url: bgBottom,
+    },
+    {
+      id: "4",
+      url: textBg,
+    }
   ];
 
   useEffect(() => {
@@ -61,80 +70,25 @@ const Theme = () => {
         <PageLoader />
       ) : (
         <FadeIn>
-          <div
-            className="theme-container"
-            style={{ backgroundImage: `url(${bg})` }}
-          >
-            <div className="theme-container-heading">
-              <PageTitle
-                title="THEME"
-                stone="An Elixir Odyssey"
-                bgImg={purpleStone}
-                subheading="Journey to the elixir odyssey"
-                color="147, 80, 203"
-              />
+          <div className="theme-page">
+            <div
+              className="theme-container"
+              style={{ backgroundImage: `url(${bg})` }}
+            >
+              <div className="nordic-text">NORDIC</div>
+              <div className="nights-text">NIGHTS</div>
             </div>
-            <div className="theme-content-container">
-              <div className="theme-container-video">
-                <iframe
-                  className="responsive-iframe"
-                  src="https://www.youtube.com/embed/tXr0-hL-Yes?rel=0"
-                  title="Prometeo '23 | IIT Jodhpur"
-                  allowFullScreen="true"
-                  autoFocus="true"
-                  frameBorder="0"
-                ></iframe>
-              </div>
-              <div className="theme-content-main">
-                <p>
-                  Imagine a vial, filled to the brim with the elixir of
-                  innovation, the epitome of knowledge, waiting for the worthy
-                  to find. Entwined with the notion of the sacred golden period,
-                  it symbolizes the profound wisdom and enlightenment needed to
-                  overcome the challenges the future will offer. In this race of
-                  innovators pursuing the sacred elixir, propel yourself towards
-                  technological enlightenment with the help of Prometeo. Join
-                  our odyssey in pursuit of this ‘Elixir of Life’, as we sail
-                  through the unexplored realms of technology, discovering new
-                  possibilities along the way. Prometeo 2024 aspires to elevate
-                  innovation, channeling creative ideas towards an enhanced
-                  impact at the forefront of progress. Featuring a dynamic blend
-                  of talks, workshops, and competitions that immerse
-                  participants in the vast world of emerging technology,
-                  Prometeo invites every thinker to set sail on an adventure of
-                  ideas, collaboration and progress. Participate in one of the
-                  most anticipated tech-fests and prove yourself worthy for the
-                  ultimate reward.
+            <div
+              className="theme-content"
+              style={{ backgroundImage: `url(${bgBottom})` }}>
+              <div
+                className="theme-text"
+              >
+                <p className="theme-detail" style={{ backgroundImage: `url(${textBg})` }}>
+                  In the enchanting dimension of Nordic Nights, we dive into innovation and technologies inspired by the northern lights. It celebrates a harmony between modernity and tradition where ideas illuminate the skies. In the spirit of technological advancements and sustainability, we explore a canopy of stars and serenity.
+                  It explores a magical dimension of transforming visions into realities.
                 </p>
               </div>
-              {/* <div className={`${content ? "content_nondisplay " : " "}`}>
-                <div className="popup">
-                  <div className="popup-inner">
-                    <img src={close} alt="" onClick={onclickclose} />
-                    <p>
-                      Imagine a vial, filled to the brim with the elixir of
-                      innovation, the epitome of knowledge, waiting for the
-                      worthy to find. Entwined with the notion of the sacred
-                      golden period, it symbolizes the profound wisdom and
-                      enlightenment needed to overcome the challenges the future
-                      will offer. In this race of innovators pursuing the sacred
-                      elixir, propel yourself towards technological
-                      enlightenment with the help of Prometeo. Join our odyssey
-                      in pursuit of this ‘Elixir of Life’, as we sail through
-                      the unexplored realms of technology, discovering new
-                      possibilities along the way. Prometeo 2024 aspires to
-                      elevate innovation, channeling creative ideas towards an
-                      enhanced impact at the forefront of progress. Featuring a
-                      dynamic blend of talks, workshops, and competitions that
-                      immerse participants in the vast world of emerging
-                      technology, Prometeo invites every thinker to set sail on
-                      an adventure of ideas, collaboration and progress.
-                      Participate in one of the most anticipated tech-fests and
-                      prove yourself worthy for the ultimate reward.
-                    </p>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </FadeIn>
