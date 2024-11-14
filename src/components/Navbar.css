@@ -34,7 +34,7 @@
 
 /* Nav Links Container */
 .nav-links-container {
-  width: 859px;
+  width: 900px;
   height: 40px;
   position: absolute ;
   padding: 9px;
@@ -73,7 +73,7 @@
   transition: 0.5s;
   background-color: #FFFFFFFA;
   border-radius: 100px;
-  padding: 5px 12px 5px 12px; /* Top, Right, Bottom, Left padding */
+  padding: 5px 8px 5px 8px; /* Top, Right, Bottom, Left padding */
 }
 
 /* Register Button */
