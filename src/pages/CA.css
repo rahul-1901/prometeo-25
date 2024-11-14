@@ -1,0 +1,364 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+.ca_page {
+  font-family: "Orbitron", sans-serif;
+  margin: 0 auto;
+  padding: 0 5vh 10vh;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* max-width: 1440px; */
+}
+.ca-title-main {
+  text-align: center;
+  padding: 30vh 0;
+}
+.ca-title-main h1 {
+  font-size: 15vh;
+  margin: 0;
+}
+.ca-title-main p {
+  font-size: 4.5vh;
+  font-weight: 500;
+  /* text-transform: uppercase; */
+  font-family: "Roboto Mono", monospace;
+}
+.ca-title-main hr {
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 100%;
+  border: 0;
+  height: 5px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
+}
+.ca_body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+  padding: 30px;
+}
+.ca_image {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.ca-info-container {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  /* background-color: #b49d08; */
+  /* background-color: rgba(38, 30, 187, 0.5); */
+  margin-bottom: 20px;
+}
+.ca-info-container img {
+  width: 30%;
+}
+.ca_blocks {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-items: start; */
+}
+.ca_blocks p {
+  font-family: "Roboto Mono", monospace;
+  font-size: 20px;
+  text-align: justify;
+}
+.ca_description {
+  display: flex;
+  /* flex-direction: column; */
+}
+.no_margin {
+  font-weight: 900;
+  color: rgb(233, 27, 154);
+}
+.olive_tree {
+  text-align: center;
+}
+.incentives_body {
+  display: flex;
+}
+.incentives_body p {
+  font-family: "Roboto Mono", monospace;
+  font-size: 18px;
+}
+.silver_incentives,
+.gold_incentives {
+  display: flex;
+  flex-direction: column;
+  /* background-color: rgba(46, 41, 51, 0.308); */
+  padding: 0px 30px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.silver_incentives {
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #ffffff 0%,
+      #5d5d5d 2%,
+      #858585 30%,
+      #a0a0a0 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffff 0%,
+      #ffffac 0%,
+      #5d5d5d 2%,
+      #383838 62.5%,
+      #383838 100%
+    );
+}
+.gold_incentives {
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #fedb37 0%,
+      #fdb931 8%,
+      #9f7928 30%,
+      #c39e47 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffff 0%,
+      #ffffac 0%,
+      #fdb931 5%,
+      #7d6223 62.5%,
+      #6c541c 100%
+    );
+}
+.silver_incentives h2 {
+  /* color: #535353; */
+  /* text-shadow: 4px 4px 4px #535353; */
+}
+.gold_incentives h2 {
+  /* color: #b49d08; */
+  /* text-shadow: 4px 4px 4px #b49d08; */
+}
+.ambassador_benefits {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-family: "Roboto Mono", monospace;
+}
+
+.ambassador_benefits img {
+  width: 50px;
+}
+.silver_incentives h2,
+.gold_incentives h2 {
+  margin-bottom: 0;
+}
+.silver_incentives h3,
+.gold_incentives h3 {
+  margin-top: 0;
+  font-family: "Roboto Mono", monospace;
+}
+.silver_brief {
+  display: flex;
+  flex-direction: column;
+}
+.ca-registration button {
+  font-size: 25px;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 100;
+  transition: all 0.5s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+  .selected_p {
+    margin-top: -100px;
+  }
+}
+
+@media (min-width: 320px) {
+  .ca_blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .olive_tree {
+    width: 400px;
+  }
+  .ca_image {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .incentives_body {
+    flex-direction: column;
+    gap: 60px;
+  }
+  .silver_brief {
+    gap: 25px;
+    align-items: start;
+  }
+}
+
+@media (min-width: 768px) {
+  .ambassador_benefits {
+    justify-content: center;
+  }
+  .ca-info-container {
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ca_blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  .ca_blocks p {
+    display: flex;
+    align-items: top;
+    margin: 0;
+    padding: 0;
+  }
+  .olive_tree {
+    width: 500px;
+  }
+  .incentives_body {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .silver_brief {
+    gap: 15px;
+  }
+  .ambassador_benefits {
+    justify-content: start;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .ca-title-main {
+    padding: 20vh 0;
+  }
+  .ca-title-main h1 {
+    font-size: 10vw;
+    margin: 0;
+  }
+  .ca-title-main p {
+    font-size: 2.8vw;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .no_margin {
+    font-size: 6vh;
+  }
+  .ca-register-btn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+  }
+
+  .ca-incentives h1,
+  .ca-registration h1 {
+    font-size: 5vh;
+    font-family: "Roboto Mono", monospace;
+    text-align: center;
+  }
+  .ca-registration h1 {
+    margin-bottom: 0;
+  }
+  .ca-registration h2 {
+    font-size: 3vh;
+    text-align: center;
+    font-family: "Roboto Mono", monospace;
+  }
+  .silver_brief {
+    justify-content: center;
+    align-items: center;
+  }
+  .ambassador_benefits {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .ambassador_benefits p {
+    margin-top: 0;
+  }
+  .silver_incentives,
+  .gold_incentives {
+    padding: 0;
+    text-shadow: none;
+  }
+  .silver_incentives h2,
+  .gold_incentives h2 {
+    text-shadow: none;
+  }
+  .ca-title-main {
+    padding: 15vh 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .no_margin {
+    font-size: 5vh;
+  }
+  .ca-incentives h1,
+  .ca-registration h1 {
+    font-size: 5vh;
+  }
+  .ca_page {
+    padding: 0 0 10vh;
+  }
+  .ca_blocks p {
+    font-size: 2vh;
+    margin-top: 0;
+  }
+  .ca-registration h2 {
+    font-size: 2vh;
+  }
+}
+@media screen and (width < 1000px) {
+  .ca-info-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .ca_blocks,
+  .ca-incentives {
+    /* align-items: start; */
+    text-align: center;
+  }
+  .silver_brief {
+    align-items: center;
+  }
+  .ca-title-main {
+    text-align: center;
+    /* padding: 20vh 0; */
+  }
+}
+@media screen and (max-width: 400px) {
+  .ca-title-main {
+    padding: 15vh 0 0;
+  }
+  .ca-title-main h1 {
+    font-size: 9vw;
+    margin: 0;
+  }
+  .ca-title-main p {
+    font-size: 3vw;
+    margin: 0;
+  }
+}

@@ -1,0 +1,207 @@
+.passes-main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+}
+
+.card button {
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+    background: white;
+    color : black;
+    border: none;
+}
+
+.limited-time{
+    color: black;
+    width: 100%;
+    background-color: white;
+    text-transform: uppercase;
+    padding: 3px;
+}
+
+.card .tick {
+    list-style-image: url(https://nsa40.casimages.com/img/2021/02/22/210222044032516304.png);
+    transform: translateX(15.5px);
+    text-align: left;
+}
+.card .cross {
+    list-style-image: url(https://iili.io/J76TBIt.png);
+    
+    transform: translateX(15.5px);
+    text-align: left;
+}
+
+hr {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border: none;
+    border-radius: 1px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.card {
+    /* width: 29%; */
+    max-width: 350px;
+    /* min-width: 240px; */
+    background-color: #8a8a8a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 30px; */
+    margin: 2em 1em;
+    border-radius: 25px;
+    box-shadow: 0 10px 12px 3px rgba(0, 0, 0, .25), inset 0 0px 3px 1px rgba(0, 0, 0, .2);
+    overflow: hidden;
+    cursor: default;
+    transition: transform .35s, width .35s;
+    margin-left: 25px;
+}
+
+.card:hover {
+    transform: scale(1.08);
+}
+
+.card:nth-child(1) {
+    background-image: linear-gradient(to bottom left, #41f6a9, #027118);
+}
+.card:nth-child(2) {
+    background-image: linear-gradient(to bottom, #ff5900, #eba41f);
+}
+.card:nth-child(3) {
+    background-image: linear-gradient(to bottom right, #3cb5f5, #0c2879);
+}
+
+.card * {
+    text-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+}
+.card hr {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+}
+
+.offer-title {
+    font-size: 2em;
+    font-weight: 780;
+    text-align: center;
+    margin-left: -10px;
+}
+
+@media screen and (min-width: 768px) {
+    .offer-title {
+        margin-left: -31px;
+    }
+}
+
+.offer-title, .buy {
+    text-transform: uppercase;
+}
+
+.offer-price {
+    font-size: 4.2em;
+    position: relative;
+}
+
+.offer-price::before {
+    content: "₹";
+    font-size: .4em;
+    position: absolute;
+    margin-right: -10px;
+    top: 0;
+    right: 105%;
+    right: calc(100% + 7px);
+}
+
+.offer-price::after {
+    content: "+taxes";
+    font-size: .2em;
+    position: absolute;
+    bottom: 18px;
+    left: 105%;
+    left: calc(100% + 3px);
+}
+.removetaxes::after {
+    content: " ";
+   
+}
+.buy {
+    color: black;
+    background-color: white;
+    mix-blend-mode: screen;
+    padding: 15px 30px;
+    border-radius: 1000px;
+}
+
+.offer-price, hr {
+    margin: 20px 0;
+}
+.original-price {
+    position: relative;
+    color: #fff;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      border-top: 7px solid red;
+      transform: rotate(-20deg);
+    }
+  }
+  
+
+
+@media screen and (max-width: 1024px) {
+    .card {
+        width: 85%;
+        margin: 15px 9px !important;
+    }
+}
+/*  */
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 50%;
+        margin-left: 0px;
+    }
+    .offer-title {
+        font-size: 1.5em;
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    /* .passes-main {
+        font-size: 0.8rem;
+    }
+    .offer-title {
+        font-size: 1em;
+    }
+    .card{
+        margin: 0;
+    }
+    
+    
+    .offer-price {
+        font-size: 2.1em;
+        position: relative;
+    } */
+    .card {
+      width: 100px;
+      margin: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+}
+  
+  
