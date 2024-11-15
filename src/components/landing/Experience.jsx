@@ -1,6 +1,5 @@
 import { Float, Line, OrbitControls, PerspectiveCamera, Text, useScroll } from "@react-three/drei";
 import Background from "./Background";
-import { Ship } from "./Viking_ship";
 import { Iceberg } from "./Low_poly_iceberg_scene";
 import Water from "./Water";
 import * as THREE from 'three'
@@ -11,9 +10,12 @@ import gsap from "gsap";
 import { usePlay } from "./Play";
 import {Speed} from "./Speed";
 import { Ship_Updated } from "./Ship";
+import { Glacier } from "./Glaciers";
+import { Glacier1 } from "./Glaciers1";
+import { Glacier2 } from "./Glaciers2";
 
 const LINE_NB_POINTS = 1000;
-const CURVE_DIST = 50
+const CURVE_DIST = 26
 const CURVE_AHEAD_CAMERA = 0.008;
 const CURVE_AHEAD_SHIP = 0.02;
 const SHIP_MAX_ANGLE = 20;
@@ -24,12 +26,11 @@ export const Experience = () => {
     () => [
       new THREE.Vector3(0,0,0),
       new THREE.Vector3(0,0,-CURVE_DIST),
-      new THREE.Vector3(20,0,-2*CURVE_DIST),
+      new THREE.Vector3(23,0,-2*CURVE_DIST),
       new THREE.Vector3(-25,0,-3*CURVE_DIST),
-      new THREE.Vector3(18,0,-4*CURVE_DIST),
+      new THREE.Vector3(-18,0,-4*CURVE_DIST),
       new THREE.Vector3(0,0,-5*CURVE_DIST),
-      new THREE.Vector3(0,0,-6*CURVE_DIST),
-      new THREE.Vector3(0,0,-7*CURVE_DIST),
+      
     ],
     []
   );
@@ -66,7 +67,7 @@ We have a wide range of beverages!`,
       {
         cameraRailDist: -1,
         position: new THREE.Vector3(
-          curvePoints[3].x - 3,
+          curvePoints[3].x - 4,
           curvePoints[3].y,
           curvePoints[3].z
         ),  
@@ -76,9 +77,9 @@ We have a wide range of beverages!`,
       {
         cameraRailDist: 1.5,
         position: new THREE.Vector3(
-          curvePoints[4].x + 3.5,
-          curvePoints[4].y,
-          curvePoints[4].z - 12
+          curvePoints[5].x - 3.5,
+          curvePoints[5].y,
+          curvePoints[5].z
         ),
         title: "Movies",
         subtitle: `We provide a large selection of medias, we highly recommend you Porco Rosso during the flight`,
@@ -302,8 +303,7 @@ We have a wide range of beverages!`,
         
         <group ref={ship}>
           <Float floatIntensity={0.8} speed={1} ref={ship} rotationIntensity={0.01}>
-            {/* <Ship scale={[0.2,0.2,0.2]} position={[0,-0.6,0]} /> */}
-            <Ship_Updated scale={[0.1,0.1,0.1]} position={[0,-1.3,0]} rotation-y={Math.PI} />
+            <Ship_Updated scale={[0.08,0.08,0.08]} position={[0,-1.1,0]} rotation-y={Math.PI} />
           </Float>
         </group>
       </group>
@@ -312,12 +312,12 @@ We have a wide range of beverages!`,
           <TextPath {...textSection} key={index} />
         ))}
       
-
-      {/* <Line points={linePoints} color={'white'} opacity={0.7} transparent lineWidth={16} /> */}
-      <Iceberg opacity={sceneOpacity} scale={[0.3,0.3,0.3]} position={[-10, 0.3, -30]} />
+      {/* <Iceberg opacity={sceneOpacity} scale={[0.3,0.3,0.3]} position={[-10, 0.3, -30]} />
       <Iceberg opacity={sceneOpacity} scale={[0.3,0.3,0.4]} position={[-8, 0.5, -20]} />
       <Iceberg opacity={sceneOpacity} scale={[0.2,0.1,0.3]} position={[9, -0.2, -15]} />
-      <Iceberg opacity={sceneOpacity} scale={[0.4,0.4,0.4]} position={[10, 0.2, -40]} />
+      <Iceberg opacity={sceneOpacity} scale={[0.4,0.4,0.4]} position={[10, 0.2, -40]} /> */}
+      <Glacier scale={[15,15,15]} position={[23.5, 0, -70]} />
+      <Glacier scale={[13,13,13]} position={[24, 0, -130]} />
     </>
   );
 };
