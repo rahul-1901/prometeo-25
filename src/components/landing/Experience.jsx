@@ -10,6 +10,7 @@ import { TextPath } from "./TextPath";
 import gsap from "gsap";
 import { usePlay } from "./Play";
 import {Speed} from "./Speed";
+import { Ship_Updated } from "./Ship";
 
 const LINE_NB_POINTS = 1000;
 const CURVE_DIST = 50
@@ -255,7 +256,7 @@ We have a wide range of beverages!`,
     shipInTimeline.current.pause()
     shipInTimeline.current.from(ship.current.position, {
       duration: 3,
-      z: 5,
+      z: 7,
       y: -2
     })
 
@@ -301,7 +302,8 @@ We have a wide range of beverages!`,
         
         <group ref={ship}>
           <Float floatIntensity={0.8} speed={1} ref={ship} rotationIntensity={0.01}>
-            <Ship scale={[0.2,0.2,0.2]} position={[0,-0.6,0]} />
+            {/* <Ship scale={[0.2,0.2,0.2]} position={[0,-0.6,0]} /> */}
+            <Ship_Updated scale={[0.1,0.1,0.1]} position={[0,-1.3,0]} rotation-y={Math.PI} />
           </Float>
         </group>
       </group>

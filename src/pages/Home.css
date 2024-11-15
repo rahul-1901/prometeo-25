@@ -69,7 +69,7 @@ body {
   margin: 0;
   transform: translateY(-50%);
   position: absolute;
-  top: 50vh;
+  top: 70svh;
   animation: fadeUp 2.4s ease-in-out;
   transition: all 2s ease-in-out;
 }
@@ -78,6 +78,7 @@ body {
   top: 42px;
   transform: scale(0.25);
   transform-origin: center top;
+  opacity: 0;
 }
 
 .spinner {
@@ -203,6 +204,7 @@ body {
     top: 24px;
     transform: scale(0.5);
     transform-origin: center top;
+    opacity: 0;
   }
 
   .spinner__image {
