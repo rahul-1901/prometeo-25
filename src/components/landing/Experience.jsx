@@ -121,17 +121,17 @@ We have a wide range of beverages!`,
       );
     }
 
-    if (end && sceneOpacity.current > 0) {
-      sceneOpacity.current = THREE.MathUtils.lerp(
-        sceneOpacity.current,
-        0,
-        delta
-      );
-    }
+    // if (end && sceneOpacity.current > 0) {
+    //   sceneOpacity.current = THREE.MathUtils.lerp(
+    //     sceneOpacity.current,
+    //     0,
+    //     delta
+    //   );
+    // }
 
-    if (end){
-      return
-    }
+    // if (end){
+    //   return
+    // }
 
     const scrollOffset = Math.max(0, scroll.offset)
 
@@ -218,8 +218,8 @@ We have a wide range of beverages!`,
     ship.current.quaternion.slerp(targetShipQuaternion, delta * 2);
 
     if (cameraGroup.current.position.z < curvePoints[curvePoints.length - 1].z + 100){
-      setEnd(true)
-      shipOutTimeline.current.play()
+      // setEnd(true)
+      // shipOutTimeline.current.play()
     }
   })
   
