@@ -68,7 +68,7 @@ export default function OverlayLanding() {
       ${hasScroll ? "overlay--scrolled" : ""}`}
       > 
         {/* <Navbar/> */}
-        <div className="navbar">
+        {/* <div className="navbar">
           <Link to={HOME_PAGE_URL}>
             <img
               className="home-img"
@@ -113,10 +113,9 @@ export default function OverlayLanding() {
                   </button>
                 </Link>
               )}
-              {/* <button className="login">LOGIN</button> */}
             </div>
           </div>
-        </div>
+        </div> */}
         <div
           className={`loader ${progress === 100 ? "loader--disappear" : ""}`}
         />
