@@ -96,7 +96,7 @@ const Events = () => {
                           //   behavior: "smooth",
                           //   block: "start",
                           // });
-                          handleEventTab(0);
+                          // handleEventTab(0);
                         }}
                       >
                         <img className="" src={all_events} alt="cloud" />
@@ -113,7 +113,7 @@ const Events = () => {
                           //   behavior: "smooth",
                           //   block: "start",
                           // });
-                          handleEventTab(0);
+                          // handleEventTab(0);
                         }}
                       >
                         <img className="" src={pre_events} alt="cloud" />
@@ -129,7 +129,7 @@ const Events = () => {
                           //   behavior: "smooth",
                           //   block: "start",
                           // });
-                          handleEventTab(1);
+                          // handleEventTab(1);
                         }}
                       >
                         <img className="" src={technical_events} alt="cloud" />
@@ -145,7 +145,7 @@ const Events = () => {
                           //   behavior: "smooth",
                           //   block: "start",
                           // });
-                          handleEventTab(2);
+                          // handleEventTab(2);
                         }}
                       >
                         <img
