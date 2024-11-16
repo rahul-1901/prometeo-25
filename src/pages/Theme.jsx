@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import "./theme.css";
 import purpleStone from "../assets/purple-bottle.webp";
-import bg from "../assets/themeBg.webp";
-import bgBottom from "../assets/bgBottom.webp";
-import textBg from "../assets/textBg.jpeg";
+import bg from "../assets/theme/themeBg.webp";
+import bgBottom from "../assets/theme/bgBottom.webp";
+import textBg from "../assets/theme/textBg.jpeg";
 import PageLoader from "../components/PageLoader";
 import FadeIn from "../components/FadeIn";
 
@@ -75,8 +75,10 @@ const Theme = () => {
               className="theme-container"
               style={{ backgroundImage: `url(${bg})` }}
             >
+              <div className="blurLayer"></div> 
               <div className="nordic-text">NORDIC</div>
               <div className="nights-text">NIGHTS</div>
+              <div className="gradient"></div>
             </div>
             <div
               className="theme-content"
