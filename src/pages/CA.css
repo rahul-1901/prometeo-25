@@ -5,7 +5,7 @@
 .caTitle_slide {
   margin: 0 auto;
   box-sizing: border-box;
-  background-position: 0px -100px;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -14,6 +14,17 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+
+.gradient_first {
+  position: absolute;
+  bottom: -160px;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(0, 15, 22, 0) 0%, #000F16 50.5%, rgba(0, 15, 22, 0) 100%);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .overLayer {
@@ -25,6 +36,7 @@
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.692);
 }
+
 
 .ca-title-main {
   font-family: 'Metal Mania', cursive;
@@ -104,7 +116,6 @@
 
 .ca_description {
   display: flex;
-  /* flex-direction: column; */
 }
 
 .no_margin {
@@ -165,7 +176,7 @@
   background-position: center;
 }
 
-.gold_incentives p{
+.gold_incentives p {
   font-family: 'Skranji', cursive;
   font-size: 38px;
   line-height: 1;
@@ -175,7 +186,7 @@
   mix-blend-mode: luminosity;
 }
 
-.silver_incentives p{
+.silver_incentives p {
   font-family: 'Skranji', cursive;
   font-size: 38px;
   line-height: 1;
@@ -186,7 +197,7 @@
 }
 
 .silver {
-  margin-top: -25px;
+  margin-top: -18px;
 }
 
 .reg_With_Acco {
@@ -207,10 +218,6 @@
   font-size: 24px;
 }
 
-.ambassador_benefits img {
-  width: 50px;
-}
-
 .silver_brief {
   display: flex;
   flex-direction: column;
@@ -229,7 +236,7 @@
   margin-top: 5vh;
 }
 
-.ca-registration h1{
+.ca-registration h1 {
   font-family: 'Metal Mania', cursive;
   background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
   -webkit-background-clip: text;
@@ -238,7 +245,7 @@
   letter-spacing: 1px;
 }
 
-.ca-registration h2{
+.ca-registration h2 {
   font-family: 'Changa', sans-serif;
   background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
   -webkit-background-clip: text;
@@ -259,6 +266,95 @@
   transition: all 0.5s ease-in-out;
   border-radius: 40px;
   border: 2px solid rgba(70, 198, 160, 1)
+}
+
+@media (max-width: 1200px) {
+
+  .title-campus,
+  .title-ambassador {
+    font-size: 18vw;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .title-ambassador,
+  .title-campus {
+    font-size: 16vw;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .title-ambassador,
+  .title-campus {
+    font-size: 16vw;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .gold_incentives p,
+  .silver_incentives p {
+    font-size: 3vw;
+  }
+
+  .silver_incentives,
+  .gold_incentives {
+    height: 180px;
+  }
+
+}
+
+@media (max-width: 1023px) {
+
+  .gold_incentives p,
+  .silver_incentives p {
+    font-size: 5vw;
+  }
+
+  .silver_incentives,
+  .gold_incentives {
+    height: 180px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .gold_incentives p,
+  .silver_incentives p {
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .gold_incentives p,
+  .silver_incentives p {
+    font-size: 5vw;
+  }
+
+
+  .reg_With_Acco {
+    text-align: center;
+    font-family: 'Changa', sans-serif;
+    font-size: 3.2vw;
+    margin-top: -6vh;
+  }
+
+  .ambassador_benefits {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0px;
+  }
+
+  .ambassador_benefits p {
+    font-family: 'Changa', sans-serif;
+    font-size: 3.9vw;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -343,16 +439,6 @@
   .ca-title-main {
     padding: 20vh 0;
   }
-
-  .ca-title-main h1 {
-    font-size: 10vw;
-    margin: 0;
-  }
-
-  .ca-title-main p {
-    font-size: 2.8vw;
-    margin: 0;
-  }
 }
 
 @media screen and (max-width: 580px) {
@@ -387,28 +473,6 @@
   .silver_brief {
     justify-content: center;
     align-items: center;
-  }
-
-  .ambassador_benefits {
-    flex-direction: column;
-    gap: 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  .ambassador_benefits p {
-    margin-top: 0;
-  }
-
-  .silver_incentives,
-  .gold_incentives {
-    padding: 0;
-    text-shadow: none;
-  }
-
-  .silver_incentives h2,
-  .gold_incentives h2 {
-    text-shadow: none;
   }
 
   .ca-title-main {
@@ -448,32 +512,16 @@
 
   .ca_blocks,
   .ca-incentives {
-    /* align-items: start; */
     text-align: center;
   }
 
   .silver_brief {
     align-items: center;
   }
-
-  .ca-title-main {
-    text-align: center;
-    /* padding: 20vh 0; */
-  }
 }
 
 @media screen and (max-width: 400px) {
   .ca-title-main {
     padding: 15vh 0 0;
-  }
-
-  .ca-title-main h1 {
-    font-size: 9vw;
-    margin: 0;
-  }
-
-  .ca-title-main p {
-    font-size: 3vw;
-    margin: 0;
   }
 }

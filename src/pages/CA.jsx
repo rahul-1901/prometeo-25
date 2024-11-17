@@ -70,7 +70,7 @@ const CA = () => {
                 <p className="title-campus" style={{ backgroundImage: `url(${campusBg_first})` }}>CAMPUS</p>
                 <p className="title-ambassador" style={{ backgroundImage: `url(${campusBg_first})` }}>AMBASSADOR</p>
               </div>
-              <div className="gradient"></div>
+              <div className="gradient_first"></div>
             </div>
             <div
               className="caDetails"
