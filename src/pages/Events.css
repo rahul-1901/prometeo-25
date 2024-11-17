@@ -114,3 +114,27 @@
     padding: 0 3vh;
   }
 }
+
+@media (max-width: 1024px) {
+  .selected-heading {
+    font-size: 4.5rem; /* Reduced font size for tablets or small laptops */
+    line-height: 100px; /* Adjusted line height for better spacing */
+  }
+}
+
+@media (max-width: 768px) {
+  .selected-heading {
+    font-size: 3.5rem; /* Further reduced font size for tablets */
+    line-height: 80px; /* Adjusted line height */
+    width: 90%; /* Reduce width for better fit */
+  }
+}
+
+@media (max-width: 480px) {
+  .selected-heading {
+    font-size: 2.5rem; /* Smaller font size for mobile devices */
+    line-height: 60px; /* Line height for mobile */
+    top: 200px; /* Adjusted top position for smaller devices */
+    width: 100%; /* Full width on small screens */
+  }
+}
