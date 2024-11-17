@@ -32,7 +32,7 @@ function App() {
     <>
       <Router>
         <AuthProvider>
-          <Navbar />
+          {/* <Navbar /> */}
           <Routes>
             <Route path="/" element={<PlayProvider> <Home/> </PlayProvider>} />
             <Route path="/ca" element={<CA />} />

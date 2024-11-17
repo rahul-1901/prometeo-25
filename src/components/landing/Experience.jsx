@@ -3,7 +3,7 @@ import Background from "./Background";
 import { Iceberg } from "./Low_poly_iceberg_scene";
 import Water from "./Water";
 import * as THREE from 'three'
-import { useEffect, useLayoutEffect, useMemo, useRef } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { TextPath } from "./TextPath";
 import gsap from "gsap";
@@ -19,7 +19,7 @@ const CURVE_DIST = 26
 const CURVE_AHEAD_CAMERA = 0.008;
 const CURVE_AHEAD_SHIP = 0.02;
 const SHIP_MAX_ANGLE = 20;
-const FRICTION_DISTANCE = 5;
+const FRICTION_DISTANCE = 8;
 
 export const Experience = () => {
   const curvePoints = useMemo(
@@ -97,17 +97,19 @@ We have a wide range of beverages!`,
   const scroll = useScroll()
   const lastScrollPosition = useRef(0)
   const { play, setHasScroll, end, setEnd} = usePlay()
-
+  const [shipScale, setShipScale] = useState(0)
   useFrame((_state, delta) => {
     if (window.innerWidth > window.innerHeight) {
       // LANDSCAPE
       camera.current.fov = 70;
       camera.current.position.z = 5;
+      setShipScale(0.08)
     } 
     else {
       // PORTRAIT
-      // camera.current.fov = 70;
-      // camera.current.position.z = 4.5;
+      // camera.current.fov = 80;
+      // camera.current.position.z = 6;
+      setShipScale(0.06)
     }
 
     if (lastScrollPosition.current <= 0 && scroll.offset > 0) {
@@ -303,7 +305,7 @@ We have a wide range of beverages!`,
         
         <group ref={ship}>
           <Float floatIntensity={0.8} speed={1} ref={ship} rotationIntensity={0.01}>
-            <Ship_Updated scale={[0.08,0.08,0.08]} position={[0,-1.1,0]} rotation-y={Math.PI} />
+            <Ship_Updated scale={[shipScale, shipScale, shipScale]} position={[0,-1.1,0]} rotation-y={Math.PI} />
           </Float>
         </group>
       </group>
