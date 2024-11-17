@@ -50,8 +50,7 @@ export const Experience = () => {
           curvePoints[0].y + 0.4,
           curvePoints[0].z - 8
         ),
-        subtitle: `Welcome to Prometeo '25,
-Have a seat and enjoy the ride!`,
+        subtitle: `Ahoy Matey, welcome on board! Witness the magic of Prometeo'25 as we sail through the Nordic Nights!`,
       },
       {
         cameraRailDist: 1.5,
