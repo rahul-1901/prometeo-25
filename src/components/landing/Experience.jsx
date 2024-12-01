@@ -50,8 +50,8 @@ export const Experience = () => {
           curvePoints[0].y + 0.4,
           curvePoints[0].z - 8
         ),
-        subtitle: `Welcome to Prometeo '25,
-Have a seat and enjoy the ride!`,
+        title: 'Welcome',
+        subtitle: `Ahoy Matey, welcome on board! Witness the magic of Prometeo'25 as we sail through the Nordic Nights!`,
       },
       {
         cameraRailDist: 1.5,
@@ -60,9 +60,8 @@ Have a seat and enjoy the ride!`,
           curvePoints[2].y,
           curvePoints[2].z
         ),
-        title: "Services",
-        subtitle: `Do you want a drink?
-We have a wide range of beverages!`,
+        title: "Events",
+        subtitle: `From nerve-wrecking Hackathons to Robots at War, here's everything you can imagine and more!`,
       },
       {
         cameraRailDist: -1,
@@ -71,18 +70,18 @@ We have a wide range of beverages!`,
           curvePoints[3].y,
           curvePoints[3].z
         ),  
-        title: "Fear of flying?",
-        subtitle: `Our flight attendants will help you have a great journey`,
+        title: "Glimpses from Prometeo'24",
+        subtitle: `With an incredible footfall of 25,000, Prometeo'24 was a massive success, attracting innovators across the country.`,
       },
       {
         cameraRailDist: 1.5,
         position: new THREE.Vector3(
-          curvePoints[5].x - 3.5,
+          curvePoints[5].x - 6,
           curvePoints[5].y,
           curvePoints[5].z
         ),
-        title: "Movies",
-        subtitle: `We provide a large selection of medias, we highly recommend you Porco Rosso during the flight`,
+        title: "Prometeo'25",
+        subtitle: `Continuing its legacy, Prometeo'25 is going to be bigger and better than ever. Gear up as we delve into the epic fusion of technology and entrepreneurship!`,
       },
     ];
   }, []);
@@ -228,8 +227,8 @@ We have a wide range of beverages!`,
   
   const timeLine = useRef()
   const backgroundColors = useRef({
-    colorA: '#3535cc',
-    colorB: '#abaadd'
+    colorA: '#247b9f',
+    colorB: '#9eddee'
   })
 
   const shipInTimeline = useRef()
@@ -239,18 +238,18 @@ We have a wide range of beverages!`,
     timeLine.current = gsap.timeline()
     timeLine.current.to(backgroundColors.current, {
       duration: 1,
-      colorA: "#6f35cc",
-      colorB: "#ffad30",
+      colorA: "#1F4E5F",
+      colorB: "#88E0EF",
     });
     timeLine.current.to(backgroundColors.current, {
       duration: 1,
-      colorA: "#424242",
-      colorB: "#ffcc00",
+      colorA: "#0A4B6B",
+      colorB: "#1C1C3D",
     });
     timeLine.current.to(backgroundColors.current, {
       duration: 1,
-      colorA: "#81318b",
-      colorB: "#55ab8f",
+      colorA: "#03045E",
+      colorB: "#90E0EF",
     });
 
     timeLine.current.pause()
@@ -290,8 +289,11 @@ We have a wide range of beverages!`,
     }
   })
 
+  
+
   return (
     <>
+      
       {/* <OrbitControls enableZoom={true} /> */}
       <group ref={cameraGroup}>
         <Speed/>
