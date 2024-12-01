@@ -5,7 +5,7 @@
   :root {
     color: #fff;
     /* background-color: #000000; */
-    background-color: #1f152d;
+    /* background-color: #2543bc; */
   }
 }
 :root {
@@ -16,7 +16,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   /* background-color: #242424; */
-  background-color: #1f152d;
+  /* background-color: #2543bc; */
   /* background-color: #000000; */
 
   font-synthesis: none;
@@ -24,6 +24,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  overflow-y: hidden;
 }
 
 a {
