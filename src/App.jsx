@@ -38,7 +38,7 @@ function App() {
     <>
       <Router>
         <AuthProvider>
-          {/* <Navbar /> */}
+          <Navbar /> 
           <Link to={'/'} >
             <img
               className="home-img"
