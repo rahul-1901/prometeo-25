@@ -52,15 +52,15 @@ const [category, setCategory] = useState("All");
     navBarEle.style.opacity = 1;
   }, []);
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      const { data } = await axios.get(API_BASE_URL + `/events/event/?type=workshop&id=&rank=`);
-      setEventsData(data);
-      // console.log(data);
-    };
+  // useEffect(() => {
+  //   const fetchEvents = async () => {
+  //     const { data } = await axios.get(API_BASE_URL + `/events/event/?type=workshop&id=&rank=`);
+  //     setEventsData(data);
+  //     // console.log(data);
+  //   };x
 
-    fetchEvents();
-  }, []);
+  //   fetchEvents();
+  // }, []);
 
   const element = document.getElementById("filter___id");
 

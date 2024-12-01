@@ -1,5 +1,6 @@
 import React from "react";
 import { API_BASE_URL } from "../config";
+import imageBox from "../assets/events/imageBox.svg"
 import "./PreEventsCard.css";
 
 const PreEventsCard = ({
@@ -11,23 +12,27 @@ const PreEventsCard = ({
   workshop,
 }) => {
   return (
-    <div className={workshop ? "event-card workshop" : `event-card`} aria-labelledby="event card">
-      <div className="event-card__filter">
-        <img
-          className="event-card__photo"
-          src={imgURL.replace(
-            "http://localhost:8000",
-            "https://apiv.prometeo.in"
-          )}
-          alt="A man in colorful clothing with the sun behind him on a beach."
-        />
+    <div className='event-card' aria-labelledby="event card">
+      <div className="event-card__filter membre">
+        <div className="register-btn-div">
+
+          <button className="r-btn">Register</button>
+        </div>
+        <a href={eventRegister}>
+          <div className="member-img " >
+            <div className="background-overlay " style={{ backgroundImage: `url(${imageBox})` }}   ></div>
+            <img src={imgURL.replace(
+              "http://localhost:8000",
+              "https://apiv.prometeo.in"
+            )} alt="" />
+          </div>
+        </a>
       </div>
       <div className="event-card__container">
         <h2>{eventName}</h2>
         <time>
           {eventTime
             .split("-")
-            .reverse()
             .join("-")
             .replace("01", "JAN")
             .replace("12", "DEC")}
@@ -35,7 +40,7 @@ const PreEventsCard = ({
         <div className="event-prize">
           {eventButton != "Coming soon..." ? (
             <>
-              <p>Prizes Worth</p>
+              <p className="prizes">Prizes Worth</p>
               <span>{eventButton.replace("Prize", "")}</span>
             </>
           ) : (
@@ -43,11 +48,7 @@ const PreEventsCard = ({
           )}
         </div>
       </div>
-      <div className="register-btn-div">
-        <a href={eventRegister}>
-          <button>Register</button>
-        </a>
-      </div>
+
     </div>
   );
 };

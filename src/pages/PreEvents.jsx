@@ -23,16 +23,6 @@ const PreEvents = (props) => {
     <div className="pre-events-main">
       <div className="pre-events-cards">
         <div className="pre-event-title">
-          <h1>
-            {props.category === "Pre_Events" ? "Pre Events" : props.category}{" "}
-            {props.workshop
-              ? "Workshops"
-              : props.informals
-              ? "Informals"
-              : props.category === "Pre_Events"
-              ? ""
-              : "Events"}
-          </h1>
         </div>
         <h2 className="blink_warning">
           {props.category === "Pre_Events" ? "Pre Events" : props.category}{" "}

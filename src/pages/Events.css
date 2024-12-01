@@ -1,30 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
+@font-face {
+  font-family: 'MyFont';
+  src: url('../assets/events/fonts.otf') format('opentype'); /* Ensure the path is correct */
+}
+
 .eventspage-main {
+  position: absolute;
+  top: 0;
   margin: 0 auto;
-  /* max-width: 1440px; */
-  padding: 0 5vh;
-  width: 100%;
+  width: 100vw;
   box-sizing: border-box;
+  /* text-transform: uppercase; */
+  background-repeat: no-repeat;
   background-size: cover;
-  background-repeat: repeat;
-  background-position: center;
+  background-position: bottom;
   background-attachment: fixed;
+  overflow: hidden;
 }
-.events-allevents {
-  margin: 7vh 0;
+.events-heading{
+  width: 100%;
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
-.events-allevents button {
-  background: #870a0c;
-  color: #fff;
-  border: none;
-  outline: none;
-  font-family: "Orbitron", sans-serif;
-  font-size: 2.5vh;
-  text-transform: uppercase;
-  word-spacing: 5px;
-  padding: 20px 50px;
-  cursor: pointer;
-  transition: 0.5s;
+.selected-heading{
+  font-family: 'MyFont', sans-serif;
+  font-weight: 400;
+  /* line-height: 132px; */
+  text-align: center;
+  top: 364px;
+  font-size: 5.93rem;
+  width: 1160px;
+  /* text-underline-position: from-font; */
+  text-decoration-skip-ink: none;
+  /* Text gradient */
+  background: linear-gradient(91.21deg, #FDCAFF 3.66%, #946F82 96.34%);
+  -webkit-background-clip: text;
+  color: transparent; /* Hides the original text color */
+  z-index: 20;
+  
+
 }
 #filter___id button {
   border-top: none;
@@ -45,7 +62,8 @@
 .filter {
   display: flex;
   justify-content: space-evenly;
-  margin-top: -5vw;
+  /* margin-top: -5vw; */
+  gap: 15px;
 }
 
 .event_cards_flex{
@@ -65,21 +83,23 @@
   transition: all 0.3s ease-in-out;
 }
 .filter___button.active {
-  scale: 1.1;
-  border-bottom: 5px solid #ED1507;
+
   border-radius: 0;
 }
-.filter___button.active:hover{
+/* .filter___button.active:hover{
   scale: 1;
-}
+} */
 .filter___button:hover {
   scale: 1.1;
 }
 .filter___button:focus {
-  outline: none;
+  /* outline: none; */
 }
 .filter___button img {
-  width: 100% !important;
+  /* width: 100% !important; */
+  width: 430px;
+  height: 142px;
+
 }
 
 .schedule{
@@ -90,10 +110,46 @@
 @media screen and (max-width: 600px) {
   .events-allevents button {
     font-size: 2vh;
-    padding: 2vh;
+    /* padding: 2vh; */
     word-spacing: 0;
   }
   .eventspage-main {
     padding: 0 3vh;
+  }
+  .events-heading{
+    height: 50svh;
+  }
+}
+
+@media (max-width: 1024px) {
+  .selected-heading {
+    font-size: 4.5rem; /* Reduced font size for tablets or small laptops */
+    line-height: 100px; /* Adjusted line height for better spacing */
+  }
+  .events-heading{
+    height: 50svh;
+  }
+}
+
+@media (max-width: 768px) {
+  .selected-heading {
+    font-size: 3.5rem; /* Further reduced font size for tablets */
+    line-height: 80px; /* Adjusted line height */
+    width: 90%; /* Reduce width for better fit */
+  }
+  .events-heading{
+    height: 50svh;
+  }
+}
+
+@media (max-width: 480px) {
+  .selected-heading {
+    font-size: 2.5rem; /* Smaller font size for mobile devices */
+    line-height: 60px; /* Line height for mobile */
+    /* top: 200px; Adjusted top position for smaller devices */
+    width: 100%; /* Full width on small screens */
+  }
+  .events-heading{
+    height: 50svh;
   }
 }
