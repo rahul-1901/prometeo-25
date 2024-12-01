@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import "./Navbar.css";
-import close from "../assets/close.svg";
-import menu from "../assets/menu.svg";
+import { FaBars, FaTimes } from "react-icons/fa"; // Font Awesome Icons
 import image from "../assets/image.png";
 import smallLogo from "../assets/logo.gif";
 import AuthContext from "../context/AuthContext";
@@ -118,20 +117,22 @@ const Navbar = () => {
           alt="click to go home"
           onClick={() => handleNavClick()}
         />
-      </Link>
 
-      {/* Title Image */}
-      <img
-        className="title-image"
-        src={image}
-        alt="Prometeo '25"
-        onClick={() => handleNavClick()}
-      />
+        {/* Title Image */}
+        <img
+          className="title-image"
+          src={image}
+          alt="Prometeo '25"
+          onClick={() => handleNavClick()}
+        />
+      </Link>
 
       {/* Desktop Navigation */}
       {!isMobile && (
-        <div className="nav-links-container">
-          {renderNavLinks()}
+        <div className="navall">
+          <div className="nav-links-container">
+            {renderNavLinks()}
+          </div>
           <div className="auth-button-container">
             {renderAuthButton()}
           </div>
@@ -141,14 +142,15 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       {isMobile && (
         <div className="nav-mobile-container">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
+          <div
+            className="menu-toggle"
             onClick={(e) => {
               e.stopPropagation();
               setToggle(prev => !prev);
             }}
-          />
+          >
+            {toggle ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </div>
           
           <div className={`nav-mobile ${toggle ? "active" : ""}`}>
             <div className="nav-mobile-links-container">
