@@ -26,19 +26,13 @@ import Edit_profile from "./pages/Edit_profile.jsx";
 import Informals from "./pages/informals.jsx";
 import Home from "./pages/Home.jsx";
 import { PlayProvider } from "./components/landing/Play.jsx";
-import smallLogo from "./assets/logo.gif";
-import image from "./assets/image.png";
-
-import { Link } from "react-router-dom";
-import './components/Navbar.css'
-
 
 function App() {
   return (
     <>
       <Router>
         <AuthProvider>
-          {/* <Navbar /> */}
+          <Navbar />
           <Routes>
             <Route path="/" element={<PlayProvider> <Home/> </PlayProvider>} />
             <Route path="/ca" element={<CA />} />
