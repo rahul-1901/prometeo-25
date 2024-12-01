@@ -1,8 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Gemunu+Libre:wght@200..800&display=swap');
 .event-card {
-  width:  328.72px;
-height:  653px;
+  width:  20.545rem;
+height:40.8125rem;
 gap: 20px;
 opacity: 0px;
   display: flex;

@@ -5,6 +5,8 @@
 }
 
 .eventspage-main {
+  position: absolute;
+  top: 0;
   margin: 0 auto;
   width: 100vw;
   box-sizing: border-box;
@@ -26,7 +28,7 @@
 .selected-heading{
   font-family: 'MyFont', sans-serif;
   font-weight: 400;
-  line-height: 132px;
+  /* line-height: 132px; */
   text-align: center;
   top: 364px;
   font-size: 5.93rem;
@@ -37,6 +39,7 @@
   background: linear-gradient(91.21deg, #FDCAFF 3.66%, #946F82 96.34%);
   -webkit-background-clip: text;
   color: transparent; /* Hides the original text color */
+  z-index: 20;
   
 
 }
@@ -59,7 +62,7 @@
 .filter {
   display: flex;
   justify-content: space-evenly;
-  margin-top: -5vw;
+  /* margin-top: -5vw; */
   gap: 15px;
 }
 
@@ -107,11 +110,14 @@
 @media screen and (max-width: 600px) {
   .events-allevents button {
     font-size: 2vh;
-    padding: 2vh;
+    /* padding: 2vh; */
     word-spacing: 0;
   }
   .eventspage-main {
     padding: 0 3vh;
+  }
+  .events-heading{
+    height: 50svh;
   }
 }
 
@@ -119,6 +125,9 @@
   .selected-heading {
     font-size: 4.5rem; /* Reduced font size for tablets or small laptops */
     line-height: 100px; /* Adjusted line height for better spacing */
+  }
+  .events-heading{
+    height: 50svh;
   }
 }
 
@@ -128,13 +137,19 @@
     line-height: 80px; /* Adjusted line height */
     width: 90%; /* Reduce width for better fit */
   }
+  .events-heading{
+    height: 50svh;
+  }
 }
 
 @media (max-width: 480px) {
   .selected-heading {
     font-size: 2.5rem; /* Smaller font size for mobile devices */
     line-height: 60px; /* Line height for mobile */
-    top: 200px; /* Adjusted top position for smaller devices */
+    /* top: 200px; Adjusted top position for smaller devices */
     width: 100%; /* Full width on small screens */
+  }
+  .events-heading{
+    height: 50svh;
   }
 }
