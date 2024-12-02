@@ -8,7 +8,7 @@ import PageTitle from "../components/PageTitle";
 import PageLoader from "../components/PageLoader";
 import Go2Top from "../components/Go2Top";
 import redStone from "../assets/red-bottle.webp";
-import bg from "../assets/events/background.jpg";
+import bg from "../assets/events/Background.jpg";
 import "./Events.css";
 import PreEvents from "./PreEvents";
 import pre_events from "../assets/events/pre-event.svg";
