@@ -15,7 +15,7 @@
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
-  overflow: hidden;
+  overflow: auto;
 }
 .events-heading{
   width: 100%;

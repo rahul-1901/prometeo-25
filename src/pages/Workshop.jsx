@@ -11,6 +11,7 @@ import redStone from "../assets/blue_elixir.png";
 import bg from "../assets/dashboard/dashboard_bg.png";
 import "./Workshop.css";
 import PreEvents from "./PreEvents";
+import eventsDataTemp from "./Events24";
 
 const Workshop = () => {
 const [category, setCategory] = useState("All");
@@ -50,6 +51,7 @@ const [category, setCategory] = useState("All");
     window.scrollTo(0, 0);
     const navBarEle = document.getElementById("navbar");
     navBarEle.style.opacity = 1;
+    setEventsData(eventsDataTemp)
   }, []);
 
   // useEffect(() => {
@@ -130,9 +132,7 @@ const [category, setCategory] = useState("All");
                   <PreEvents
                     category={category}
                     workshop={true}
-                    // data={eventsData.filter((e) => {
-                    //   return e.type !== "talk";
-                    // })}
+                    data={eventsData}
                   />
                 </div>
               </div>

@@ -18,7 +18,7 @@ function createEntry(e) {
   );
 }
 
-const PreEvents = (props) => {
+const PreEvents = (props) => {  
   return (
     <div className="pre-events-main">
       <div className="pre-events-cards">

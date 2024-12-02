@@ -26,14 +26,14 @@ import Edit_profile from "./pages/Edit_profile.jsx";
 import Informals from "./pages/informals.jsx";
 import Home from "./pages/Home.jsx";
 import { PlayProvider } from "./components/landing/Play.jsx";
-
+import { Link } from "react-router-dom";
 function App() {
   return (
     <>
       <Router>
         <AuthProvider>
           <Navbar /> 
-          <Link to={'/'} >
+          {/* <Link to={'/'} >
             <img
               className="home-img"
               src={smallLogo}
@@ -48,7 +48,7 @@ function App() {
         alt="Prometeo '25"
         onClick={() => handleNavClick()}
       />
-          </Link>
+          </Link> */}
           <Routes>
             <Route path="/" element={<PlayProvider> <Home/> </PlayProvider>} />
             <Route path="/ca" element={<CA />} />
