@@ -41,7 +41,6 @@ body {
   display: flex;
   justify-content: center;
   place-items: center;
-  overflow: auto;
   min-width: 320px;
   min-height: 100svh;
 }
