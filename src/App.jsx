@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import "./App.css";
 
@@ -25,6 +25,8 @@ import Workshop from "./pages/Workshop.jsx";
 import Edit_profile from "./pages/Edit_profile.jsx";
 import Informals from "./pages/informals.jsx";
 import Home from "./pages/Home.jsx";
+import smallLogo from "../src/assets/logo.gif";
+import image from "../src/assets/image.png";
 import { PlayProvider } from "./components/landing/Play.jsx";
 
 function App() {
@@ -32,7 +34,7 @@ function App() {
     <>
       <Router>
         <AuthProvider>
-          <Navbar />
+          <Navbar /> 
           <Routes>
             <Route path="/" element={<PlayProvider> <Home/> </PlayProvider>} />
             <Route path="/ca" element={<CA />} />

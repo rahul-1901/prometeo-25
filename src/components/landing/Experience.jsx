@@ -1,34 +1,36 @@
 import { Float, Line, OrbitControls, PerspectiveCamera, Text, useScroll } from "@react-three/drei";
 import Background from "./Background";
-import { Ship } from "./Viking_ship";
 import { Iceberg } from "./Low_poly_iceberg_scene";
 import Water from "./Water";
 import * as THREE from 'three'
-import { useEffect, useLayoutEffect, useMemo, useRef } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { TextPath } from "./TextPath";
 import gsap from "gsap";
 import { usePlay } from "./Play";
 import {Speed} from "./Speed";
+import { Ship_Updated } from "./Ship";
+import { Glacier } from "./Glaciers";
+import { Glacier1 } from "./Glaciers1";
+import { Glacier2 } from "./Glaciers2";
 
 const LINE_NB_POINTS = 1000;
-const CURVE_DIST = 50
+const CURVE_DIST = 26
 const CURVE_AHEAD_CAMERA = 0.008;
 const CURVE_AHEAD_SHIP = 0.02;
 const SHIP_MAX_ANGLE = 20;
-const FRICTION_DISTANCE = 5;
+const FRICTION_DISTANCE = 8;
 
 export const Experience = () => {
   const curvePoints = useMemo(
     () => [
       new THREE.Vector3(0,0,0),
       new THREE.Vector3(0,0,-CURVE_DIST),
-      new THREE.Vector3(20,0,-2*CURVE_DIST),
+      new THREE.Vector3(23,0,-2*CURVE_DIST),
       new THREE.Vector3(-25,0,-3*CURVE_DIST),
-      new THREE.Vector3(18,0,-4*CURVE_DIST),
+      new THREE.Vector3(-18,0,-4*CURVE_DIST),
       new THREE.Vector3(0,0,-5*CURVE_DIST),
-      new THREE.Vector3(0,0,-6*CURVE_DIST),
-      new THREE.Vector3(0,0,-7*CURVE_DIST),
+      
     ],
     []
   );
@@ -48,8 +50,8 @@ export const Experience = () => {
           curvePoints[0].y + 0.4,
           curvePoints[0].z - 8
         ),
-        subtitle: `Welcome to Prometeo '25,
-Have a seat and enjoy the ride!`,
+        title: 'Welcome',
+        subtitle: `Ahoy Matey, welcome on board! Witness the magic of Prometeo'25 as we sail through the Nordic Nights!`,
       },
       {
         cameraRailDist: 1.5,
@@ -58,29 +60,28 @@ Have a seat and enjoy the ride!`,
           curvePoints[2].y,
           curvePoints[2].z
         ),
-        title: "Services",
-        subtitle: `Do you want a drink?
-We have a wide range of beverages!`,
+        title: "Events",
+        subtitle: `From nerve-wrecking Hackathons to Robots at War, here's everything you can imagine and more!`,
       },
       {
         cameraRailDist: -1,
         position: new THREE.Vector3(
-          curvePoints[3].x - 3,
+          curvePoints[3].x - 4,
           curvePoints[3].y,
           curvePoints[3].z
         ),  
-        title: "Fear of flying?",
-        subtitle: `Our flight attendants will help you have a great journey`,
+        title: "Glimpses from Prometeo'24",
+        subtitle: `With an incredible footfall of 25,000, Prometeo'24 was a massive success, attracting innovators across the country.`,
       },
       {
         cameraRailDist: 1.5,
         position: new THREE.Vector3(
-          curvePoints[4].x + 3.5,
-          curvePoints[4].y,
-          curvePoints[4].z - 12
+          curvePoints[5].x - 6,
+          curvePoints[5].y,
+          curvePoints[5].z
         ),
-        title: "Movies",
-        subtitle: `We provide a large selection of medias, we highly recommend you Porco Rosso during the flight`,
+        title: "Prometeo'25",
+        subtitle: `Continuing its legacy, Prometeo'25 is going to be bigger and better than ever. Gear up as we delve into the epic fusion of technology and entrepreneurship!`,
       },
     ];
   }, []);
@@ -95,17 +96,19 @@ We have a wide range of beverages!`,
   const scroll = useScroll()
   const lastScrollPosition = useRef(0)
   const { play, setHasScroll, end, setEnd} = usePlay()
-
+  const [shipScale, setShipScale] = useState(0)
   useFrame((_state, delta) => {
     if (window.innerWidth > window.innerHeight) {
       // LANDSCAPE
       camera.current.fov = 70;
       camera.current.position.z = 5;
+      setShipScale(0.08)
     } 
     else {
       // PORTRAIT
-      // camera.current.fov = 70;
-      // camera.current.position.z = 4.5;
+      // camera.current.fov = 80;
+      // camera.current.position.z = 6;
+      setShipScale(0.06)
     }
 
     if (lastScrollPosition.current <= 0 && scroll.offset > 0) {
@@ -120,17 +123,17 @@ We have a wide range of beverages!`,
       );
     }
 
-    if (end && sceneOpacity.current > 0) {
-      sceneOpacity.current = THREE.MathUtils.lerp(
-        sceneOpacity.current,
-        0,
-        delta
-      );
-    }
+    // if (end && sceneOpacity.current > 0) {
+    //   sceneOpacity.current = THREE.MathUtils.lerp(
+    //     sceneOpacity.current,
+    //     0,
+    //     delta
+    //   );
+    // }
 
-    if (end){
-      return
-    }
+    // if (end){
+    //   return
+    // }
 
     const scrollOffset = Math.max(0, scroll.offset)
 
@@ -217,15 +220,15 @@ We have a wide range of beverages!`,
     ship.current.quaternion.slerp(targetShipQuaternion, delta * 2);
 
     if (cameraGroup.current.position.z < curvePoints[curvePoints.length - 1].z + 100){
-      setEnd(true)
-      shipOutTimeline.current.play()
+      // setEnd(true)
+      // shipOutTimeline.current.play()
     }
   })
   
   const timeLine = useRef()
   const backgroundColors = useRef({
-    colorA: '#3535cc',
-    colorB: '#abaadd'
+    colorA: '#247b9f',
+    colorB: '#9eddee'
   })
 
   const shipInTimeline = useRef()
@@ -235,18 +238,18 @@ We have a wide range of beverages!`,
     timeLine.current = gsap.timeline()
     timeLine.current.to(backgroundColors.current, {
       duration: 1,
-      colorA: "#6f35cc",
-      colorB: "#ffad30",
+      colorA: "#1F4E5F",
+      colorB: "#88E0EF",
     });
     timeLine.current.to(backgroundColors.current, {
       duration: 1,
-      colorA: "#424242",
-      colorB: "#ffcc00",
+      colorA: "#0A4B6B",
+      colorB: "#1C1C3D",
     });
     timeLine.current.to(backgroundColors.current, {
       duration: 1,
-      colorA: "#81318b",
-      colorB: "#55ab8f",
+      colorA: "#03045E",
+      colorB: "#90E0EF",
     });
 
     timeLine.current.pause()
@@ -255,7 +258,7 @@ We have a wide range of beverages!`,
     shipInTimeline.current.pause()
     shipInTimeline.current.from(ship.current.position, {
       duration: 3,
-      z: 5,
+      z: 7,
       y: -2
     })
 
@@ -286,8 +289,11 @@ We have a wide range of beverages!`,
     }
   })
 
+  
+
   return (
     <>
+      
       {/* <OrbitControls enableZoom={true} /> */}
       <group ref={cameraGroup}>
         <Speed/>
@@ -301,7 +307,7 @@ We have a wide range of beverages!`,
         
         <group ref={ship}>
           <Float floatIntensity={0.8} speed={1} ref={ship} rotationIntensity={0.01}>
-            <Ship scale={[0.2,0.2,0.2]} position={[0,-0.6,0]} />
+            <Ship_Updated scale={[shipScale, shipScale, shipScale]} position={[0,-1.1,0]} rotation-y={Math.PI} />
           </Float>
         </group>
       </group>
@@ -310,12 +316,12 @@ We have a wide range of beverages!`,
           <TextPath {...textSection} key={index} />
         ))}
       
-
-      {/* <Line points={linePoints} color={'white'} opacity={0.7} transparent lineWidth={16} /> */}
-      <Iceberg opacity={sceneOpacity} scale={[0.3,0.3,0.3]} position={[-10, 0.3, -30]} />
+      {/* <Iceberg opacity={sceneOpacity} scale={[0.3,0.3,0.3]} position={[-10, 0.3, -30]} />
       <Iceberg opacity={sceneOpacity} scale={[0.3,0.3,0.4]} position={[-8, 0.5, -20]} />
       <Iceberg opacity={sceneOpacity} scale={[0.2,0.1,0.3]} position={[9, -0.2, -15]} />
-      <Iceberg opacity={sceneOpacity} scale={[0.4,0.4,0.4]} position={[10, 0.2, -40]} />
+      <Iceberg opacity={sceneOpacity} scale={[0.4,0.4,0.4]} position={[10, 0.2, -40]} /> */}
+      <Glacier scale={[15,15,15]} position={[23.5, 0, -70]} />
+      <Glacier scale={[13,13,13]} position={[24, 0, -130]} />
     </>
   );
 };
