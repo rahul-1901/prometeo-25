@@ -60,7 +60,6 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   color: #B7D7FF; /* Retained if it's part of the design */
-  box-shadow: -2px 4px 4px 0px #E3E7FF40;
 }
 
 
@@ -78,11 +77,12 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   color: #B7D7FF;
-  box-shadow: -2px 4px 4px 0px rgba(227, 231, 255, 0.25);
 }
 
 
 .caDetails {
+  font-family: 'Changa', sans-serif;
+
   margin: 0 auto;
   box-sizing: border-box;
   background-position: center;
@@ -245,13 +245,20 @@
 }
 
 .ca-registration {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5vh;
+  font-family: 'Changa', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  width: 1189px;
+  height: 54px;
+  gap: 0px;
+  opacity: 1;
+  color: #D6B1FF;
 }
-
 .ca-registration h1 {
   font-family: 'Metal Mania', cursive;
   background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);

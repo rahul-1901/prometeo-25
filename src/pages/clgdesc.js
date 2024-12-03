@@ -28,7 +28,7 @@ export const description = [
 
 ];
 
-export const silver_amabassador = [
+/*export const silver_amabassador = [
   {
     content: "Free Accommodation and Pronite Pass",
     img: image_1,
@@ -68,4 +68,4 @@ export const gold_amabassador = [
     content: "Networking with IITians & LinkedIn endorsements",
     img: image_7,
   },
-];
+];*/

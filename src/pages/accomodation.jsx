@@ -2,8 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./accomodation.css";
 import { description } from "./clgdesc";
-import { silver_amabassador } from "./description";
-import { gold_amabassador } from "./description";
+{/*import { silver_amabassador } from "./description";
+import { gold_amabassador } from "./description"; */}
 import FadeIn from "../components/FadeIn";
 import FadeInContent from "../components/FadeInContent";
 import PageLoader from "../components/PageLoader";
@@ -11,10 +11,10 @@ import Go2Top from "../components/Go2Top";
 import AuthContext from "../context/AuthContext";
 import bg from "../assets/accomodation/bg.webp";
 import campusBg_second from "../assets/cAmbassador/caBg_second.webp";
-import silverIncentives from "../assets/cAmbassador/silverIncentives.webp";
-import goldIncentives from "../assets/cAmbassador/goldIncentives.webp";
+{/*import silverIncentives from "../assets/cAmbassador/silverIncentives.webp";
+import goldIncentives from "../assets/cAmbassador/goldIncentives.webp";*/}
 
-const CA = () => {
+const Acc = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -74,7 +74,6 @@ const CA = () => {
             </div>
             <div
               className="caDetails"
-              style={{ backgroundImage: `url(${campusBg_second})` }}
             >
               <div className="overLayer"></div>
               <div className="ca_body">
@@ -84,13 +83,13 @@ const CA = () => {
                       <div className="acc_decription">
                         <div className="ca-info-container" key={index}>
                           <div className="ca_blocks">
-                            <h1
-                              className="no_margin"
-                              style={{
-                                textAlign: `${index % 2 !== 0 ? "right" : "left"}`,
-                                alignSelf: `${index % 2 !== 0 ? "flex-end" : "flex-start"}`,
-                              }}
-                            >
+                          <h1
+  className="no_margin"
+  style={{
+    textAlign: "center",
+    alignSelf: "center",
+  }}
+>
                               {item.heading}
                             </h1>
                             <div
@@ -163,10 +162,8 @@ const CA = () => {
                 <div className="registrationSection">
                   <FadeInContent>
                     <div className="ca-registration">
-                      <h1>REGISTRATION</h1>
                       <h2>
-                        So, grab the opportunity and pre-register as soon as possible to
-                        win the goodies and wonderful perks!
+                      Prometeo 2024 and IIT Jodhpur will not be responsible for any mishaps that occur through the duration of stay for Prometeo 202
                       </h2>
                       <div className="ca-register-btn">
                         {!user ? (<Link to="/register">
