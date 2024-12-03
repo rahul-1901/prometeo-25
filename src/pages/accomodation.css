@@ -1,230 +1,543 @@
-@import url("https://fonts.googleapis.com/css?family=Josefin Sans");
-@import url("https://fonts.googleapis.com/css?family=Orbitron");
-@import url("https://fonts.googleapis.com/css?family=Roboto Mono");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Changa:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Skranji:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa&display=swap');
 
+.caTitle_slide {
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 
-.accomodation-main {
+.gradient_first {
+  position: absolute;
+  bottom: -160px;
+  left: 0;
   width: 100%;
-  padding: 0 0vh;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(0, 15, 22, 0) 0%, #000F16 50.5%, rgba(0, 15, 22, 0) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.overLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.692);
+}
+
+
+.ca-title-main {
+  font-family: 'Metal Mania', cursive;
+  margin-top: 5%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-campus {
+  width: 1161px;
+  height: 132px;
+  gap: 0px;
+  opacity: 1; /* Fully visible */
+  font-family: 'Metal Mania', cursive;
+  font-size: 120px;
+  font-weight: 400;
+  line-height: 132px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #B7D7FF; /* Retained if it's part of the design */
+  box-shadow: -2px 4px 4px 0px #E3E7FF40;
+}
+
+
+.title-ambassador {
+  width: 1161px;
+  height: 64px;
+  top: 194px;
+  gap: 0px;
+  opacity: 1; /* Initial opacity set to 0 */
+  font-family: 'Changa', sans-serif;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 64.4px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #B7D7FF;
+  box-shadow: -2px 4px 4px 0px rgba(227, 231, 255, 0.25);
+}
+
+
+.caDetails {
+  margin: 0 auto;
   box-sizing: border-box;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-}
-.acc-header {
-  text-transform: uppercase;
-  text-align: center;
-  width: 100%;
-  padding-top: 20vh;
-}
-.acc-header h1 {
-  font-size: 8vw;
-  font-family: "Orbitron", sans-serif;
-  color: #ed9340;
-  margin: 0;
-}
-.acc-header p {
-  font-size: 2vw;
-  font-weight: 100;
-  font-family: "Roboto Mono", sans-serif;
-  color: #ffffff;
-  margin: 0;
-}
-.acc-button {
-  background-color: #000000;
-  padding: 3vh 7vh;
-  box-sizing: border-box;
-  align-items: center;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 3vh;
-  font-weight: 500;
-  text-align: center;
-  margin-top: 5vh;
-  margin-bottom: 10vh;
-}
-
-.acc-content {
-  /* margin: auto; */
-  position: relative; /* width: 100%; */
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: justify;
-  /* border: 2px solid red; */
-  padding: 0 5vh;
-  /*
-    backdrop-filter: blur(5px);
-
-    margin-bottom: 5vmin; */
-  /* padding-bottom: 5vmin;
-    padding-left: 20vmin;
-    padding-right: 20vmin; */
-}
-/* About Us Section */
-.about-us-image {
-  width: 1189px;  /* Adjusted width */
-  height: 370px;  /* Adjusted height */
-  top: 535px;  /* Adjusted vertical position */
-  left: -14px;  /* Horizontal position */
-  gap: 23px;  /* Space between elements */
-  opacity: 1;  /* Initial opacity */
-  transition: opacity 0.5s ease-in-out;  /* Smooth opacity transition */
-}
-
-/* Guidelines Section */
-.guidelines-image {
-  width: 1189px;  /* Set the width as per your requirement */
-  height: 694px;  /* Set the height as per your requirement */
-  top: 1143px;  /* Vertical position from the top of the container */
-  left: -14px;  /* Horizontal position */
-  gap: 23px;  /* Space between elements */
-  opacity: 1;  /* Initial opacity */
-  transition: opacity 0.5s ease-in-out;  /* Smooth opacity transition */
-}
-
-
-.instr-student {
-  width: 1189px; /* Matches width for consistency */
-  height: 262px; /* Matches height as required */
- /* Allows precise placement */
-  top: 2129px; /* Different 'top' value specific to this section */
-  left: -14px; /* Keeps the same left offset as guidelines */
-  gap: 23px; /* Space between sibling elements, if applicable */
-  opacity:1;
-  transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
-}
-
-
-/*.acc-content-title {
-  width: 1189px;
-  height: 50px;
-  gap: 0px;
-  opacity: 0px;
-  font-family: 'Zaptron', sans-serif;
-  font-size: 45px;
-  font-weight: 400;
-  Color: #D2D1FF;
-  line-height: 49.5px;
-  text-align: center;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-}
-.acc-content-text {
-  Font-Family: 'Changa', Sans-Serif;
-  Font-Size: 20px;
-  Font-Weight: 500;
-  Line-Height: 27px;
-  Letter-Spacing: 0.12em;
-  Text-Align: Justify;
-  Text-Underline-Position: From-Font;
-  Text-Decoration-Skip-Ink: None;
-  Color: #A8A8FF;
-  Display: Flex;
-  Flex-Direction: Column;
-  Gap: 2vmin;
-  Justify-Content: Center;
-  Margin-Bottom: 2vmin;
-}*/
-
-
-/*.acc-content-list {
-  width: 1189px;
-  height: 694px;
-  top: 1143px;
-  left: -14px;
-  gap: 23px;
-  opacity: 0;
-} */
-
-
-.hostel-images-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.hostel-image {
-  width: calc(50% - 10px);
-  max-width: 100px; 
-  height: auto;
-  zoom: 2.5;
-}
-
-.acc-passes {
   position: relative;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: justify;
-  padding: 10px;
-  /*backdrop-filter: blur(5px);*/
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-@media screen and (max-width: 425px) {
-  .acc-passes {
-    flex-direction: column;
-  }
-}
-.acc-faq > li {
+.ca_body {
   display: flex;
   flex-direction: column;
-  gap: 1vmin;
+  justify-content: center;
+  padding: 5%;
+  position: relative;
+  margin-top: 100px;
+  z-index: 5;
 }
-.acc-faq-questions {
-  margin-bottom: 20vh;
+
+.ca_image {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
 }
-@media screen and (max-width: 900px) {
-  .acc-header h1 {
-    font-size: 7.5vw;
-  }
-  .acc-header p {
-    font-size: 2.8vw;
+
+.ca-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  margin-bottom: 20px;
+  margin-top: 100px;
+}
+
+.ca-info-container img {
+  width: 30%;
+}
+
+.ca_blocks {
+  display: flex;
+  flex-direction: column;
+}
+
+.acc_description {
+  font-family: 'Changa', sans-serif;
+
+  display: flex;
+}
+
+.no_margin {
+  font-family: 'Metal Mania', cursive;
+  background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.selected_p {
+  font-family: 'Changa', sans-serif;
+  background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 30px;
+  text-align: justify;
+}
+
+.olive_tree {
+  text-align: center;
+}
+
+.ca-incentives {
+  margin-top: 8vh;
+}
+
+.incentives_body {
+  display: flex;
+  margin-top: 4vh;
+  padding: 0px 40px;
+}
+
+.incentives_body p {
+  font-family: "Roboto Mono", monospace;
+  font-size: 18px;
+}
+
+.incentive_title {
+  text-align: center;
+  font-family: 'Metal Mania', cursive;
+  background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+}
+
+.silver_incentives,
+.gold_incentives {
+  display: flex;
+  height: 150px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.gold_incentives p {
+  font-family: 'Skranji', cursive;
+  font-size: 38px;
+  line-height: 1;
+  background: linear-gradient(175.12deg, #070033 3.91%, #003B7A 96.09%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  mix-blend-mode: luminosity;
+}
+
+.silver_incentives p {
+  font-family: 'Skranji', cursive;
+  font-size: 38px;
+  line-height: 1;
+  background: linear-gradient(175.12deg, #070033 3.91%, #003B7A 96.09%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  mix-blend-mode: luminosity;
+}
+
+.silver {
+  margin-top: -18px;
+}
+
+.reg_With_Acco {
+  text-align: center;
+  font-family: 'Changa', sans-serif;
+  font-size: 24px;
+}
+
+.ambassador_benefits {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.ambassador_benefits p {
+  font-family: 'Changa', sans-serif;
+  font-size: 24px;
+}
+
+.silver_brief {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2vh;
+}
+
+.registrationSection {
+  margin-top: 8vh;
+}
+
+.ca-registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.ca-registration h1 {
+  font-family: 'Metal Mania', cursive;
+  background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+}
+
+.ca-registration h2 {
+  font-family: 'Changa', sans-serif;
+  background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 25px;
+  margin-top: 1vh;
+}
+
+.ca-registration button {
+  font-size: 25px;
+  margin-top: 2vh;
+  font-family: 'Changa', sans-serif;
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 8px 20px 8px 20px;
+  transition: all 0.5s ease-in-out;
+  border-radius: 40px;
+  border: 2px solid rgba(70, 198, 160, 1)
+}
+
+@media (max-width: 1200px) {
+
+  .title-campus,
+  .title-ambassador {
+    font-size: 18vw;
   }
 }
-@media screen and (max-width: 670px) {
-  .acc-content {
-    padding: 0 2vh;
+
+@media (max-width: 768px) {
+
+  .title-ambassador,
+  .title-campus {
+    font-size: 16vw;
   }
 }
-@media screen and (max-width: 600px) {
-  .acc-header {
-    padding-top: 12vh;
-  }
-  .acc-content-title {
-    font-size: 7.8vw;
-  }
-  .acc-button {
-    margin-bottom: 5vh;
-  }
-  .acc-content-text {
-    font-size: 3.4vw;
-  }
-  .acc-content-list {
-    font-size: 3.4vw;
-  }
-  .acc-faq-questions {
-    margin-bottom: 10vh;
+
+@media (max-width: 480px) {
+
+  .title-ambassador,
+  .title-campus {
+    font-size: 16vw;
   }
 }
-@media screen and (max-width: 500px) {
-  .acc-content {
-    padding: 10px;
+
+@media (max-width: 1024px) {
+
+  .gold_incentives p,
+  .silver_incentives p {
+    font-size: 3vw;
+  }
+
+  .silver_incentives,
+  .gold_incentives {
+    height: 180px;
+  }
+
+}
+
+@media (max-width: 1023px) {
+
+  .gold_incentives p,
+  .silver_incentives p {
+    font-size: 5vw;
+  }
+
+  .silver_incentives,
+  .gold_incentives {
+    height: 180px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .gold_incentives p,
+  .silver_incentives p {
+    font-size: 5vw;
   }
 }
-@media screen and (max-width: 400px) {
-  .acc-button {
-    padding: 2vh 5vh;
+
+@media (max-width: 480px) {
+
+  .gold_incentives p,
+  .silver_incentives p {
+    font-size: 5vw;
+  }
+
+
+  .reg_With_Acco {
+    text-align: center;
+    font-family: 'Changa', sans-serif;
+    font-size: 3.2vw;
+    margin-top: -6vh;
+  }
+
+  .ambassador_benefits {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0px;
+  }
+
+  .ambassador_benefits p {
+    font-family: 'Changa', sans-serif;
+    font-size: 3.9vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .selected_p {
+    margin-top: -100px;
+  }
+}
+
+@media (min-width: 320px) {
+  .ca_blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .olive_tree {
+    width: 400px;
+  }
+
+  .ca_image {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .incentives_body {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .silver_brief {
+    gap: 25px;
+    align-items: start;
+  }
+}
+
+@media (min-width: 768px) {
+  .ambassador_benefits {
+    justify-content: center;
+  }
+
+  .ca-info-container {
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ca_blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .ca_blocks p {
+    display: flex;
+    align-items: top;
+    margin: 0;
+    padding: 0;
+  }
+
+  .olive_tree {
+    width: 500px;
+  }
+
+  .incentives_body {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .silver_brief {
+    gap: 15px;
+  }
+
+  .ambassador_benefits {
+    justify-content: start;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .ca-title-main {
+    padding: 20vh 0;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .no_margin {
+    font-size: 6vh;
+  }
+
+  .ca-register-btn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+  }
+
+  .ca-incentives h1,
+  .ca-registration h1 {
+    font-size: 5vh;
+    font-family: "Roboto Mono", monospace;
+    text-align: center;
+  }
+
+  .ca-registration h1 {
+    margin-bottom: 0;
+  }
+
+  .ca-registration h2 {
+    font-size: 3vh;
+    text-align: center;
+    font-family: "Roboto Mono", monospace;
+  }
+
+  .silver_brief {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ca-title-main {
+    padding: 15vh 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .no_margin {
+    font-size: 5vh;
+  }
+
+  .ca-incentives h1,
+  .ca-registration h1 {
+    font-size: 5vh;
+  }
+
+  .ca_page {
+    padding: 0 0 10vh;
+  }
+
+  .ca_blocks p {
+    font-size: 2vh;
+    margin-top: 0;
+  }
+
+  .ca-registration h2 {
     font-size: 2vh;
   }
-  .acc-button {
-    margin-bottom: 0;
+}
+
+@media screen and (width < 1000px) {
+  .ca-info-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .ca_blocks,
+  .ca-incentives {
+    text-align: center;
+  }
+
+  .silver_brief {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .ca-title-main {
+    padding: 15vh 0 0;
   }
 }

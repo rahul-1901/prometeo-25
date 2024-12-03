@@ -1,51 +1,46 @@
 import React, { useEffect, useState, useContext } from "react";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import PageLoader from "../components/PageLoader";
-import FadeIn from "../components/FadeIn";
-import Go2Top from "../components/Go2Top";
-import "./accomodation.css";
-import bg from "../assets/Background.jpg";
-import aboutUsImage from "../assets/About Us.jpg";
-import instru1 from "../assets/instru1.jpg";
-
-import guideImage from "../assets/guidelines.jpg";
-import PassesCard from "../components/passesCard";
-import AuthContext from "../context/AuthContext";
 import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
-import useAxios from "../context/UseAxios";
-import { API_BASE_URL } from "../config";
-import image4 from "../assets/hostels/image4.webp";
-import image5 from "../assets/hostels/image5.webp";
-import image7 from "../assets/hostels/image7.webp";
-import image9 from "../assets/hostels/image9.webp";
-import image10 from "../assets/hostels/image10.webp";
-import image11 from "../assets/hostels/image11.webp";
+import "./accomodation.css";
+import { description } from "./clgdesc";
+import { silver_amabassador } from "./description";
+import { gold_amabassador } from "./description";
+import FadeIn from "../components/FadeIn";
+import FadeInContent from "../components/FadeInContent";
+import PageLoader from "../components/PageLoader";
+import Go2Top from "../components/Go2Top";
+import AuthContext from "../context/AuthContext";
+import bg from "../assets/accomodation/bg.webp";
+import campusBg_second from "../assets/cAmbassador/caBg_second.webp";
+import silverIncentives from "../assets/cAmbassador/silverIncentives.webp";
+import goldIncentives from "../assets/cAmbassador/goldIncentives.webp";
 
-const Accomodation = () => {
-  const api = useAxios();
-  const navigate = useNavigate();
-  const { user } = useContext(AuthContext);
+const CA = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [isProfileCompleted, setIsProfileCompleted] = useState(false);
+  const { user } = useContext(AuthContext);
 
-  const IMAGES = [{ id: "1", url: bg }];
-
+  const IMAGES = [
+    {
+      id: "1",
+      url: bg,
+    },
+  ];
   useEffect(() => {
     window.scrollTo(0, 0);
     const navBarEle = document.getElementById("navbar");
     navBarEle.style.opacity = 1;
 
+    const mediaQuery = window.matchMedia("(max-width:500px)");
+    setIsMobile(mediaQuery.matches);
+    const tablet = window.matchMedia("(max-width:1000px)");
+    setIsTablet(tablet.matches);
+
     const loadImage = (image) => {
       return new Promise((resolve, reject) => {
         const loadImg = new Image();
         loadImg.src = image.url;
-        // Simulate loading time
+        // wait 2 seconds to simulate loading time
         loadImg.onload = () =>
           setTimeout(() => {
             resolve(image.url);
@@ -54,39 +49,10 @@ const Accomodation = () => {
         loadImg.onerror = (err) => reject(err);
       });
     };
-
     Promise.all(IMAGES.map((image) => loadImage(image)))
       .then(() => setLoading(false))
       .catch((err) => console.log("Failed to load images", err));
-
-    const fetchProfileData = async () => {
-      try {
-        if (user) {
-          const response = await api.get(`${API_BASE_URL}/accounts/userdata/`);
-          setIsProfileCompleted(response.data.isProfileCompleted);
-        }
-      } catch (error) {
-        console.error("Error fetching profile data:", error);
-      }
-    };
-
-    fetchProfileData();
   }, []);
-
-  const handleAccRegistration = () => {
-    if (!user) {
-      navigate("/register");
-    } else {
-      if (isProfileCompleted) {
-        navigate("/dashboard");
-      } else {
-        // Redirect to profile completion page
-        toast.error("Please complete your profile first");
-        navigate("/edit-profile");
-        console.log("Profile not completed");
-      }
-    }
-  };
 
   return (
     <>
@@ -94,48 +60,134 @@ const Accomodation = () => {
         <PageLoader />
       ) : (
         <FadeIn>
-          <div
-            className="accomodation-main"
-            style={{ backgroundImage: `url(${bg})` }}
-          >
-            <div className="acc-header">
-              {/*<h1>Accommodation</h1>
-              <p>A COMFORTABLE AND CONVENIENT ACCOMMODATION IN PROMETEO</p> */}
-            </div>
-            <div className=" acc-passes">
-              {/* <PassesCard /> */}
-            </div>
-            <div className="acc-content">
-              <div className="acc-content-text">
-                {/* Replacing the About Us text with the image */}
-                <img
-                  src={aboutUsImage} // The path to your JPG image
-                  alt="About Us"
-                  className="about-us-image" // Add styling for the image if needed
-                />
+          <div className="caPage">
+            <div
+              className="caTitle_slide"
+              style={{ backgroundImage: `url(${bg})` }}
+            >
+              <div className="overLayer"></div>
+              <div className="ca-title-main">
+                <p className="title-campus" style={{ backgroundImage: `url(${bg})` }}>ACCOMODATION</p>
+                <p className="title-ambassador" style={{ backgroundImage: `url(${bg})` }}>A COMFORTABLE AND CONVENIENT ACCOMMODATION IN PROMETEO</p>
               </div>
-              <div className="acc-content-list">
-                <img
-                  src={guideImage} // Replace with the path to your guidelines.png
-                  alt="Guidelines"
-                  className="guidelines-image" // Custom class for styling the image
-                />
-              </div>
-              <div className="acc-content-list">
-              <img src={instru1}
-              alt="instructions for school students"
-              classname="instr-student" />
-              </div>
-              <button onClick={handleAccRegistration} className="acc-button">
-                <span className="button-text">Register</span>
-              </button>
+              <div className="gradient_first"></div>
             </div>
-            <Go2Top />
+            <div
+              className="caDetails"
+              style={{ backgroundImage: `url(${campusBg_second})` }}
+            >
+              <div className="overLayer"></div>
+              <div className="ca_body">
+                {description.map((item, index) => {
+                  return (
+                    <FadeInContent key={index}>
+                      <div className="acc_decription">
+                        <div className="ca-info-container" key={index}>
+                          <div className="ca_blocks">
+                            <h1
+                              className="no_margin"
+                              style={{
+                                textAlign: `${index % 2 !== 0 ? "right" : "left"}`,
+                                alignSelf: `${index % 2 !== 0 ? "flex-end" : "flex-start"}`,
+                              }}
+                            >
+                              {item.heading}
+                            </h1>
+                            <div
+                              className="ca_info-content"
+                              style={{
+                                display: "flex",
+                                flexDirection: `${isTablet
+                                  ? "column-reverse"
+                                  : index % 2 != 0
+                                    ? "row-reverse"
+                                    : "row"
+                                  }`,
+                                justifyContent: "space-between",
+                                alignItems: "center",
+                              }}
+                            >
+                              <p className="selected_p">{item.info}</p>
+                              <img
+                                src={item.img}
+                                style={{ width: `${isTablet ? "50%" : "30%"}` }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </FadeInContent>
+                  );
+                })}
+                <div className="ca-incentives">
+                  <FadeInContent>
+                    <h1 className="incentive_title">INCENTIVES</h1>
+                    <div className="incentives_body">
+                      <div className="silver_ambassador">
+                        <div className="silver_incentives" style={{ backgroundImage: `url(${silverIncentives})` }}>
+                          <p className="silver">Silver</p>
+                          <p className="campusA">Campus Ambassador</p>
+                        </div>
+                        <div className="reg_With_Acco">
+                          15+ Registrations (with accommodation)
+                        </div>
+                        <div className="silver_brief">
+                          {silver_amabassador.map((item, index) => (
+                            <div key={index} className="ambassador_benefits">
+                              <p>&#x2022;</p>
+                              <p className="items">{item.content}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="gold_ambassador">
+                        <div className="gold_incentives" style={{ backgroundImage: `url(${goldIncentives})` }}>
+                          <p className="silver">Gold</p>
+                          <p className="campusA">Campus Ambassador</p>
+                        </div>
+                        <div className="reg_With_Acco">
+                          30+ Registrations (with accommodation)
+                        </div>
+                        <div className="silver_brief">
+                          {gold_amabassador.map((item, index) => (
+                            <div key={index} className="ambassador_benefits">
+                              <p>&#x2022;</p>
+                              <p>{item.content}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </FadeInContent>
+                </div>
+                <div className="registrationSection">
+                  <FadeInContent>
+                    <div className="ca-registration">
+                      <h1>REGISTRATION</h1>
+                      <h2>
+                        So, grab the opportunity and pre-register as soon as possible to
+                        win the goodies and wonderful perks!
+                      </h2>
+                      <div className="ca-register-btn">
+                        {!user ? (<Link to="/register">
+                          <button>Register</button>
+                        </Link>
+                        ) : (
+                          <Link to="/dashboard">
+                            <button>Dashboard</button>
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+                  </FadeInContent>
+                </div>
+              </div>
+            </div>
           </div>
-        </FadeIn>
-      )}
+          <Go2Top />
+        </FadeIn>)}
     </>
   );
 };
 
-export default Accomodation;
+export default CA;
