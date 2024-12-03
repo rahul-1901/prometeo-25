@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css?family=Orbitron");
 @import url("https://fonts.googleapis.com/css?family=Roboto Mono");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@400;500&display=swap');
+
 
 .accomodation-main {
   width: 100%;
@@ -47,8 +49,7 @@
 
 .acc-content {
   /* margin: auto; */
-  position: relative;
-  /* width: 100%; */
+  position: relative; /* width: 100%; */
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -57,69 +58,91 @@
   text-align: justify;
   /* border: 2px solid red; */
   padding: 0 5vh;
-  backdrop-filter: blur(5px);
-  /* margin-bottom: 5vmin; */
+  /*
+    backdrop-filter: blur(5px);
+
+    margin-bottom: 5vmin; */
   /* padding-bottom: 5vmin;
     padding-left: 20vmin;
     padding-right: 20vmin; */
 }
+/* About Us Section */
+.about-us-image {
+  width: 1189px;  /* Adjusted width */
+  height: 370px;  /* Adjusted height */
+  top: 535px;  /* Adjusted vertical position */
+  left: -14px;  /* Horizontal position */
+  gap: 23px;  /* Space between elements */
+  opacity: 1;  /* Initial opacity */
+  transition: opacity 0.5s ease-in-out;  /* Smooth opacity transition */
+}
 
-.acc-content-title {
-  width: 100%;
-  font-family: "Orbitron", sans-serif;
-  font-size: min(50px, 10vmin);
-  text-shadow: 0 3px 5px #000000;
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  color: #ed9340;
-  margin-top: 7vh;
-  font-weight: 700;
-  text-transform: uppercase;
+/* Guidelines Section */
+.guidelines-image {
+  width: 1189px;  /* Set the width as per your requirement */
+  height: 694px;  /* Set the height as per your requirement */
+  top: 1143px;  /* Vertical position from the top of the container */
+  left: -14px;  /* Horizontal position */
+  gap: 23px;  /* Space between elements */
+  opacity: 1;  /* Initial opacity */
+  transition: opacity 0.5s ease-in-out;  /* Smooth opacity transition */
+}
+
+
+.instr-student {
+  width: 1189px; /* Matches width for consistency */
+  height: 262px; /* Matches height as required */
+ /* Allows precise placement */
+  top: 2129px; /* Different 'top' value specific to this section */
+  left: -14px; /* Keeps the same left offset as guidelines */
+  gap: 23px; /* Space between sibling elements, if applicable */
+  opacity:1;
+  transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+}
+
+
+/*.acc-content-title {
+  width: 1189px;
+  height: 50px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: 'Zaptron', sans-serif;
+  font-size: 45px;
+  font-weight: 400;
+  Color: #D2D1FF;
+  line-height: 49.5px;
   text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 .acc-content-text {
-  font-family: "Roboto Mono", sans-serif;
-  width: 100%;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 2vmin;
-  font-size: 20px;
-  justify-content: center;
-  line-height: 1.4;
-  margin-bottom: 2vmin;
-  /* margin-left: 5%;
-    margin-right: 5%; */
-}
-.acc-content-list {
-  font-family: "Roboto Mono", sans-serif;
-  /* width: 80%; */
-  color: white;
-  /* margin-left: 10px; */
-  /* align-content: center; */
-  font-size: larger;
-  display: flex;
-  flex-direction: column;
-  gap: 2vmin;
-  justify-content: center;
-  line-height: 1.5;
-  /* margin-left: 5%; */
-  /* margin-right: 5%; */
-}
+  Font-Family: 'Changa', Sans-Serif;
+  Font-Size: 20px;
+  Font-Weight: 500;
+  Line-Height: 27px;
+  Letter-Spacing: 0.12em;
+  Text-Align: Justify;
+  Text-Underline-Position: From-Font;
+  Text-Decoration-Skip-Ink: None;
+  Color: #A8A8FF;
+  Display: Flex;
+  Flex-Direction: Column;
+  Gap: 2vmin;
+  Justify-Content: Center;
+  Margin-Bottom: 2vmin;
+}*/
 
-.acc-content-faq {
-  font-family: "Roboto Mono", sans-serif;
-  width: 80%;
-  color: white;
-  font-size: larger;
-  display: contents;
-  flex-direction: column;
-  gap: 2vmin;
-  justify-content: center;
-  line-height: 2;
-  margin: 5%;
-}
+
+/*.acc-content-list {
+  width: 1189px;
+  height: 694px;
+  top: 1143px;
+  left: -14px;
+  gap: 23px;
+  opacity: 0;
+} */
+
+
 .hostel-images-container {
   display: flex;
   justify-content: space-between;
@@ -142,7 +165,7 @@
   align-items: center;
   text-align: justify;
   padding: 10px;
-  backdrop-filter: blur(5px);
+  /*backdrop-filter: blur(5px);*/
 }
 
 @media screen and (max-width: 425px) {

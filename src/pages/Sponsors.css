@@ -16,12 +16,13 @@
   margin: 0px;
 }
 .container-spos {
-  position: relative;
-  z-index: 3;
-  background-color: #1f152d;
-  /* padding-top: 150px; */
-  margin: 0 auto;
-  padding: 0 10vh;
+  width: 100%;
+  padding: 0 0vh;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .container-spos hr {
