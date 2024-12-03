@@ -160,12 +160,20 @@
   margin-top: 8vh;
 }
 
-.incentives_body {
-  display: flex;
-  margin-top: 4vh;
-  padding: 0px 40px;
+.incentive-body {
+  font-family: Changa, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0.12em;
+  text-align: justify;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color:#94E1FF;
+
 }
 
+{/*
 .incentives_body p {
   font-family: "Roboto Mono", monospace;
   font-size: 18px;
@@ -180,40 +188,7 @@
   background-clip: text;
   letter-spacing: 2px;
 }
-
-.silver_incentives,
-.gold_incentives {
-  display: flex;
-  height: 150px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-}
-
-.gold_incentives p {
-  font-family: 'Skranji', cursive;
-  font-size: 38px;
-  line-height: 1;
-  background: linear-gradient(175.12deg, #070033 3.91%, #003B7A 96.09%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  mix-blend-mode: luminosity;
-}
-
-.silver_incentives p {
-  font-family: 'Skranji', cursive;
-  font-size: 38px;
-  line-height: 1;
-  background: linear-gradient(175.12deg, #070033 3.91%, #003B7A 96.09%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  mix-blend-mode: luminosity;
-}
-
-.silver {
-  margin-top: -18px;
+*/
 }
 
 .reg_With_Acco {
@@ -234,11 +209,6 @@
   font-size: 24px;
 }
 
-.silver_brief {
-  display: flex;
-  flex-direction: column;
-  margin-top: 2vh;
-}
 
 .registrationSection {
   margin-top: 8vh;
