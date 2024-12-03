@@ -5,17 +5,15 @@
 }
 
 .eventspage-main {
-  position: absolute;
-  top: 0;
   margin: 0 auto;
-  width: 100vw;
+  /* max-width: 1440px; */
+  padding: 0 5vh;
+  width: 100%;
   box-sizing: border-box;
-  /* text-transform: uppercase; */
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: repeat;
   background-position: bottom;
   background-attachment: fixed;
-  overflow: auto;
 }
 .events-heading{
   width: 100%;

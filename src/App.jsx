@@ -28,7 +28,6 @@ import Home from "./pages/Home.jsx";
 import smallLogo from "../src/assets/logo.gif";
 import image from "../src/assets/image.png";
 import { PlayProvider } from "./components/landing/Play.jsx";
-import { Link } from "react-router-dom";
 function App() {
   return (
     <>

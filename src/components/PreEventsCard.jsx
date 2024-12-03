@@ -15,7 +15,6 @@ const PreEventsCard = ({
     <div className='event-card' aria-labelledby="event card">
       <div className="event-card__filter membre">
         <div className="register-btn-div">
-
           <button className="r-btn">Register</button>
         </div>
         <a href={eventRegister}>
