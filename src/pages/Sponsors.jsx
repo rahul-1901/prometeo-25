@@ -68,7 +68,6 @@ const Sponsors = () => {
       ) : (
         <FadeIn>
           <div className="container-spos"
-            {/* Title Section with Background Image */}
             
               style={{ backgroundImage: `url(${bg_first})` }}
             >
