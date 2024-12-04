@@ -99,7 +99,7 @@ const Navbar = () => {
       <Link key={index} to={item.path} className="nav-links">
         <div
           onClick={() => handleNavClick(item.name)}
-          className={selected === item.name ? "highlight" : ""}
+          className={selected === item.name ? "highlight pad" : "pad"}
         >
           {item.name}
         </div>

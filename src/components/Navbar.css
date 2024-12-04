@@ -66,14 +66,16 @@
   /* Prevent shifting on click */
   transform: scale(1);
 }
-
+.pad{
+  padding: 5px 8px 5px 8px;
+}
 .nav-links:hover,
 .highlight {
   color: rgb(129, 9, 135);
   transition: 0.5s;
   background-color: #FFFFFFFA;
   border-radius: 100px;
-  padding: 5px 8px 5px 8px; /* Top, Right, Bottom, Left padding */
+  /* Top, Right, Bottom, Left padding */
 }
 
 /* Register Button */
