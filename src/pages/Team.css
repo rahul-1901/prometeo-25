@@ -37,9 +37,13 @@
 }
 .team-verticle h1 {
   padding-top: 0.625rem;
-  width: 32.17rem;
+  width: 39.17rem;
   height: 8.25rem;
   background-image: url('../assets/team/banner.png');
+  background-repeat: no-repeat;
+  /* background-size: 100% 8.25; */
+  background-position: center;
+
   font-family: Changa;
   font-size: 38px;
   font-weight: 400;
@@ -48,10 +52,6 @@
   text-align: center;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  
- 
- 
- 
 }
 .team-cards-container {
   display: flex;

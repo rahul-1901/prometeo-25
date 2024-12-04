@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto Mono");
 
 .login-container-right {
-  /* position: relative; */
-  height: 100%;
+  position: relative;
+  /* height: 100%; */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20vh auto;
+  /* margin: 20vh auto; */
   width: 80%;
 }
 .login-container-right-title{
