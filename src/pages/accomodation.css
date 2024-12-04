@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Skranji:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Changa&display=swap');
+@font-face {
+  font-family: 'Zaptron';
+  src: url('../assets/Zaptron-Regular.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Changa';
+  src: url('../assets/Changa-VariableFont_wght.ttf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+}
 
 .caTitle_slide {
   margin: 0 auto;
@@ -8,24 +21,16 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   position: relative;
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-.gradient_first {
-  position: absolute;
-  bottom: -160px;
-  left: 0;
-  width: 100%;
-  height: 40%;
-  background: linear-gradient(180deg, rgba(0, 15, 22, 0) 0%, #000F16 50.5%, rgba(0, 15, 22, 0) 100%);
-  pointer-events: none;
-  z-index: 2;
-}
 
 .overLayer {
   position: absolute;
@@ -34,25 +39,36 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.692);
+  background-color: rgba(0, 0, 0, 0.192);
 }
 
 
 .ca-title-main {
-  font-family: 'Metal Mania', cursive;
+  font-family: 'Zaptron';
   margin-top: 5%;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.caPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
+
 .title-campus {
+  top:62px;
   width: 1161px;
   height: 132px;
   gap: 0px;
   opacity: 1; /* Fully visible */
-  font-family: 'Metal Mania', cursive;
+  font-family: 'Zaptron', cursive;
   font-size: 120px;
   font-weight: 400;
   line-height: 132px;
@@ -89,7 +105,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  position: relative;
   min-height: 100vh;
   overflow: hidden;
 }
@@ -102,13 +117,12 @@
   position: relative;
   margin-top: 100px;
   z-index: 5;
+  
+  backdrop-filter: blur(10px);
+
 }
 
-.ca_image {
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-}
+
 
 .ca-info-container {
   display: flex;
@@ -117,6 +131,9 @@
   align-items: start;
   margin-bottom: 20px;
   margin-top: 100px;
+  color:  #A8A8FF;
+  ;
+
 }
 
 .ca-info-container img {
@@ -126,23 +143,30 @@
 .ca_blocks {
   display: flex;
   flex-direction: column;
+  color: #94BAFF;
+
 }
 
 .acc_description {
   font-family: 'Changa', sans-serif;
+  background: linear-gradient(98.79deg, #44A7C8 7.18%,  #AFC8FF 92.82%);
 
   display: flex;
 }
 
-.no_margin {
-  font-family: 'Metal Mania', cursive;
-  background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
+.margin {
+  font-family: 'Zaptron', cursive;
+  background: linear-gradient(98.79deg, #44A7C8 7.18%,  #AFC8FF
+  92.82%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: #94BAFF;
+
+
 }
 
-.selected_p {
+.acc-p {
   font-family: 'Changa', sans-serif;
   background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
   -webkit-background-clip: text;
@@ -158,6 +182,8 @@
 
 .ca-incentives {
   margin-top: 8vh;
+  color: #94BAFF;
+
 }
 
 .incentive-body {
@@ -166,10 +192,10 @@
   font-weight: 500;
   line-height: 27px;
   letter-spacing: 0.12em;
-  text-align: justify;
+  text-align: center;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  color:#94E1FF;
+  color: #D6B1FF;
 
 }
 
@@ -191,29 +217,28 @@
 */
 }
 
-.reg_With_Acco {
-  text-align: center;
-  font-family: 'Changa', sans-serif;
-  font-size: 24px;
-}
 
-.ambassador_benefits {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-}
-
-.ambassador_benefits p {
-  font-family: 'Changa', sans-serif;
-  font-size: 24px;
-}
 
 
 .registrationSection {
-  margin-top: 8vh;
+  font-family: 'Changa', sans-serif; /* Apply Changa font */
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
+
+.ca-register-btn {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+{/*
 .ca-registration {
   font-family: 'Changa', sans-serif;
   font-size: 24px;
@@ -259,7 +284,7 @@
   transition: all 0.5s ease-in-out;
   border-radius: 40px;
   border: 2px solid rgba(70, 198, 160, 1)
-}
+}*/}
 
 @media (max-width: 1200px) {
 
@@ -330,24 +355,10 @@
   }
 
 
-  .reg_With_Acco {
-    text-align: center;
-    font-family: 'Changa', sans-serif;
-    font-size: 3.2vw;
-    margin-top: -6vh;
-  }
+  
 
-  .ambassador_benefits {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0px;
-  }
+  
 
-  .ambassador_benefits p {
-    font-family: 'Changa', sans-serif;
-    font-size: 3.9vw;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -419,13 +430,6 @@
     justify-content: space-between;
   }
 
-  .silver_brief {
-    gap: 15px;
-  }
-
-  .ambassador_benefits {
-    justify-content: start;
-  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -463,10 +467,7 @@
     font-family: "Roboto Mono", monospace;
   }
 
-  .silver_brief {
-    justify-content: center;
-    align-items: center;
-  }
+  
 
   .ca-title-main {
     padding: 15vh 0;
@@ -508,9 +509,7 @@
     text-align: center;
   }
 
-  .silver_brief {
-    align-items: center;
-  }
+  
 }
 
 @media screen and (max-width: 400px) {

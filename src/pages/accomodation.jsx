@@ -53,95 +53,98 @@ const CA = () => {
 
   return (
     <>
-      {loading ? (
-        <PageLoader />
-      ) : (
-        <FadeIn>
-          <div className="caPage">
-            <div
-              className="caTitle_slide"
-              style={{ backgroundImage: `url(${bg})` }}
-            >
-              <div className="overLayer"></div>
-              <div className="ca-title-main">
-                <p className="title-campus" style={{ backgroundImage: `url(${bg})` }}>ACCOMODATION</p>
-                <p className="title-ambassador" style={{ backgroundImage: `url(${bg})` }}>A COMFORTABLE AND CONVENIENT ACCOMMODATION IN PROMETEO</p>
-              </div>
-              <div className="gradient_first"></div>
-            </div>
-            <div
-              className="caDetails"
-            >
-              <div className="overLayer"></div>
-              <div className="ca_body">
-                {description.map((item, index) => {
-                  return (
-                    <FadeInContent key={index}>
-                      <div className="acc_decription">
-                        <div className="ca-info-container" key={index}>
-                          <div className="ca_blocks">
-                          <h1
-  className="no_margin"
-  style={{
-    textAlign: "center",
-    alignSelf: "center",
-  }}
+    {loading ? (
+      <PageLoader />
+    ) : (
+      <FadeIn>
+        <div className="caPage">
+        <div
+  className="caTitle_slide"
+  style={{ backgroundImage: `url(${bg})` }}
 >
 
-                              {item.heading}
-                            </h1>
-                            <div
-                              className="ca_info-content"
-                              style={{
-                                display: "flex",
-                                flexDirection: `${isTablet
-                                  ? "column-reverse"
-                                  : index % 2 != 0
-                                    ? "row-reverse"
-                                    : "row"
-                                  }`,
-                                justifyContent: "space-between",
-                                alignItems: "center",
-                              }}
-                            >
-                              <p className="selected_p">{item.info}</p>
-                              <img
-                                src={item.img}
-                                style={{ width: `${isTablet ? "50%" : "30%"}` }}
-                              />
-                            </div>
-                          </div>
+            <div className="overLayer"></div>
+            <div className="ca-title-main">
+            <p
+  className="title-campus"
+  style={{ backgroundImage: `url(${bg})` }}
+>
+  ACCOMODATION
+</p>
+<p
+  className="title-ambassador"
+  style={{ backgroundImage: `url(${bg})` }}
+>
+  A COMFORTABLE AND CONVENIENT ACCOMMODATION IN PROMETEO
+</p>
+
+            </div>
+
+            <div className="ca_body">
+              {description.map((item, index) => {
+                return (
+                  <FadeInContent key={index}>
+                    <div className="acc_decription">
+                      <div className="ca-info-container" key={index}>
+                        <div className="ca_blocks">
+                          <h1
+                            className="margin"
+                            style={{
+                              textAlign: "center",
+                              alignSelf: "center",
+                            }}
+                          >
+
+                            {item.heading}
+                          </h1>
+                          <div
+  className="acc-info-content"
+  style={{
+    display: "flex",
+    flexDirection: isTablet
+      ? "column-reverse"
+      : index % 2 !== 0
+      ? "row-reverse"
+      : "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  }}
+>
+  <p className="acc-p">{item.info}</p>
+  <img
+    src={item.img}
+    style={{ width: isTablet ? "50%" : "30%" }}
+  />
+</div>
+
                         </div>
-                      </div>
-                    </FadeInContent>
-                  );
-                })}
-               
-                <div className="registrationSection">
-                  <FadeInContent>
-                    <div className="ca-registration">
-                      <h2>
-                      Prometeo 2024 and IIT Jodhpur will not be responsible for any mishaps that occur through the duration of stay for Prometeo 202
-                      </h2>
-                      <div className="ca-register-btn">
-                        {!user ? (<Link to="/register">
-                          <button>Register</button>
-                        </Link>
-                        ) : (
-                          <Link to="/dashboard">
-                            <button>Dashboard</button>
-                          </Link>
-                        )}
                       </div>
                     </div>
                   </FadeInContent>
+                );
+              })}
+
+              <div className="ca-registration">
+                <h2>
+                  Prometeo 2025 and IIT Jodhpur will not be responsible for any mishaps that occur <br />through the duration of stay for Prometeo 2025
+                </h2>
+                <div className="ca-register-btn">
+                  {!user ? (<Link to="/register">
+                    <button>Register</button>
+                  </Link>
+                  ) : (
+                    <Link to="/dashboard">
+                      <button>Dashboard</button>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
           </div>
-          <Go2Top />
-        </FadeIn>)}
-    </>
+        </div>
+        <Go2Top />
+      </FadeIn>)}
+  </>
   );
 };
 
