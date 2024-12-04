@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Team.css";
+import ship from "../assets/ship.png"; // Update the path to your image
 import { useState } from "react";
 import FadeIn from "../components/FadeIn";
 import TeamCard from "../components/TeamCard";
@@ -13,7 +14,75 @@ const Team = () => {
   const [team24, setTeam24] = useState({});
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [scrolling, setScrolling] = useState(0); // Track scroll state to apply animation
+  const [transitioned, setTransitioned] = useState(false);
 
+  useEffect(() => {
+    if (!loading) {
+      if (!transitioned) {
+        const item = document.getElementById("team-title");
+        let startY = 0;
+        let endY = 0;
+  
+        const handleScroll = (e) => {
+          e.preventDefault();
+  
+          const currentPosition = parseInt(
+            item.querySelector("img").style.transform.replace("translateX(", "").replace("px)", "")
+          );
+  
+          if (e.deltaY > 0 && currentPosition > -window.innerWidth) {
+            setScrolling(window.innerWidth);
+            setTimeout(() => {
+              setTransitioned(true);
+            }, 1000);
+          }
+        };
+  
+        const handleTouchStart = (e) => {
+          startY = e.touches[0].clientY;
+          console.log(startY)
+        };
+  
+        const handleTouchMove = (e) => {
+          e.preventDefault();
+          endY = e.touches[0].clientY;
+          console.log(endY)
+        };
+  
+        const handleTouchEnd = () => {
+          const swipeDistance = startY - endY;
+          console.log(swipeDistance)
+          if (swipeDistance > 50) {
+            // Swipe left
+            const currentPosition = parseInt(
+              item.querySelector("img").style.transform.replace("translateX(", "").replace("px)", "")
+            );
+  
+            if (currentPosition > -window.innerWidth) {
+              setScrolling(window.innerWidth);
+              setTimeout(() => {
+                setTransitioned(true);
+              }, 1000);
+            }
+          }
+        };
+  
+        item.addEventListener("wheel", handleScroll, { passive: false });
+        item.addEventListener("touchstart", handleTouchStart, { passive: true });
+        item.addEventListener("touchmove", handleTouchMove, { passive: false });
+        item.addEventListener("touchend", handleTouchEnd, { passive: true });
+  
+        return () => {
+          item.removeEventListener("wheel", handleScroll);
+          item.removeEventListener("touchstart", handleTouchStart);
+          item.removeEventListener("touchmove", handleTouchMove);
+          item.removeEventListener("touchend", handleTouchEnd);
+        };
+      }
+    }
+  }, [loading, transitioned]);
+  
   useEffect(() => {
     window.scrollTo(0, 0);
     const navBarEle = document.getElementById("navbar");
@@ -43,18 +112,16 @@ const Team = () => {
       ) : (
         <FadeIn>
           <div className="team-main" >
-            <div className="animation h-svh w-full ">
-              {/* <PageTitle
-                title="Organizing Team"
-                stone="Wisdom Elixir"
-                bgImg={blueStone2}
-                subheading="Meet the masterminds propelling our techno festival to new heights!"
-                color="14,53,177"
-              /> */}
-
-              {/* animation here */}
+          <div id="team-title" className="team-title">
+              <img
+                src={ship}
+                style={{
+                  transform: `translateX(-${scrolling}px)`, // Apply horizontal translation based on scroll state
+                  transition: "transform 0.9s ease-out", // Smooth transition for transform
+                }}
+                alt="ship"
+              />
             </div>
-
             <div className="team-section" style={{ backgroundImage: `url(${bg})` }}>
               {team24.map((member) => (
                 <FadeInContent key={member.id}>
