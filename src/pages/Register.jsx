@@ -54,13 +54,17 @@ const Register = () => {
         className="form-container sign-up-container hide-it"
         id="sign-up-container-id"
       >
+        <div className="line2">
         <SignUp handleSignin={handleSignin} />
+        </div>
       </div>
       <div
-        className="form-container sign-in-container"
+        className="form-container sign-in-container "
         id="sign-in-container-id"
       >
+        <div className="line1">
         <SignIn handleSignup={handleSignup} />
+        </div>
       </div>
      
     </div>
