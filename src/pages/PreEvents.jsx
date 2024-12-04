@@ -38,15 +38,10 @@ const PreEvents = (props) => {
     <div className="pre-events-main">
       <div className="pre-events-cards">
         <h2 className="blink_warning pb-44">
-          {props.category === "Pre_Events" ? "Pre Events" : props.category}{" "}
           {props.workshop
-            ? "Workshops"
-            : props.informals
-              ? "Informals"
-              : props.category === "Pre_Events"
-                ? ""
-                : "Events "}{" "}
-          registrations are closed!!!
+            ? "Workshops are live now"
+            : ""}{" "}
+          
         </h2>
         <div className="pre-events-cards-x">
           {

@@ -76,12 +76,13 @@
   padding: 0;
   background: transparent;
   width: 100%;
-  border: 0;
+  outline: none; 
+  border: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 .filter___button.active {
-
+  border: none;
   border-radius: 0;
 }
 /* .filter___button.active:hover{
@@ -91,7 +92,7 @@
   scale: 1.1;
 }
 .filter___button:focus {
-  /* outline: none; */
+  outline: none;
 }
 .filter___button img {
   /* width: 100% !important; */

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Gemunu+Libre:wght@200..800&display=swap');
 .event-card {
   width: 19.518rem;
-  height: 40.81rem;
+  height: 45.68rem;
   gap: 20px;
   opacity: 0px;
   display: flex;
@@ -56,13 +56,44 @@
 
 .event-card__container {
   width: 20.54rem; /* 328.72px / 16 */
-  height: 16.13rem; /* 258px / 16 */
+  height: 21.13rem; /* 258px / 16 */
   gap: 0.5rem; /* 8px / 16 */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
 }
+
+.btn-container {
+  position: relative;
+  width: 8.437rem;    
+  height: 4.375rem;   
+}
+
+.btn1, .btn1-hov {
+  position: relative; /* Position absolutely inside the container */
+  top: 0;             /* Align to the top of the container */
+  left: 0;            /* Align to the left of the container */
+  width: 100%;        /* Stretch to fill the container */
+  height: 100%;       /* Stretch to fill the container */
+  transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn1-hov {
+  opacity: 0; /* Hover image hidden by default */
+  top: -100%;
+  pointer-events: none; /* Prevent interactions with the hidden image */
+}
+
+.btn-container:hover .btn1-hov {
+  opacity: 1; /* Show hover image on hover */
+
+}
+
+.btn-container:hover .btn1 {
+  opacity: 0; /* Hide default button on hover */
+}
+
 
 .event-card h2 {
   font-family: Gemunu Libre;
@@ -204,7 +235,9 @@
   text-decoration-skip-ink: none;
   background-color: transparent;
   border: none;
-  
+}
+.btn-container{
+ margin: auto;
 }
 @-webkit-keyframes gradient {
   0% {

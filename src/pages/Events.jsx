@@ -19,7 +19,7 @@ import eventsData from "./Events24";
 
 
 const Events = () => {
-  const [category, setCategory] = useState("All");
+  const [category, setCategory] = useState("Technical");
   const [loading, setLoading] = useState(true);
   const IMAGES = [
     {
@@ -82,31 +82,13 @@ const Events = () => {
               style={{ backgroundImage: `url(${bg})` }}
             >
               <div className="events-heading">
-                <h1 className="selected-heading">{`${category} EVENTS`}</h1>
+                <h1 className="selected-heading">All events</h1>
               </div>
               <FadeInContent>
                 <div className="eventspage-events">
                   <div className="filter" id="filter___id">
-                    {
-                      category != 'All' ?
-                        (<button
-                          className={`filter___button`}
-                          onClick={(e) => {
-                            setCategory("All");
-                            // element.scrollIntoView({
-                            //   behavior: "smooth",
-                            //   block: "start",
-                            // });
-                            // handleEventTab(0);
-                          }}
-                        >
-                          <img className="" src={all_events} alt="cloud" />
-                        </button>) : <></>
-                    }
-
-                    {
-                      category != 'pre_Events' ?
-                        (<button
+                   
+                        <button
                           className={`filter___button`}
                           onClick={(e) => {
                             setCategory("pre_Events");
@@ -118,11 +100,10 @@ const Events = () => {
                           }}
                         >
                           <img className="" src={pre_events} alt="cloud" />
-                        </button>) : <></>
-                    }
-                    {
-                      category != 'Technical' ?
-                        (<button
+                        </button>
+                    
+                   
+                        <button
                           className={`filter___button`}
                           onClick={(e) => {
                             setCategory("Technical");
@@ -134,11 +115,9 @@ const Events = () => {
                           }}
                         >
                           <img className="" src={technical_events} alt="cloud" />
-                        </button>) : <></>
-                    }
-                    {
-                      category != 'Entrepreneurial' ?
-                        (<button
+                        </button>
+                    
+                        <button
                           className={`filter___button`}
                           onClick={(e) => {
                             setCategory("Entrepreneurial");
@@ -154,8 +133,8 @@ const Events = () => {
                             src={entrepreneurial_events}
                             alt="cloud"
                           />
-                        </button>) : <></>
-                    }
+                        </button>
+                    
                   </div>
                   <div className="pre-events" id="EventList">
                     <PreEvents category={category} data={eventsData} />
