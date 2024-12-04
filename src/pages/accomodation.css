@@ -17,6 +17,7 @@
 
 .caTitle_slide {
   margin: 0 auto;
+  width: 100vw;
   box-sizing: border-box;
   background-position: center;
   background-repeat: no-repeat;
@@ -31,7 +32,6 @@
   overflow: hidden;
 }
 
-
 .overLayer {
   position: absolute;
   top: 0;
@@ -41,7 +41,6 @@
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.192);
 }
-
 
 .ca-title-main {
   font-family: 'Zaptron';
@@ -55,50 +54,48 @@
 }
 .caPage {
   display: flex;
+  width: 100vw;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
-
 .title-campus {
-  top:62px;
-  width: 1161px;
-  height: 132px;
+  top: 62px;
+  width: 100%;  /* Make the title width responsive */
+  height: auto;  /* Make the height adjust with content */
   gap: 0px;
-  opacity: 1; /* Fully visible */
+  opacity: 1;
   font-family: 'Zaptron', cursive;
-  font-size: 120px;
-  font-weight: 400;
-  line-height: 132px;
+  font-size: clamp(2rem, 8vw, 10rem);
+  line-height: 1.2;
   text-align: center;
+  font-weight: 400;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  color: #B7D7FF; /* Retained if it's part of the design */
+  color: #B7D7FF;
 }
 
-
 .title-ambassador {
-  width: 1161px;
-  height: 64px;
+  width: 100%;  /* Ensure responsive width */
+  max-width: 1161px;
+  height: auto;
   top: 194px;
   gap: 0px;
-  opacity: 1; /* Initial opacity set to 0 */
+  opacity: 1;
   font-family: 'Changa', sans-serif;
-  font-size: 35px;
+  font-size: clamp(1rem, 4vw, 3rem);
+  line-height: 1.2;
   font-weight: 500;
-  line-height: 64.4px;
   text-align: center;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   color: #B7D7FF;
 }
 
-
 .caDetails {
   font-family: 'Changa', sans-serif;
-
   margin: 0 auto;
   box-sizing: border-box;
   background-position: center;
@@ -112,17 +109,13 @@
 .ca_body {
   display: flex;
   flex-direction: column;
+  width: 100vw;
   justify-content: center;
   padding: 5%;
   position: relative;
-  margin-top: 100px;
   z-index: 5;
-  
   backdrop-filter: blur(10px);
-
 }
-
-
 
 .ca-info-container {
   display: flex;
@@ -131,43 +124,39 @@
   align-items: start;
   margin-bottom: 20px;
   margin-top: 100px;
-  color:  #A8A8FF;
-  ;
-
+  color: #A8A8FF;
 }
 
 .ca-info-container img {
-  width: 30%;
+  width: 100%;  /* Responsive image width */
+  max-width: 30%;  /* Maximum width for larger screens */
 }
 
 .ca_blocks {
   display: flex;
   flex-direction: column;
   color: #94BAFF;
-
 }
 
 .acc_description {
   font-family: 'Changa', sans-serif;
-  background: linear-gradient(98.79deg, #44A7C8 7.18%,  #AFC8FF 92.82%);
-
+  background: linear-gradient(98.79deg, #44A7C8 7.18%, #AFC8FF 92.82%);
   display: flex;
 }
 
 .margin {
   font-family: 'Zaptron', cursive;
-  background: linear-gradient(98.79deg, #44A7C8 7.18%,  #AFC8FF
-  92.82%);
+  background: linear-gradient(98.79deg, #44A7C8 7.18%, #AFC8FF 92.82%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: #94BAFF;
-
-
 }
 
 .acc-p {
   font-family: 'Changa', sans-serif;
+  width: 100%;
+  text-align: center;
   background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -183,7 +172,6 @@
 .ca-incentives {
   margin-top: 8vh;
   color: #94BAFF;
-
 }
 
 .incentive-body {
@@ -196,32 +184,10 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   color: #D6B1FF;
-
 }
-
-{/*
-.incentives_body p {
-  font-family: "Roboto Mono", monospace;
-  font-size: 18px;
-}
-
-.incentive_title {
-  text-align: center;
-  font-family: 'Metal Mania', cursive;
-  background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: 2px;
-}
-*/
-}
-
-
-
 
 .registrationSection {
-  font-family: 'Changa', sans-serif; /* Apply Changa font */
+  font-family: 'Changa', sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 27px;
@@ -230,7 +196,6 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
-
 
 .ca-register-btn {
   margin-top: 15px;
@@ -238,94 +203,26 @@
   justify-content: center;
 }
 
-{/*
-.ca-registration {
-  font-family: 'Changa', sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 27px;
-  letter-spacing: 0.12em;
-  text-align: center;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  width: 1189px;
-  height: 54px;
-  gap: 0px;
-  opacity: 1;
-  color: #D6B1FF;
-}
-.ca-registration h1 {
-  font-family: 'Metal Mania', cursive;
-  background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: 1px;
-}
-
-.ca-registration h2 {
-  font-family: 'Changa', sans-serif;
-  background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-size: 25px;
-  margin-top: 1vh;
-}
-
-.ca-registration button {
-  font-size: 25px;
-  margin-top: 2vh;
-  font-family: 'Changa', sans-serif;
-  background-color: transparent;
-  color: #ffffff;
-  font-weight: 500;
-  padding: 8px 20px 8px 20px;
-  transition: all 0.5s ease-in-out;
-  border-radius: 40px;
-  border: 2px solid rgba(70, 198, 160, 1)
-}*/}
-
-@media (max-width: 1200px) {
-
-  .title-campus,
-  .title-ambassador {
-    font-size: 18vw;
-  }
-}
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-
-  .title-ambassador,
   .title-campus {
-    font-size: 16vw;
+    font-size: clamp(2rem, 7vw, 8rem);
+  }
+  .title-ambassador {
+    font-size: clamp(1rem, 3.5vw, 2.5rem);
   }
 }
 
 @media (max-width: 480px) {
-
-  .title-ambassador,
-  .title-campus {
-    font-size: 16vw;
+  .margin, .title-campus {
+    font-size: clamp(1.5rem, 6vw, 7rem);
+  }
+  .title-ambassador {
+    font-size: clamp(0.8rem, 3vw, 2rem);
   }
 }
 
 @media (max-width: 1024px) {
-
-  .gold_incentives p,
-  .silver_incentives p {
-    font-size: 3vw;
-  }
-
-  .silver_incentives,
-  .gold_incentives {
-    height: 180px;
-  }
-
-}
-
-@media (max-width: 1023px) {
-
   .gold_incentives p,
   .silver_incentives p {
     font-size: 5vw;
@@ -335,12 +232,9 @@
   .gold_incentives {
     height: 180px;
   }
-
 }
 
-
 @media (max-width: 768px) {
-
   .gold_incentives p,
   .silver_incentives p {
     font-size: 5vw;
@@ -348,17 +242,10 @@
 }
 
 @media (max-width: 480px) {
-
   .gold_incentives p,
   .silver_incentives p {
     font-size: 5vw;
   }
-
-
-  
-
-  
-
 }
 
 @media (min-width: 1024px) {
@@ -376,7 +263,7 @@
   }
 
   .olive_tree {
-    width: 400px;
+    width: 80%;  /* Responsive width for smaller screens */
   }
 
   .ca_image {
@@ -429,7 +316,6 @@
     flex-direction: row;
     justify-content: space-between;
   }
-
 }
 
 @media screen and (max-width: 1000px) {
@@ -441,79 +327,5 @@
 @media screen and (max-width: 580px) {
   .no_margin {
     font-size: 6vh;
-  }
-
-  .ca-register-btn {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-  }
-
-  .ca-incentives h1,
-  .ca-registration h1 {
-    font-size: 5vh;
-    font-family: "Roboto Mono", monospace;
-    text-align: center;
-  }
-
-  .ca-registration h1 {
-    margin-bottom: 0;
-  }
-
-  .ca-registration h2 {
-    font-size: 3vh;
-    text-align: center;
-    font-family: "Roboto Mono", monospace;
-  }
-
-  
-
-  .ca-title-main {
-    padding: 15vh 0;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .no_margin {
-    font-size: 5vh;
-  }
-
-  .ca-incentives h1,
-  .ca-registration h1 {
-    font-size: 5vh;
-  }
-
-  .ca_page {
-    padding: 0 0 10vh;
-  }
-
-  .ca_blocks p {
-    font-size: 2vh;
-    margin-top: 0;
-  }
-
-  .ca-registration h2 {
-    font-size: 2vh;
-  }
-}
-
-@media screen and (width < 1000px) {
-  .ca-info-container {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-
-  .ca_blocks,
-  .ca-incentives {
-    text-align: center;
-  }
-
-  
-}
-
-@media screen and (max-width: 400px) {
-  .ca-title-main {
-    padding: 15vh 0 0;
   }
 }
