@@ -1,6 +1,6 @@
 import { Float, Line, OrbitControls, PerspectiveCamera, Text, useScroll } from "@react-three/drei";
 import Background from "./Background";
-import { Iceberg } from "./Low_poly_iceberg_scene";
+
 import Water from "./Water";
 import * as THREE from 'three'
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
@@ -9,10 +9,10 @@ import { TextPath } from "./TextPath";
 import gsap from "gsap";
 import { usePlay } from "./Play";
 import {Speed} from "./Speed";
-import { Ship_Updated } from "./Ship";
-import { Glacier } from "./Glaciers";
-import { Glacier1 } from "./Glaciers1";
-import { Glacier2 } from "./Glaciers2";
+import { Ocean } from "./Ocean";
+import { ShipFinal } from "./SHIP_PROMETEO";
+import { GlacierFinal } from "./GLACIER_2";
+
 
 const LINE_NB_POINTS = 1000;
 const CURVE_DIST = 26
@@ -47,7 +47,7 @@ export const Experience = () => {
         cameraRailDist: 3,
         position: new THREE.Vector3(
           curvePoints[0].x + 2,
-          curvePoints[0].y + 0.4,
+          curvePoints[0].y + 1.5,
           curvePoints[0].z - 8
         ),
         title: 'Welcome',
@@ -57,7 +57,7 @@ export const Experience = () => {
         cameraRailDist: 1.5,
         position: new THREE.Vector3(
           curvePoints[2].x + 2,
-          curvePoints[2].y,
+          curvePoints[2].y+1.5,
           curvePoints[2].z
         ),
         title: "Events",
@@ -67,7 +67,7 @@ export const Experience = () => {
         cameraRailDist: -1,
         position: new THREE.Vector3(
           curvePoints[3].x - 4,
-          curvePoints[3].y,
+          curvePoints[3].y+1.5,
           curvePoints[3].z
         ),  
         title: "Glimpses from Prometeo'24",
@@ -77,7 +77,7 @@ export const Experience = () => {
         cameraRailDist: 1.5,
         position: new THREE.Vector3(
           curvePoints[5].x - 6,
-          curvePoints[5].y,
+          curvePoints[5].y+2,
           curvePoints[5].z
         ),
         title: "Prometeo'25",
@@ -114,7 +114,9 @@ export const Experience = () => {
     if (lastScrollPosition.current <= 0 && scroll.offset > 0) {
       setHasScroll(true);
     }
-
+    if (play){
+      sceneOpacity.current = 1
+    }
     if (play && !end && sceneOpacity.current < 1) {
       sceneOpacity.current = THREE.MathUtils.lerp(
         sceneOpacity.current,
@@ -301,27 +303,35 @@ export const Experience = () => {
         <group ref={cameraRail}>
           <PerspectiveCamera ref={camera} position={[0,1,5]} fov={70} makeDefault />
         </group>
-        <Float floatIntensity={0.3} speed={0.4} rotationIntensity={0.001}>
+        {/* <Float floatIntensity={0.3} speed={0.4} rotationIntensity={0.001}>
           <Water/>
-        </Float>
+          <Ocean/>
+        </Float> */}
+        <Ocean scale={[1, 0.5, 1]} />
         
         <group ref={ship}>
           <Float floatIntensity={0.8} speed={1} ref={ship} rotationIntensity={0.01}>
-            <Ship_Updated scale={[shipScale, shipScale, shipScale]} position={[0,-1.1,0]} rotation-y={Math.PI} />
+            <ShipFinal scale={[shipScale, shipScale, shipScale]} position={[0,-0.9,0]} rotation-y={Math.PI} />
           </Float>
         </group>
       </group>
 
       {textSections.map((textSection, index) => (
-          <TextPath {...textSection} key={index} />
+          <TextPath {...textSection} opacity={1} key={index} />
         ))}
       
       {/* <Iceberg opacity={sceneOpacity} scale={[0.3,0.3,0.3]} position={[-10, 0.3, -30]} />
       <Iceberg opacity={sceneOpacity} scale={[0.3,0.3,0.4]} position={[-8, 0.5, -20]} />
       <Iceberg opacity={sceneOpacity} scale={[0.2,0.1,0.3]} position={[9, -0.2, -15]} />
       <Iceberg opacity={sceneOpacity} scale={[0.4,0.4,0.4]} position={[10, 0.2, -40]} /> */}
-      <Glacier scale={[15,15,15]} position={[23.5, 0, -70]} />
-      <Glacier scale={[13,13,13]} position={[24, 0, -130]} />
+      <Float floatIntensity={0.8} speed={1}  rotationIntensity={0.01}>
+        <GlacierFinal scale={[15,15,15]} position={[23.5, -0.3, -70]} />
+      </Float>
+      <Float floatIntensity={0.8} speed={1}  rotationIntensity={0.01}>
+        <GlacierFinal scale={[13,13,13]} position={[24, -0.3, -130]} />
+      </Float>
+      
+      
     </>
   );
 };
