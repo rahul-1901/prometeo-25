@@ -206,7 +206,7 @@
 }
 .log-in {
   display: inline-block; /* Ensure it stays as a single block element */
-  padding: 0.2rem 1.25rem; /* Adjust padding for responsiveness */
+  padding: 0rem 1.25rem; /* Adjust padding for responsiveness */
   border-radius: 2rem; /* Use rem for consistent scaling */
   background: rgba(255, 255, 255, 0.98); /* Keep the opacity in RGBA for flexibility */
   color: #8125A6;
