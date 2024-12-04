@@ -1,207 +1,519 @@
-@import url("https://fonts.googleapis.com/css?family=Josefin Sans");
-@import url("https://fonts.googleapis.com/css?family=Orbitron");
-@import url("https://fonts.googleapis.com/css?family=Roboto Mono");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Skranji:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa&display=swap');
+@font-face {
+  font-family: 'Zaptron';
+  src: url('../assets/Zaptron-Regular.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+}
 
-.accomodation-main {
-  width: 100%;
-  padding: 0 0vh;
+@font-face {
+  font-family: 'Changa';
+  src: url('../assets/Changa-VariableFont_wght.ttf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+.caTitle_slide {
+  margin: 0 auto;
   box-sizing: border-box;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-}
-.acc-header {
-  text-transform: uppercase;
-  text-align: center;
-  width: 100%;
-  padding-top: 20vh;
-}
-.acc-header h1 {
-  font-size: 8vw;
-  font-family: "Orbitron", sans-serif;
-  color: #ed9340;
-  margin: 0;
-}
-.acc-header p {
-  font-size: 2vw;
-  font-weight: 100;
-  font-family: "Roboto Mono", sans-serif;
-  color: #ffffff;
-  margin: 0;
-}
-.acc-button {
-  background-color: #000000;
-  padding: 3vh 7vh;
-  box-sizing: border-box;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 3vh;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.overLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.192);
+}
+
+
+.ca-title-main {
+  font-family: 'Zaptron';
+  margin-top: 5%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.caPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.title-campus {
+  top:62px;
+  width: 1161px;
+  height: 132px;
+  gap: 0px;
+  opacity: 1; /* Fully visible */
+  font-family: 'Zaptron', cursive;
+  font-size: 120px;
+  font-weight: 400;
+  line-height: 132px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #B7D7FF; /* Retained if it's part of the design */
+}
+
+
+.title-ambassador {
+  width: 1161px;
+  height: 64px;
+  top: 194px;
+  gap: 0px;
+  opacity: 1; /* Initial opacity set to 0 */
+  font-family: 'Changa', sans-serif;
+  font-size: 35px;
   font-weight: 500;
+  line-height: 64.4px;
   text-align: center;
-  margin-top: 5vh;
-  margin-bottom: 10vh;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #B7D7FF;
 }
 
-.acc-content {
-  /* margin: auto; */
-  position: relative;
-  /* width: 100%; */
-  height: fit-content;
+
+.caDetails {
+  font-family: 'Changa', sans-serif;
+
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.ca_body {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: justify;
-  /* border: 2px solid red; */
-  padding: 0 5vh;
-  backdrop-filter: blur(5px);
-  /* margin-bottom: 5vmin; */
-  /* padding-bottom: 5vmin;
-    padding-left: 20vmin;
-    padding-right: 20vmin; */
-}
-
-.acc-content-title {
-  width: 100%;
-  font-family: "Orbitron", sans-serif;
-  font-size: min(50px, 10vmin);
-  text-shadow: 0 3px 5px #000000;
-  flex-grow: 1;
-  display: flex;
   justify-content: center;
-  color: #ed9340;
-  margin-top: 7vh;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
+  padding: 5%;
+  position: relative;
+  margin-top: 100px;
+  z-index: 5;
+  
+  backdrop-filter: blur(10px);
+
 }
-.acc-content-text {
-  font-family: "Roboto Mono", sans-serif;
-  width: 100%;
-  color: white;
+
+
+
+.ca-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  margin-bottom: 20px;
+  margin-top: 100px;
+  color:  #A8A8FF;
+  ;
+
+}
+
+.ca-info-container img {
+  width: 30%;
+}
+
+.ca_blocks {
   display: flex;
   flex-direction: column;
-  gap: 2vmin;
+  color: #94BAFF;
+
+}
+
+.acc_description {
+  font-family: 'Changa', sans-serif;
+  background: linear-gradient(98.79deg, #44A7C8 7.18%,  #AFC8FF 92.82%);
+
+  display: flex;
+}
+
+.margin {
+  font-family: 'Zaptron', cursive;
+  background: linear-gradient(98.79deg, #44A7C8 7.18%,  #AFC8FF
+  92.82%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #94BAFF;
+
+
+}
+
+.acc-p {
+  font-family: 'Changa', sans-serif;
+  background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 30px;
+  text-align: justify;
+}
+
+.olive_tree {
+  text-align: center;
+}
+
+.ca-incentives {
+  margin-top: 8vh;
+  color: #94BAFF;
+
+}
+
+.incentive-body {
+  font-family: Changa, sans-serif;
   font-size: 20px;
-  justify-content: center;
-  line-height: 1.4;
-  margin-bottom: 2vmin;
-  /* margin-left: 5%;
-    margin-right: 5%; */
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #D6B1FF;
+
 }
-.acc-content-list {
-  font-family: "Roboto Mono", sans-serif;
-  /* width: 80%; */
-  color: white;
-  /* margin-left: 10px; */
-  /* align-content: center; */
-  font-size: larger;
+
+{/*
+.incentives_body p {
+  font-family: "Roboto Mono", monospace;
+  font-size: 18px;
+}
+
+.incentive_title {
+  text-align: center;
+  font-family: 'Metal Mania', cursive;
+  background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+}
+*/
+}
+
+
+
+
+.registrationSection {
+  font-family: 'Changa', sans-serif; /* Apply Changa font */
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+
+.ca-register-btn {
+  margin-top: 15px;
   display: flex;
-  flex-direction: column;
-  gap: 2vmin;
   justify-content: center;
-  line-height: 1.5;
-  /* margin-left: 5%; */
-  /* margin-right: 5%; */
 }
 
-.acc-content-faq {
-  font-family: "Roboto Mono", sans-serif;
-  width: 80%;
-  color: white;
-  font-size: larger;
-  display: contents;
-  flex-direction: column;
-  gap: 2vmin;
-  justify-content: center;
-  line-height: 2;
-  margin: 5%;
+{/*
+.ca-registration {
+  font-family: 'Changa', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  width: 1189px;
+  height: 54px;
+  gap: 0px;
+  opacity: 1;
+  color: #D6B1FF;
 }
-.hostel-images-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.hostel-image {
-  width: calc(50% - 10px);
-  max-width: 100px; 
-  height: auto;
-  zoom: 2.5;
-}
-
-.acc-passes {
-  position: relative;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: justify;
-  padding: 10px;
-  backdrop-filter: blur(5px);
+.ca-registration h1 {
+  font-family: 'Metal Mania', cursive;
+  background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
 }
 
-@media screen and (max-width: 425px) {
-  .acc-passes {
+.ca-registration h2 {
+  font-family: 'Changa', sans-serif;
+  background: linear-gradient(98.79deg, #44A7C8 7.18%, #75D58E 92.82%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 25px;
+  margin-top: 1vh;
+}
+
+.ca-registration button {
+  font-size: 25px;
+  margin-top: 2vh;
+  font-family: 'Changa', sans-serif;
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 8px 20px 8px 20px;
+  transition: all 0.5s ease-in-out;
+  border-radius: 40px;
+  border: 2px solid rgba(70, 198, 160, 1)
+}*/}
+
+@media (max-width: 1200px) {
+
+  .title-campus,
+  .title-ambassador {
+    font-size: 18vw;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .title-ambassador,
+  .title-campus {
+    font-size: 16vw;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .title-ambassador,
+  .title-campus {
+    font-size: 16vw;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .gold_incentives p,
+  .silver_incentives p {
+    font-size: 3vw;
+  }
+
+  .silver_incentives,
+  .gold_incentives {
+    height: 180px;
+  }
+
+}
+
+@media (max-width: 1023px) {
+
+  .gold_incentives p,
+  .silver_incentives p {
+    font-size: 5vw;
+  }
+
+  .silver_incentives,
+  .gold_incentives {
+    height: 180px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .gold_incentives p,
+  .silver_incentives p {
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .gold_incentives p,
+  .silver_incentives p {
+    font-size: 5vw;
+  }
+
+
+  
+
+  
+
+}
+
+@media (min-width: 1024px) {
+  .selected_p {
+    margin-top: -100px;
+  }
+}
+
+@media (min-width: 320px) {
+  .ca_blocks {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .olive_tree {
+    width: 400px;
+  }
+
+  .ca_image {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .incentives_body {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .silver_brief {
+    gap: 25px;
+    align-items: start;
   }
 }
-.acc-faq > li {
-  display: flex;
-  flex-direction: column;
-  gap: 1vmin;
-}
-.acc-faq-questions {
-  margin-bottom: 20vh;
-}
-@media screen and (max-width: 900px) {
-  .acc-header h1 {
-    font-size: 7.5vw;
+
+@media (min-width: 768px) {
+  .ambassador_benefits {
+    justify-content: center;
   }
-  .acc-header p {
-    font-size: 2.8vw;
+
+  .ca-info-container {
+    align-items: center;
   }
 }
-@media screen and (max-width: 670px) {
-  .acc-content {
-    padding: 0 2vh;
+
+@media (min-width: 1024px) {
+  .ca_blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .ca_blocks p {
+    display: flex;
+    align-items: top;
+    margin: 0;
+    padding: 0;
+  }
+
+  .olive_tree {
+    width: 500px;
+  }
+
+  .incentives_body {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+  .ca-title-main {
+    padding: 20vh 0;
   }
 }
-@media screen and (max-width: 600px) {
-  .acc-header {
-    padding-top: 12vh;
+
+@media screen and (max-width: 580px) {
+  .no_margin {
+    font-size: 6vh;
   }
-  .acc-content-title {
-    font-size: 7.8vw;
+
+  .ca-register-btn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
   }
-  .acc-button {
-    margin-bottom: 5vh;
+
+  .ca-incentives h1,
+  .ca-registration h1 {
+    font-size: 5vh;
+    font-family: "Roboto Mono", monospace;
+    text-align: center;
   }
-  .acc-content-text {
-    font-size: 3.4vw;
+
+  .ca-registration h1 {
+    margin-bottom: 0;
   }
-  .acc-content-list {
-    font-size: 3.4vw;
+
+  .ca-registration h2 {
+    font-size: 3vh;
+    text-align: center;
+    font-family: "Roboto Mono", monospace;
   }
-  .acc-faq-questions {
-    margin-bottom: 10vh;
+
+  
+
+  .ca-title-main {
+    padding: 15vh 0;
   }
 }
-@media screen and (max-width: 500px) {
-  .acc-content {
-    padding: 10px;
+
+@media screen and (max-width: 480px) {
+  .no_margin {
+    font-size: 5vh;
   }
-}
-@media screen and (max-width: 400px) {
-  .acc-button {
-    padding: 2vh 5vh;
+
+  .ca-incentives h1,
+  .ca-registration h1 {
+    font-size: 5vh;
+  }
+
+  .ca_page {
+    padding: 0 0 10vh;
+  }
+
+  .ca_blocks p {
+    font-size: 2vh;
+    margin-top: 0;
+  }
+
+  .ca-registration h2 {
     font-size: 2vh;
   }
-  .acc-button {
-    margin-bottom: 0;
+}
+
+@media screen and (width < 1000px) {
+  .ca-info-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .ca_blocks,
+  .ca-incentives {
+    text-align: center;
+  }
+
+  
+}
+
+@media screen and (max-width: 400px) {
+  .ca-title-main {
+    padding: 15vh 0 0;
   }
 }
