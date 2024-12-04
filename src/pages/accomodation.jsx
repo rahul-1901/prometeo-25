@@ -10,10 +10,9 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import PageLoader from "../components/PageLoader";
 import FadeIn from "../components/FadeIn";
 import FadeInContent from "../components/FadeInContent";
-import PageLoader from "../components/PageLoader";
 import Go2Top from "../components/Go2Top";
 import AuthContext from "../context/AuthContext";
-import bg from "../assets/accomodation/bg.webp";
+import bg from "../assets/Accomodation/bg.webp";
 
 
 const CA = () => {

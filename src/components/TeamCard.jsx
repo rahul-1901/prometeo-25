@@ -17,7 +17,8 @@ const TeamCard = ({
   instagram,
   yellow
 }) => {
-  //TODO: how much from top
+  // console.log(`https://devluplabs.iitj.ac.in${imgURL}`);
+  
   return (
     <>
       <div className="wrapper ">
@@ -28,7 +29,7 @@ const TeamCard = ({
               yellow % 2 != 0 ? (<div className="background-overlay " style={{ backgroundImage: `url(${yellowImage})` }}   ></div>)
                 : (<div className="background-overlay " style={{ backgroundImage: `url(${blueImageBox})` }}   ></div>)
             }
-            { imgURL ?( <img src={imgURL} alt="" />): (<img src={DefaultIMG} />)}
+            { imgURL ?( <img src={`https://devluplabs.iitj.ac.in${imgURL}`} alt="" />): (<img src={DefaultIMG} />)}
 
           </div>
           <div className="overly left">
