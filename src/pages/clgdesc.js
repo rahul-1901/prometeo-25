@@ -11,18 +11,18 @@ export const description = [
   },
   {
     heading: "ACCOMMODATION GUIDELINES",
-    info: `1. Every participant shall at all times be in possession of a current, government-issued photo ID and student participants must also carry a valid photo ID issued by their college. If a visitor cannot present their identification card, they will not be permitted to enter the Prometeo'24 campus.\n
-    2. Alcohol, drugs, illegal substances, sharp objects, and any kind of explosives are absolutely prohibited on campus. Anything else that is deemed hazardous is prohibited. The Security and Prometeo'24 team's decision shall be final if there are any disputes.\n
-    3. Throughout the fest of Prometeo '24, no outside vehicles will be permitted on campus.\n
-    4. All participants are expected to maintain the campus's decorum and cleanliness as well as to diligently and consistently abide by its rules and regulations.\n
-    5. IIT Jodhpur and its students disclaim all liability for any accidents that may or may not happen during the course of Prometeo '24.\n
-    6. To prevent any unauthorized activities on campus, random checks would be conducted.\n
-    7. Any commodities issued to the guests would have to be returned in sound condition to the organizers during check-out.\n
-    8. Anyone found visiting a hostel other than the one that is designated will be penalized and appropriate action will be taken against them.\n
-    9. Hostel guests must take care to prevent damage to the institute's property and facilities, since those found guilty of such behavior will be responsible for covering any necessary repairs.\n
-    10. The administration will not be held liable for any damage or loss of property or valuables of the participants stored in places of lodging.\n
-    11. Participants are requested to refrain from causing any disruptions to their other participants.\n
-    12. Institute will provide the pickup and drop facility to the participants between bus/railway stations and campus during the dates which will be announced soon.\n`
+    info: `1. Every participant shall at all times be in possession of a current, government-issued photo ID and student participants must also carry a valid photo ID issued by their college. If a visitor cannot present their identification card, they will not be permitted to enter the Prometeo'24 campus.
+    2. Alcohol, drugs, illegal substances, sharp objects, and any kind of explosives are absolutely prohibited on campus. Anything else that is deemed hazardous is prohibited. The Security and Prometeo'24 team's decision shall be final if there are any disputes.
+    3. Throughout the fest of Prometeo '24, no outside vehicles will be permitted on campus.
+    4. All participants are expected to maintain the campus's decorum and cleanliness as well as to diligently and consistently abide by its rules and regulations.
+    5. IIT Jodhpur and its students disclaim all liability for any accidents that may or may not happen during the course of Prometeo '24.
+    6. To prevent any unauthorized activities on campus, random checks would be conducted.
+    7. Any commodities issued to the guests would have to be returned in sound condition to the organizers during check-out.
+    8. Anyone found visiting a hostel other than the one that is designated will be penalized and appropriate action will be taken against them.
+    9. Hostel guests must take care to prevent damage to the institute's property and facilities, since those found guilty of such behavior will be responsible for covering any necessary repairs.
+    10. The administration will not be held liable for any damage or loss of property or valuables of the participants stored in places of lodging.
+    11. Participants are requested to refrain from causing any disruptions to their other participants.
+    12. Institute will provide the pickup and drop facility to the participants between bus/railway stations and campus during the dates which will be announced soon.`
       },
 {
     heading:"INSTRUCTIONS FOR SCHOOL STUDENTS",

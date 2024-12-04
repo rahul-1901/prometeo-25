@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap');
 .team-main {
-  /* padding: 0 5vh 10vh; */
+  padding: 0px;
   margin: 0 auto;
   width: 99.8vw;
   text-align: left;
@@ -13,9 +13,33 @@
   background-attachment: fixed;
   overflow: hidden;
 }
-.animation{
-  padding: 0 5vh 10vh;
+
+.team-title{
+  padding-top: 1rem;
+  width: 200vw;
+  height: 100vh;
+  background-color: #000f16;
+  scrollbar-width: none; /* For Firefox */  
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center;     /* Center the image vertically */
 }
+
+.team-title img{
+  height: 85%;
+  width: auto;
+  /* object-fit: contain; Maintain aspect ratio */
+  padding-left: 100vw;
+  /* padding-right: 30vw; */
+}
+
+.team-main::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+.team-title::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
 .team-section {
   padding: 0 5vh 10vh;
   display: flex;
