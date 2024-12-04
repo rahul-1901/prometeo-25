@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import AuthContext from "../context/AuthContext";
 
 const Signup = ({ handleSignin }) => {
-  
+
   const { registerUser } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
@@ -76,7 +76,8 @@ const Signup = ({ handleSignin }) => {
     }
   };
   return (
-    <div className="signup-container-right">
+    <div className="signup-container-right ">
+     <div className="line2 border-l-0  md:border-l-2 border-dashed border-[#D183F0]">
       <div className="signup-container-right-title">SIGN UP</div>
       <form className="signup-form" onSubmit={handleSubmit}>
         <div className="signup-form-name">
@@ -124,78 +125,87 @@ const Signup = ({ handleSignin }) => {
           }}
           required
         />
-        <div className="signup-gender-dropdown">
-          {/* <label htmlFor="gender" className="signup-gender-dropdown-label">
+        <div className="w-full flex gap-3 " >
+          <div className="signup-gender-dropdown ">
+            {/* <label htmlFor="gender" className="signup-gender-dropdown-label">
             Gender
           </label> */}
-          <select
-            name="gender"
-            id="gender"
-            className="signup-gender-dropdown-select"
-          >
-            <option className="signup-gender-option" selected disabled hidden>
-              -- Select gender--
-            </option>
-            <option className="signup-gender-option" value="Male">
-              Male
-            </option>
-            <option className="signup-gender-option" value="Female">
-              Female
-            </option>
-            <option className="signup-gender-option" value="Other">
-              Other
-            </option>
-          </select>
+            <select
+              name="gender"
+              id="gender"
+              className="signup-gender-dropdown-select h-12 text-white "
+            >
+              <option className="signup-gender-option " selected disabled hidden>
+              &nbsp;Gender
+              </option>
+              <option className="signup-gender-option" value="Male">
+              &nbsp; Male
+              </option>
+              <option className="signup-gender-option" value="Female">
+              &nbsp; Female
+              </option>
+              <option className="signup-gender-option" value="Other">
+              &nbsp; Other
+              </option>
+            </select>
+          </div>
+          <input
+            type="text"
+            name="referral_code"
+            maxLength={8}
+            placeholder="Referral Code (If any)"
+            className="input"
+          />
         </div>
+
+        <input type="email" name="email" placeholder="Email *" autoComplete="username" required />
+        <div className="w-full flex gap-3">
+          <input
+            id="signup-form-password"
+            type="password"
+            name="password"
+            placeholder="Password *"
+            autoComplete="new-password"
+            onKeyUp={handleConfirmPassword}
+            required
+            className="h-11"
+          />
+          <div className="signup-form-confirmpassword-container">
+            <input
+              id="signup-form-confirmpassword"
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm Password *"
+              autoComplete="new-password"
+              onKeyUp={handleConfirmPassword}
+              required
+            />
+            <div id="signup-form-confirmpassword-warning">
+              Passwords do not match!
+            </div>
+          </div>
+        </div>
+
         <div className="signup-ca-checkbox">
           <input type="checkbox" name="ca" id="signup-ca-checkbox-input" />
           <label htmlFor="ca" className="signup-ca-checkbox-label">
-            I want to signup for <Link to="/ca">CA Program</Link>
+            I want to signup for <Link to="/ca" className="text-[#D183F0] underline">CA Program</Link>
           </label>
         </div>
         <div className="signup-acc-checkbox">
           <input type="checkbox" name="acc" id="signup-acc-checkbox-input" />
           <label htmlFor="acc" className="signup-acc-checkbox-label">
             I would like to avail accommodation at IIT Jodhpur campus and agree
-            to abide by the <Link to="/accommodation">guidelines</Link> of the
+            to abide by the <Link to="/accommodation"  className="text-[#D183F0] underline">guidelines</Link> of the
             same.
           </label>
-        </div>
-        <input
-          type="text"
-          name="referral_code"
-          maxLength={8}
-          placeholder="Referral Code (If any)"
-        />
-        <input type="email" name="email" placeholder="Email *" autoComplete="username" required />
-        <input
-          id="signup-form-password"
-          type="password"
-          name="password"
-          placeholder="Password *"
-          autoComplete="new-password"
-          onKeyUp={handleConfirmPassword}
-          required
-        />
-        <div className="signup-form-confirmpassword-container">
-          <input
-            id="signup-form-confirmpassword"
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm Password *"
-            autoComplete="new-password"
-            onKeyUp={handleConfirmPassword}
-            required
-          />
-          <div id="signup-form-confirmpassword-warning">
-            Passwords do not match!
-          </div>
         </div>
         <input type="submit" value="Submit" id="signup-form-submit" />
         <br />
       </form>
       <div className="signup-alreadyAccount">
-        Already have an account? <button onClick={handleSignin}>Login</button>
+        Already have an account? <button className="log-in" onClick={handleSignin}>Login</button>
+      </div>
       </div>
     </div>
   );
