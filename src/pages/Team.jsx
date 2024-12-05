@@ -23,14 +23,17 @@ const Team = () => {
         const item = document.getElementById("team-title");
         let startY = 0;
         let endY = 0;
-  
+
         const handleScroll = (e) => {
           e.preventDefault();
-  
+
           const currentPosition = parseInt(
-            item.querySelector("img").style.transform.replace("translateX(", "").replace("px)", "")
+            item
+              .querySelector("img")
+              .style.transform.replace("translateX(", "")
+              .replace("px)", "")
           );
-  
+
           if (e.deltaY > 0 && currentPosition > -window.innerWidth) {
             setScrolling(window.innerWidth);
             setTimeout(() => {
@@ -38,71 +41,78 @@ const Team = () => {
             }, 1000);
           }
         };
-  
-        const handleTouchStart = (e) => {
-          startY = e.touches[0].clientY;
-          console.log(startY)
-        };
-  
-        const handleTouchMove = (e) => {
-          e.preventDefault();
-          endY = e.touches[0].clientY;
-          console.log(endY)
-        };
-  
-        const handleTouchEnd = () => {
-          const swipeDistance = startY - endY;
-          console.log(swipeDistance)
-          if (swipeDistance > 50) {
-            // Swipe left
-            const currentPosition = parseInt(
-              item.querySelector("img").style.transform.replace("translateX(", "").replace("px)", "")
-            );
-  
-            if (currentPosition > -window.innerWidth) {
-              setScrolling(window.innerWidth);
-              setTimeout(() => {
-                setTransitioned(true);
-              }, 1000);
-            }
-          }
-        };
-  
+
+        // const handleTouchStart = (e) => {
+        //   startY = e.touches[0].clientY;
+        //   console.log(startY);
+        // };
+
+        // const handleTouchMove = (e) => {
+        //   e.preventDefault();
+        //   endY = e.touches[0].clientY;
+        //   console.log(endY);
+        // };
+
+        // const handleTouchEnd = () => {
+        //   const swipeDistance = startY - endY;
+        //   console.log(swipeDistance);
+        //   if (swipeDistance > 50) {
+        //     // Swipe left
+        //     const currentPosition = parseInt(
+        //       item
+        //         .querySelector("img")
+        //         .style.transform.replace("translateX(", "")
+        //         .replace("px)", "")
+        //     );
+
+        //     if (currentPosition > -window.innerWidth) {
+        //       setScrolling(window.innerWidth);
+        //       setTimeout(() => {
+        //         setTransitioned(true);
+        //       }, 1000);
+        //     }
+        //   }
+        // };
+
         item.addEventListener("wheel", handleScroll, { passive: false });
-        item.addEventListener("touchstart", handleTouchStart, { passive: true });
-        item.addEventListener("touchmove", handleTouchMove, { passive: false });
-        item.addEventListener("touchend", handleTouchEnd, { passive: true });
-  
+        // item.addEventListener("touchstart", handleTouchStart, {
+        //   passive: true,
+        // });
+        // item.addEventListener("touchmove", handleTouchMove, { passive: false });
+        // item.addEventListener("touchend", handleTouchEnd, { passive: true });
+
         return () => {
           item.removeEventListener("wheel", handleScroll);
-          item.removeEventListener("touchstart", handleTouchStart);
-          item.removeEventListener("touchmove", handleTouchMove);
-          item.removeEventListener("touchend", handleTouchEnd);
+          // item.removeEventListener("touchstart", handleTouchStart);
+          // item.removeEventListener("touchmove", handleTouchMove);
+          // item.removeEventListener("touchend", handleTouchEnd);
         };
       }
     }
   }, [loading, transitioned]);
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
     const navBarEle = document.getElementById("navbar");
     navBarEle.style.opacity = 1;
     const fetchEvents = async () => {
-      const { data } = await axios.get('https://devluplabs.iitj.ac.in/ftadmin/current-team/');
+      const { data } = await axios.get(
+        "https://devluplabs.iitj.ac.in/ftadmin/current-team/"
+      );
       // console.log(data);
-      const temp = Object.entries(data["Current-Team"]).map(([vertical, members]) => ({
-        id: vertical,
-        name: vertical,
-        members: members,
-      }));
+      const temp = Object.entries(data["Current-Team"]).map(
+        ([vertical, members]) => ({
+          id: vertical,
+          name: vertical,
+          members: members,
+        })
+      );
       setTeam24(temp);
       // console.log(temp);
       setLoading(false);
-      
     };
 
     fetchEvents();
-    
   }, []);
   // TODO:replace png images
   return (
@@ -111,8 +121,8 @@ const Team = () => {
         <PageLoader />
       ) : (
         <FadeIn>
-          <div className="team-main" >
-          <div id="team-title" className="team-title">
+          <div className="team-main">
+            <div id="team-title" className="team-title">
               <img
                 src={ship}
                 style={{
@@ -121,13 +131,23 @@ const Team = () => {
                 }}
                 alt="ship"
               />
+              <h3 className={`${transitioned ? "hide" : "visible"}`}>
+                Scroll to see our carvaa
+              </h3>
             </div>
-            <div className="team-section" style={{ backgroundImage: `url(${bg})` }}>
+            <div
+              className="team-section"
+              style={{ backgroundImage: `url(${bg})` }}
+            >
               {team24.map((member) => (
                 <FadeInContent key={member.id}>
                   <div className="team-position-section">
                     <div className="team-verticle w-full flex justify-center ">
-                      <h1 className=" flex items-center justify-center">{member.name=="Accommodation, Transport, Security"?"ATS":member.name}</h1>
+                      <h1 className=" flex items-center justify-center">
+                        {member.name == "Accommodation, Transport, Security"
+                          ? "ATS"
+                          : member.name}
+                      </h1>
                     </div>
                     <div className="team-cards-container">
                       {member.members.map((team) => (
@@ -144,7 +164,6 @@ const Team = () => {
                         />
                       ))}
                     </div>
-
                   </div>
                 </FadeInContent>
               ))}
