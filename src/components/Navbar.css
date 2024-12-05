@@ -39,9 +39,9 @@
 }
 /* Nav Links Container */
 .nav-links-container {
-  width: 830px;
-  height: 40px;
-  padding: 18px 15px 18px 15px;
+  width: 55vw;
+  height: 10%;
+  padding: 6px 1px;
   border-radius: 90px;
   background: rgba(255, 255, 255, 0.15); /* Slightly transparent white background */
   backdrop-filter: blur(30px);   
@@ -67,7 +67,7 @@
   transform: scale(1);
 }
 .pad{
-  padding: 5px 8px 5px 8px;
+  padding: 0px 20px;
 }
 .nav-links:hover,
 .highlight {
@@ -78,6 +78,9 @@
   /* Top, Right, Bottom, Left padding */
 }
 
+.auth-button-container{
+  margin: 0px 20px;
+}
 /* Register Button */
 .register {
   text-transform: none;
@@ -92,6 +95,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  /* margin-top: 2px; */
   padding: 10px 20px;
   color: rgb(129, 9, 135);
   gap: 10px;
@@ -194,7 +198,7 @@
 
 .nav-links {
   color: white;
-  margin: 15px 0;
+  /* margin: 15px 0; */
   text-align: center;
 }
 
