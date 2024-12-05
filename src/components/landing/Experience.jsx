@@ -46,7 +46,7 @@ export const Experience = () => {
   const textSections = useMemo(() => {
     return [
       {
-        cameraRailDist: 3,
+        cameraRailDist: 5,
         position: new THREE.Vector3(
           curvePoints[0].x + 2,
           curvePoints[0].y + 1.5,
@@ -56,7 +56,7 @@ export const Experience = () => {
         subtitle: `Ahoy Matey, welcome on board! Witness the magic of Prometeo'25 as we sail through the Nordic Nights!`,
       },
       {
-        cameraRailDist: 1.5,
+        cameraRailDist: 2,
         position: new THREE.Vector3(
           curvePoints[2].x + 2,
           curvePoints[2].y+1.5,
@@ -66,7 +66,7 @@ export const Experience = () => {
         subtitle: `From nerve-wrecking Hackathons to Robots at War, here's everything you can imagine and more!`,
       },
       {
-        cameraRailDist: -1,
+        cameraRailDist: -4,
         position: new THREE.Vector3(
           curvePoints[3].x - 4,
           curvePoints[3].y+1.5,
@@ -76,7 +76,7 @@ export const Experience = () => {
         subtitle: `With an incredible footfall of 25,000, Prometeo'24 was a massive success, attracting innovators across the country.`,
       },
       {
-        cameraRailDist: 1.5,
+        cameraRailDist: -5,
         position: new THREE.Vector3(
           curvePoints[5].x - 6,
           curvePoints[5].y+2,
@@ -319,11 +319,16 @@ export const Experience = () => {
           <TextPath {...textSection} opacity={1} key={index} />
         ))} */}
         
-        {sceneOpacity.current == 0 ? <group></group> : <WelcomeText position={[textSections[0].position.x,textSections[0].position.y-0.5,textSections[0].position.z+2]} scale={[10,10,10]} rotation-x={Math.PI/2} />}
+        {sceneOpacity.current == 0 ? <group></group> : <WelcomeText position={[textSections[0].position.x-0.5,textSections[0].position.y-0.5,textSections[0].position.z+2]} scale={[10,10,10]} rotation-x={Math.PI/2} />}
         <EventText position={[textSections[1].position.x,textSections[1].position.y-0.5,textSections[1].position.z+2]} scale={[10,10,10]} rotation-x={Math.PI/2}/>
         <GlimpsesText position={[textSections[2].position.x,textSections[2].position.y-0.5,textSections[2].position.z]} scale={[10,10,10]} rotation-x={Math.PI/2} rotation-z={-Math.PI/6}/>
-        <PrometeoText position={[textSections[3].position.x+2,textSections[3].position.y-1,textSections[3].position.z]} scale={[10,10,10]} rotation-x={Math.PI/2}/>
+        <PrometeoText position={[textSections[3].position.x+2.5,textSections[3].position.y-1,textSections[3].position.z]} scale={[10,10,10]} rotation-x={Math.PI/2} rotation-z={Math.PI/6}/>
 
+      <pointLight position={[textSections[2].position.x+0.8,textSections[2].position.y+0.5,textSections[2].position.z]} intensity={1} color={'#1F4E5F'} distance={1.8}/>
+      <pointLight position={[textSections[2].position.x+1.2,textSections[2].position.y-0.2,textSections[2].position.z]} intensity={1} color={'#1F4E5F'} distance={1.8}/>
+      <pointLight position={[textSections[2].position.x+1.5,textSections[2].position.y,textSections[2].position.z]} intensity={1} color={'#1F4E5F'} distance={1.8}/>  
+      <pointLight position={[textSections[2].position.x-0.1,textSections[2].position.y,textSections[2].position.z-0.1]} intensity={1} color={'#1F4E5F'} distance={1.8}/>  
+  
       
       <Float floatIntensity={0.8} speed={1}  rotationIntensity={0.01}>
         <GlacierFinal scale={[15,15,15]} position={[23.5, -0.3, -70]} />
