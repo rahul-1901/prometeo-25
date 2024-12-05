@@ -40,9 +40,8 @@ body {
   display: flex;
   justify-content: center;
   place-items: center;
-  overflow: auto;
   height: auto;
-  min-width: 320px;
+  min-width: 320px;
 }
 
 h1 {
