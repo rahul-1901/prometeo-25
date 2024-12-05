@@ -5,7 +5,7 @@ import btn1 from "../assets/events/button-1.svg"
 import btn1h from "../assets/events/button-1hov.svg"
 import "./PreEventsCard.css";
 import { ToastContainer, toast } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css"; 
+import 'react-toastify/dist/ReactToastify.css';
 
 const PreEventsCard = ({
   imgURL,
