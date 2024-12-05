@@ -132,7 +132,7 @@ const Team = () => {
                 alt="ship"
               />
               <h3 className={`${transitioned ? "hide" : "visible"}`}>
-                Scroll to see our carvaa
+                Scroll to see our Cruise
               </h3>
             </div>
             <div
