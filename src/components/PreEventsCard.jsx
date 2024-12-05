@@ -4,7 +4,7 @@ import imageBox from "../assets/events/imageBox.svg"
 import btn1 from "../assets/events/button-1.svg"
 import btn1h from "../assets/events/button-1hov.svg"
 import "./PreEventsCard.css";
-import { ToastContainer, toast } from 'react-toastify';
+import toast, { Toaster } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css"; 
 
 const PreEventsCard = ({
@@ -18,15 +18,18 @@ const PreEventsCard = ({
 }) => {
 
   const notify = () => {
-    toast.dark("Registration are not Started!", {
-      position: "top-center", // Toast position (centered horizontally)
-      autoClose: 3000,        // Close after 3 seconds
-      hideProgressBar: true,  // No progress bar
-      closeOnClick: true,     // Allow toast to close when clicked
-      pauseOnHover: false,    // Disable pause on hover for simplicity
-      draggable: false,     // Allow the toast to be dragged
+    toast("Registration Comming soon!!", {
+      duration: 3000, // Auto-close after 3 seconds
+      position: "top-center", // Center the toast on the screen
+     
     });
   };
+  console.log(imgURL.replace(
+    "http://localhost:8004",
+    "https://devluplabs.iitj.ac.in"
+
+  ),);
+  
   return (
     <div className='event-card' aria-labelledby="event card">
       <div className="event-card__filter membre">
@@ -37,8 +40,8 @@ const PreEventsCard = ({
           <div className="member-img " >
             <div className="background-overlay " style={{ backgroundImage: `url(${imageBox})` }}   ></div>
             <img src={imgURL.replace(
-              "http://localhost:8000",
-              "https://apiv.prometeo.in"
+              "http://localhost:8004",
+              "https://devluplabs.iitj.ac.in"
             )} alt="" />
           </div>
         </a>
@@ -70,7 +73,7 @@ const PreEventsCard = ({
         </div>
      
       </div>
-      <ToastContainer />
+      
     </div>
   );
 };

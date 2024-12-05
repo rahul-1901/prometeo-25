@@ -2,7 +2,7 @@ import "./Register.css";
 import SignUp from "../components/Signup";
 import SignIn from "../components/Signin";
 import login_gate from "../assets/login-gate.jpg";
-import signup_gate from "../assets/signup-gate.jpg";
+import signup_gates from "../assets/signup-gates.jpg";
 import { useContext, useEffect ,useState} from "react";
 import AuthContext from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -33,7 +33,7 @@ const Register = () => {
       top: 0,
       behavior: "smooth",
     });
-    setBg(signup_gate)
+    setBg(signup_gates)
 
   };
   const handleSignin = () => {
