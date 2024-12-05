@@ -24,7 +24,10 @@ const Register = () => {
     const signIn = document.getElementById("sign-in-container-id");
     const signUp = document.getElementById("sign-up-container-id");
     container.classList.add("right-panel-active");
+    container.classList.remove("heig")
     signIn.classList.add("hide-it");
+    container.classList.remove('right')
+    container.classList.add('left')
     signUp.classList.remove("hide-it");
     window.scrollTo({
       top: 0,
@@ -38,6 +41,10 @@ const Register = () => {
     const signIn = document.getElementById("sign-in-container-id");
     const signUp = document.getElementById("sign-up-container-id");
     container.classList.remove("right-panel-active");
+    container.classList.add("heig")
+ 
+    container.classList.add('right');
+    container.classList.remove('left');
     signIn.classList.remove("hide-it");
     signUp.classList.add("hide-it");
     window.scrollTo({
@@ -49,7 +56,7 @@ const Register = () => {
   };
 
   return (
-    <div className="form-container-main" id="form-container-id"  style={{ backgroundImage: `url(${bg})` }}>
+    <div className="form-container-main heig right" id="form-container-id"  style={{ backgroundImage: `url(${bg})` }}>
       <div
         className="form-container sign-up-container hide-it"
         id="sign-up-container-id"
