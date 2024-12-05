@@ -10,7 +10,9 @@ export function WelcomeText(props) {
   const { nodes, materials } = useGLTF('./models/text/welcome.glb')
   return (
     <group {...props} dispose={null} >
-      <mesh geometry={nodes.Curve.geometry} material={materials['Material.001']} position={[0, 0, 0]}></mesh>
+      <mesh geometry={nodes.Curve.geometry} position={[0, 0, 0]} >
+        <meshStandardMaterial color={'#1F4E5F'} envMapIntensity={3} />
+      </mesh>
     </group>
   )
 }

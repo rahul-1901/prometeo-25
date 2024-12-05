@@ -10,7 +10,9 @@ export function PrometeoText(props) {
   const { nodes, materials } = useGLTF('./models/text/prometeo25.glb')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Curve001.geometry} material={materials['Material.001']} position={[0, 0, 0]} />
+      <mesh geometry={nodes.Curve001.geometry} position={[0, 0, 0]} >
+        <meshStandardMaterial color={'#1F4E5F'} envMapIntensity={3} />
+      </mesh>
     </group>
   )
 }

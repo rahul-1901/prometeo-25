@@ -61,7 +61,7 @@ body {
   height: 100%;
 }
 
-.logo {
+.logo-home {
   font-family: "Share Tech", sans-serif;
   color: white;
   font-size: 8rem;
@@ -70,12 +70,12 @@ body {
   margin: 0;
   transform: translateY(-50%);
   position: absolute;
-  top: 70svh;
+  top: 40svh;
   animation: fadeUp 2.4s ease-in-out;
   transition: all 2s ease-in-out;
 }
 
-.intro--disappear .logo {
+.intro--disappear .logo-home {
   top: 42px;
   transform: scale(0.25);
   transform-origin: center top;
@@ -196,12 +196,12 @@ body {
 /* RESPONSIVE */
 
 @media screen and (max-width: 768px) {
-  .logo {
+  .logo-home {
     font-size: 3rem;
     letter-spacing: 0.25rem;
   }
 
-  .intro--disappear .logo {
+  .intro--disappear .logo-home {
     top: 24px;
     transform: scale(0.5);
     transform-origin: center top;
