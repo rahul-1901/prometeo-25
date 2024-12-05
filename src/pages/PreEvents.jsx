@@ -14,11 +14,14 @@ function createEntry(e) {
         eventRegister={e.external_link}
         eventButton={e.prize ? e.prize : "Coming soon..."}
         workshop={e.type === "informal"}
+        description={e.description}
       />
     </FadeInContent>
   );
 }
 function createEntryForWorkshop(e) {
+
+  
   return (
     <FadeInContent key={e.id}>
       <WorkshopCard
@@ -28,6 +31,7 @@ function createEntryForWorkshop(e) {
         eventRegister={e.external_link}
         eventButton={e.prize ? e.prize : "Coming soon..."}
         workshop={e.type === "informal"}
+
       />
     </FadeInContent>
   );
