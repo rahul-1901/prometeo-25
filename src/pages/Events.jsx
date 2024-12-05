@@ -15,10 +15,10 @@ import pre_events from "../assets/events/pre-event.svg";
 import all_events from "../assets/events/all-eventsvg.svg";
 import technical_events from "../assets/events/tech.svg";
 import entrepreneurial_events from "../assets/events/enter.svg";
-import eventsData from "./Events24";
 
 
 const Events = () => {
+  const [eventsData, setEventsData] = useState([])
   const [category, setCategory] = useState("Technical");
   const [loading, setLoading] = useState(true);
   const IMAGES = [
@@ -55,6 +55,22 @@ const Events = () => {
     window.scrollTo(0, 0);
     const navBarEle = document.getElementById("navbar");
     navBarEle.style.opacity = 1;
+    const fetchEvents = async () => {
+      const { data } = await axios.get('https://devluplabs.iitj.ac.in/ftadmin/event/');
+      // console.log(data);
+     
+      setEventsData(data)
+      setLoading(false);
+      
+    };
+
+    fetchEvents();
+    
+  }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const navBarEle = document.getElementById("navbar");
+    navBarEle.style.opacity = 1;
   }, []);
 
   const element = document.getElementById("filter___id");
@@ -81,7 +97,7 @@ const Events = () => {
               className="eventspage-main "
               style={{ backgroundImage: `url(${bg})` }}
             >
-              <div className="events-heading">
+              <div className="events-headings p-0">
                 <h1 className="selected-heading">All events</h1>
               </div>
               <FadeInContent>

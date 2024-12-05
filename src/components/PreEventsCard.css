@@ -213,7 +213,7 @@
   z-index: 9;
   display: none;
 }
-.event-card:hover .register-btn-div {
+.event-card__filter:hover .register-btn-div {
   display: block;
 }
 .register-btn-div button{
@@ -226,15 +226,18 @@
 }
 .r-btn{
   font-family: Gemunu Libre;
-  font-size: 55px;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 59.62px;
+  line-height: 21.68px;
   letter-spacing: 0.07em;
-  text-align: center;
+  text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   background-color: transparent;
   border: none;
+  margin-left: 3rem;
+  margin-right: 1.5rem;
+
 }
 .btn-container{
  margin: auto;
