@@ -1,17 +1,19 @@
 import { Float, Line, OrbitControls, PerspectiveCamera, Text, useScroll } from "@react-three/drei";
 import Background from "./Background";
 
-import Water from "./Water";
 import * as THREE from 'three'
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
-import { TextPath } from "./TextPath";
 import gsap from "gsap";
 import { usePlay } from "./Play";
 import {Speed} from "./Speed";
 import { Ocean } from "./Ocean";
 import { ShipFinal } from "./SHIP_PROMETEO";
 import { GlacierFinal } from "./GLACIER_2";
+import { WelcomeText } from "./text/Welcome";
+import { EventText } from "./text/Event";
+import { GlimpsesText } from "./text/Glimpses";
+import { PrometeoText } from "./text/Prometeo25";
 
 
 const LINE_NB_POINTS = 1000;
@@ -303,11 +305,8 @@ export const Experience = () => {
         <group ref={cameraRail}>
           <PerspectiveCamera ref={camera} position={[0,1,5]} fov={70} makeDefault />
         </group>
-        {/* <Float floatIntensity={0.3} speed={0.4} rotationIntensity={0.001}>
-          <Water/>
-          <Ocean/>
-        </Float> */}
-        <Ocean scale={[1, 0.5, 1]} />
+        
+        <Ocean scale={[2, 0.5, 2]} />
         
         <group ref={ship}>
           <Float floatIntensity={0.8} speed={1} ref={ship} rotationIntensity={0.01}>
@@ -316,14 +315,16 @@ export const Experience = () => {
         </group>
       </group>
 
-      {textSections.map((textSection, index) => (
+      {/* {textSections.map((textSection, index) => (
           <TextPath {...textSection} opacity={1} key={index} />
-        ))}
+        ))} */}
+        
+        {sceneOpacity.current == 0 ? <group></group> : <WelcomeText position={[textSections[0].position.x,textSections[0].position.y-0.5,textSections[0].position.z+2]} scale={[10,10,10]} rotation-x={Math.PI/2} />}
+        <EventText position={[textSections[1].position.x,textSections[1].position.y-0.5,textSections[1].position.z+2]} scale={[10,10,10]} rotation-x={Math.PI/2}/>
+        <GlimpsesText position={[textSections[2].position.x,textSections[2].position.y-0.5,textSections[2].position.z]} scale={[10,10,10]} rotation-x={Math.PI/2} rotation-z={-Math.PI/6}/>
+        <PrometeoText position={[textSections[3].position.x+2,textSections[3].position.y-1,textSections[3].position.z]} scale={[10,10,10]} rotation-x={Math.PI/2}/>
+
       
-      {/* <Iceberg opacity={sceneOpacity} scale={[0.3,0.3,0.3]} position={[-10, 0.3, -30]} />
-      <Iceberg opacity={sceneOpacity} scale={[0.3,0.3,0.4]} position={[-8, 0.5, -20]} />
-      <Iceberg opacity={sceneOpacity} scale={[0.2,0.1,0.3]} position={[9, -0.2, -15]} />
-      <Iceberg opacity={sceneOpacity} scale={[0.4,0.4,0.4]} position={[10, 0.2, -40]} /> */}
       <Float floatIntensity={0.8} speed={1}  rotationIntensity={0.01}>
         <GlacierFinal scale={[15,15,15]} position={[23.5, -0.3, -70]} />
       </Float>
