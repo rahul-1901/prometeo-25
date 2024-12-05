@@ -34,7 +34,7 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.397);
+  background-color: rgba(0, 0, 0, 0.288);
 }
 
 @font-face {
@@ -57,8 +57,6 @@
   color: transparent;
 }
 
-.nordic-text {}
-
 .nights-text {
   margin-left: 0px;
   margin-top: 20%;
@@ -73,7 +71,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 10vh;
+  padding-bottom: 5vh;
   padding-top: 10vh;
   overflow: hidden;
 }
@@ -116,31 +114,21 @@
   display: flex;
   flex-direction: row;
   background-color: black;
-  width: 60%;
-  gap: 2vw;
   z-index: 5;
-  padding: 20px;
+  padding: 12px;
   align-items: center;
 }
 
 .video_play iframe {
-  width: 550px;
-  height: 550px;
-}
-
-.video_text {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  width: 50vw;
+  height: 450px;
 }
 
 @media (max-width: 1200px) {
 
   .nordic-text,
   .nights-text {
-    font-size: 20vw;
+    font-size: 18vw;
   }
 
   .nights-text {
@@ -172,7 +160,7 @@
   }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
   .theme-text {
     font-size: 36px;
     padding: 10vh 5vh 10vh 5vh;
@@ -183,17 +171,8 @@
   }
 
   .video_play iframe {
-    height: 400px;
-  }
-
-  .theme_video {
-    width: 90%;
-    align-items: center;
-  }
-
-  .video_text {
-    line-height: 1.5;
-    letter-spacing: 0px;
+    height: 450px;
+    width: 60vw;
   }
 }
 
@@ -205,18 +184,6 @@
   .video_play iframe {
     width: 80vw;
     height: 420px;
-  }
-
-  .theme_video {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-  }
-
-  .video_text {
-    line-height: 1.5;
-    letter-spacing: 0px;
-    text-align: center;
   }
 }
 
@@ -234,18 +201,6 @@
     width: 80vw;
     height: 350px;
   }
-
-  .theme_video {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-  }
-
-  .video_text {
-    line-height: 1.5;
-    letter-spacing: 0px;
-    text-align: center;
-  }
 }
 
 @media (max-width: 480px) {
@@ -259,19 +214,7 @@
   }
 
   .video_play iframe {
-    width: 100%;
+    width: 80vw;
     height: 250px;
-  }
-
-  .theme_video {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-  }
-
-  .video_text {
-    line-height: 1.5;
-    letter-spacing: 0px;
-    text-align: center;
   }
 }
