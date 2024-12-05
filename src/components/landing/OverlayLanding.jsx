@@ -121,7 +121,7 @@ export default function OverlayLanding() {
         />
         {progress === 100 && (
           <div className={`intro ${play ? "intro--disappear" : ""}`}>
-            <h1 className="logo">
+            <h1 className="logo-home">
               Prometeo '25
             </h1>
             <p className="intro__scroll">Scroll to begin the journey</p>

@@ -10,7 +10,9 @@ export function EventText(props) {
   const { nodes, materials } = useGLTF('./models/text/event.glb')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Curve003.geometry} material={materials['Material.001']} position={[0, 0, 0]} />
+      <mesh geometry={nodes.Curve003.geometry} position={[0, 0, 0]} >
+        <meshStandardMaterial color={'#1F4E5F'} envMapIntensity={3} />
+      </mesh>
     </group>
   )
 }
