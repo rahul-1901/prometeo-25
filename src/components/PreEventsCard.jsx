@@ -4,7 +4,7 @@ import imageBox from "../assets/events/imageBox.svg"
 import btn1 from "../assets/events/button-1.svg"
 import btn1h from "../assets/events/button-1hov.svg"
 import "./PreEventsCard.css";
-import toast, { Toaster } from "react-hot-toast";
+import {toast} from 'react-hot-toast';
 import "react-toastify/dist/ReactToastify.css"; 
 
 const PreEventsCard = ({
