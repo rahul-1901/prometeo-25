@@ -110,25 +110,26 @@ const CA = () => {
                     </FadeInContent>
                   );
                 })}
-
-                <div className="ca-registration">
-                  <h2>
-                    Prometeo 2025 and IIT Jodhpur will not be responsible for
-                    any mishaps that occur <br />
-                    through the duration of stay for Prometeo 2025
-                  </h2>
-                  <div className="ca-register-btn">
-                    {!user ? (
-                      <Link to="/register">
-                        <button>Register</button>
-                      </Link>
-                    ) : (
-                      <Link to="/dashboard">
-                        <button>Dashboard</button>
-                      </Link>
-                    )}
+                <FadeInContent>
+                  <div className="ca-registration">
+                    <h2>
+                      Prometeo 2025 and IIT Jodhpur will not be responsible for
+                      any mishaps that occur <br />
+                      through the duration of stay for Prometeo 2025
+                    </h2>
+                    <div className="ca-register-btn">
+                      {!user ? (
+                        <Link to="/register">
+                          <button>Register</button>
+                        </Link>
+                      ) : (
+                        <Link to="/dashboard">
+                          <button>Dashboard</button>
+                        </Link>
+                      )}
+                    </div>
                   </div>
-                </div>
+                </FadeInContent>
               </div>
             </div>
           </div>
