@@ -322,12 +322,12 @@ export const Experience = () => {
         {sceneOpacity.current == 0 ? <group></group> : <WelcomeText position={[textSections[0].position.x-0.5,textSections[0].position.y-0.5,textSections[0].position.z+2]} scale={[8,8,8]} rotation-x={Math.PI/2} />}
         <EventText position={[textSections[1].position.x,textSections[1].position.y-0.5,textSections[1].position.z+2]} scale={[8,8,8]} rotation-x={Math.PI/2} rotation-z={-Math.PI/12}/>
         <GlimpsesText position={[textSections[2].position.x,textSections[2].position.y-0.5,textSections[2].position.z]} scale={[8,8,8]} rotation-x={Math.PI/2} rotation-z={-Math.PI/6}/>
-        <PrometeoText position={[textSections[3].position.x+3.5,textSections[3].position.y-1,textSections[3].position.z]} scale={[8,8,8]} rotation-x={Math.PI/2} rotation-z={Math.PI/6}/>
+        <PrometeoText position={[textSections[3].position.x+2.8,textSections[3].position.y-1,textSections[3].position.z]} scale={[8,8,8]} rotation-x={Math.PI/2} rotation-z={Math.PI/6}/>
 
       <pointLight position={[textSections[2].position.x+0.8,textSections[2].position.y+0.5,textSections[2].position.z]} intensity={1} color={'#1F4E5F'} distance={1.8}/>
       <pointLight position={[textSections[2].position.x+1.2,textSections[2].position.y-0.2,textSections[2].position.z]} intensity={1} color={'#1F4E5F'} distance={1.8}/>
       <pointLight position={[textSections[2].position.x+1.5,textSections[2].position.y,textSections[2].position.z]} intensity={1} color={'#1F4E5F'} distance={1.8}/>  
-      <pointLight position={[textSections[2].position.x+0.5,textSections[2].position.y,textSections[2].position.z]} intensity={0.07} color={'white'} distance={1.8}/>   
+      <pointLight position={[textSections[2].position.x+0.5,textSections[2].position.y-0.2,textSections[2].position.z]} intensity={0.15} color={'white'} distance={1.8}/>   
   
       
       <Float floatIntensity={0.8} speed={1}  rotationIntensity={0.01}>
