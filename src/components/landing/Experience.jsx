@@ -97,7 +97,7 @@ export const Experience = () => {
   const camera = useRef()
   const scroll = useScroll()
   const lastScrollPosition = useRef(0)
-  const { play, setHasScroll, end, setEnd} = usePlay()
+  const { play, setPlay, setHasScroll, end, setEnd} = usePlay()
   const [shipScale, setShipScale] = useState(0)
   useFrame((_state, delta) => {
     if (window.innerWidth > window.innerHeight) {
@@ -127,17 +127,17 @@ export const Experience = () => {
       );
     }
 
-    // if (end && sceneOpacity.current > 0) {
-    //   sceneOpacity.current = THREE.MathUtils.lerp(
-    //     sceneOpacity.current,
-    //     0,
-    //     delta
-    //   );
-    // }
+    if (end && sceneOpacity.current > 0) {
+      sceneOpacity.current = THREE.MathUtils.lerp(
+        sceneOpacity.current,
+        0,
+        delta
+      );
+    }
 
-    // if (end){
-    //   return
-    // }
+    if (end){
+      return
+    }
 
     const scrollOffset = Math.max(0, scroll.offset)
 
@@ -223,9 +223,12 @@ export const Experience = () => {
     );
     ship.current.quaternion.slerp(targetShipQuaternion, delta * 2);
 
-    if (cameraGroup.current.position.z < curvePoints[curvePoints.length - 1].z + 100){
-      // setEnd(true)
-      // shipOutTimeline.current.play()
+    if (cameraGroup.current.position.z < curvePoints[curvePoints.length - 1].z + 0.1){
+      setEnd(true)
+      
+      shipOutTimeline.current.play()
+      setPlay(false)
+      //setHasScroll(false)
     }
   })
   
@@ -270,20 +273,20 @@ export const Experience = () => {
     shipOutTimeline.current.pause()
     shipOutTimeline.current.to(
       ship.current.position,
-      {duration: 10, z: -250, y: 10}, 0
+      {duration: 10, z: -25, y: 0}, 0
     )
     shipOutTimeline.current.to(
       cameraRail.current.position,
       {
         duration: 8,
-        y: 12,
+        y: 4,
       },
       0
     );
-    shipOutTimeline.current.to(ship.current.position, {
-      duration: 1,
-      z: -1000,
-    });
+    // shipOutTimeline.current.to(ship.current.position, {
+    //   duration: 1,
+    //   z: -1000,
+    // });
 
   }, [])
 

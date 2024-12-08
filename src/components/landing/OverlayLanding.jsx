@@ -3,12 +3,9 @@ import { Link } from "react-router-dom";
 //import { usePlay } from "../contexts/Play";
 import { usePlay } from "./Play";
 import { useState, useContext } from "react";
-import close from "../../assets/close.svg";
-import menu from "../../assets/menu.svg";
-import smallLogo from "../../assets/logo.gif";
-import { HOME_PAGE_URL } from "../../config";
+
 import AuthContext from "../../context/AuthContext";
-import Navbar from "../Navbar";
+
 import '../Navbar.css'
 
 const navlinks = [
@@ -120,7 +117,7 @@ export default function OverlayLanding() {
           className={`loader ${progress === 100 ? "loader--disappear" : ""}`}
         />
         {progress === 100 && (
-          <div className={`intro ${play ? "intro--disappear" : ""}`}>
+          <div className={`intro ${play || end ? "intro--disappear" : ""}`}>
             <h1 className="logo-home">
               Prometeo '25
             </h1>
@@ -136,7 +133,13 @@ export default function OverlayLanding() {
           </div>
         )}
         <div className={`outro ${end ? "outro--appear" : ""}`}>
-          <p className="outro__text">Ending text</p>
+          {/* <p className="outro__text" onClick={() => {
+            // console.log("clicked")
+            window.location.href = "/register";
+          }}>Ending text</p> */}
+          <Link to="/register">
+            <button className="outro__text">Register</button>
+          </Link>
         </div>
       </div>
     );
