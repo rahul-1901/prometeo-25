@@ -66,31 +66,3 @@ const Home = () => {
 
 export default Home
 
-
-
-{/* <>
-{loading ? (
-<PageLoader />
-) : (
-<>
-  <Canvas >
-  <color attach="background" args={["#040404"]} />
-  <ScrollControls pages={play && !end ? 20 : 0}
-    damping={0.5}
-    style={{
-      top: "10px",
-      left: "0px",
-      bottom: "10px",
-      right: "10px",
-      width: "auto",
-      height: "auto",
-      animation: "fadeIn 2.4s ease-in-out 1s forwards",
-      opacity: 0,
-    }} >
-    <Experience />
-  </ScrollControls>
-</Canvas>
-<OverlayLanding/>
-</>)}
-
-</> */}

@@ -8,7 +8,7 @@ import gsap from "gsap";
 import { usePlay } from "./Play";
 import {Speed} from "./Speed";
 import { Ocean2 } from "./Ocean_2";
-import { ShipFinal } from "./SHIP_PROMETEO";
+import { ShipFinal } from "./SHIP_PROMETEO_2";
 import { GlacierFinal } from "./GLACIER_2";
 import { WelcomeText } from "./text/Welcome";
 import { EventText } from "./text/Event";
@@ -313,7 +313,7 @@ export const Experience = () => {
         
         <group ref={ship}>
           <Float floatIntensity={0.8} speed={1} ref={ship} rotationIntensity={0.01}>
-            <ShipFinal scale={[shipScale, shipScale, shipScale]} position={[0,-0.61,0]} rotation-y={Math.PI} />
+            <ShipFinal scale={[shipScale, shipScale, shipScale]} position={[1,-0.61,-6]} rotation-y={Math.PI} />
           </Float>
         </group>
       </group>
