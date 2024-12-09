@@ -168,6 +168,7 @@ body {
 
 .intro--disappear .explore {
   animation: fadeOut 1s ease-in-out forwards;
+  pointer-events: none;
 }
 
 .outro {
@@ -178,6 +179,7 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
+  
   justify-content: center;
   opacity: 0;
   transition: opacity 4s ease-in-out;
@@ -191,6 +193,8 @@ body {
   font-family: "Share Tech", sans-serif;
   font-size: 1.5rem;
   color: white;
+  border-radius: 32px;
+  padding: 1rem 2rem;
 }
 
 /* RESPONSIVE */

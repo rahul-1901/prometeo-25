@@ -97,7 +97,7 @@ export const Experience = () => {
   const camera = useRef()
   const scroll = useScroll()
   const lastScrollPosition = useRef(0)
-  const { play, setHasScroll, end, setEnd} = usePlay()
+  const { play, setPlay, setHasScroll, end, setEnd} = usePlay()
   const [shipScale, setShipScale] = useState(0)
   useFrame((_state, delta) => {
     if (window.innerWidth > window.innerHeight) {
@@ -127,17 +127,17 @@ export const Experience = () => {
       );
     }
 
-    // if (end && sceneOpacity.current > 0) {
-    //   sceneOpacity.current = THREE.MathUtils.lerp(
-    //     sceneOpacity.current,
-    //     0,
-    //     delta
-    //   );
-    // }
+    if (end && sceneOpacity.current > 0) {
+      sceneOpacity.current = THREE.MathUtils.lerp(
+        sceneOpacity.current,
+        0,
+        delta
+      );
+    }
 
-    // if (end){
-    //   return
-    // }
+    if (end){
+      return
+    }
 
     const scrollOffset = Math.max(0, scroll.offset)
 
@@ -223,9 +223,12 @@ export const Experience = () => {
     );
     ship.current.quaternion.slerp(targetShipQuaternion, delta * 2);
 
-    if (cameraGroup.current.position.z < curvePoints[curvePoints.length - 1].z + 100){
-      // setEnd(true)
-      // shipOutTimeline.current.play()
+    if (cameraGroup.current.position.z < curvePoints[curvePoints.length - 1].z + 0.1){
+      setEnd(true)
+      
+      shipOutTimeline.current.play()
+      setPlay(false)
+      //setHasScroll(false)
     }
   })
   
@@ -270,20 +273,20 @@ export const Experience = () => {
     shipOutTimeline.current.pause()
     shipOutTimeline.current.to(
       ship.current.position,
-      {duration: 10, z: -250, y: 10}, 0
+      {duration: 10, z: -25, y: 0}, 0
     )
     shipOutTimeline.current.to(
       cameraRail.current.position,
       {
         duration: 8,
-        y: 12,
+        y: 4,
       },
       0
     );
-    shipOutTimeline.current.to(ship.current.position, {
-      duration: 1,
-      z: -1000,
-    });
+    // shipOutTimeline.current.to(ship.current.position, {
+    //   duration: 1,
+    //   z: -1000,
+    // });
 
   }, [])
 
@@ -322,12 +325,12 @@ export const Experience = () => {
         {sceneOpacity.current == 0 ? <group></group> : <WelcomeText position={[textSections[0].position.x-0.5,textSections[0].position.y-0.5,textSections[0].position.z+2]} scale={[8,8,8]} rotation-x={Math.PI/2} />}
         <EventText position={[textSections[1].position.x,textSections[1].position.y-0.5,textSections[1].position.z+2]} scale={[8,8,8]} rotation-x={Math.PI/2} rotation-z={-Math.PI/12}/>
         <GlimpsesText position={[textSections[2].position.x,textSections[2].position.y-0.5,textSections[2].position.z]} scale={[8,8,8]} rotation-x={Math.PI/2} rotation-z={-Math.PI/6}/>
-        <PrometeoText position={[textSections[3].position.x+3.5,textSections[3].position.y-1,textSections[3].position.z]} scale={[8,8,8]} rotation-x={Math.PI/2} rotation-z={Math.PI/6}/>
+        <PrometeoText position={[textSections[3].position.x+2.8,textSections[3].position.y-1,textSections[3].position.z]} scale={[8,8,8]} rotation-x={Math.PI/2} rotation-z={Math.PI/6}/>
 
       <pointLight position={[textSections[2].position.x+0.8,textSections[2].position.y+0.5,textSections[2].position.z]} intensity={1} color={'#1F4E5F'} distance={1.8}/>
       <pointLight position={[textSections[2].position.x+1.2,textSections[2].position.y-0.2,textSections[2].position.z]} intensity={1} color={'#1F4E5F'} distance={1.8}/>
       <pointLight position={[textSections[2].position.x+1.5,textSections[2].position.y,textSections[2].position.z]} intensity={1} color={'#1F4E5F'} distance={1.8}/>  
-      <pointLight position={[textSections[2].position.x+0.5,textSections[2].position.y,textSections[2].position.z]} intensity={0.07} color={'white'} distance={1.8}/>   
+      <pointLight position={[textSections[2].position.x+0.5,textSections[2].position.y-0.2,textSections[2].position.z]} intensity={0.15} color={'white'} distance={1.8}/>   
   
       
       <Float floatIntensity={0.8} speed={1}  rotationIntensity={0.01}>
