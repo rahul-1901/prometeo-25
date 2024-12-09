@@ -4,6 +4,7 @@ import { GoMoveToTop } from "react-icons/go";
 
 const Go2Top = () => {
   const handleGo2Top = () => {
+    console.log("Go to top");
     window.scrollTo({
       top: 0,
       behavior: "smooth",

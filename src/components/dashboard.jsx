@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import AuthContext from "../context/AuthContext";
 import "./dashboard.css";
-import bg from "../assets/tpalace.webp";
+import bg from "../assets/dashboard/dashboard.webp";
 // import EventPasses from "./eventPasses";
 import useAxios from "../context/UseAxios";
 import { API_BASE_URL } from "../config";
 import { useNavigate } from "react-router-dom";
-import king from "../assets/dashboard/king.png";
-import queen from "../assets/dashboard/queen.png";
+import man from "../assets/dashboard/profileFace.webp";
 import EventPasses from "./eventPasses";
 import { toPng } from "html-to-image";
 
@@ -76,24 +75,14 @@ const Dasboard = () => {
 
   return (
     <div className="dashboard__main" style={{ backgroundImage: `url(${bg})` }}>
+      <div className="blurLayer_dash"></div>
       <div className="dashboard-title">
-        <h1 className="m-0 heading">Dashboard</h1>
-        <h2 className="m-0 heading">Personal Details</h2>
+        <h1 className="m-0 heading">DASHBOARD</h1>
+        <h2 className="m-0 heading">PERSONAL DETAILS</h2>
       </div>
       <div className="dashboard__upper">
         <div className="dashboard__profile">
-          <div className="user_image">
-            {userData.gender === "Male" ? (
-              <img src={king} />
-            ) : (
-              <img src={queen} />
-            )}
-          </div>
-          <div className="user_text">
-            {userData.first_name + " " + userData.last_name}
-          </div>
-          {/* <div className="user_text">{userData.email}</div> */}
-          {/* <div className="user_text">{userData.college}</div> */}
+            <img className="manProfile" src={man}></img>
           <button
             onClick={() => navigate("/edit-profile")}
             style={{ marginTop: "5px", marginBottom: "5px" }}
@@ -108,12 +97,12 @@ const Dasboard = () => {
               {userData.first_name + " " + userData.last_name}
             </div>
           </div>
-          <hr />
+          <div className="divider"></div>
           <div className="user__line">
             <div className="user__left">Email</div>
             <div className="user__right">{userData.email}</div>
           </div>
-          <hr />
+          <div className="divider"></div>
           <div className="user__line">
             <div className="user__left">College</div>
             <div className="user__right">{userData.college}</div>
@@ -130,7 +119,7 @@ const Dasboard = () => {
               {userData.ambassador === true ? "Yes" : "No"}
             </div>
           </div>
-          <hr />
+          <div className="divider"></div>
           {userData.ambassador === true ? (
             <div className="user__line">
               <div className="user__left">Invite Referral</div>
@@ -160,7 +149,7 @@ const Dasboard = () => {
                 : "Unpaid"}
             </div>
           </div>
-          <hr />
+          <div className="divider"></div>
 
           <div className="user__line">
             <div className="user__left">Pass Status</div>
@@ -168,14 +157,14 @@ const Dasboard = () => {
               {passCondition === true ? userPassDetails[0].name : "NIL"}
             </div>
           </div>
-          <hr />
+          <div className="divider"></div>
         </div>
       </div>
       <div className="dashboard_button">
-        <button onClick={handlePass}>
+        <button onClick={handlePass} className="passesButton">
           {passCondition ? "Download Pass" : "Buy Pass"}
         </button>
-        <button onClick={logoutUser} style={{ color: "red" }}>
+        <button onClick={logoutUser} className="loginButtondash">
           Logout
         </button>
       </div>
