@@ -6,7 +6,7 @@ Command: npx gltfjsx@6.5.3 public/models/ship/SHIP_PROMETEO_2.glb
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function Model(props) {
+export function ShipFinal(props) {
   const { nodes, materials } = useGLTF('./models/ship/SHIP_PROMETEO_2.glb')
   return (
     <group {...props} dispose={null}>
