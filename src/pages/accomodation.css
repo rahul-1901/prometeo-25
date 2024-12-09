@@ -19,7 +19,7 @@
   margin: 0 auto;
   width: 100vw;
   box-sizing: border-box;
-  background-position: 80%;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -309,6 +309,12 @@
 @media screen and (max-width: 1000px) {
   .ca-title-main {
     padding: 20vh 0;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .caTitle_slide {
+    background-position: 82%;
   }
 }
 
