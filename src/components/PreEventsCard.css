@@ -54,6 +54,7 @@
   cursor: pointer;
 }
 
+
 .event-card__container {
   width: 20.54rem; /* 328.72px / 16 */
   height: 21.13rem; /* 258px / 16 */
@@ -242,53 +243,40 @@
 .btn-container{
  margin: auto;
 }
-@-webkit-keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
+@media screen and (max-width: 500px) {
+  /* main card */
+  .event-card{
+    height: 42rem;
   }
-  50% {
-    background-position: 100% 50%;
+  .membre{
+    /* background-color: #1897e1; */
+    overflow: hidden !important;
+    width: 14rem !important;
+    height: 16rem !important;
   }
-  100% {
-    background-position: 0% 50%;
+  /* img container */
+  .member-img{
+    height: 50%;
   }
-}
-@-webkit-keyframes levitate {
-  0% {
-    padding-left: 0px;
+  /* bg container */
+  .background-overlay{
+    position: relative;
+    width: 60%;
+    height: 10rem;
   }
-  50% {
-    padding-left: 5px;
+  /* main img */
+  .event-img{
+    height: 12.99rem !important;
+    width: 11.6rem !important; 
+    top: 25px !important;
+    left: 20px !important;
   }
-  100% {
-    padding-left: 0px;
-  }
-}
-@keyframes levitate {
-  0% {
-    padding-left: 0px;
-  }
-  50% {
-    padding-left: 5px;
-  }
-  100% {
-    padding-left: 0px;
-  }
-}
-@media (max-width: 400px) {
-  .fas {
+  .r-btn{
     display: none;
+    padding: 8rem 2rem 20rem 2rem !important;
+    width: 14rem !important;
+    height: 16rem !important;
   }
+  
 }

@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
       : null
   );
   const [loading, setLoading] = useState(true);
-  const isRegistrationClosed = true;
+  const isRegistrationClosed = false;
   const registerUser = async (
     first_name,
     last_name,
@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }) => {
       toast.success("Registrations are closed!!!");
       throw error;
     } else {
-      const response = await fetch(`${API_BASE_URL}/accounts/signup/`, {
+      const response = await fetch(`${API_BASE_URL}/signup/`, {
         method: "POST",
         body: JSON.stringify(register_data),
         headers: {
@@ -72,7 +72,7 @@ export const AuthProvider = ({ children }) => {
       toast.success("Registrations are closed!!!");
       throw error;
     } else {
-      const response = await fetch(`${API_BASE_URL}/accounts/login/`, {
+      const response = await fetch(`${API_BASE_URL}/login/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -101,7 +101,7 @@ export const AuthProvider = ({ children }) => {
     if (isRegistrationClosed) {
       toast.success("Registrations are closed!!!");
     } else {
-      const response = await fetch(`${API_BASE_URL}/accounts/google-login/`, {
+      const response = await fetch(`${API_BASE_URL}/google-login/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
