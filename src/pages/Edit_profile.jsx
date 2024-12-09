@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../components/Signup.css";
+import "./Edit_profile.css";
+import manFace from "../assets/edit_profile/manFace.webp";
 import toast from "react-hot-toast";
 import useAxios from "../context/UseAxios";
+import editBg from "../assets/edit_profile/editProfile.webp"
 import { API_BASE_URL } from "../config";
 
-const Edit_profile = ({}) => {
+const Edit_profile = ({ }) => {
   const api = useAxios();
   const navigate = useNavigate();
   const [userData, setUserData] = useState({});
@@ -14,6 +16,7 @@ const Edit_profile = ({}) => {
   const [city, setCity] = useState("");
   const [college, setCollege] = useState("");
   const [contact, setContact] = useState("");
+  const [gender, setGender] = useState("");
   const [ca, setCa] = useState(false);
   const [referralCode, setReferralCode] = useState("");
   const [referralCode2, setReferralCode2] = useState("");
@@ -59,9 +62,7 @@ const Edit_profile = ({}) => {
         console.log("error");
       }
     } catch (error) {
-      toast.error(error.response.data.error );
-
-      
+      toast.error(error.response.data.error);
     }
   };
   // console.log("heloo")
@@ -99,157 +100,133 @@ const Edit_profile = ({}) => {
   // console.log(referralCode2);
 
   return (
-    <div className="signup-container-right" style={{ marginTop: "10vh" }}>
-      <div className="signup-container-right-title">Edit Your Profile</div>
-      <form className="signup-form" onSubmit={handleSubmit}>
-        <div className="signup-form-name">
-          <input
-            type="text"
-            name="first_name"
-            placeholder="First Name *"
-            maxLength={100}
-            value={firstName}
-            // {console.log(value)}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-          />
-          <input
-            type="text"
-            name="last_name"
-            placeholder="Last Name *"
-            maxLength={100}
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            required
-          />
+    <div
+      className="edit_profile_main"
+      style={{ backgroundImage: `url(${editBg})` }}
+    >
+      <div className="man_face_edit md:flex hidden">
+        <img className="man_face" src={manFace}></img>
+      </div>
+      <div className="edit_profile_form_container">
+        <div className="edit_profile_form_container">
+          <div className="edit-container-right-title">Edit Your Profile</div>
+          <form className="edit-form" onSubmit={handleSubmit}>
+            <div className="edit-form-name">
+              <input
+                type="text"
+                name="first_name"
+                placeholder="First Name *"
+                maxLength={100}
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+              />
+              <input
+                type="text"
+                name="last_name"
+                placeholder="Last Name *"
+                maxLength={100}
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                required
+              />
+            </div>
+            <input
+              type="text"
+              name="city"
+              placeholder="City *"
+              maxLength={40}
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              required
+            />
+            <input
+              type="text"
+              name="college"
+              placeholder="College *"
+              maxLength={60}
+              value={college}
+              onChange={(e) => setCollege(e.target.value)}
+              required
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number *"
+              pattern="[6-9]{1}[0-9]{9}"
+              value={contact}
+              onChange={(e) => setContact(e.target.value)}
+              onInput={(e) => {
+                e.target.setCustomValidity("");
+              }}
+              onInvalid={(e) => {
+                e.target.setCustomValidity(
+                  "Please enter a valid phone number e.g. 9876543210"
+                );
+              }}
+              required
+            />
+            <div className="w-full flex gap-3">
+              <div className="edit-gender-dropdown">
+                <select
+                  name="gender"
+                  id="gender"
+                  className="edit-gender-dropdown-select h-12 text-white"
+                  value={gender}
+                  onChange={(e) => setGender(e.target.value)}
+                  required
+                >
+                  <option className="edit-gender-option" value="" disabled hidden>
+                    &nbsp;Gender
+                  </option>
+                  <option className="edit-gender-option" value="Male">
+                    &nbsp; Male
+                  </option>
+                  <option className="edit-gender-option" value="Female">
+                    &nbsp; Female
+                  </option>
+                  <option className="edit-gender-option" value="Other">
+                    &nbsp; Other
+                  </option>
+                </select>
+              </div>
+              <input
+                type="text"
+                name="referral_code"
+                maxLength={8}
+                placeholder="Referral Code (If any)"
+                className="input"
+                value={referralCode}
+                onChange={(e) => setReferralCode(e.target.value)}
+              />
+            </div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email (Read-only)"
+              value={email}
+              readOnly
+              required
+            />
+            <div className="edit-ca-checkbox">
+              <input
+                type="checkbox"
+                name="ca"
+                id="edit-ca-checkbox-input"
+                checked={ca}
+                onChange={(e) => setCa(e.target.checked)}
+              />
+              <label htmlFor="ca" className="edit-ca-checkbox-label">
+                I want to signup for{" "}
+                <Link to="/ca" className="text-[#D183F0] underline">
+                  CA Program
+                </Link>
+              </label>
+            </div>
+            <input type="submit" value="Submit" id="edit-form-submit" />
+          </form>
         </div>
-        <input
-          type="text"
-          name="city"
-          placeholder="City *"
-          maxLength={40}
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          required
-        />
-        <input
-          type="text"
-          name="college"
-          placeholder="College *"
-          maxLength={60}
-          value={college}
-          onChange={(e) => setCollege(e.target.value)}
-          required
-        />
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Phone Number *"
-          pattern="[6-9]{1}[0-9]{9}"
-          onInput={(e) => {
-            e.target.setCustomValidity("");
-          }}
-          onInvalid={(e) => {
-            e.target.setCustomValidity(
-              "Please enter a valid phone number e.g. 9876543210"
-            );
-          }}
-          value={contact}
-          onChange={(e) => setContact(e.target.value)}
-          required
-        />
-        <div className="signup-gender-dropdown">
-          {/* <label htmlFor="gender" className="signup-gender-dropdown-label">
-            Gender
-          </label> */}
-          <select
-            name="gender"
-            id="gender"
-            className="signup-gender-dropdown-select"
-          >
-            <option className="signup-gender-option" selected disabled hidden>
-              -- Select gender--
-            </option>
-            <option className="signup-gender-option" value="Male">
-              Male
-            </option>
-            <option className="signup-gender-option" value="Female">
-              Female
-            </option>
-            <option className="signup-gender-option" value="Other">
-              Other
-            </option>
-          </select>
-        </div>
-        {ca === false ? (
-          <div className="signup-ca-checkbox">
-            <input type="checkbox" name="ca" id="signup-ca-checkbox-input" />
-            <label htmlFor="ca" className="signup-ca-checkbox-label">
-              I want to signup for <Link to="/ca">CA Program</Link>
-            </label>
-          </div>
-        ) : (
-          <></>
-        )}
-        {/* <div className="signup-acc-checkbox">
-          <input type="checkbox" name="acc" id="signup-acc-checkbox-input" />
-          <label htmlFor="acc" className="signup-acc-checkbox-label">
-            I would like to avail accommodation at IIT Jodhpur campus and agree
-            to abide by the <Link to="/accommodation">guidelines</Link> of the
-            same.
-          </label>
-        </div> */}
-        <input
-          type="text"
-          name="referral_code"
-          maxLength={8}
-          placeholder="Referral Code (If any)"
-          value={referralCode}
-          onChange={
-            referralCode2 === ""
-              ? (e) => setReferralCode(e.target.value)
-              : false
-          }
-          //   {bool ? (setReferralCode("")):(setReferralCode(response.data.referral_code))}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email *"
-          autoComplete="username"
-          value={email}
-          //   onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        {/* <input
-          id="signup-form-password"
-          type="password"
-          name="password"
-          placeholder="Password *"
-          autoComplete="new-password"
-          onKeyUp={handleConfirmPassword}
-          required
-        />
-        <div className="signup-form-confirmpassword-container">
-          <input
-            id="signup-form-confirmpassword"
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm Password *"
-            autoComplete="new-password"
-            onKeyUp={handleConfirmPassword}
-            required
-          />
-          <div id="signup-form-confirmpassword-warning">
-            Passwords do not match!
-          </div>
-        </div> */}
-        <input type="submit" value="Submit" id="signup-form-submit" />
-        <br />
-      </form>
-      {/* <div className="signup-alreadyAccount">
-        Don't want to update your profile, Go to <button onClick={handleSignin}>Homepage</button>
-      </div> */}
+      </div>
     </div>
   );
 };

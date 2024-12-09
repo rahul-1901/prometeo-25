@@ -1,30 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Changa&display=swap');
 
 .dashboard__main {
-  color: black;
+  color: rgb(255, 255, 255);
   margin: 0 auto;
-  padding: 0 5vh 10vh;
-  width: 99.7vw;
-  overflow: hidden;
+  width: 100%;
   min-height: 100vh;
   box-sizing: border-box;
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: repeat;
   background-position: center;
   background-attachment: fixed;
-  font-family: "Orbitron", sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  gap: 0.8em;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh;
 }
+
+.blurLayer_dash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.562);
+}
+
 .dashboard-title {
-  margin-top: 15vh;
+  margin-top: 10vh;
+  font-family: 'Changa';
+  font-weight: 550;
+  z-index: 10;
 }
+
 .dashboard-title h1 {
   font-size: 10vh;
-  font-weight: 900;
 }
+
+.dashboard-title h2 {
+  font-size: 3vh;
+}
+
 .m-0 {
   margin: 0;
 }
@@ -35,42 +53,40 @@
 
 .dashboard__upper {
   display: flex;
-  gap: 2em;
-  justify-content: space-evenly;
+  gap: 2vw;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }
 
 .dashboard__profile {
   display: flex;
-  /* width: 50%; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* padding: 2vh; */
-  /* From https://css.glass */
-  /* background: rgba(119, 167, 223, 0.18); */
   border-radius: 16px;
-  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
-  backdrop-filter: blur(9.8px);
-  -webkit-backdrop-filter: blur(9.8px);
-  border: 1px solid rgba(255, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.705);
+  width: 500px;
+  height: 350px;
+  z-index: 10;
 }
 
-.user_image {
-  width: 400px;
-  margin-bottom: 0.8em;
-}
-.user_image img {
-  width: 50%;
+.dashboard__profile img {
+  height: 65%;
+  mix-blend-mode: hard-light;
 }
 
-.user_image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.dashboard__profile button {
+  background-color: rgba(255, 255, 255, 0.281);
+  color: white;
+  font-family: 'Changa';
+  font-weight: 550;
+  border-radius: 50px;
+  width: 200px;
+  font-size: 20px;
 }
 
 .user_text {
-  /* color: #ffffff; */
   margin-bottom: 0.8rem;
   text-align: center;
   font-weight: 600;
@@ -79,59 +95,81 @@
 .dashboard__description {
   display: flex;
   flex-direction: column;
-  padding: 2vh;
+  padding: 3vh;
+  font-family: 'Changa';
   justify-content: center;
   align-items: center;
-  min-width: 400px;
-  /* From https://css.glass */
-  background: rgba(119, 167, 223, 0.18);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(9.8px);
-  -webkit-backdrop-filter: blur(9.8px);
-  border: 1px solid rgba(119, 167, 223, 0.3);
+  width: 500px;
+  background: rgba(0, 0, 0, 0.575);
+  border-radius: 20px;
+  z-index: 10;
+  gap: 0.1rem;
 }
 
 .user__line {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  /* gap: 2em; */
   text-align: center;
-  /* color: #fff; */
-  font-weight: 800;
   margin-bottom: 0.4em;
+  z-index: 10;
+  font-size: 20px;
 }
 
 .user__right {
-  color: azure;
+  color: rgba(255, 255, 255, 1);
+}
+
+.user_left {
+  color: rgba(192, 192, 192, 1);
+
 }
 
 hr {
-  border-top: 1px solid red;
-  margin: 0;
-  background-color: transparent;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 1); /* Customize color and style */
+  z-index: 100;
+}
+
+.divider {
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  width: 100%;
+  margin: 5px 0;
 }
 
 .dashboard_pass {
   display: flex;
   flex-direction: column;
   gap: 0.4em;
+  z-index: 10;
 }
 
 .dashboard_button {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 4px;
+  gap: 2vw;
   justify-content: center;
+  z-index: 10;
 }
 
 .dashboard_button button {
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 500px;
+  border-radius: 20px;
+  font-family: 'Changa';
+  font-size: 20px;
+}
+
+.passesButton {
+  background-color: rgba(0, 0, 0, 0.781);
+}
+
+.loginButtondash {
+  background-color: rgb(255, 255, 255);
+  color: rgba(255, 35, 35, 1);
 }
 
 .dashboard__passes{
@@ -145,17 +183,47 @@ hr {
   z-index: -999;
 }
 
-@media screen and (min-width : 1284px) {
+@media screen and (max-width : 1095px) {
   .dashboard_pass_element{
     z-index: auto;
   }
+
+  .dashboard__profile {
+    width: 400px;
+  }
+
+  .dashboard__description {
+    width: 400px;
+  }
+
+  .dashboard_button button{
+    width: 400px;
+  }
 }
 
+@media screen and (max-width: 860px) {
+  .dashboard__profile {
+    width: 300px;
+  }
+
+  .dashboard__description {
+    width: 400px;
+  }
+
+  .dashboard_button button {
+    width: 350px;
+  }
+}
 
 @media screen and (max-width: 760px) {
   .dashboard__upper {
     flex-direction: column;
     align-items: center;
+  }
+
+  .dashboard_button {
+    flex-direction: column;
+    gap: 15px;
   }
 }
 
@@ -174,10 +242,15 @@ hr {
     width: auto;
   }
   .dashboard__description {
-    min-width: auto;
+    width: 95%;
   }
+
+  .user__line {
+    font-size: 15px;
+  }
+
   .dashboard_button button {
-    width: 100%;
+    width: 85%;
   }
   
 }
