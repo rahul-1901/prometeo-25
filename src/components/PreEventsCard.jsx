@@ -33,7 +33,7 @@ const PreEventsCard = ({
   
   return (
     <div className='event-card' aria-labelledby="event card">
-      <div className="event-card__filter membre">
+      <div className="event-card__filter membre  ">
         <div className="register-btn-div">
           <p className="r-btn px-2">{truncateText(description, 35)}</p>
         </div>
@@ -43,7 +43,7 @@ const PreEventsCard = ({
             <img src={imgURL.replace(
               "http://localhost:8004",
               "https://devluplabs.iitj.ac.in"
-            )} alt="" />
+            )} className="event-img" alt="" />
           </div>
         </a>
       </div>

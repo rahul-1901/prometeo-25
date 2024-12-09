@@ -42,7 +42,7 @@ const Edit_profile = ({ }) => {
     try {
       console.log(userData.id, " user_id");
       const response = await api.patch(
-        `${API_BASE_URL}/accounts/update/${userData.id}/`,
+        `${API_BASE_URL}/update/${userData.id}/`,
         {
           first_name,
           last_name,
@@ -71,7 +71,7 @@ const Edit_profile = ({ }) => {
     const navBarEle = document.getElementById("navbar");
     navBarEle.style.opacity = 1;
     const userDetails = async () => {
-      const response = await api.get(`${API_BASE_URL}/accounts/userdata/`);
+      const response = await api.get(`${API_BASE_URL}/userdata/`);
       if (response.status === 200) {
         setUserData(response.data);
         setFirstName(response.data.first_name);

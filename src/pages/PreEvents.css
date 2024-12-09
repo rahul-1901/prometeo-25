@@ -36,3 +36,8 @@
     opacity: 0.5;
   }
 }
+@media screen and (max-width: 500px) {
+  .pre-events-cards-x {
+    gap: 0px;
+  }
+}
