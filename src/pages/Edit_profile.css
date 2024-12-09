@@ -252,3 +252,32 @@
     cursor: pointer;
     z-index: 100;
 }
+
+#edit-form-submit:hover {
+    background: rgba(0, 0, 0, 0.89);
+    z-index: 100;
+}
+
+@media (max-width: 980px) {
+    .man_face_edit {
+        width: 350px;
+        height: 250px;
+        border-radius: 50px;
+    }
+
+    .edit-form {
+        width: 52vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .edit-form {
+        width: 70vw;
+    }
+}
+
+@media (max-width: 580px) {
+    .edit-form {
+        width: 95vw;
+    }
+}
