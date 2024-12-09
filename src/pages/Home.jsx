@@ -18,7 +18,7 @@ const Home = () => {
     useEffect(() => {
       const timer = setTimeout(() => {
         setOpacity(1); // Change opacity to 1 after 5 seconds
-      }, 1000); // 5000ms = 5 seconds
+      }, 0); // 5000ms = 5 seconds
       return () => clearTimeout(timer); // Cleanup the timer
     }, []);
     
@@ -35,7 +35,7 @@ const Home = () => {
         width: '100vw', 
         height: '100vh', 
         backgroundColor: '#FFFFFF', 
-        // opacity: opacity, 
+        opacity: opacity, 
         transition: 'opacity 1s ease-in-out' 
       }}
       >         
