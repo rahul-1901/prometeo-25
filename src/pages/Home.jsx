@@ -10,19 +10,37 @@ import './Home.css'
 const Home = () => {
     const {play, end} = usePlay()
     const [loading, setLoading] = useState(true);
+    const [opacity, setOpacity] = useState(0); 
 
     useEffect(()=>{
-      setTimeout(() => setLoading(false), 4000);
+      setTimeout(() => setLoading(false), 1000);
     }, [])
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setOpacity(1); // Change opacity to 1 after 5 seconds
+      }, 1000); // 5000ms = 5 seconds
+      return () => clearTimeout(timer); // Cleanup the timer
+    }, []);
+    
     return (
       
       <>
-        {loading ? (
+        {/* {loading ? (
         <PageLoader />
       ) : (
-      <>
+      <> */}
+     
+      <div
+      style={{ 
+        width: '100vw', 
+        height: '100vh', 
+        backgroundColor: '#FFFFFF', 
+        // opacity: opacity, 
+        transition: 'opacity 1s ease-in-out' 
+      }}
+      >         
           <Canvas >
-          <color attach="background" args={["#ececec"]} />
+          <color attach="background" args={["#040404"]} />
           <ScrollControls pages={play && !end ? 20 : 0}
             damping={0.5}
             style={{
@@ -32,17 +50,47 @@ const Home = () => {
               right: "10px",
               width: "auto",
               height: "auto",
-              animation: "fadeIn 2.4s ease-in-out 1.2s forwards",
+              animation: "fadeIn 2.4s ease-in-out 1s forwards",
               opacity: 0,
             }} >
             <Experience />
           </ScrollControls>
         </Canvas>
         <OverlayLanding/>
-      </>)}
+        </div>
+      {/* </>)} */}
         
       </>
     );
 }
 
 export default Home
+
+
+
+{/* <>
+{loading ? (
+<PageLoader />
+) : (
+<>
+  <Canvas >
+  <color attach="background" args={["#040404"]} />
+  <ScrollControls pages={play && !end ? 20 : 0}
+    damping={0.5}
+    style={{
+      top: "10px",
+      left: "0px",
+      bottom: "10px",
+      right: "10px",
+      width: "auto",
+      height: "auto",
+      animation: "fadeIn 2.4s ease-in-out 1s forwards",
+      opacity: 0,
+    }} >
+    <Experience />
+  </ScrollControls>
+</Canvas>
+<OverlayLanding/>
+</>)}
+
+</> */}
