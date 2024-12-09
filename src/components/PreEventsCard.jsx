@@ -35,7 +35,7 @@ const PreEventsCard = ({
     <div className='event-card' aria-labelledby="event card">
       <div className="event-card__filter membre">
         <div className="register-btn-div">
-          <p className="r-btn">{truncateText(description, 35)}</p>
+          <p className="r-btn px-2">{truncateText(description, 35)}</p>
         </div>
         <a href={eventRegister}>
           <div className="member-img " >

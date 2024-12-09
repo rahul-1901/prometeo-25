@@ -8,7 +8,7 @@ function createEntry(e) {
   return (
     <FadeInContent key={e.id}>
       <PreEventsCard
-        imgURL={bplan}
+        imgURL={e.image}
         eventName={e.name}
         eventTime={e.date}
         eventRegister={e.external_link}
