@@ -68,8 +68,9 @@ function App() {
             <Route path="/accommodation" element={<Accomodation />} />
             <Route path="/workshop" element={<Workshop />} />
             <Route path="/informals" element={<Informals />} />
-
+            <Route path="/dashboard" element={<PrivateRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
+            </Route>
             <Route path="/edit-profile" element={<Edit_profile />} />
             <Route path="/business-darbar" element={<Darbar />} />
           </Routes>
