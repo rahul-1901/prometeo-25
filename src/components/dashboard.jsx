@@ -86,7 +86,7 @@ const Dasboard = () => {
         <div className="dashboard__profile">
           <img
             className="manProfile"
-            src={userData.gender === 'female' ? girl : man}
+            src={userData.gender === 'Female' ? girl : man}
           />
           <button
             onClick={() => navigate("/edit-profile")}
