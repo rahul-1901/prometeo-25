@@ -39,6 +39,7 @@ const Dasboard = () => {
       if (response.status === 200) {
         setPassCondition(true);
         setUserPassDetails(response.data);
+        console.log(response.data)
       } else if (response.status === 400) {
         setPassCondition(false);
       }

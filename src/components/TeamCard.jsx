@@ -7,6 +7,8 @@ import insta from "../assets/team/Insta.svg"
 import linkdein from "../assets/team/link.svg"
 import mail from "../assets/team/Mail.svg"
 import phonesvg from "../assets/team/Phone.svg"
+import { API_BASE_URL,API_BASE_URL_IMG } from "../config";
+
 const TeamCard = ({
   name,
   position,
@@ -16,9 +18,7 @@ const TeamCard = ({
   linkedin,
   instagram,
   yellow
-}) => {
-  // console.log(`https://devluplabs.iitj.ac.in${imgURL}`);
-  
+}) => {  
   return (
     <>
       <div className="wrapper ">
@@ -29,7 +29,7 @@ const TeamCard = ({
               yellow % 2 != 0 ? (<div className="background-overlay " style={{ backgroundImage: `url(${yellowImage})` }}   ></div>)
                 : (<div className="background-overlay " style={{ backgroundImage: `url(${blueImageBox})` }}   ></div>)
             }
-            { imgURL ?( <img src={`https://devluplabs.iitj.ac.in${imgURL}`} alt="" />): (<img src={DefaultIMG} />)}
+            { imgURL ?( <img src={`${API_BASE_URL_IMG +imgURL}`} alt="" />): (<img src={DefaultIMG} />)}
 
           </div>
           <div className="overly left">

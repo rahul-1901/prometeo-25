@@ -1,4 +1,5 @@
 export const API_BASE_URL = "https://devluplabs.iitj.ac.in/ftadmin";
+export const API_BASE_URL_IMG = "https://devluplabs.iitj.ac.in";
 // // google sign in doesn't work with 127.0.0.1
 // export const API_BASE_URL = "https://apiv.prometeo.in";
 // export const API_BASE_URL = "https://demo.prometeo.in";
