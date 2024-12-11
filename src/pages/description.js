@@ -14,7 +14,7 @@ export const description = [
   },
   {
     heading: "AN OPPORTUNITY TO GROW",
-    info: `Your task as the campus ambassador is very flexible and easy to do, ranging from providing information about Prometeo '24 to asking students to register for the fest using your referral code. By becoming the campus ambassador you will serve as a link between the students of your college and Prometeo '24.
+    info: `Your task as the campus ambassador is very flexible and easy to do, ranging from providing information about Prometeo '25 to asking students to register for the fest using your referral code. By becoming the campus ambassador you will serve as a link between the students of your college and Prometeo '25.
 
         It will help to boost your confidence and leadership skills. Your communication skills will also bloom extravagantly. The campus ambassador program will become an asset if you are a student looking for great learning and networking opportunities.`,
     img: ca_growth,

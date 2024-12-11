@@ -167,12 +167,24 @@ hr {
 
 .passesButton {
   background-color: rgba(0, 0, 0, 0.781);
+  transition: 0.3s ease;
+}
+
+.passesButton:hover {
+  background-color: rgba(0, 0, 0, 0.925);
 }
 
 .loginButtondash {
   background-color: rgb(255, 255, 255);
   color: rgba(255, 35, 35, 1);
+  transition: 0.3s ease;
 }
+
+.loginButtondash:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 35, 35, 1);
+}
+
 
 .dashboard__passes{
   width: 100%;

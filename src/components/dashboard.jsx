@@ -7,6 +7,7 @@ import useAxios from "../context/UseAxios";
 import { API_BASE_URL } from "../config";
 import { useNavigate } from "react-router-dom";
 import man from "../assets/dashboard/profileFace.webp";
+import girl from "../assets/dashboard/queen.png";
 import EventPasses from "./eventPasses";
 import { toPng } from "html-to-image";
 
@@ -83,7 +84,10 @@ const Dasboard = () => {
       </div>
       <div className="dashboard__upper">
         <div className="dashboard__profile">
-            <img className="manProfile" src={man}></img>
+          <img
+            className="manProfile"
+            src={userData.gender === 'female' ? girl : man}
+          />
           <button
             onClick={() => navigate("/edit-profile")}
             style={{ marginTop: "5px", marginBottom: "5px" }}
