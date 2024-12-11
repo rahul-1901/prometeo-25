@@ -56,7 +56,7 @@ const Events = () => {
     const navBarEle = document.getElementById("navbar");
     navBarEle.style.opacity = 1;
     const fetchEvents = async () => {
-      const { data } = await axios.get('https://devluplabs.iitj.ac.in/ftadmin/event/');
+      const { data } = await axios.get(API_BASE_URL +'/event/');
       // console.log(data);
      
       setEventsData(data)

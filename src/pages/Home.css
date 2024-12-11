@@ -179,7 +179,7 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
-  
+  flex-direction: column;
   justify-content: center;
   opacity: 0;
   transition: opacity 4s ease-in-out;
@@ -196,7 +196,18 @@ body {
   border-radius: 32px;
   padding: 1rem 2rem;
 }
-
+.__text_group{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.__text{
+  font-size: 25px;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
 /* RESPONSIVE */
 
 @media screen and (max-width: 768px) {

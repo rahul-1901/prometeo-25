@@ -9,6 +9,7 @@ import FadeInContent from "../components/FadeInContent";
 import bg from "../assets/team/Background.png";
 import PageLoader from "../components/PageLoader";
 import axios from "axios";
+import { API_BASE_URL } from "../config";
 
 const Team = () => {
   const [team24, setTeam24] = useState({});
@@ -97,7 +98,7 @@ const Team = () => {
     navBarEle.style.opacity = 1;
     const fetchEvents = async () => {
       const { data } = await axios.get(
-        "https://devluplabs.iitj.ac.in/ftadmin/current-team/"
+        API_BASE_URL +"/current-team"
       );
       // console.log(data);
       const temp = Object.entries(data["Current-Team"]).map(
