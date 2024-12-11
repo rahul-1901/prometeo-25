@@ -6,7 +6,7 @@ Command: npx gltfjsx@6.5.3 public/models/environment/ocean_2.glb
 import React from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
-export function Ocean2(props) {
+export function Ocean(props) {
   const group = React.useRef()
   const { nodes, materials, animations } = useGLTF('./models/environment/ocean_2.glb')
   const { actions } = useAnimations(animations, group)
