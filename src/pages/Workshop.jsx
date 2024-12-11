@@ -57,10 +57,10 @@ const [category, setCategory] = useState("All");
 
   // useEffect(() => {
   //   const fetchEvents = async () => {
-  //     const { data } = await axios.get(API_BASE_URL + `/events/event/?type=workshop&id=&rank=`);
+  //     const { data } = await axios.get('https://devluplabs.iitj.ac.in/ftadmin/past-team/');
   //     setEventsData(data);
-  //     // console.log(data);
-  //   };x
+  //     console.log(data);
+  //   };
 
   //   fetchEvents();
   // }, []);

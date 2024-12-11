@@ -32,7 +32,8 @@ export const AuthProvider = ({ children }) => {
     gender,
     referral_code,
     ambassador,
-    accomodation
+    accomodation,
+    current_year,
   ) => {
     const register_data = {
       first_name,
@@ -46,6 +47,7 @@ export const AuthProvider = ({ children }) => {
       referral_code,
       ambassador,
       accomodation,
+      current_year,
     };
     if (isRegistrationClosed) {
       toast.success("Registrations are closed!!!");
