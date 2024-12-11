@@ -98,7 +98,7 @@ const Team = () => {
     navBarEle.style.opacity = 1;
     const fetchEvents = async () => {
       const { data } = await axios.get(
-        API_BASE_URL +"/current-team"
+        API_BASE_URL +"team/current-team/"
       );
       // console.log(data);
       const temp = Object.entries(data["Current-Team"]).map(

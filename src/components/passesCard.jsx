@@ -22,7 +22,7 @@ const PassesCard = ({ user, isProfileCompleted }) => {
   const navigate = useNavigate();
   useEffect(() => {
     const fetchPassData = async () => {
-      const { data } = await axios.get(API_BASE_URL + `/accounts/pass-detail/`);
+      const { data } = await axios.get(API_BASE_URL + `accounts/pass-detail/`);
       setPassData(data);
     };
     console.log(passData);
@@ -30,7 +30,7 @@ const PassesCard = ({ user, isProfileCompleted }) => {
   }, []);
   useEffect(() => {
     const userDetails = async () => {
-      const response = await api.get(`${API_BASE_URL}/accounts/user-passes/`);
+      const response = await api.get(`${API_BASE_URL}accounts/user-passes/`);
       console.log(response);
       if (response.status === 200) {
         setPassCondition(true);

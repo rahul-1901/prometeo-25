@@ -22,7 +22,7 @@ const Team23 = () => {
     navBarEle.style.opacity = 1;
 
     const getTeam23 = async () => {
-      const { data } = await axios.get(API_BASE_URL + "/team/past-team/");
+      const { data } = await axios.get(API_BASE_URL + "team/past-team/");
       setTeam23(data["Past-Team"]);
     };
     getTeam23();

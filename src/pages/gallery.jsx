@@ -12,7 +12,7 @@ const Gallery = () => {
     navBarEle.style.opacity = 1;
 
     const fetch = async () => {
-      const { data } = await axios.get(`${API_BASE_URL}/home/gallery/`);
+      const { data } = await axios.get(`${API_BASE_URL}home/gallery/`);
       setCardData(data[""]);
     };
     fetch();

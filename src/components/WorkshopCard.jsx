@@ -35,7 +35,7 @@ const WorkshopCard = ({
             <div className="background-overlay " style={{ backgroundImage: `url(${imageBox})` }}   ></div>
             <img src={imgURL.replace(
               "http://localhost:8000",
-              "https://apiv.prometeo.in"
+              API_BASE_URL
             )} alt="" />
           </div>
         </a>
