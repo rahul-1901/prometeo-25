@@ -22,7 +22,7 @@ const Dasboard = () => {
     const navBarEle = document.getElementById("navbar");
     navBarEle.style.opacity = 1;
     const userDetails = async () => {
-      const response = await api.get(`${API_BASE_URL}/userdata/`);
+      const response = await api.get(`${API_BASE_URL}accounts/userdata/`);
       if (response.status === 200) {
         setUserData(response.data);
         // console.log(response.data);
@@ -35,7 +35,7 @@ const Dasboard = () => {
 
   useEffect(() => {
     const userDetails = async () => {
-      const response = await api.get(`${API_BASE_URL}/user-passes/`);
+      const response = await api.get(`${API_BASE_URL}accounts/user-passes/`);
       if (response.status === 200) {
         setPassCondition(true);
         setUserPassDetails(response.data);

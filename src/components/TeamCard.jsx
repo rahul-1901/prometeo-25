@@ -7,7 +7,7 @@ import insta from "../assets/team/Insta.svg"
 import linkdein from "../assets/team/link.svg"
 import mail from "../assets/team/Mail.svg"
 import phonesvg from "../assets/team/Phone.svg"
-import { API_BASE_URL,API_BASE_URL_IMG } from "../config";
+import { API_BASE_URL } from "../config";
 
 const TeamCard = ({
   name,
@@ -29,7 +29,7 @@ const TeamCard = ({
               yellow % 2 != 0 ? (<div className="background-overlay " style={{ backgroundImage: `url(${yellowImage})` }}   ></div>)
                 : (<div className="background-overlay " style={{ backgroundImage: `url(${blueImageBox})` }}   ></div>)
             }
-            { imgURL ?( <img src={`${API_BASE_URL_IMG +imgURL}`} alt="" />): (<img src={DefaultIMG} />)}
+            { imgURL ?( <img src={`${API_BASE_URL +imgURL}`} alt="" />): (<img src={DefaultIMG} />)}
 
           </div>
           <div className="overly left">

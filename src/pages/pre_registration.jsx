@@ -99,7 +99,7 @@ const Preregister = () => {
 
     // if (isValid === true) {
     try {
-      let result = await fetch(API_BASE_URL + "/accounts/preregister/", {
+      let result = await fetch(API_BASE_URL + "accounts/preregister/", {
         method: "POST",
         // setemail(email);
         body: JSON.stringify(item),

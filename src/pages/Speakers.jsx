@@ -34,7 +34,7 @@ function createEntry(term) {
       key={term.id}
       image={term.image.replace(
         "http://localhost:8000",
-        "https://apiv.prometeo.in"
+        API_BASE_URL
       )}
       name={term.name}
       designation={term.designation}
@@ -53,7 +53,7 @@ const Speakers = () => {
     navBarEle.style.opacity = 1;
     const fetchData = async () => {
       const { data } = await axios.get(
-        API_BASE_URL + "/events/event/?type=talk&id=&rank="
+        API_BASE_URL + "events/event/?type=talk&id=&rank="
       );
       setSpeakers(data);
     };

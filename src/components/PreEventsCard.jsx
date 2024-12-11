@@ -1,5 +1,5 @@
 import React from "react";
-import { API_BASE_URL_IMG } from "../config";
+import { API_BASE_URL } from "../config";
 import imageBox from "../assets/events/imageBox.svg"
 import btn1 from "../assets/events/button-1.svg"
 import btn1h from "../assets/events/button-1hov.svg"
@@ -42,7 +42,7 @@ const PreEventsCard = ({
             <div className="background-overlay " style={{ backgroundImage: `url(${imageBox})` }}   ></div>
             <img src={imgURL.replace(
               "http://localhost:8004",
-              API_BASE_URL_IMG
+              API_BASE_URL
             )} className="event-img" alt="" />
           </div>
         </a>

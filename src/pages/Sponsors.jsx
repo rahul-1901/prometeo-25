@@ -50,7 +50,7 @@ const Sponsors = () => {
 
       const fetchProfileData = async () => {
         try {
-          const response = await api.get(`${API_BASE_URL}/accounts/userdata/`);
+          const response = await api.get(`${API_BASE_URL}accounts/userdata/`);
           setIsProfileCompleted(response.data.isProfileCompleted);
           setSponsors(response.data.sponsors || {}); 
         } catch (error) {

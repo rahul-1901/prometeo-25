@@ -54,7 +54,7 @@ const [category, setCategory] = useState("All");
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const { data } = await axios.get(API_BASE_URL + `/events/event/?type=informal&id=&rank=`);
+      const { data } = await axios.get(API_BASE_URL + `events/event/?type=informal&id=&rank=`);
       setEventsData(data);
       // console.log(data);
     };

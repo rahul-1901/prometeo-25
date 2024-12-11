@@ -309,7 +309,7 @@ export const Experience = () => {
           <PerspectiveCamera ref={camera} position={[0,1,5]} fov={70} makeDefault />
         </group>
         
-        <Ocean scale={[2, 0.5, 2]} position={[-15,0,0]}/>
+        <Ocean scale={[2, 0.25, 2]} position={[-15,0,0]}/>
         
         <group ref={ship}>
           <Float floatIntensity={0.8} speed={1} ref={ship} rotationIntensity={0.01}>
