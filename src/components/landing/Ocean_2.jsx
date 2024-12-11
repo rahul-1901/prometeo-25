@@ -28,7 +28,7 @@ export function Ocean(props) {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <mesh name="large001" geometry={nodes.large001.geometry} material={materials.Material} morphTargetDictionary={nodes.large001.morphTargetDictionary} morphTargetInfluences={nodes.large001.morphTargetInfluences} />
+        <mesh name="large001" geometry={nodes.large001.geometry} material={materials.Material} morphTargetDictionary={nodes.large001.morphTargetDictionary} morphTargetInfluences={nodes.large001.morphTargetInfluences} position={[0, 0, 0]} />
       </group>
     </group>
   )
