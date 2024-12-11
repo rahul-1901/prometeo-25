@@ -44,10 +44,10 @@ export default function OverlayLanding() {
           <div className="__text_group">
           <Link to="/register">
           
-            <div className="outro__text" o>Register</div>
+            <button className="__text" o>Register</button>
           </Link>
           <Link to="/events">
-            <div className="outro__text">Event</div>
+            <button className="__text">Event</button>
           </Link>
           </div>
         </div>

@@ -203,9 +203,8 @@ body {
   gap: 20px;
 }
 .__text{
-  font-size: 25px;
+  font-size: 15px;
   color: white;
-  text-decoration: underline;
   cursor: pointer;
 }
 /* RESPONSIVE */

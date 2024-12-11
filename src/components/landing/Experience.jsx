@@ -7,7 +7,7 @@ import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 import { usePlay } from "./Play";
 import {Speed} from "./Speed";
-import { Ocean2 } from "./Ocean_2";
+import { Ocean } from "./Ocean";
 import { ShipFinal } from "./SHIP_PROMETEO";
 import { GlacierFinal } from "./GLACIER_2";
 import { WelcomeText } from "./text/Welcome";
@@ -309,11 +309,11 @@ export const Experience = () => {
           <PerspectiveCamera ref={camera} position={[0,1,5]} fov={70} makeDefault />
         </group>
         
-        <Ocean2 scale={[2, 2, 2]} position={[-30,0,0]}/>
+        <Ocean scale={[2, 0.5, 2]} position={[-15,0,0]}/>
         
         <group ref={ship}>
           <Float floatIntensity={0.8} speed={1} ref={ship} rotationIntensity={0.01}>
-            <ShipFinal scale={[shipScale, shipScale, shipScale]} position={[0,-0.6,0]} rotation-y={Math.PI} />
+            <ShipFinal scale={[shipScale, shipScale, shipScale]} position={[0,-0.8,0]} rotation-y={Math.PI} />
           </Float>
         </group>
       </group>
