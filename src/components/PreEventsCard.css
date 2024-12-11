@@ -278,5 +278,7 @@
     width: 14rem !important;
     height: 16rem !important;
   }
-  
+  .event-card__container {
+    margin-top: -60px;
+  }
 }

@@ -30,6 +30,13 @@ const PreEventsCard = ({
       ? words.slice(0, wordLimit).join(" ") + "..."
       : text;
   }
+  const handleClick=()=>{
+    if(!eventRegister){
+      notify();
+    }else{
+      window.open(eventRegister);
+    }
+  }
   
   return (
     <div className='event-card' aria-labelledby="event card">
@@ -57,7 +64,7 @@ const PreEventsCard = ({
             .replace("12", "DEC")}
         </time>
         <div className="btn-container ">
-          <a className="cursor-pointer" onClick={notify}>
+          <a className="cursor-pointer" onClick={handleClick}>
           <img src={btn1} className="btn1" alt="" />
           <img src={btn1h} className="btn1-hov" alt="" />
           </a>

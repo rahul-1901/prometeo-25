@@ -7,8 +7,6 @@
   justify-content: space-between;
   
 }
-
-
 .member-img {
   width: 100%;
   width: 279.5px;
@@ -17,11 +15,11 @@
 }
 .member-img img{
   width: 279.5px;
-height: 327.55px;
-top: 32.34px;
-left: 26.72px;
-gap: 0px;
-opacity: 0px;
+  height: 327.55px;
+  top: 32.34px;
+  left: 26.72px;
+  gap: 0px;
+  opacity: 0px;
 
   position: absolute;
     transform-origin: center; 
@@ -122,3 +120,24 @@ opacity: 0px;
   transition: all 0.5s ease-in;
 }
 
+@media (max-width: 500px) {
+  .wrapper {
+    width: 100%;
+    margin: auto;
+    margin-top: -20px;
+  }
+  .membre{
+    width: 100%;
+    margin: auto;
+    height: fit-content;
+  }
+  .member-img img{
+    top: 22px !important;
+    left: 20px !important;
+    width: 190px !important;
+    height: 230.55px !important;
+  }
+  .member-nm{
+    margin-top: -120px;
+  }
+}
