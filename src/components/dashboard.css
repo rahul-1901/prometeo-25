@@ -15,6 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
   gap: 3vh;
 }
 
@@ -152,6 +153,7 @@ hr {
   gap: 2vw;
   justify-content: center;
   z-index: 10;
+  padding-bottom: 2vh;
 }
 
 .dashboard_button button {

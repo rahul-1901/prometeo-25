@@ -169,19 +169,6 @@ const Dasboard = () => {
           Logout
         </button>
       </div>
-      <div className="dashboard__passes">
-        {passCondition === true ? (
-          <div ref={ref} className="dashboard_pass_element">
-            <EventPasses
-              passType={userPassDetails[0].name}
-              regId={userData.registration_id}
-              fName={userData.first_name}
-            />
-          </div>
-        ) : (
-          <></>
-        )}
-      </div>
     </div>
   );
 };
