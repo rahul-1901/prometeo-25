@@ -7,7 +7,7 @@ import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 import { usePlay } from "./Play";
 import {Speed} from "./Speed";
-import { Ocean } from "./Ocean_2";
+import { Ocean } from "./Ocean";
 import { ShipFinal } from "./SHIP_PROMETEO";
 import { GlacierFinal } from "./GLACIER_2";
 import { WelcomeText } from "./text/Welcome";
