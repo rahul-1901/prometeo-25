@@ -66,13 +66,13 @@ const PreEventsCard = ({
       </div>
       <div className="event-card__container ">
         <h2>{eventName}</h2>
-        <time>
+        {/* <time>
           {eventTime
             .split("-")
             .join("-")
             .replace("01", "JAN")
             .replace("12", "DEC")}
-        </time>
+        </time> */}
         <div className="work-card__container ">
         <div className="btn-container" onClick={handleClick}>
           <img src={btn1} className="btn1" alt="" />
