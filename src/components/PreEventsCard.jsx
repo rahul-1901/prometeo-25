@@ -20,8 +20,8 @@ const PreEventsCard = ({
   rule
 }) => {
 
-  const notify = () => {
-    toast("Registration Comming soon!!", {
+  const notify = (mesg) => {
+    toast(mesg, {
       duration: 3000, // Auto-close after 3 seconds
       position: "top-center", // Center the toast on the screen
 
@@ -35,14 +35,14 @@ const PreEventsCard = ({
   }
   const handleClick = () => {
     if (!eventRegister) {
-      notify();
+      notify("Registration Comming soon!!");
     } else {
       window.open(eventRegister);
     }
   }
   const handleClick2 = () => {
     if (!rule) {
-      notify();
+      notify("Rulebook Comming soon!!");
     } else {
       window.open(rule);
     }
