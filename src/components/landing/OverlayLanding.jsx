@@ -47,7 +47,7 @@ export default function OverlayLanding() {
             <button className="__text" o>Register</button>
           </Link>
           <Link to="/events">
-            <button className="__text">Event</button>
+            <button className="__text">Events</button>
           </Link>
           </div>
         </div>
