@@ -7,6 +7,7 @@ import useAxios from "../context/UseAxios";
 import { API_BASE_URL } from "../config";
 import { useNavigate } from "react-router-dom";
 import man from "../assets/dashboard/profileFace.webp";
+import girl from "../assets/dashboard/queen.png";
 import EventPasses from "./eventPasses";
 import { toPng } from "html-to-image";
 
@@ -83,7 +84,10 @@ const Dasboard = () => {
       </div>
       <div className="dashboard__upper">
         <div className="dashboard__profile">
-            <img className="manProfile" src={man}></img>
+          <img
+            className="manProfile"
+            src={userData.gender === 'Female' ? girl : man}
+          />
           <button
             onClick={() => navigate("/edit-profile")}
             style={{ marginTop: "5px", marginBottom: "5px" }}
@@ -151,6 +155,17 @@ const Dasboard = () => {
             </div>
           </div>
           <div className="divider"></div>
+
+          {userData.coupon_code && (
+            <div className="user__line">
+              <div className="user__left">Coupon Code</div>
+              <div className="user__right">{userData.coupon_code}</div>
+            </div>
+          )}
+
+          {userData.coupon_code && (
+            <div className="divider"></div>
+          )}
 
           <div className="user__line">
             <div className="user__left">Pass Status</div>

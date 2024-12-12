@@ -445,6 +445,7 @@
 @media screen and (max-width: 580px) {
   .no_margin {
     font-size: 6vh;
+    text-align: center;
   }
 
   .ca-register-btn {
@@ -472,6 +473,7 @@
 @media screen and (max-width: 480px) {
   .no_margin {
     font-size: 5vh;
+    text-align: center;
   }
 
   .ca-incentives h1,
