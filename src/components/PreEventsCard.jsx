@@ -3,9 +3,11 @@ import { API_BASE_URL } from "../config";
 import imageBox from "../assets/events/imageBox.svg"
 import btn1 from "../assets/events/button-1.svg"
 import btn1h from "../assets/events/button-1hov.svg"
+import btn2 from "../assets/events/rulebook1.svg"
+import btn2h from "../assets/events/rulebook2.svg"
 import "./PreEventsCard.css";
-import {toast} from 'react-hot-toast';
-import "react-toastify/dist/ReactToastify.css"; 
+import { toast } from 'react-hot-toast';
+import "react-toastify/dist/ReactToastify.css";
 
 const PreEventsCard = ({
   imgURL,
@@ -14,14 +16,15 @@ const PreEventsCard = ({
   eventButton,
   eventRegister,
   workshop,
-  description
+  description,
+  rule
 }) => {
 
   const notify = () => {
     toast("Registration Comming soon!!", {
       duration: 3000, // Auto-close after 3 seconds
       position: "top-center", // Center the toast on the screen
-     
+
     });
   };
   function truncateText(text, wordLimit) {
@@ -30,11 +33,18 @@ const PreEventsCard = ({
       ? words.slice(0, wordLimit).join(" ") + "..."
       : text;
   }
-  const handleClick=()=>{
-    if(!eventRegister){
+  const handleClick = () => {
+    if (!eventRegister) {
       notify();
-    }else{
+    } else {
       window.open(eventRegister);
+    }
+  }
+  const handleClick2 = () => {
+    if (!rule) {
+      notify();
+    } else {
+      window.open(rule);
     }
   }
   
@@ -63,12 +73,17 @@ const PreEventsCard = ({
             .replace("01", "JAN")
             .replace("12", "DEC")}
         </time>
-        <div className="btn-container ">
-          <a className="cursor-pointer" onClick={handleClick}>
+        <div className="work-card__container ">
+        <div className="btn-container" onClick={handleClick}>
           <img src={btn1} className="btn1" alt="" />
           <img src={btn1h} className="btn1-hov" alt="" />
-          </a>
         </div>
+        <div className="btn-container" onClick={handleClick2}>
+          <img src={btn2} className="btn1" alt="" />
+          <img src={btn2h} className="btn1-hov" alt="" />
+        </div>
+
+      </div>
         <div className="event-prize">
           {eventButton != "Coming soon..." ? (
             <>
@@ -79,9 +94,9 @@ const PreEventsCard = ({
             <></>
           )}
         </div>
-     
+
       </div>
-      
+
     </div>
   );
 };
