@@ -82,6 +82,7 @@ const Team23 = () => {
       { "id": 14, "name": "Festival Chiefs", "members":[
         {"id": 29, "name": "Shreejan Kumar", "vertical": 15, "image": "https://imgur.com/PCvP4fA.jpeg", "github_link": "", "instagram_link": "https://instagram.com/kumar_shreejan?igshid=eXJkbjBjdmVrZGFu", "facebook_link": "", "linkedin_link": "https://www.linkedin.com/in/shreejan-kumar/", "email": "kumar.301@iitj.ac.in", "phoneNo": "9920320934"},
         {"id": 31, "name": "Kushal Agarwal", "vertical": 15, "image": "https://imgur.com/J9JZPBo.jpg", "github_link": "", "instagram_link": "", "facebook_link": "", "linkedin_link": "", "email": "agarwal.26@iitj.ac.in", "phoneNo": "9140806190"},
+        {"id": 27, "name": "Niyant Shukla", "vertical": 15, "image": "https://imgur.com/vo3nxeH.PNG", "github_link": "", "instagram_link": "https://instagram.com/niyant_shukla.7?igshid=NzZlODBkYWE4Ng%3D%3D&utm_source=qr", "facebook_link": "", "linkedin_link": "https://www.linkedin.com/in/niyant-shukla-51ba37221?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", "email": "prometeo@iitj.ac.in", "phoneNo": "9316772479"},
         {"id": 3, "name": "Mayank Srivastava", "vertical": 15, "image": "https://imgur.com/Vp1WzaO.jpg", "github_link": "", "instagram_link": "https://instagram.com/0o_mayank_oo?igshid=OGQ5ZDc2ODk2ZA==", "facebook_link": "", "linkedin_link": "", "email": "srivastava.31@iitj.ac.in", "phoneNo": "9519695188"},
       ]},
     ];
