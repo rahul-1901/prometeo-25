@@ -135,13 +135,8 @@ const Team23 = () => {
       ) : (
         <FadeIn>
           <div className="team-main" style={{ backgroundImage: `url(${bg})` }}>
-            <div className="team-title23 ">
-              <PageTitle
-                title="Team'2024"
-                bgImg={null}
-                
-                color="156,96,31"
-              />
+            <div className="team-title23 flex justify-center items-center ">
+            Team'2024
             </div>
             <div className="team-section">
             {team24.map((member) => (

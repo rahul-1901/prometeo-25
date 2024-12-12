@@ -23,12 +23,7 @@ const PageTitle = ({ title, stone, bgImg, subheading, color }) => {
         </div>
         <div className="page-title-content">
           <h1
-            style={{
-              background: `radial-gradient(circle, rgba(${color},${
-                title == "CAMPUS AMBASSADOR" ? 1 : 0.4
-              }) 0%, transparent ${title == "CAMPUS AMBASSADOR" ? "60%" : "50%"})`,
-              // color: `${title == "CAMPUS AMBASSADOR" ? "#D66C0A" : ""}`,
-            }}
+            
           >
             {title}
           </h1>

@@ -35,6 +35,11 @@
   font-weight: 700;
   text-transform: uppercase;
   font-family: 'Orbitron';
+  color: #fff;
+  /* font-size: 7rem; */
+  font-size: 8vw;
+  font-weight: 900;
+  margin-bottom: 0;
 }
 .team-title img {
   height: 85%;
@@ -202,6 +207,9 @@
   }
   .current-team-btn {
     width: 80%;
-    
+  }
+  .team-title23{
+    margin-top: 10rem;
+    height: 1rem;
   }
 }
