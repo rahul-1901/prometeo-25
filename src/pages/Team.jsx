@@ -156,7 +156,7 @@ const Team = () => {
                           key={team.id}
                           name={team.name}
                           position={team.vertical_name}
-                          imgURL={team.image}
+                          imgURL={`${API_BASE_URL}${team.image}`}
                           phone={team.phoneNo}
                           email={team.email}
                           linkedin={team.linkedin_link}
@@ -168,6 +168,11 @@ const Team = () => {
                   </div>
                 </FadeInContent>
               ))}
+               <Link to="/team24">
+                <button className="current-team-btn bg-orange-400 text-white">
+                  Go to Past Team Prometeo'24
+                </button>
+              </Link>
             </div>
           </div>
         </FadeIn>

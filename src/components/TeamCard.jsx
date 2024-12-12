@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DefaultIMG from "../assets/defaultIMG.jpg";
 import "./TeamCard.css";
 import yellowImage from "../assets/team/yellowboxsvg.svg"
@@ -29,8 +29,7 @@ const TeamCard = ({
               yellow % 2 != 0 ? (<div className="background-overlay " style={{ backgroundImage: `url(${yellowImage})` }}   ></div>)
                 : (<div className="background-overlay " style={{ backgroundImage: `url(${blueImageBox})` }}   ></div>)
             }
-            { imgURL ?( <img src={`${API_BASE_URL +imgURL}`} alt="" />): (<img src={DefaultIMG} />)}
-
+            { imgURL ?( <img src={`${imgURL}`} alt="" />): (<img src={DefaultIMG} />)}
           </div>
           <div className="overly left">
             <div className="middle">

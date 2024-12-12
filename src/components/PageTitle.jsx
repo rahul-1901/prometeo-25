@@ -13,13 +13,13 @@ const PageTitle = ({ title, stone, bgImg, subheading, color }) => {
     }
   }, []);
   const backgroundStyle = {
-    background: `radial-gradient(${glow}, rgb(${color}) 0, #6535b400 100%)`,
+    
   };
   return (
     <div className="page-title-main">
       <div className="page-title-container">
         <div className="page-title-bg" style={backgroundStyle}>
-          <img src={bgImg} alt="" />
+         
         </div>
         <div className="page-title-content">
           <h1
