@@ -57,7 +57,7 @@
 
 .event-card__container {
   width: 20.54rem; /* 328.72px / 16 */
-  height: 21.13rem; /* 258px / 16 */
+  height: 19.13rem; /* TODO:make height 21.13 after adding date*/
   gap: 0.5rem; /* 8px / 16 */
   display: flex;
   flex-direction: column;
