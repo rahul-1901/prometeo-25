@@ -132,7 +132,7 @@ const Events = () => {
                         >
                           <img className="" src={technical_events} alt="cloud" />
                         </button>
-                    
+                          
                         <button
                           className={`filter___button`}
                           onClick={(e) => {
@@ -152,7 +152,7 @@ const Events = () => {
                         </button>
                     
                   </div>
-                  <div className="pre-events" id="EventList">
+                  <div className="pre-events pt-44" id="EventList">
                     <PreEvents category={category} data={eventsData} />
                   </div>
                 </div>
