@@ -86,15 +86,6 @@
   pointer-events: none; /* Prevent interactions with the hidden image */
 }
 
-.btn-container:hover .btn1-hov {
-  opacity: 1; /* Show hover image on hover */
-
-}
-
-.btn-container:hover .btn1 {
-  opacity: 0; /* Hide default button on hover */
-}
-
 
 .event-card h2 {
   font-family: Gemunu Libre;
@@ -281,4 +272,27 @@
   .event-card__container {
     margin-top: -60px;
   }
+}
+.btn1, .btn1-hov {
+  position: relative; /* Position absolutely inside the container */
+  top: 0;             /* Align to the top of the container */
+  left: 0;            /* Align to the left of the container */
+  width: 100%;        /* Stretch to fill the container */
+  height: 100%;       /* Stretch to fill the container */
+  transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn1-hov {
+  opacity: 0; /* Hover image hidden by default */
+  top: -100%;
+  pointer-events: none; /* Prevent interactions with the hidden image */
+}
+
+.btn1:hover .btn1-hov {
+  opacity: 1; /* Show hover image on hover */
+
+}
+
+.btn1:hover .btn1 {
+  opacity: 0; /* Hide default button on hover */
 }

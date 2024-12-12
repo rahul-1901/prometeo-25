@@ -15,6 +15,7 @@ function createEntry(e) {
         eventButton={e.prize ? e.prize : "Coming soon..."}
         workshop={e.type === "informal"}
         description={e.description}
+        rule={e.rulebook}
       />
     </FadeInContent>
   );
