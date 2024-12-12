@@ -86,7 +86,7 @@ const Dasboard = () => {
         <div className="dashboard__profile">
           <img
             className="manProfile"
-            src={userData.gender === 'female' ? girl : man}
+            src={userData.gender === 'Female' ? girl : man}
           />
           <button
             onClick={() => navigate("/edit-profile")}
@@ -155,6 +155,17 @@ const Dasboard = () => {
             </div>
           </div>
           <div className="divider"></div>
+
+          {userData.coupon_code && (
+            <div className="user__line">
+              <div className="user__left">Coupon Code</div>
+              <div className="user__right">{userData.coupon_code}</div>
+            </div>
+          )}
+
+          {userData.coupon_code && (
+            <div className="divider"></div>
+          )}
 
           <div className="user__line">
             <div className="user__left">Pass Status</div>
