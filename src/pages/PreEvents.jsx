@@ -41,12 +41,12 @@ const PreEvents = (props) => {
   return (
     <div className="pre-events-main">
       <div className="pre-events-cards">
-        <h2 className="blink_warning pb-44">
+        {/* <h2 className="blink_warning pb-44 ">
           {props.workshop
             ? "Workshops are live now"
             : ""}{" "}
           
-        </h2>
+        </h2> */}
         <div className="pre-events-cards-x">
           {
             props.workshop ? (props.data
