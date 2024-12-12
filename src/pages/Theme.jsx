@@ -3,7 +3,6 @@ import "./theme.css";
 import purpleStone from "../assets/purple-bottle.webp";
 import bg from "../assets/theme/themeBg.webp";
 import bgBottom from "../assets/theme/bgBottom.webp";
-import textBg from "../assets/theme/textBg.jpeg";
 import PageLoader from "../components/PageLoader";
 import FadeIn from "../components/FadeIn";
 import FadeInContent from "../components/FadeInContent";
@@ -39,10 +38,6 @@ const Theme = () => {
     {
       id: "3",
       url: bgBottom,
-    },
-    {
-      id: "4",
-      url: textBg,
     }
   ];
 
