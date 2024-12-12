@@ -101,7 +101,7 @@ const Signup = ({ handleSignin }) => {
           <input
             type="text"
             name="city"
-            placeholder="City *"
+            placeholder="City , State*"
             maxLength={40}
             required
           />

@@ -27,7 +27,15 @@
   justify-content: center; /* Center the image horizontally */
   align-items: center; /* Center the image vertically */
 }
-
+.team-title23{
+  position: relative;
+  text-align: left;
+  font-size: 1.2rem;
+  height: 25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Orbitron';
+}
 .team-title img {
   height: 85%;
 
@@ -192,5 +200,8 @@
     margin-top: -100px;
     gap: 0px;
   }
-
+  .current-team-btn {
+    width: 80%;
+    
+  }
 }

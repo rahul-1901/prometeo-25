@@ -57,7 +57,7 @@ function App() {
             <Route path="/sponsors" element={<Sponsors />} />
             <Route path="/closed" element={<PreregiClosed />} />
             <Route path="/team" element={<Team />} />
-            <Route path="/team23" element={<Team23 />} />
+            <Route path="/team24" element={<Team23 />} />
             <Route path="/theme" element={<Theme />} />
             <Route path="/events" element={<Events />} />
             <Route path="/ca" element={<CA />} />
