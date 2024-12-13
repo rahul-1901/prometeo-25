@@ -6,7 +6,7 @@ import btn1h from "../assets/events/button-1hov.svg"
 import btn2 from "../assets/events/rulebook1.svg"
 import btn2h from "../assets/events/rulebook2.svg"
 import "./PreEventsCard.css";
-import { toast } from 'react-hot-toast';
+import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 const PreEventsCard = ({
@@ -20,10 +20,21 @@ const PreEventsCard = ({
   rule
 }) => {
 
+  // const notify = (mesg) => {
+  //   toast.custom(<div className="bg-white text-black flex gap-1 rounded-md p-3"> <img className="h-6" src="https://img.icons8.com/?size=100&id=2800&format=png&color=228BE6" alt="" /> {mesg} </div>, {
+  //     duration: 3000, // Auto-close after 3 seconds
+  //     position: "top-center", // Center the toast on the screen
+
+  //   });
+  // };
   const notify = (mesg) => {
     toast(mesg, {
+      type:"info",
       duration: 3000, // Auto-close after 3 seconds
       position: "top-center", // Center the toast on the screen
+      hideProgressBar:true,
+      closeButton:false,
+      // transition:""
 
     });
   };
@@ -35,14 +46,14 @@ const PreEventsCard = ({
   }
   const handleClick = () => {
     if (!eventRegister) {
-      notify("Registration Coming soon!! ℹ️");
+      notify("Registration Coming soon!!");
     } else {
       window.open(eventRegister);
     }
   }
   const handleClick2 = () => {
     if (!rule) {
-      notify("Rulebook Coming soon!! ℹ️");
+      notify("Rulebook Coming soon!!");
     } else {
       window.open(rule);
     }

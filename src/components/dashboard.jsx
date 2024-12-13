@@ -10,7 +10,7 @@ import man from "../assets/dashboard/profileFace.webp";
 import girl from "../assets/dashboard/queen.png";
 import EventPasses from "./eventPasses";
 import { toPng } from "html-to-image";
-import { toast } from 'react-hot-toast';
+import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 
@@ -77,10 +77,12 @@ const Dasboard = () => {
     // } else {
     //   navigate("/accommodation");
     // }
-    toast("Coming Soon, We'll let you know! ℹ️", {
+    toast("Coming Soon, We'll let you know!", {
+      type:"info",
       duration: 3000, // Auto-close after 3 seconds
       position: "top-center", // Center the toast on the screen
-
+      hideProgressBar:true,
+      closeButton:false,
     });
   };
 

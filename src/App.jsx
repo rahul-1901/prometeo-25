@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import { ToastContainer, toast } from 'react-toastify';
 import "./App.css";
 
 import { AuthProvider } from "./context/AuthContext.jsx";
@@ -75,6 +76,7 @@ function App() {
             <Route path="/business-darbar" element={<Darbar />} />
           </Routes>
           <Toaster />
+          <ToastContainer />
         </AuthProvider>
       </Router>
     </>
