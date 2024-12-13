@@ -54,14 +54,7 @@ const Signin = ({ handleSignup }) => {
     toast.promise(myPromise, {
       pending: "Logging you in...",
       success: "Logged in successfully!",
-      error: {
-        render: ({ data }) => {
-          if (data == "Unauthorized") {
-            return "Invalid Credentials!";
-          }
-          return "Something went wrong!";
-        },
-      },
+      error: (err) => `${err == "Bad Request" ? "Please sign up first!" : "Something went wrong!"}`,
     });
   }
 
