@@ -35,6 +35,7 @@ const Register = () => {
     const signUp = document.getElementById("sign-up-container-id");
     container.classList.add("right-panel-active");
     signIn.classList.add("hide-it");
+    container.classList.add('h');   
     container.classList.remove('right')
     container.classList.add('left')
     signUp.classList.remove("hide-it");
@@ -51,6 +52,7 @@ const Register = () => {
     const signUp = document.getElementById("sign-up-container-id");
     container.classList.remove("right-panel-active"); 
     container.classList.add('right');
+    container.classList.remove('h');
     container.classList.remove('left');
     signIn.classList.remove("hide-it");
     signUp.classList.add("hide-it");
