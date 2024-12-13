@@ -35,14 +35,14 @@ const PreEventsCard = ({
   }
   const handleClick = () => {
     if (!eventRegister) {
-      notify("Registration Comming soon!!");
+      notify("Registration Coming soon!! ℹ️");
     } else {
       window.open(eventRegister);
     }
   }
   const handleClick2 = () => {
     if (!rule) {
-      notify("Rulebook Comming soon!!");
+      notify("Rulebook Coming soon!! ℹ️");
     } else {
       window.open(rule);
     }
