@@ -305,6 +305,15 @@
 
 @media screen and (max-width: 580px) {
   .no_margin {
-    font-size: 3.8vh;
+    font-size: 6vh;
+    margin-bottom: 1vh;
+    word-spacing: 0px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .no_margin {
+    font-size: 3.9vh;
+    margin-bottom: 1vh;
   }
 }

@@ -7,7 +7,7 @@
   width: 100%;
   min-height: 100vh;
   box-sizing: border-box;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: repeat;
   background-position: center;
   background-attachment: fixed;
@@ -30,7 +30,7 @@
 }
 
 .dashboard-title {
-  margin-top: 10vh;
+  margin-top: 12vh;
   font-family: 'Changa';
   font-weight: 550;
   z-index: 10;
