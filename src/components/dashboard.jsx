@@ -10,6 +10,9 @@ import man from "../assets/dashboard/profileFace.webp";
 import girl from "../assets/dashboard/queen.png";
 import EventPasses from "./eventPasses";
 import { toPng } from "html-to-image";
+import { toast } from 'react-hot-toast';
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Dasboard = () => {
   const { user, logoutUser } = useContext(AuthContext);
@@ -68,11 +71,17 @@ const Dasboard = () => {
   };
 
   const handlePass = () => {
-    if (passCondition) {
-      downloadPng();
-    } else {
-      navigate("/accommodation");
-    }
+
+    // if (passCondition) {
+    //   downloadPng();
+    // } else {
+    //   navigate("/accommodation");
+    // }
+    toast("Coming Soon, We'll let you know!", {
+      duration: 3000, // Auto-close after 3 seconds
+      position: "top-center", // Center the toast on the screen
+
+    });
   };
 
   return (
