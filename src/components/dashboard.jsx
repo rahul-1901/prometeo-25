@@ -77,7 +77,7 @@ const Dasboard = () => {
     // } else {
     //   navigate("/accommodation");
     // }
-    toast("Coming Soon, We'll let you know!", {
+    toast("Coming Soon, We'll let you know! ℹ️", {
       duration: 3000, // Auto-close after 3 seconds
       position: "top-center", // Center the toast on the screen
 
