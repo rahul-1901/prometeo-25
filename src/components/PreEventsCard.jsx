@@ -55,7 +55,7 @@ const PreEventsCard = ({
     if (!rule) {
       notify("Rulebook Coming soon!!");
     } else {
-      window.open(rule);
+      window.open(rule, "_blank"); 
     }
   }
   
