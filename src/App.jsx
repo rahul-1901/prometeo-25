@@ -29,6 +29,7 @@ import Home from "./pages/Home.jsx";
 import smallLogo from "../src/assets/logo.gif";
 import image from "../src/assets/image.png";
 import { PlayProvider } from "./components/landing/Play.jsx";
+import Chatbot from './components/Chatbot.jsx';
 function App() {
   return (
     <>
@@ -75,6 +76,7 @@ function App() {
             <Route path="/edit-profile" element={<Edit_profile />} />
             <Route path="/business-darbar" element={<Darbar />} />
           </Routes>
+{/*           <Chatbot /> */}
           <Toaster />
           <ToastContainer />
         </AuthProvider>
