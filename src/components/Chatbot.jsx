@@ -10,7 +10,7 @@ const Chatbot = () => {
   ]);;
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-
+  const [isOnline, setIsOnline] = useState(true);
 
   const apiResponse = async (prompt) => {
     try {
@@ -35,6 +35,7 @@ const Chatbot = () => {
 
     } catch (error) {
       console.error('error',error.message);
+      setIsOnline(false);
       throw error;
     }
   };
@@ -68,12 +69,14 @@ const Chatbot = () => {
         }
         return updatedMessages;
       } );
+      setIsOnline(true)
     } catch (error) {
       console.error('Chat Error:', error.message);
       const errorMessage = {
         text: 'services not available, please try some time later',
         sender: 'bot',
       };
+      setIsOnline(false);
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
@@ -95,7 +98,9 @@ const Chatbot = () => {
             <img src={botChat} className='h-9' />
             <div>
               <h3 className='saga pl-0'>Saga</h3>
-              <p className='online'> <span className='text-[10px]'>🟢</span> Online</p>
+             { isOnline?
+              (<p className='online'> <span className='text-[10px]'>🟢</span> Online</p>):
+              (<p className='online text-red-600'> <span className='text-[10px]'>🔴</span> Offline</p>)}
             </div>
             
           </div>
@@ -108,7 +113,7 @@ const Chatbot = () => {
                     {message.sender === 'bot' ? (
                       <img
                         src={botChat}
-                        className="botImage"
+                        className="botImage w-9"
                       />
                     ) : (
                       '👤'
