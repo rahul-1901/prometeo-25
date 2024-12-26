@@ -50,7 +50,6 @@ const Chatbot = () => {
     if (!inputMessage.trim()) return;
 
     const userMessage = {
-      id: Date.now(),
       text: inputMessage,
       sender: 'user',
     };
@@ -62,7 +61,6 @@ const Chatbot = () => {
     try {
       const data = await apiResponse(inputMessage);
       const botMessage = {
-        id: Date.now() + 1,
         text: data.response || 'services not available, please try some time later',
         sender: 'bot',
       };
@@ -71,7 +69,6 @@ const Chatbot = () => {
     } catch (error) {
       console.error('Chat Error:', error.message);
       const errorMessage = {
-        id: Date.now() + 1,
         text: 'services not available, please try some time later',
         sender: 'bot',
       };

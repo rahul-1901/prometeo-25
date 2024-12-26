@@ -87,7 +87,7 @@
 }
 
 .loading {
-  background-color: #f0f0f0; 
+  background-color: #d1cfcf; 
   animation: fadeInOut 1.5s ease-in-out infinite;
 }
 
