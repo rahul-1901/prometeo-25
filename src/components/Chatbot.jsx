@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import botChat from "../assets/logo.gif";
+import man from "../assets/dashboard/profileFace.webp";
+import girl from "../assets/dashboard/queen.png";
+import { API_BASE_URL } from "../config";
+import useAxios from '../context/UseAxios';
 import './Chatbot.css';
 
 const Chatbot = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { text: 'Hello! How can I help you today?', bot: true}
+    { text: 'Hello! How can I help you today?', sender: 'bot' }
   ]);;
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const api = useAxios();
+  const [userImage, setUserImage] = useState({});
 
 
   const apiResponse = async (prompt) => {
@@ -25,20 +31,20 @@ const Chatbot = () => {
           stream: false,
         }),
       });
-  
-      const data = await response.json(); 
-  
+
+      const data = await response.json();
+
       if (!data?.response) {
         throw new Error('response error');
       }
-      return data; 
+      return data;
 
     } catch (error) {
-      console.error('error',error.message);
+      console.error('error', error.message);
       throw error;
     }
   };
-  
+
   const userAsk = async (e) => {
     e.preventDefault();
     if (!inputMessage.trim()) return;
@@ -72,13 +78,25 @@ const Chatbot = () => {
     }
   };
 
+  useEffect(() => {
+    const userPic = async () => {
+      const responses = await api.get(`${API_BASE_URL}accounts/userdata/`);
+      if (responses.status === 200) {
+        setUserImage(responses.data);
+      } else {
+        console.log("notImage");
+      }
+    };
+    userPic();
+  }, []);
+
   return (
     <div className="chatbot-container">
       <button
         className="chatbot-toggle"
         onClick={() => setIsOpen(!isOpen)}
       >
-        {isOpen ? '✕' : '💬'}
+        {isOpen ? 'x' : '💬'}
       </button>
 
       {isOpen && (
@@ -98,13 +116,29 @@ const Chatbot = () => {
                         className="botImage"
                       />
                     ) : (
-                      '👤'
+                      <img
+                        src={userImage.gender === 'Female' ? girl : man}
+                        className='userImage'
+                      />
                     )}
                   </span>
                   <p>{message.text}</p>
                 </div>
               </div>
             ))}
+            {isLoading && (
+              <div className="message bot-message">
+                <div className="message-content loading">
+                  <span className="bot">
+                    <img
+                      src={botChat}
+                      className="botImage"
+                    />
+                  </span>
+                  <div className="loading-box"></div>
+                </div>
+              </div>
+            )}
           </div>
 
           <form onSubmit={userAsk} className="userInput">
@@ -113,7 +147,7 @@ const Chatbot = () => {
               onChange={(e) => setInputMessage(e.target.value)}
               placeholder="Type your message.."
             />
-            <button type="submit">Send</button>
+            <button type="submit" disabled={isLoading}>Send</button>
           </form>
         </div>
       )}

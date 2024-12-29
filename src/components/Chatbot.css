@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa&display=swap');
+
 .chatbot-container {
   position: fixed;
   bottom: 10px;
@@ -38,6 +40,9 @@
   background-color: #0e1731;
   color: white;
   border-radius: 10px 10px 0 0;
+  text-align: center;
+  font-family: 'Changa', sans-serif;
+  font-weight: 700;
 }
 
 .chat-header h3 {
@@ -69,24 +74,34 @@
   background-color: #288f7e;
   color: black;
   margin-left: auto;
-  width: 40%;
+  width: 70%;
 }
 
 .message-content {
-  max-width: 80%;
+  width: 90%;
   padding: 10px;
   border-radius: 15px;
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 8px;
 }
 
+.loading {
+  background-color: #d1cfcf; 
+  animation: fadeInOut 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 .bot {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 50%;
+  width: 30%;
 }
 
 .botImage {
@@ -94,11 +109,16 @@
   height: 100%;
 }
 
+.userImage {
+  width: 80%;
+  border-radius: 50%;
+}
 
 .message-content p {
   margin: 0;
   font-size: clamp(0.8rem, 2.5vw, 0.9rem);
   word-break: break-word;
+  width: 80%;
 }
 
 .userInput {
