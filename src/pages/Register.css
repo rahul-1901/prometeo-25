@@ -33,6 +33,7 @@
   background-attachment: fixed;
   transition: background-image 0.5s ease-in-out;
   z-index: 20;
+  height: 100vh;
 }
 
 .form-container {
@@ -190,6 +191,12 @@
   height: 100%;
 }
 
+.h{
+  height: fit-content 100vh !important;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
 @media screen and (max-width: 800px) {
   .form-container-main {
     /* margin: 0; */
@@ -242,7 +249,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .h{
     height: fit-content !important;
 
@@ -254,6 +261,6 @@
     background-position: calc(100% + 69vw) center;
   }
   .left{
-    background-position: calc(100% + 140vw) center;
+    background-position: center;
   }
 }
