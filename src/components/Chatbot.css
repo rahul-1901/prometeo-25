@@ -255,4 +255,8 @@
     padding: 0px;
     font-size: clamp(0.8rem, 2.5vw, 0.9rem);
   }
+
+  .loading {
+    height: 35px;
+  }
 }
