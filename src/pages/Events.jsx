@@ -41,7 +41,7 @@ const Events = () => {
         loadImg.onload = () =>
           setTimeout(() => {
             resolve(image.url);
-          }, 2000);
+          }, 500);
 
         loadImg.onerror = (err) => reject(err);
       });

@@ -30,6 +30,7 @@ import smallLogo from "../src/assets/logo.gif";
 import image from "../src/assets/image.png";
 import { PlayProvider } from "./components/landing/Play.jsx";
 import Chatbot from './components/Chatbot.jsx';
+import Landing from "./pages/Landing.jsx";
 function App() {
   return (
     <>
@@ -53,7 +54,8 @@ function App() {
       />
           </Link>
           <Routes>
-            <Route path="/" element={<PlayProvider> <Home/> </PlayProvider>} />
+            <Route path="/" element={<Landing />} />
+            <Route path="/landing" element={<PlayProvider> <Home/> </PlayProvider>} />
             <Route path="/ca" element={<CA />} />
             <Route path="/past-speakers" element={<Speakers />} />
             <Route path="/sponsors" element={<Sponsors />} />
