@@ -55,7 +55,7 @@ function App() {
           </Link>
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/landing" element={<PlayProvider> <Home/> </PlayProvider>} />
+            <Route path="/3d" element={<PlayProvider> <Home/> </PlayProvider>} />
             <Route path="/ca" element={<CA />} />
             <Route path="/past-speakers" element={<Speakers />} />
             <Route path="/sponsors" element={<Sponsors />} />
