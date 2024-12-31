@@ -16,7 +16,7 @@ const TypingEffect = ({ text, onComplete }) => {
     }
   }, [currentIndex, text]);
 
-  return <p>{displayedText}</p>;
+  return <div>{displayedText}</div>;
 };
 
 export default TypingEffect;
