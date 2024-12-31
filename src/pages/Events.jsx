@@ -92,7 +92,7 @@ const Events = () => {
         <PageLoader />
       ) : (
         <FadeIn>
-          <div className="w-full h-svh">
+          <div className="w-full">
             <div
               className="eventspage-main "
               style={{ backgroundImage: `url(${bg})` }}

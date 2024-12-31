@@ -37,22 +37,6 @@ function App() {
       <Router>
         <AuthProvider>
           <Navbar /> 
-          <Link to={'/'} >
-            <img
-              className="home-img"
-              src={smallLogo}
-              style={{zIndex:100}}
-              alt="click to go home"
-              onClick={() => handleNavClick()}
-            />
-            <img
-        className="title-image"
-        src={image}
-        style={{zIndex:100}}
-        alt="Prometeo '25"
-        onClick={() => handleNavClick()}
-      />
-          </Link>
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/3d" element={<PlayProvider> <Home/> </PlayProvider>} />
