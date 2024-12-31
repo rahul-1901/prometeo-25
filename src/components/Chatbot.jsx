@@ -156,7 +156,7 @@ const Chatbot = () => {
                       onComplete={() => handleTypingComplete(index)}
                     />
                   ) : (
-                    <p className='whitespace-pre-wrap break-words'>{message.text}</p>
+                    <div className='whitespace-pre-wrap break-words messagePara'>{message.text}</div>
                   )}
                 </div>
               </div>
