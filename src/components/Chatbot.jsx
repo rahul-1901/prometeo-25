@@ -42,7 +42,6 @@ const Chatbot = () => {
       return data;
     } catch (error) {
       console.error('error',error.message);
-      setIsOnline(false);
       throw error;
     }
   };
@@ -68,8 +67,6 @@ const Chatbot = () => {
 
     setMessages((prev) => [...prev, userMessage]);
     setInputMessage('');
-    const botMessage = { text: ' ...', sender: 'bot' };
-    setMessages((prev) => [...prev, botMessage]); 
     setIsLoading(true);
     try {
       const data = await apiResponse(inputMessage);
@@ -88,7 +85,6 @@ const Chatbot = () => {
         sender: 'bot',
         isTyping: true,
       };
-      setIsOnline(false);
       setMessages((prev) => [...prev, errorMessage]);
       setIsLive(false);
     } finally {
