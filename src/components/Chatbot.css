@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 
 .chatbot-container {
   position: fixed;
@@ -11,43 +14,73 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: rgb(109, 143, 137);
   border: none;
-  color: white;
-  font-size: 1.5rem;
   cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   position: absolute;
   bottom: 0;
   right: 0;
+  background-image: url('../assets/chatBot/saga.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .chatbot {
   position: absolute;
   bottom: 70px;
   right: 0;
-  width: 300px;
-  height: 400px;
-  background-color: white;
+  width: 350px;
+  height: 500px;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(180deg, #004d2c 0%, #2a0033 100%);
   display: flex;
   flex-direction: column;
 }
 
 .chat-header {
   padding: 15px;
-  background-color: #0e1731;
+  backdrop-filter: blur(103.5999984741211px);
   color: white;
   border-radius: 10px 10px 0 0;
-  text-align: center;
-  font-family: 'Changa', sans-serif;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.chat-header h3 {
+.saga_header {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url('../assets/chatBot/saga.png');
+  background-size: cover;
+}
+
+.saga_title {
+  display: flex;
+  flex-direction: column;
+}
+
+.saga_name {
+  margin-top: -2px;
+  padding: 0;
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.online {
+  color: rgba(67, 238, 125, 1);
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  padding: 0;
+  margin-top: -9px;
+  font-family: 'Inter', sans-serif;
+}
+
+.liveDots {
+  font-size: 9px;
   margin: 0;
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  padding: 0;
 }
 
 .messages {
@@ -57,44 +90,44 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  color: black;
 }
 
 .message {
   display: flex;
   margin-bottom: 10px;
+  color: rgba(255, 255, 255, 1);
 }
 
+.message-content {
+  padding: 5px;
+}
+
+
 .bot-message .message-content {
-  background-color: #f1f1f1;
+  background: rgba(255, 255, 255, 0.3);
   margin-right: auto;
 }
 
 .user-message .message-content {
-  background-color: #288f7e;
-  color: black;
+  background: rgba(255, 255, 255, 0.3);
   margin-left: auto;
-  width: 70%;
-}
-
-.message-content {
-  width: 90%;
-  padding: 10px;
-  border-radius: 15px;
-  display: flex;
-  align-items: start;
-  gap: 8px;
 }
 
 .loading {
-  background-color: #d1cfcf; 
+  background-color: rgba(255, 255, 255, 0.3);
   animation: fadeInOut 1.5s ease-in-out infinite;
+  width: 60%;
+  padding: 10px;
+  height: 150px;
 }
 
 @keyframes fadeInOut {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.2;
   }
+
   50% {
     opacity: 1;
   }
@@ -123,41 +156,52 @@
 
 .userInput {
   padding: 5px;
+  margin: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
-  border-top: 1px solid #eee;
+  border: 2px solid rgb(50, 122, 95);
+  border-radius: 20px;
 }
 
 .userInput input {
   flex: 1;
   padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  font-size: clamp(0.8rem, 2.5vw, );
+  background-color: transparent;
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 400;
+  color: rgb(255, 255, 255, 1);
 }
+
+.userInput input::placeholder {
+  color: rgb(255, 255, 255, 1);
+}
+
+.userInput input:focus {
+  border: none;
+  outline: none;
+} 
 
 .userInput button {
   padding: 8px 10px;
-  background-color: #28282e;
-  color: white;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
-  white-space: nowrap;
+  background-color: transparent;
+  color: rgb(42, 196, 129);
+  font-size: 25px;
 }
 
-.userInput button:hover {
-  background-color: #000000;
+.userInput button:focus {
+  outline: none;
+  border: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
   .chatbot {
-    width: 300px;
-    height: 50vh;
-    bottom: 10x;
+    width: 50vw;
+    height: 65vh;
     right: 0px;
   }
 }
@@ -169,21 +213,25 @@
   }
 
   .chatbot {
-    width: 50vw;
-    height: 50vh;
+    width: 65vw;
+    height: 65vh;
     bottom: 8vh;
-    right: 5px;
+    right: 0px;
     border-radius: 20px;
   }
 
   .chatbot-toggle {
     width: 45px;
     height: 45px;
-    font-size: 1.2rem;
   }
 
   .chat-header {
-    border-radius: 0;
+    height: 15%;
+  }
+
+  .saga_header {
+    height: 40px;
+    width: 40px;
   }
 
   .message-content {
@@ -193,15 +241,14 @@
   }
 
   .userInput {
-    padding: 10px;
+    padding: 4px;
     gap: 5px;
+    height: 50px;
   }
 
   .userInput input {
     width: 50%;
     padding: 0px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
     font-size: clamp(0.8rem, 2.5vw, 0.9rem);
   }
 }
