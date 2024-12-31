@@ -109,6 +109,7 @@
 @media (max-width: 488px) {
     .land-container {
         background-image: url('../assets/bgmobile.jpg');
+        background-size: cover;
     }
    .titles{
     font-size: 10vw ;  
