@@ -36,7 +36,7 @@ function Landing() {
                 loadImg.onload = () =>
                     setTimeout(() => {
                         resolve(image.url);
-                    }, 100);
+                    }, 1500);
 
                 loadImg.onerror = (err) => reject(err);
             });
