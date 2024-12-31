@@ -33,19 +33,20 @@ const Chatbot = () => {
           stream: false,
         }),
       });
-
-      const data = await response.json();
-
+  
+      const data = await response.json(); 
+  
       if (!data?.response) {
         throw new Error('response error');
       }
       return data;
     } catch (error) {
-      console.error('error', error.message);
+      console.error('error',error.message);
+      setIsOnline(false);
       throw error;
     }
   };
-
+  
   const userAsk = async (e) => {
     e.preventDefault();
     if (!inputMessage.trim()) return;
@@ -67,7 +68,8 @@ const Chatbot = () => {
 
     setMessages((prev) => [...prev, userMessage]);
     setInputMessage('');
-
+    const botMessage = { text: ' ...', sender: 'bot' };
+    setMessages((prev) => [...prev, botMessage]); 
     setIsLoading(true);
     try {
       const data = await apiResponse(inputMessage);
@@ -86,6 +88,7 @@ const Chatbot = () => {
         sender: 'bot',
         isTyping: true,
       };
+      setIsOnline(false);
       setMessages((prev) => [...prev, errorMessage]);
       setIsLive(false);
     } finally {
@@ -115,7 +118,7 @@ const Chatbot = () => {
   return (
     <div className="chatbot-container">
       <button
-        className="chatbot-toggle"
+        className="chatbot-toggle flex justify-center items-center"
         onClick={() => setIsOpen(!isOpen)}
       >
       </button>
@@ -141,7 +144,7 @@ const Chatbot = () => {
                     {message.sender === 'bot' ? (
                       <img
                         src={botChat}
-                        className="botImage"
+                        className="botImage w-9"
                       />
                     ) : (
                       <img
@@ -177,6 +180,7 @@ const Chatbot = () => {
           </div>
 
           <form onSubmit={userAsk} className="userInput">
+       
             <input
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}

@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Gemunu+Libre:wght@200..800&family=Shojumaru&display=swap');
+@font-face {
+  font-family: 'MyFont';
+  src: url('../assets/events/fonts.otf') format('opentype'); /* Ensure the path is correct */
+}
+
+@font-face {
+    font-family: 'Noatun';
+    src: url('../assets/theme/Noatun.otf') format('opentype');
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+.land-container {
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/bgLanding.webp'); /* Ensure the path is correct */
+  }
+.main-text{
+    margin-top: 8rem;
+}
+.titles {  
+    font-family: Zaptron;
+    font-size: 132.84px;
+    line-height: 100.13px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 
+        0px 0px 34.99px rgba(96, 240, 120, 1),  /* Intense glow */
+        0px 0px 24.99px rgba(96, 240, 120, 0.8),  /* Slightly less intense for layering effect */
+        0px 0px 44.99px rgba(96, 240, 120, 0.304); 
+}
+.sub-title{
+    font-family: Noatun;
+    font-size: 47.94px;
+    font-weight: 400;
+    line-height: 60.65px;
+    text-align:right;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    text-shadow: 
+        0px 0px 14.99px rgba(96, 240, 120, 1),  /* Intense glow */
+        0px 0px 24.99px rgba(96, 240, 120, 0.8),  /* Slightly less intense for layering effect */
+        0px 0px 44.99px rgba(96, 240, 120, 0.066); 
+    
+}
+.exp-the{
+    margin-top: 8rem;
+}
+.exp-the h1 {
+    width: 30.17rem;
+    height: 5.25rem;
+    background-image: url("../assets/textbg.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    font-family: Shojumaru;
+    font-size: 23.45px;
+    font-weight: 400;
+    line-height: 44.3px;
+    text-align: center;
+  }
+.none{
+    all: unset;
+}
+.none:hover{
+    all: unset;
+    cursor: pointer;
+}
+
+
+
+  @media (max-width: 1200px) {
+    .land-container {
+        background-size: auto 100%; /* Fit height, but allow width to overflow */
+        background-repeat: no-repeat; /* Prevent tiling */
+        background-position: right; /* Align the image to the right, cropping from the left */
+        overflow: hidden;
+    }
+   .titles{
+    font-size: 10vw ;  
+    line-height: 50px;    
+   }
+   .sub-title{
+    font-size: 5vw ;      
+   }
+   .exp-the h1{
+    width: 30.17rem;
+    height: 5.25rem;
+    background-image: url("../assets/textbg.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-size: 25px;
+   }    
+}
+@media (max-width: 488px) {
+    .land-container {
+        background-image: url('../assets/bgmobile.jpg');
+    }
+   .titles{
+    font-size: 10vw ;  
+    line-height: 0px;    
+   }
+   .sub-title{
+    font-size: 5vw ;      
+   }
+   .exp-the h1{
+    width: 20.17rem;
+    height: 4.25rem;
+    background-image: url("../assets/textbg.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-size: 18px;
+   }    
+}

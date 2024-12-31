@@ -41,7 +41,7 @@ const Events = () => {
         loadImg.onload = () =>
           setTimeout(() => {
             resolve(image.url);
-          }, 2000);
+          }, 500);
 
         loadImg.onerror = (err) => reject(err);
       });
@@ -92,7 +92,7 @@ const Events = () => {
         <PageLoader />
       ) : (
         <FadeIn>
-          <div className="w-full">
+          <div className="w-full h-svh">
             <div
               className="eventspage-main "
               style={{ backgroundImage: `url(${bg})` }}

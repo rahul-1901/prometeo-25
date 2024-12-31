@@ -3,7 +3,7 @@
   height: 131px; /* Height as specified */
   margin: 0 auto; /* Center horizontally */
   padding: 0;
-  position: fixed; top:0;
+  position: absolute; top:0;
   background-color:  transparent;
   display: flex;
   align-items: center;
