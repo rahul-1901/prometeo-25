@@ -23,13 +23,13 @@ const Chatbot = () => {
 
   const apiResponse = async (prompt) => {
     try {
-      const response = await fetch('https://verified-jaguar-champion.ngrok-free.app/api/generate', {
+      const response = await fetch('https://hookworm-upward-eminently.ngrok-free.app/api/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: "promteo_iter4",
+          model: "prometeo_iter4",
           prompt: prompt,
           stream: false,
         }),
