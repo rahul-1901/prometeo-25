@@ -36,7 +36,7 @@ const Chatbot = () => {
       });
   
       const data = await response.json(); 
-  
+      // console.log(data)
       if (!data?.response) {
         throw new Error('response error');
       }
