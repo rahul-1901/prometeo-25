@@ -28,7 +28,7 @@ const Chatbot = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: "prometeo_iter3",
+          model: "prometeo_iter4",
           prompt: prompt,
           stream: false,
         }),
