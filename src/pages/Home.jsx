@@ -54,7 +54,7 @@ const Home = () => {
       <div
         style={{
           width: '100%',
-          height: '100%',
+          height: '100vh',
           backgroundColor: 'black',
           opacity: showContent ? 1 : 0, // Fade in smoothly
           visibility: showContent ? 'visible' : 'hidden', // Waits until fade is complete
