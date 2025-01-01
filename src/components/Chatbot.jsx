@@ -7,6 +7,7 @@ import useAxios from '../context/UseAxios';
 import saga from "../assets/chatBot/saga.png";
 import './Chatbot.css';
 import TypingEffect from './TypingEffect';
+import ReactMarkdown from 'react-markdown';
 
 const Chatbot = () => {
 
@@ -28,7 +29,7 @@ const Chatbot = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: "prometeo_iter3",
+          model: "promteo_iter4",
           prompt: prompt,
           stream: false,
         }),
@@ -155,7 +156,13 @@ const Chatbot = () => {
                       onComplete={() => handleTypingComplete(index)}
                     />
                   ) : (
-                    <div className='whitespace-pre-wrap break-words messagePara'>{message.text}</div>
+                    <div className='whitespace-pre-wrap break-words messagePara'>
+                      {message.sender === 'bot' ? (
+                        <ReactMarkdown>{message.text}</ReactMarkdown>
+                      ) : (
+                        message.text
+                      )}
+                    </div>
                   )}
                 </div>
               </div>
