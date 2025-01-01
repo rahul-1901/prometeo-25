@@ -61,13 +61,14 @@ function Landing() {
                                 </div>
                                 <div className="sub-title">NORDIC NIGHTS</div>
                             </div>
-                            <a href="/3d" className="none">
-                                <div className="exp-the w-full flex justify-center  ">
+
+                            <div className="exp-the w-full flex justify-center  ">
+                                <a href="/3d" className="none">
                                     <h1 className="flex justify-center items-center">
                                         EXPLORE THE 3D
                                     </h1>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
 
                         </div>
                     </div>
