@@ -169,6 +169,7 @@ hr {
 .passesButton {
   background-color: rgba(0, 0, 0, 0.781);
   transition: 0.3s ease;
+  cursor:not-allowed;
 }
 
 .passesButton:hover {
@@ -197,7 +198,13 @@ hr {
 .dashboard_pass_element{
   z-index: -999;
 }
-
+.open_payment_link_button_group{
+  margin-top: 20px;
+  justify-content: space-around;
+  display: flex;
+  flex-direction:column;
+  gap: 20px;
+}
 @media screen and (max-width : 1095px) {
   .dashboard_pass_element{
     z-index: auto;
@@ -227,6 +234,10 @@ hr {
 
   .dashboard_button button {
     width: 350px;
+  }
+  .open_payment_link_button_group{
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
@@ -273,5 +284,5 @@ hr {
   .dashboard_button button {
     width: 85%;
   }
-  
+
 }
