@@ -169,13 +169,23 @@ hr {
 .passesButton {
   background-color: rgba(0, 0, 0, 0.781);
   transition: 0.3s ease;
-  cursor:not-allowed;
 }
+._pendding{
+  cursor:not-allowed;
+  background-color: rgba(0, 0, 0, 0.257);
 
+}
 .passesButton:hover {
   background-color: rgba(0, 0, 0, 0.925);
 }
+._pendding{
+  cursor:not-allowed;
+  background-color: rgba(0, 0, 0, 0.257);
 
+}
+._pendding:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
 .loginButtondash {
   background-color: rgb(255, 255, 255);
   color: rgba(255, 35, 35, 1);

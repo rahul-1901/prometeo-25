@@ -12,7 +12,7 @@ const WorkshopModal = ({ isModalOpen, closeModal }) => {
     phone: ""
   });
 
- 
+
 
   return (
     <>
@@ -30,6 +30,7 @@ const WorkshopModal = ({ isModalOpen, closeModal }) => {
                 </li>
                 <li>The cost is Inclusive of GST</li>
                 <li>The pass is nonrefundable and nontransferable in case of cancellation from your side.</li>
+                <li  style={{fontWeight:820}}>You should fill the same data(email, name,phone number) in the gateway form that you have used for registering on Prometeo.in</li>
                 <li>To successfully register
                   <li style={{fontWeight:820}}>Click proceed to the gateway </li>
                   <li>Add details </li>
