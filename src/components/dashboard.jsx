@@ -12,6 +12,9 @@ import EventPasses from "./eventPasses";
 import { toPng } from "html-to-image";
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import Modal from "./Model/modal";
+import WorkshopModal from "./Model/WorkshopModel";
+import ProniteModal from "./Model/ProniteModel";
 
 
 const Dasboard = () => {
@@ -21,6 +24,10 @@ const Dasboard = () => {
   const [userPassDetails, setUserPassDetails] = useState({});
   const [passCondition, setPassCondition] = useState(false);
   const [userData, setUserData] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const closeModal = () => setIsModalOpen(false);
+  const [paymentmethod,setpaymentmethod]=useState("Register")
+
   useEffect(() => {
     window.scrollTo(0, 0);
     const navBarEle = document.getElementById("navbar");
@@ -86,6 +93,11 @@ const Dasboard = () => {
     });
   };
 
+  const handlePay=(name)=>{
+    setIsModalOpen(true)
+    setpaymentmethod(name)
+  }
+
   return (
     <div className="dashboard__main" style={{ backgroundImage: `url(${bg})` }}>
       <div className="blurLayer_dash"></div>
@@ -94,6 +106,7 @@ const Dasboard = () => {
         <h2 className="m-0 heading">PERSONAL DETAILS</h2>
       </div>
       <div className="dashboard__upper">
+        <div>
         <div className="dashboard__profile">
           <img
             className="manProfile"
@@ -105,6 +118,12 @@ const Dasboard = () => {
           >
             Edit Profile
           </button>
+        </div>
+        <div className="open_payment_link_button_group">
+        <button onClick={() => handlePay("register")} >Buy Registeration </button>
+        <button onClick={() => handlePay("workshop")}> Workshop Stay Pass</button>
+        <button onClick={() => handlePay("pronite")}>Buy Pronite Pass</button>
+        </div>
         </div>
         <div className="dashboard__description">
           <div className="user__line">
@@ -188,13 +207,22 @@ const Dasboard = () => {
         </div>
       </div>
       <div className="dashboard_button">
-        <button onClick={handlePass} className="passesButton">
+        {/* <button onClick={handlePass} className="passesButton">
           {passCondition ? "Download Pass" : "Buy Pass"}
-        </button>
+        </button> */}
         <button onClick={logoutUser} className="loginButtondash">
           Logout
         </button>
       </div>
+      {paymentmethod === "register" && (
+        <Modal isModalOpen={isModalOpen} closeModal={closeModal} />
+      )}
+      {paymentmethod === "workshop" && (
+        <WorkshopModal isModalOpen={isModalOpen} closeModal={closeModal} />
+      )}
+      {paymentmethod === "pronite" && (
+        <ProniteModal isModalOpen={isModalOpen} closeModal={closeModal} />
+      )}
     </div>
   );
 };
