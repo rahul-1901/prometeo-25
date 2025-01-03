@@ -36,7 +36,8 @@ const ProniteModal = ({ isModalOpen, closeModal }) => {
             <h3 className="modal-title">Read Carefully</h3>
                 <li>The pronite Pass only consists of the cost of the Pronite/EDM Night happening on the last day of the fest. We will not handle the transportation or any other costs besides the cost of entering the pronite area.                </li>
                 <li>The cost is Inclusive of GST</li>
-                <li>The pass is non-refundable in case of cancellation from your side.                </li>
+                <li>The pass is non-refundable in case of cancellation from your side.  </li>
+                <li  style={{fontWeight:820}}>You should fill the same data(email, name,phone number) in the gateway form that you have used for registering on Prometeo.in</li>
                 <li>To successfully register
                   <li style={{fontWeight:820}}>Click proceed to the gateway </li>
                   <li>Add details </li>
