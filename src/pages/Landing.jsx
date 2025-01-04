@@ -10,12 +10,6 @@ import FadeInContent from "../components/FadeInContent";
 function Landing() {
     const [loading, setLoading] = React.useState(true);
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        const navBarEle = document.getElementById("navbar");
-        navBarEle.style.opacity = 1;
-    });
-
     const IMAGES = [
         {
             id: "1",
@@ -79,4 +73,4 @@ function Landing() {
     )
 }
 
-export default Landing
+export default Landing;
