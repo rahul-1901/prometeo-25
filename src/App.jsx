@@ -31,15 +31,18 @@ import image from "../src/assets/image.png";
 import { PlayProvider } from "./components/landing/Play.jsx";
 import Chatbot from './components/Chatbot.jsx';
 import Landing from "./pages/Landing.jsx";
+import ShowNavbar from "./components/ShowNavbar.jsx";
 function App() {
   return (
     <>
       <Router>
         <AuthProvider>
-          <Navbar /> 
+          <ShowNavbar>
+            <Navbar />
+          </ShowNavbar>
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/3d" element={<PlayProvider> <Home/> </PlayProvider>} />
+            <Route path="/3d" element={<PlayProvider> <Home /> </PlayProvider>} />
             <Route path="/ca" element={<CA />} />
             <Route path="/past-speakers" element={<Speakers />} />
             <Route path="/sponsors" element={<Sponsors />} />
@@ -57,7 +60,7 @@ function App() {
             <Route path="/workshop" element={<Workshop />} />
             <Route path="/informals" element={<Informals />} />
             <Route path="/dashboard" element={<PrivateRoute />}>
-            <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/dashboard" element={<Dashboard />} />
             </Route>
             <Route path="/edit-profile" element={<Edit_profile />} />
             <Route path="/business-darbar" element={<Darbar />} />
