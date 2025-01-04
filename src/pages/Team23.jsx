@@ -10,6 +10,8 @@ import PageTitle from "../components/PageTitle";
 import goldenStone from "../assets/golden-bottle.webp";
 import PageLoader from "../components/PageLoader";
 import { API_BASE_URL } from "../config";
+import rajneesh from "../assets/team/rajneesh.png";
+import sharnoya from "../assets/team/sharonya.png";
 
 const Team23 = () => {
   const [team24, setTeam23] = useState(0);
@@ -45,8 +47,8 @@ const Team23 = () => {
       ] },
       // { "id": 8, "name": "Marketing", "members":[
       //   // No members data provided
-      // ] },
-      { "id": 9, "name": "Design and Creativity", "members": [
+      // ] },i
+      { "id": 9, "name": "Design And Creativity", "members": [
         {"id": 7, "name": "Shashwat Sharma", "vertical": 10, "image": "https://imgur.com/bIVx2mS.png", "github_link": "", "instagram_link": "https://www.instagram.com/sshashwat56/", "facebook_link": "", "linkedin_link": "http://www.linkedin.com/in/shashwat-sharma-2189b3223", "email": "sharma.133@iitj.ac.in", "phoneNo": "8052521146"},
         {"id": 14, "name": "Samyak Haribhakta", "vertical": 10, "image": "https://imgur.com/MHcUjnb.jpg", "github_link": "", "instagram_link": "https://www.instagram.com/samyak._02/", "facebook_link": "", "linkedin_link": "https://www.linkedin.com/in/samyak-haribhakta-6b644a230/", "email": "", "phoneNo": "8263809204"},
         {"id": 4, "name": "Sanya Shankar", "vertical": 10, "image": "https://imgur.com/dzpNs0Z.jpg", "github_link": "", "instagram_link": "https://instagram.com/sny.dsgn?igshid=OGQ5ZDc2ODk2ZA==", "facebook_link": "", "linkedin_link": "https://www.linkedin.com/in/sanya-shankar-bb2ab5201", "email": "m23ldx028@iitj.ac.in", "phoneNo": "9650662994"},
@@ -61,6 +63,13 @@ const Team23 = () => {
         {"id": 1, "name": "Ritik Tiwari", "vertical": 12, "image": "https://imgur.com/vA4fwxw.jpeg", "github_link": "", "instagram_link": "https://www.instagram.com/tiwari_1kt/", "facebook_link": "", "linkedin_link": "https://www.linkedin.com/in/ritiktiwari95/", "email": "tiwari.26@iitj.ac.in", "phoneNo": "9555092875"}
       ] },
       // { "id": 13, "name": "Publicity and Media", "members":[]},
+      {
+        "id": 13, "name": "Publicity and Media", "members": [
+          { "id": 40, "name": "Rajneesh Maleti", "vertical": 13, "image": rajneesh, "github_link": "", "instagram_link": "https://www.instagram.com/rajneesh._.18?igsh=cHF3NDlzN3B3aXBz", "linkedin_link": "https://www.linkedin.com/in/rajneesh-maleti-3b5221218?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", "email": "maleti.1@iitj.ac.in", "phoneNo": "" },
+          { "id": 41, "name": "Praveen Kumar", "vertical": 13, "image": "https://media.licdn.com/dms/image/v2/D5603AQFRRtS_C09FPw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718255381893?e=1741219200&v=beta&t=LDZMYCVrZRixiLzw8jQQdr37n5ynb5pT2onSr-xnBMg", "github_link": "", "instagram_link": "https://www.instagram.com/__praveen.kr_?igsh=eDlsa28xMDNvNHVy", "linkedin_link": "https://www.linkedin.com/in/praveen-kumar-28b856227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", "email": "kumar.308@iitj.ac.in", "phoneNo": "" },
+          { "id": 42, "name": "Sharonya Jain", "vertical": 13, "image": sharnoya, "github_link": "", "instagram_link": "https://www.instagram.com/_sharonyaj.022?igsh=YWMzbjhmcmtpZDJm", "linkedin_link": "https://www.linkedin.com/in/sharonya-jain-05737622a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", "email": "jain.72@iitj.ac.in", "phoneNo": "" }
+        ]
+      },
       { "id": 14, "name": "ATS", "members":[
         {"id": 26, "name": "Virender Parasariya", "vertical": 16, "image": "https://imgur.com/IxlzCtl.jpg", "github_link": "", "instagram_link": "https://instagram.com/virender_parasariya?igshid=MzMyNGUyNmU2YQ==", "facebook_link": "", "linkedin_link": "https://www.linkedin.com/in/virender-parasariya-8320631b6", "email": "parasariya.1@iitj.ac.in", "phoneNo": "9079199488"},
         {"id": 25, "name": "Praneeth Chiluvuri", "vertical": 16, "image": "https://imgur.com/22ECB5i.jpg", "github_link": "", "instagram_link": "https://instagram.com/praneeth_chiluvuri?igshid=MXJ1cmo0cXVkMGZ3Zw==", "facebook_link": "", "linkedin_link": "", "email": "", "phoneNo": "7901463683"},
