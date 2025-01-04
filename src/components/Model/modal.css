@@ -1,0 +1,433 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap");
+@font-face {
+  font-family: "Lemon-Milk-Bold";
+  src: local("LEMONMILK-Bold"),
+    url("./fonts/LEMONMILK-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "LEMON-MILK";
+  src: local("LEMONMILK-Bold"),
+    url("./fonts/LemonMilkLight.otf") format("truetype");
+}
+body{
+  /* background: var(--bg-image-url1) no-repeat center center fixed; */
+    background-size: cover;
+}
+
+
+
+
+.home-main-container {
+  position: absolute;
+  height: 40vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the left */
+  z-index: 20;
+  background-color: #ffffff00;
+}
+
+.fog-svg {
+  width: 100%;
+  transform: scale(2);
+  filter: invert() blur(1px);
+  opacity: 0.4;
+}
+
+.fogLeftContainer{
+  position: absolute;
+  width: 50vw;
+  height: 52vh;
+  top: 30vh;
+  z-index: 0;
+}
+
+.fogRightContainer{
+  position: absolute;
+  width: 50vw;
+  height: 52vh;
+  top: 30vh;
+  right: -5vw;
+}
+
+.logo {
+  box-sizing: border-box;
+  width: auto;
+  margin: 1.2rem;
+  height: auto !important; /* Reset height */
+  padding: 0 !important;
+  z-index: 10;
+}
+
+
+
+.pre-register {
+  padding-right: 15px;
+  z-index: 100;
+  transition: transform 0.3s ease, scale 0.3s ease;
+}
+
+.pre-register:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+
+.pre-register span {
+  text-align: center;
+  font-family: 'Lemon-Milk', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.7em;
+  line-height: 1.2;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.pre-register span:hover {
+  color: #BBBBBB;
+}
+
+.register span{
+  color: #000000;
+  background-color: white;
+  box-shadow: 2px 3px 5px black;
+
+}
+.brochure span {
+  background-color: rgba(0, 0, 0, 0.19);
+  box-shadow: 2px 3px 5px black;
+}
+.brochure span a{
+  color: #ffffff;
+}
+.home-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0px !important;
+  height: 7vh !important;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 0px 18px 0px 0px !important;
+  margin: auto;
+  z-index: 100;
+}
+.home-music{
+  width: 10%;
+  position: absolute;
+  bottom: 0px !important;
+  height: 7vh !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 0px 18px 0px 18px !important;
+  margin: auto;
+  z-index: 1000;
+  font-size: 40px;
+}
+
+.modal-back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background: var(--back-image-url) no-repeat center center; */
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.766);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.modal {
+  position: relative;
+  background: rgba(25, 19, 19, 0.777);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 900px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  opacity: 0;
+  animation: modalFadeIn 0.4s ease forwards;
+}
+.modal li{
+  text-align: start;
+  margin: 10px;
+  line-height: 20px;
+}
+.modal div{
+  text-align: start;
+  margin: 10px;
+  line-height: 20px;
+  text-decoration: underline;
+  font-weight: 800;
+}
+
+.modal-title {
+  font-family: 'Lemon-Milk-Bold', sans-serif;
+  font-size: 1.75rem; /* Increased font size slightly */
+  font-weight: 1000; /* Added boldness */
+  line-height: 1.2; /* Reduced line height for denser look */
+  margin: 1rem 0 2rem 0;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 0.5rem 0;
+  margin: 1rem 0;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.modal-input::placeholder{
+  color: white;
+  opacity: 0.8;
+}
+
+.modal-input::-ms-input-placeholder{
+  color: white;
+  opacity: 0.8;
+}
+
+.modal-input:focus {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.modal-button {
+  width: 100%;
+  padding: 0.7rem;
+  margin: 1rem 0;
+  background: rgba(255, 255, 255, 0.15); /* Softer background for a subtle look */
+  border: none;
+  border-radius: 6px; /* Slightly more rounded corners */
+  color: #fff; /* White text for contrast */
+  font-family: 'Roboto', sans-serif; /* Modern, clean font */
+  font-size: 1rem;
+  font-weight: 1000; /* Medium weight for elegance */
+  letter-spacing: 0.5px; /* Subtle spacing for readability */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+.modal-button:hover {
+  background: rgba(255, 255, 255, 0.3); /* Brighter background on hover */
+  transform: translateY(-2px); /* Slight lift on hover for an interactive feel */
+}
+
+.modal-button:active {
+  transform: translateY(0); /* Returns to original position when clicked */
+}
+@media screen and (min-width: 300px) {
+  .modal {
+  width: 350px;
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+}
+@media screen and (min-width: 480px) {
+  .modal {
+  width: 400px;
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+}
+@media screen and (min-width: 720px) {
+  .home-main-container {
+    height: 40vh;
+  }
+  .home-title h1{
+    color: white;
+    font-weight: 900;
+    font-size: 100px;
+  }
+
+  .pre-register span {
+    font-size: 1.2em;
+    line-height: 1.2;
+    padding: 5px 15px;
+  }
+  .modal {
+    width: 500px;
+    max-height: 80vh;
+    overflow-y: scroll;
+  }
+
+
+}
+@media screen and (max-width: 1280px) {
+  .fogLeftContainer{
+    top: 400px;
+  }
+  .fogRightContainer{
+    right: 0vw;
+    height: 40vh;
+  }
+
+}
+
+@media screen and (min-width: 1080px) {
+  .modal {
+    width: 900px;
+    max-height: 90vh;
+    overflow-y: scroll;
+  }
+
+}
+@media screen and (max-width: 720px) {
+  .fogLeftContainer{
+    top: 55vh;
+    left: -5vw;
+    width: 60vw;
+    height: 62.4vh;
+  }
+  .fogRightContainer{
+    width: 30vw;
+    height: 34vh;
+    right: 30vw;
+    top: 20vh;
+  }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+  .pre-register {
+    margin-top: 15px;
+  }
+  .pre-register span {
+    font-weight: 600;
+    font-size: 0.8em;
+    line-height: 1.2;
+    padding: 5px 10px;
+  }
+  .home-music{
+  display: flex;
+  justify-content: start;
+  flex-direction: row-reverse;
+  top:90.5%;
+  bottom: 0px !important;
+  width: 50%;
+  font-size: 40px;
+  position: fixed;
+  }
+
+  .fogLeftContainer{
+    top: 70vh;
+  }
+  .fogRightContainer{
+    top: 0vh;
+    right: 50vw;
+  }
+  .logo img {
+    height: auto;
+    width: 220px;
+    margin: auto;
+  }
+  .logo {
+    box-sizing: border-box;
+    display: flex;
+    width: auto;
+    margin: 0rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    justify-content: center;
+    height: auto !important; /* Reset height */
+    padding: 0 !important;
+    z-index: 10;
+  }
+  .home-title h1{
+    color: white;
+    font-weight: 900;
+    font-size: 40px;
+  }
+  .home-title {
+    margin-top: 40px;
+  }
+  /* .modal-back {
+    background: var(--back-image-url) no-repeat center center;
+  } */
+  .details{
+    flex-direction:column;
+  }
+
+
+}
+
+@media screen and (max-width: 300px) {
+  .home-title h1{
+    color: white;
+    font-weight: 900;
+    font-size: 30px;
+  }
+
+}
+
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes modalFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
