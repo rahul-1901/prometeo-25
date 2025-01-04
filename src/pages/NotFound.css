@@ -1,6 +1,11 @@
 .notfound {
   color: white;
   text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .notFound-back-btn {
   notfound-back-btnground-color: rgb(21, 18, 18);
@@ -13,6 +18,8 @@
 }
 .notFound-container {
   font-family: "Share Tech", sans-serif;
+  display: flex;
+  align-items: center;
 }
 
 .notFound-container img {
@@ -20,22 +27,11 @@
 }
 
 @media screen and (min-width: 460px) {
-  .notFound-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
   .notFound-container img {
     margin-left: 20px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .notFound-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
   .notFound-container img {
     margin-top: 20px;
   }
