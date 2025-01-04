@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 .notfound {
   color: white;
   text-align: center;
@@ -6,33 +8,27 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-image: url('../assets/notFound.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
-.notFound-back-btn {
-  notfound-back-btnground-color: rgb(21, 18, 18);
-  margin-top: 20px;
-  padding: 20px 10px 20px 10px;
-  border-radius: 15px;
-}
-.notFound-back-btn:hover {
-  border-color: white;
-}
+
 .notFound-container {
   font-family: "Share Tech", sans-serif;
   display: flex;
   align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.notFound-container img {
-  width: 90px;
+.notfound h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
 }
 
-@media screen and (min-width: 460px) {
-  .notFound-container img {
-    margin-left: 20px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .notFound-container img {
-    margin-top: 20px;
+@media screen and (max-width: 480px) {
+  .notFound-container{
+    margin-left: 10px;
   }
 }
