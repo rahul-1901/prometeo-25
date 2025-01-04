@@ -11,6 +11,7 @@
   background-image: url('../assets/notFound.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 29%;
   overflow: hidden;
 }
 
@@ -27,8 +28,8 @@
   font-size: 20px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 680px) {
   .notFound-container{
-    margin-left: 10px;
+    margin-left: 11px;
   }
 }
