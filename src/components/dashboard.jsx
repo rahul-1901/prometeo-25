@@ -206,7 +206,7 @@ const Dasboard = () => {
           <div className="user__line">
             <div className="user__left">Accommodation Status</div>
             <div className="user__right">
-              {userData.pass_type === "0" || userData.pass_type === "None" || userData.pass_type === "Pronite Pass" ? "Buy accomodation" : "Paid"}
+              {userData.pass_type === "0" || userData.pass_type === "None" || userData.pass_type === "Pronite Pass" ? "Update Pass" : "Confirmed"}
             </div>
           </div>
           <div className="divider"></div>
