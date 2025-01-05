@@ -127,10 +127,6 @@
 
 }
 
-.smallAcco {
-  color: rgb(255, 255, 255);
-}
-
 hr {
   border: 0;
   border-top: 1px solid rgba(255, 255, 255, 1); /* Customize color and style */
@@ -229,7 +225,7 @@ hr {
   }
 
   .dashboard__description {
-    width: 440px;
+    width: 420px;
   }
 
   .dashboard_button button{
@@ -243,7 +239,7 @@ hr {
   }
 
   .dashboard__description {
-    width: 410px;
+    width: 415px;
   }
 
   .dashboard_button button {
@@ -288,7 +284,7 @@ hr {
     width: auto;
   }
   .dashboard__description {
-    width: 100%;
+    width: 98%;
   }
 
   .user__line {

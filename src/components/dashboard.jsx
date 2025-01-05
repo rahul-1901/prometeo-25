@@ -204,10 +204,9 @@ const Dasboard = () => {
           {userData.ambassador === true ? <hr /> : <></>}
 
           <div className="user__line">
-            <div className="user__left lg:flex hidden lgAcco">Accommodation Status</div>
-            <div className="user_left smallAcco lg:hidden">Accommodation</div>
+            <div className="user__left">Accommodation Status</div>
             <div className="user__right">
-              {userData.pass_type === "0" || userData.pass_type === "None" || userData.pass_type === "Pronite Pass" ? "Buy accommodation" : "Paid"}
+              {userData.pass_type === "0" || userData.pass_type === "None" || userData.pass_type === "Pronite Pass" ? "Update Pass" : "Confirmed"}
             </div>
           </div>
           <div className="divider"></div>
