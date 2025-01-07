@@ -6,22 +6,20 @@ import { API_BASE_URL } from "../config";
 import useAxios from '../context/UseAxios';
 import saga from "../assets/chatBot/saga.png";
 import './Chatbot.css';
-import TypingEffect from './TypingEffect';
 import ReactMarkdown from 'react-markdown';
 
 const Chatbot = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { text: 'Hello! How can I help you today?', sender: 'bot', isTyping: false}
+    { text: 'Hello! How can I help you today?', sender: 'bot', isTyping: false }
   ]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   // const api = useAxios();
   const [userImage, setUserImage] = useState({});
   const [isLive, setIsLive] = useState(true);
-
-  const apiResponse = async (prompt) => {
+  const apiResponse = async (prompt, onStreamData) => {
     try {
       const response = await fetch('https://hookworm-upward-eminently.ngrok-free.app/api/generate', {
         method: 'POST',
@@ -31,63 +29,100 @@ const Chatbot = () => {
         body: JSON.stringify({
           model: "prometeo_iter4",
           prompt: prompt,
-          stream: false,
+          stream: true,
         }),
       });
-  
-      const data = await response.json(); 
-      // console.log(data)
-      if (!data?.response) {
-        throw new Error('response error');
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-      return data;
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+
+      let buffer = ''; // Buffer to hold incomplete JSON chunks
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value, { stream: true });
+        buffer += chunk; // Append new chunk to buffer
+
+        // Attempt to extract JSON objects from the buffer
+        let boundaryIndex;
+        while ((boundaryIndex = buffer.indexOf('}')) !== -1) {
+          const jsonString = buffer.slice(0, boundaryIndex + 1); // Extract one JSON object
+          buffer = buffer.slice(boundaryIndex + 1); // Remove the processed part
+
+          try {
+            const jsonObject = JSON.parse(jsonString); // Parse the JSON object
+            onStreamData(jsonObject.response); // Pass the `response` field to the callback
+          } catch (error) {
+            console.error('Error parsing JSON chunk:', error.message);
+            break; // Exit the loop if there's a parsing error
+          }
+        }
+      }
+
+      return; // No final concatenation needed
     } catch (error) {
-      console.error('error',error.message);
+      console.error('Error in streaming:', error.message);
       throw error;
     }
   };
-  
+
+
   const userAsk = async (e) => {
     e.preventDefault();
     if (!inputMessage.trim()) return;
 
-
-    setMessages((prev) =>
-      prev.map((msg) =>
-        msg.sender === 'bot' && msg.isTyping
-          ? { ...msg, isTyping: false }
-          : msg
-      )
-    );
-
+    // Add user message
     const userMessage = {
       text: inputMessage,
       sender: 'user',
       isTyping: false,
     };
-
     setMessages((prev) => [...prev, userMessage]);
     setInputMessage('');
     setIsLoading(true);
-    try {
-      const data = await apiResponse(inputMessage);
-      const botMessage = {
-        text: data.response || 'services not available, please try some time later',
-        sender: 'bot',
-        isTyping: true,
-      };
 
-      setMessages((prev) => [...prev, botMessage]);
-      setIsLive(true);
+    // Add initial bot message and calculate index
+    let botMessageIndex;
+    setMessages((prev) => {
+      botMessageIndex = prev.length; // Index of the new bot message
+      return [...prev, { text: '', sender: 'bot', isTyping: true }];
+    });
+
+    try {
+      await apiResponse(inputMessage, (chunk) => {
+        // Update bot message incrementally
+        setMessages((prev) =>
+          prev.map((msg, index) =>
+            index === botMessageIndex
+              ? { ...msg, text: msg.text + chunk }
+              : msg
+          )
+        );
+      });
+
+      // Mark bot message as not typing
+      setMessages((prev) =>
+        prev.map((msg, index) =>
+          index === botMessageIndex
+            ? { ...msg, isTyping: false }
+            : msg
+        )
+      );
     } catch (error) {
       console.error('Chat Error:', error.message);
-      const errorMessage = {
-        text: 'services not available, please try some time later',
-        sender: 'bot',
-        isTyping: true,
-      };
-      setMessages((prev) => [...prev, errorMessage]);
-      setIsLive(false);
+      setMessages((prev) =>
+        prev.map((msg, index) =>
+          index === botMessageIndex
+            ? { ...msg, text: 'Error: Please try again later', isTyping: false }
+            : msg
+        )
+      );
     } finally {
       setIsLoading(false);
     }
@@ -107,7 +142,7 @@ const Chatbot = () => {
 
 
   const handleTypingComplete = (index) => {
-    setMessages(prev => prev.map((msg, i) => 
+    setMessages(prev => prev.map((msg, i) =>
       i === index ? { ...msg, isTyping: false } : msg
     ));
   };
@@ -136,54 +171,20 @@ const Chatbot = () => {
           <div className='messages'>
             {messages.map((message, index) => (
               <div key={message.id || index} className={`message ${message.sender === 'user' ? 'user-message' : 'bot-message'} ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`message-content inline-block max-w-[80%] rounded-2xl ${message.sender === 'user' ? 'rounded-br-none': 'rounded-bl-none'}`}>
-                  {/* <span className="bot">
-                    {message.sender === 'bot' ? (
-                      <img
-                        src={botChat}
-                        className="botImage w-9"
-                      />
-                    ) : (
-                      <img
-                        src={userImage.gender === 'Female' ? girl : man}
-                        className='userImage'
-                      />
-                    )}
-                  </span> */}
-                  {message.sender === 'bot' && message.isTyping ? (
-                    <TypingEffect 
-                      text={message.text} 
-                      onComplete={() => handleTypingComplete(index)}
-                    />
+                <div className={`message-content inline-block max-w-[80%] rounded-2xl ${message.sender === 'user' ? 'rounded-br-none' : 'rounded-bl-none'}`}>
+                  {message.sender === 'bot' ? (
+                    <ReactMarkdown>{message.text}</ReactMarkdown>
                   ) : (
-                    <div className='whitespace-pre-wrap break-words messagePara'>
-                      {message.sender === 'bot' ? (
-                        <ReactMarkdown>{message.text}</ReactMarkdown>
-                      ) : (
-                        message.text
-                      )}
-                    </div>
+                    message.text
                   )}
                 </div>
               </div>
             ))}
-            {isLoading && (
-              <div className="message bot-message">
-                <div className="message-contents loading rounded-bl-none rounded-2xl">
-                  {/* <span className="bot">
-                    <img
-                      src={botChat}
-                      className="botImage"
-                    />
-                  </span>
-                  <div className="loading-box"></div> */}
-                </div>
-              </div>
-            )}
+            
           </div>
 
           <form onSubmit={userAsk} className="userInput">
-       
+
             <input
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
