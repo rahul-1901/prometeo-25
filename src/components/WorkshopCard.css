@@ -89,7 +89,7 @@
 
 .btn-container {
   position: relative;
-  width: 8.437rem;    
+  /* width: 8.437rem;     */
   height: 4.375rem;   
 }
 
@@ -195,21 +195,20 @@
   .fas {
     display: none;
   }
-  .work-btn{
-    /* height: 50px; */
+  /* .work-btn{
     display: none;
-  }
-  .work-card__container{
+  } */
+  /* .work-card__container{
     width: 250px;
     padding-left: 10px;
-  }
-  .btn-container{
+  } */
+  /* .btn-container{
     margin-top: -60px;
-  }
-  .btn1{
+  } */
+  /* .btn1{
     width: 100px;
   }
   .btn1-hov{
     width: 100px;
-  }
+  } */
 }
