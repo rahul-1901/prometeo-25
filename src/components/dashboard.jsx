@@ -12,6 +12,9 @@ import EventPasses from "./eventPasses";
 import { toPng } from "html-to-image";
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import Modal from "./Model/modal";
+import WorkshopModal from "./Model/WorkshopModel";
+import ProniteModal from "./Model/ProniteModel";
 
 
 const Dasboard = () => {
@@ -21,6 +24,10 @@ const Dasboard = () => {
   const [userPassDetails, setUserPassDetails] = useState({});
   const [passCondition, setPassCondition] = useState(false);
   const [userData, setUserData] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const closeModal = () => setIsModalOpen(false);
+  const [paymentmethod,setpaymentmethod]=useState("Register")
+
   useEffect(() => {
     window.scrollTo(0, 0);
     const navBarEle = document.getElementById("navbar");
@@ -29,7 +36,8 @@ const Dasboard = () => {
       const response = await api.get(`${API_BASE_URL}accounts/userdata/`);
       if (response.status === 200) {
         setUserData(response.data);
-        // console.log(response.data);
+        console.log(response.data.pass_type)
+        console.log(response.data);
       } else {
         console.log("error");
       }
@@ -86,6 +94,23 @@ const Dasboard = () => {
     });
   };
 
+
+  const handlePassPending = () => {
+
+    toast("Your transaction is being processed.", {
+      type:"info",
+      duration: 3000, // Auto-close after 3 seconds
+      position: "top-center", // Center the toast on the screen
+      hideProgressBar:true,
+      closeButton:false,
+    });
+  };
+
+  const handlePay=(name)=>{
+    setIsModalOpen(true)
+    setpaymentmethod(name)
+  }
+
   return (
     <div className="dashboard__main" style={{ backgroundImage: `url(${bg})` }}>
       <div className="blurLayer_dash"></div>
@@ -94,6 +119,7 @@ const Dasboard = () => {
         <h2 className="m-0 heading">PERSONAL DETAILS</h2>
       </div>
       <div className="dashboard__upper">
+        <div>
         <div className="dashboard__profile">
           <img
             className="manProfile"
@@ -105,6 +131,28 @@ const Dasboard = () => {
           >
             Edit Profile
           </button>
+        </div>
+        {
+           userData.payment_status==="Unpaid" &&
+          <div className="open_payment_link_button_group">
+        <button onClick={() => handlePay("register")} >Buy Registeration </button>
+        <button onClick={() => handlePay("workshop")}>Buy Workshop Stay Pass</button>
+        <button onClick={() => handlePay("pronite")}>Buy Pronite Pass</button>
+        </div>
+        }
+        {
+          userData.pass_type==="Pronite Pass" && userData.payment_status==="Success" &&
+          <div className="open_payment_link_button_group">
+        <button onClick={() => handlePay("register")} >Buy Registeration </button>
+        </div>
+        }
+        {
+          userData.pass_type==="Workshop Stay Pass" && userData.payment_status==="Success" &&
+          <div className="open_payment_link_button_group">
+        <button onClick={() => handlePay("pronite")}>Buy Pronite Pass</button>
+        </div>
+        }
+
         </div>
         <div className="dashboard__description">
           <div className="user__line">
@@ -158,11 +206,7 @@ const Dasboard = () => {
           <div className="user__line">
             <div className="user__left">Accommodation Status</div>
             <div className="user__right">
-              {passCondition
-                ? userPassDetails[0].name === "Accommodation"
-                  ? "Paid"
-                  : "Unpaid"
-                : "Unpaid"}
+              {userData.pass_type === "0" || userData.pass_type === "None" || userData.pass_type === "Pronite Pass" ? "Update Pass" : "Confirmed"}
             </div>
           </div>
           <div className="divider"></div>
@@ -181,20 +225,43 @@ const Dasboard = () => {
           <div className="user__line">
             <div className="user__left">Pass Status</div>
             <div className="user__right">
-              {passCondition === true ? userPassDetails[0].name : "NIL"}
+              {userData.pass_type === "0" || userData.pass_type === "None" ? "Purchase Pass" : userData.pass_type}
             </div>
           </div>
           <div className="divider"></div>
         </div>
       </div>
       <div className="dashboard_button">
-        <button onClick={handlePass} className="passesButton">
-          {passCondition ? "Download Pass" : "Buy Pass"}
+       {userData.payment_status !=="Unpaid" &&(
+         <>
+{
+          userData.payment_status==="Success" ?
+          <button onClick={handlePass} className="passesButton">
+        Download Pass
         </button>
+        :
+        <button className="passesButton _pendding" onClick={handlePassPending} >
+        Download Pass
+        </button>
+        }
+         </>
+       )}
+
         <button onClick={logoutUser} className="loginButtondash">
           Logout
         </button>
       </div>
+
+          {paymentmethod === "register" && (
+            <Modal isModalOpen={isModalOpen} closeModal={closeModal} />
+          )}
+          {paymentmethod === "workshop" && (
+            <WorkshopModal isModalOpen={isModalOpen} closeModal={closeModal} />
+          )}
+          {paymentmethod === "pronite" && (
+            <ProniteModal isModalOpen={isModalOpen} closeModal={closeModal} />
+          )}
+
     </div>
   );
 };
