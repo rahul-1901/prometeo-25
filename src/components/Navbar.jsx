@@ -29,6 +29,10 @@ const navlinks = [
     name: "Team",
   },
   // {
+  //   path: "/workshop",
+  //   name: "Workshop",
+  // }
+  // {
   //   path: "/sponsors",
   //   name: "Sponsors",
   // },

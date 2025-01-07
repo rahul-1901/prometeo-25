@@ -19,22 +19,14 @@
 /* Heading Styles */
 .events-heading {
   font-family: 'MyFont', sans-serif;
-  font-size: 7.5rem; /* Scalable heading size */
-  font-weight: 400;
-  /* line-height: 8.25rem; */
-  text-align: center;
+  /* display: flex; */
+  /* justify-content: center; */
   padding-top: 50svh;
   padding-bottom: 20svh;
   height: 70svh;
-
-  background-repeat: no-repeat;
-  -webkit-background-clip: text; /* For text masking */
-  background-clip: text; /* Standard property */
-  background-size: cover;
-  /* background-position: -12.9375rem 6.25rem; Converted to rem (-207px 100px) */
-  background-attachment: fixed; 
   width: 100%; /* Ensures the container spans full width */
-  color: transparent;
+  margin-bottom: 5rem;
+  z-index: 999;
 }
 
 /* Responsive Adjustments for Smaller Screens */
@@ -63,6 +55,9 @@
     font-size: 3.125rem; /* Font size for mobile devices */
     line-height: 3.75rem;
     text-align: center; /* Ensure proper alignment */
+    margin-bottom: -15rem;
+    padding-top: 10svh;
+    /* padding-bottom: 0px; */
   }
 
   .events-allevents button {
