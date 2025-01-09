@@ -28,14 +28,22 @@ const navlinks = [
     path: "/team",
     name: "Team",
   },
-  // {
-  //   path: "/sponsors",
-  //   name: "Sponsors",
-  // },
+  {
+    path: "/sponsors",
+   name: "Sponsors",
+  },
+  {/*{
+      path: "/informals",
+       name: "Informals",
+   },
+   {
+     path: "/sponsors",
+    name: "Sponsors",
+   },
   // {
   //   path: "/informals",
   //   name: "Informals",
-  // },
+  // },*/}
 ];
 
 const Navbar = () => {

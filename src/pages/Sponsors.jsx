@@ -11,6 +11,7 @@ import FadeInContent from "../components/FadeInContent";
 import Heading from "../components/Heading";
 import bg_first from "../assets/sponsors/spBg.jpg";
 
+
 const Sponsors = () => {
   const [sponsors, setSponsors] = useState({}); 
   const [loading, setLoading] = useState(true);
@@ -73,7 +74,8 @@ const Sponsors = () => {
               style={{ backgroundImage: `url(${bg_first})` }}
               >
               <div className="sponsors-title-main">
-                <p className="title-sponsors">Past Sponsors</p>
+                <p className="title-sponsors">Current Sponsors</p>
+                <p className="subtitle-sponsors">TITLE SPONSOR</p>
               </div>
             </div>
 

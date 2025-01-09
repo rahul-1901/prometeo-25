@@ -5,15 +5,47 @@
     margin-bottom: 80px;
     padding: 0px 20px ;
 } */
+@font-face {
+  font-family: 'Zaptron';
+  src: url('../assets/Zaptron-Regular.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+}
 
+
+@font-face {
+  font-family: 'Changa';
+  src: url('../assets/Changa-VariableFont_wght.ttf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+}
+.sponsors-title-main {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align horizontally */
+  gap: 150px; /* Adds space between title and subtitle */
+}
 
 .spos-title {
   color: #ed9340;
   position: relative;
-  font-size: 1rem;
-  font-family: "Orbitron", sans-serif;
-  /* opacity: 0.5; */
+  font-size: 75px; /* Updated font size */
+  font-family: 'Zaptron'; /* Keep the font-family */
+  font-weight: 400; /* Add font-weight */
+  line-height: 82.5px; /* Add line-height */
+  text-align: center; /* Add text alignment */
+  text-underline-position: from-font; /* Add text underline position */
+  text-decoration-skip-ink: none; /* Add text decoration property */
+  width: 997px; /* Set width */
+  height: 83px; /* Set height */
+  top: 116px; /* Set top position */
+  left: 138px; /* Set left position */
+  gap: 200px; /* Set gap */
+  opacity: 1px; /* Set opacity */
+  /* opacity: 0.5; */ /* Commented alternative opacity */
 }
+
+
 .spos-title h1 {
   margin: 0px;
 }
@@ -29,6 +61,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  gap:20px;
 }
 
 .container-spos hr {
@@ -48,23 +81,37 @@
 }
 
 .title-sponsors {
-  width: 1112px;
-  height: 116px;
-  position: absolute;
-  top: 418px;
-  left: 164px;
-  gap: 0px;
-  opacity: 1;
-
-  /* Font and text styles */
-  font-family: "Metal Mania", cursive; /* Ensure Zaptron is loaded */
-  font-size: 105px;
-  font-weight: 400;
-  line-height: 115.5px;
-  text-align: center;
-  text-underline-position: from-font;
+  font-size: 75px; /* Updated font size */
+  font-family: 'Zaptron'; /* Keep the font-family */
+  font-weight: 400; /* Add font-weight */
+  line-height: 82.5px; /* Add line-height */
+  text-align: center; /* Add text alignment */
+  text-underline-position: from-font; /* Add text underline position */
+  text-decoration-skip-ink: none; /* Add text decoration property */
+  width: 997px; /* Set width */
+  height: 83px; /* Set height */
+  top: 116px; /* Set top position */
+  left: 100px; /* Set left position */
+  gap: 0px; /* Set gap */
+  opacity: 1px; /* Set opacity */
   text-decoration-skip-ink: none;
-  color:#FFFFFF
+  color:#FFF0EE;
+}
+.subtitle-sponsors {
+  font-family: 'Changa'; /* Set the font family */
+  font-size: 55px; /* Set the font size */
+  font-weight: 700; /* Set the font weight */
+  line-height: 58.41px; /* Set the line height */
+  letter-spacing: 0.05em; /* Set letter spacing */
+  text-align: center; /* Align text to the center */
+  text-underline-position: from-font; /* Position underline relative to the font */
+  text-decoration-skip-ink: none; /* Ensure underline doesn't skip descenders */
+  width: 436px; /* Set width */
+  height: 58px; /* Set height */
+  top: 1000px; /* Set top position */
+  left: 418px; /* Set left position */
+  gap: 0px; /* Set gap */
+  opacity: 1px; /* Set opacity */
 }
 
 
