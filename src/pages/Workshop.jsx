@@ -4,15 +4,14 @@ import { API_BASE_URL } from "../config";
 import { Link } from "react-router-dom";
 import FadeIn from "../components/FadeIn";
 import FadeInContent from "../components/FadeInContent";
-import PageTitle from "../components/PageTitle";
 import PageLoader from "../components/PageLoader";
 import Go2Top from "../components/Go2Top";
-import redStone from "../assets/blue_elixir.png";
 import bg from "../assets/dashboard/dashboard_bg.jpg";
 import textBg from "../assets/dashboard/textbg.jpg";
 import "./Workshop.css";
 import PreEvents from "./PreEvents";
 import eventsDataTemp from "./Events24";
+import heading from "../assets/worshop/heading.png"
 
 const Workshop = () => {
 const [category, setCategory] = useState("All");
@@ -21,7 +20,7 @@ const [category, setCategory] = useState("All");
   const IMAGES = [
     {
       id: "1",
-      url: redStone,
+      url: textBg,
     },
     {
       id: "2",
@@ -88,8 +87,8 @@ const [category, setCategory] = useState("All");
           >
             <FadeInContent>
               <div className="eventspage-events">
-                <div className="events-heading " style={{ backgroundImage: `url(${textBg})` }}>
-                 workshops
+                <div className="events-heading flex justify-center items-center" >
+                 <img src={heading} alt="" />
                 </div>
                 <div className="pre-events workshops-content-main" id="EventList">
                   <PreEvents

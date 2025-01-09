@@ -170,11 +170,22 @@ hr {
   background-color: rgba(0, 0, 0, 0.781);
   transition: 0.3s ease;
 }
+._pendding{
+  cursor:not-allowed;
+  background-color: rgba(0, 0, 0, 0.257);
 
+}
 .passesButton:hover {
   background-color: rgba(0, 0, 0, 0.925);
 }
+._pendding{
+  cursor:not-allowed;
+  background-color: rgba(0, 0, 0, 0.257);
 
+}
+._pendding:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
 .loginButtondash {
   background-color: rgb(255, 255, 255);
   color: rgba(255, 35, 35, 1);
@@ -197,7 +208,13 @@ hr {
 .dashboard_pass_element{
   z-index: -999;
 }
-
+.open_payment_link_button_group{
+  margin-top: 20px;
+  justify-content: space-around;
+  display: flex;
+  flex-direction:column;
+  gap: 20px;
+}
 @media screen and (max-width : 1095px) {
   .dashboard_pass_element{
     z-index: auto;
@@ -208,7 +225,7 @@ hr {
   }
 
   .dashboard__description {
-    width: 400px;
+    width: 420px;
   }
 
   .dashboard_button button{
@@ -222,11 +239,15 @@ hr {
   }
 
   .dashboard__description {
-    width: 400px;
+    width: 415px;
   }
 
   .dashboard_button button {
     width: 350px;
+  }
+  .open_payment_link_button_group{
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
@@ -263,15 +284,15 @@ hr {
     width: auto;
   }
   .dashboard__description {
-    width: 95%;
+    width: 98%;
   }
 
   .user__line {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .dashboard_button button {
     width: 85%;
   }
-  
+
 }
