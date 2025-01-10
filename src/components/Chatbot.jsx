@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import botChat from "../assets/logo.gif";
 import man from "../assets/dashboard/profileFace.webp";
 import girl from "../assets/dashboard/queen.png";
@@ -141,15 +141,30 @@ const Chatbot = () => {
   // }, []);
 
 
-  const handleTypingComplete = (index) => {
-    setMessages(prev => prev.map((msg, i) =>
-      i === index ? { ...msg, isTyping: false } : msg
-    ));
-  };
+  // const handleTypingComplete = (index) => {
+  //   setMessages(prev => prev.map((msg, i) =>
+  //     i === index ? { ...msg, isTyping: false } : msg
+  //   ));
+  // };
+
+  const touchClose = useRef(null);
+
+  useEffect(() => {
+    const clickOnscreen = (e) => {
+      if (touchClose.current && !touchClose.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', clickOnscreen);
+    // console.log(clickOnscreen);
+    return () => {
+      // console.log("removeEventlistener"); 
+      document.removeEventListener('mousedown', clickOnscreen)};
+  }, []);
 
   return (
-    <div className="chatbot-container">
-      <button
+    <div className="chatbot-container" ref={touchClose}>
+      <button 
         className="chatbot-toggle flex justify-center items-center"
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -180,7 +195,7 @@ const Chatbot = () => {
                 </div>
               </div>
             ))}
-            
+
           </div>
 
           <form onSubmit={userAsk} className="userInput">
