@@ -57,7 +57,7 @@ const Events = () => {
     navBarEle.style.opacity = 1;
     const fetchEvents = async () => {
       const { data } = await axios.get(API_BASE_URL +'events/event/');
-      console.log(data);
+      // console.log(data);
      
       setEventsData(data)
       setLoading(false);
