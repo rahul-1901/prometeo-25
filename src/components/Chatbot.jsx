@@ -162,6 +162,22 @@ const Chatbot = () => {
       document.removeEventListener('mousedown', clickOnscreen)};
   }, []);
 
+  const messageScroll = useRef(null);
+  useEffect(() => {
+    const scrollLivedown = () => {
+      messageScroll.current?.scrollIntoView({behavior: 'smooth'});
+    };
+    scrollLivedown();
+  }, [messages]);
+
+  const messageLive = useRef(null);
+  useEffect(()=> {
+    const scrollLivedown = ()=> {
+      messageLive.current?.scrollIntoView({behavior: "smmoth"});
+    };
+    scrollLivedown();
+  }, [messages]);
+
   return (
     <div className="chatbot-container" ref={touchClose}>
       <button 
@@ -195,7 +211,7 @@ const Chatbot = () => {
                 </div>
               </div>
             ))}
-
+            <div ref={messageScroll}/>
           </div>
 
           <form onSubmit={userAsk} className="userInput">
