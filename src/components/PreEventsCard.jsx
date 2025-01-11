@@ -29,11 +29,11 @@ const PreEventsCard = ({
   // };
   const notify = (mesg) => {
     toast(mesg, {
-      type: "info",
+      type:"info",
       duration: 3000, // Auto-close after 3 seconds
       position: "top-center", // Center the toast on the screen
-      hideProgressBar: true,
-      closeButton: false,
+      hideProgressBar:true,
+      closeButton:false,
       // transition:""
 
     });
@@ -54,11 +54,31 @@ const PreEventsCard = ({
   const handleClick2 = () => {
     if (!rule) {
       notify("Rulebook Coming soon!!");
+    } 
+    // else {
+    //   window.open(rule, "_blank"); 
+    // }
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+    if (isIOS) {
+      // For iOS devices, open in a new window
+      window.open(rule, '_blank');
     } else {
-      window.open(rule, "_blank");
+      // For other devices, create a temporary link and trigger download
+      const link = document.createElement('a');
+      link.href = rule;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+
+      // Add download attribute for mobile devices
+      link.setAttribute('download', 'document.pdf');
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   }
-
+  
   return (
     <div className='event-card' aria-labelledby="event card">
       <div className="event-card__filter membre  ">
@@ -85,16 +105,16 @@ const PreEventsCard = ({
             .replace("12", "DEC")}
         </time> */}
         <div className="work-card__container ">
-          <div className="btn-container" onClick={handleClick}>
-            <img src={btn1} className="btn1" alt="" />
-            <img src={btn1h} className="btn1-hov" alt="" />
-          </div>
-          <div className="btn-container" onClick={handleClick2}>
-            <img src={btn2} className="btn1" alt="" />
-            <img src={btn2h} className="btn1-hov" alt="" />
-          </div>
-
+        <div className="btn-container" onClick={handleClick}>
+          <img src={btn1} className="btn1" alt="" />
+          <img src={btn1h} className="btn1-hov" alt="" />
         </div>
+        <div className="btn-container" onClick={handleClick2}>
+          <img src={btn2} className="btn1" alt="" />
+          <img src={btn2h} className="btn1-hov" alt="" />
+        </div>
+
+      </div>
         <div className="event-prize">
           {eventButton != "Coming soon..." ? (
             <>
