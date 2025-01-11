@@ -55,27 +55,8 @@ const PreEventsCard = ({
     if (!rule) {
       notify("Rulebook Coming soon!!");
     } 
-    // else {
-    //   window.open(rule, "_blank"); 
-    // }
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-
-    if (isIOS) {
-      // For iOS devices, open in a new window
-      window.open(rule, '_blank');
-    } else {
-      // For other devices, create a temporary link and trigger download
-      const link = document.createElement('a');
-      link.href = rule;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-
-      // Add download attribute for mobile devices
-      link.setAttribute('download', 'document.pdf');
-
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+    else {
+      window.open(rule, "_blank"); 
     }
   }
   
