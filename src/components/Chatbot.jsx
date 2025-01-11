@@ -114,6 +114,7 @@ const Chatbot = () => {
             : msg
         )
       );
+      setIsLive(true);
     } catch (error) {
       console.error('Chat Error:', error.message);
       setMessages((prev) =>
@@ -123,6 +124,7 @@ const Chatbot = () => {
             : msg
         )
       );
+      setIsLive(false);
     } finally {
       setIsLoading(false);
     }
