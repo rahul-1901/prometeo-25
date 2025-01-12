@@ -6,9 +6,9 @@ const ShowNavbar = ({ children }) => {
     const [showNavbar, setShowNavbar] = useState(true);
 
     const navVisible = [
-        "/", "/ca", "/3d", "/sponsors", "/events", "/past-speakers", 
+        "/", "/ca", "/3d", "/events", 
         "/closed", "/register", "/team", "/team24", "/theme", "/preregister", 
-        "/gallery", "/accommodation", "/workshop", "/informals", "/dashboard", 
+        "/accommodation", "/workshop", "/dashboard", 
         "/edit-profile", "/business-darbar"
     ];
 
