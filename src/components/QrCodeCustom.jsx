@@ -40,7 +40,7 @@ const QrCodeCustom = () => {
         <>
          <QrCode
                 value={valuesUsed}
-                size={180}
+                size={150}
                 variant={{
                     eyes: 'gravity',
                     body: 'rounded'

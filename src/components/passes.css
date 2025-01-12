@@ -398,12 +398,12 @@
 @media (max-width: 530px) and (min-width: 381px) {
     .passes {
         width: 80vw;
-        height: 85vh;
+        height: 92vh;
     }
 
     .passesName {
         font-size: 40px;
-        margin-top: 15vh;
+        margin-top: 12vh;
     }
 
     .closeButtonpass {
@@ -417,14 +417,14 @@
     }
 
     .namePass {
-        margin-top: 5vh;
+        margin-top: 2vh;
     }
 } 
 
 @media (max-width: 380px) {
     .passes {
         width: 80vw;
-        height: 90vh;
+        height: 95vh;
     }
 
     .passesName {
