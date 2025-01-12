@@ -169,6 +169,26 @@
     margin-top: 20px;
 }
 
+.confidential {
+    z-index: 100;
+    font-size: 11px; 
+    color: #ff0000e8;
+    font-weight: bold; 
+    text-align: center; 
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.confidential1 {
+    z-index: 100;
+    font-size: 11px; 
+    color: #ff0000e8;
+    font-weight: bold; 
+    text-align: center; 
+    margin-top: -2px;
+    font-style: italic;
+}
+
 @media (max-width: 1440px) and (min-width: 1026px) {
     .passes {
         width: 50vw;
@@ -282,7 +302,7 @@
 
     .passesName {
         /* font-size: 90px; */
-        font-size: 45px;
+        font-size: 50px;
         margin-top: 15vh;
         /* line-height: 90px; */
     }
@@ -317,8 +337,6 @@
         margin-top: -3px;
     }
 }
-
-
 
 @media (max-width: 780px) and (min-width: 581px) {
     .passes {
