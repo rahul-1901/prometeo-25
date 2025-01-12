@@ -76,6 +76,8 @@ const Passes = ({ isPassOpen, closePass }) => {
                                 <div className="qrCode">
                                     <QRCodeCustom />
                                 </div>
+                                <p className="confidential">Disclaimer: Keep QR confidential</p>
+                                <p className="confidential1">Show only at ProNite gate</p>
                             </div>
                         </div>
                     </div>
