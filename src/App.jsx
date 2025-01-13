@@ -44,8 +44,8 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/3d" element={<PlayProvider> <Home /> </PlayProvider>} />
             <Route path="/ca" element={<CA />} />
-            <Route path="/past-speakers" element={<Speakers />} />
-            <Route path="/sponsors" element={<Sponsors />} />
+            {/* <Route path="/past-speakers" element={<Speakers />} /> */}
+            {/* <Route path="/sponsors" element={<Sponsors />} /> */}
             <Route path="/closed" element={<PreregiClosed />} />
             <Route path="/team" element={<Team />} />
             <Route path="/team24" element={<Team23 />} />
@@ -55,10 +55,10 @@ function App() {
             <Route path="*" element={<NotFound />} />
             <Route path="/preregister" element={<Preregister />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/gallery" element={<Gallery />} />
+            {/* <Route path="/gallery" element={<Gallery />} /> */}
             <Route path="/accommodation" element={<Accomodation />} />
             <Route path="/workshop" element={<Workshop />} />
-            <Route path="/informals" element={<Informals />} />
+            {/* <Route path="/informals" element={<Informals />} /> */}
             <Route path="/dashboard" element={<PrivateRoute />}>
               <Route path="/dashboard" element={<Dashboard />} />
             </Route>

@@ -7,7 +7,7 @@ import useAxios from "../context/UseAxios";
 import { API_BASE_URL } from "../config";
 import { useNavigate } from "react-router-dom";
 import man from "../assets/dashboard/profileFace.webp";
-import girl from "../assets/dashboard/queen.png";
+import girl from "../assets/dashboard/queenBeauty.png";
 import EventPasses from "./eventPasses";
 import { toPng } from "html-to-image";
 import { toast } from 'react-toastify';
@@ -15,7 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Modal from "./Model/modal";
 import WorkshopModal from "./Model/WorkshopModel";
 import ProniteModal from "./Model/ProniteModel";
-
+import Passes from "../components/passes";
 
 const Dasboard = () => {
   const { user, logoutUser } = useContext(AuthContext);
@@ -26,7 +26,9 @@ const Dasboard = () => {
   const [userData, setUserData] = useState({});
   const [isModalOpen, setIsModalOpen] = useState(false);
   const closeModal = () => setIsModalOpen(false);
-  const [paymentmethod,setpaymentmethod]=useState("Register")
+  const [isPassOpen, setIsPassOpen] = useState(false);
+  const closePass = () => setIsPassOpen(false);
+  const [paymentmethod, setpaymentmethod] = useState("Register")
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -86,11 +88,11 @@ const Dasboard = () => {
     //   navigate("/accommodation");
     // }
     toast("Coming Soon, We'll let you know!", {
-      type:"info",
+      type: "info",
       duration: 3000, // Auto-close after 3 seconds
       position: "top-center", // Center the toast on the screen
-      hideProgressBar:true,
-      closeButton:false,
+      hideProgressBar: true,
+      closeButton: false,
     });
   };
 
@@ -98,18 +100,22 @@ const Dasboard = () => {
   const handlePassPending = () => {
 
     toast("Your transaction is being processed.", {
-      type:"info",
+      type: "info",
       duration: 3000, // Auto-close after 3 seconds
       position: "top-center", // Center the toast on the screen
-      hideProgressBar:true,
-      closeButton:false,
+      hideProgressBar: true,
+      closeButton: false,
     });
   };
 
-  const handlePay=(name)=>{
+  const handlePay = (name) => {
     setIsModalOpen(true)
     setpaymentmethod(name)
   }
+
+  const handleOpenModal = () => {
+    setIsPassOpen(true);
+  };
 
   return (
     <div className="dashboard__main" style={{ backgroundImage: `url(${bg})` }}>
@@ -120,38 +126,38 @@ const Dasboard = () => {
       </div>
       <div className="dashboard__upper">
         <div>
-        <div className="dashboard__profile">
-          <img
-            className="manProfile"
-            src={userData.gender === 'Female' ? girl : man}
-          />
-          <button
-            onClick={() => navigate("/edit-profile")}
-            style={{ marginTop: "5px", marginBottom: "5px" }}
-          >
-            Edit Profile
-          </button>
-        </div>
-        {
-           userData.payment_status==="Unpaid" &&
-          <div className="open_payment_link_button_group">
-        <button onClick={() => handlePay("register")} >Buy Registeration </button>
-        <button onClick={() => handlePay("workshop")}>Buy Workshop Stay Pass</button>
-        <button onClick={() => handlePay("pronite")}>Buy Pronite Pass</button>
-        </div>
-        }
-        {
-          userData.pass_type==="Pronite Pass" && userData.payment_status==="Success" &&
-          <div className="open_payment_link_button_group">
-        <button onClick={() => handlePay("register")} >Buy Registeration </button>
-        </div>
-        }
-        {
-          userData.pass_type==="Workshop Stay Pass" && userData.payment_status==="Success" &&
-          <div className="open_payment_link_button_group">
-        <button onClick={() => handlePay("pronite")}>Buy Pronite Pass</button>
-        </div>
-        }
+          <div className="dashboard__profile">
+            <img
+              className="manProfile"
+              src={userData.gender === 'Female' ? girl : man}
+            />
+            <button
+              onClick={() => navigate("/edit-profile")}
+              style={{ marginTop: "5px", marginBottom: "5px" }}
+            >
+              Edit Profile
+            </button>
+          </div>
+          {
+            userData.payment_status === "Unpaid" &&
+            <div className="open_payment_link_button_group">
+              <button onClick={() => handlePay("register")} >Buy Registeration </button>
+              <button onClick={() => handlePay("workshop")}>Buy Workshop Stay Pass</button>
+              <button onClick={() => handlePay("pronite")}>Buy Pronite Pass</button>
+            </div>
+          }
+          {
+            userData.pass_type === "Pronite Pass" && userData.payment_status === "Success" &&
+            <div className="open_payment_link_button_group">
+              <button onClick={() => handlePay("register")} >Buy Registeration </button>
+            </div>
+          }
+          {
+            userData.pass_type === "Workshop Stay Pass" && userData.payment_status === "Success" &&
+            <div className="open_payment_link_button_group">
+              <button onClick={() => handlePay("pronite")}>Buy Pronite Pass</button>
+            </div>
+          }
 
         </div>
         <div className="dashboard__description">
@@ -232,36 +238,41 @@ const Dasboard = () => {
         </div>
       </div>
       <div className="dashboard_button">
-       {userData.payment_status !=="Unpaid" &&(
-         <>
-{
-          userData.payment_status==="Success" ?
-          <button onClick={handlePass} className="passesButton">
-        Download Pass
-        </button>
-        :
-        <button className="passesButton _pendding" onClick={handlePassPending} >
-        Download Pass
-        </button>
-        }
-         </>
-       )}
+        {userData.payment_status !== "Unpaid" && (
+          <>
+            {
+              userData.payment_status === "Success" ?
+                <button onClick={handleOpenModal} className="passesButton">
+                  Download Pass
+                </button>
+                
+                :
+                <button className="passesButton _pendding" onClick={handlePassPending} >
+                  Download Pass
+                </button>
+            }
+          </>
+        )}
 
         <button onClick={logoutUser} className="loginButtondash">
           Logout
         </button>
       </div>
 
-          {paymentmethod === "register" && (
-            <Modal isModalOpen={isModalOpen} closeModal={closeModal} />
-          )}
-          {paymentmethod === "workshop" && (
-            <WorkshopModal isModalOpen={isModalOpen} closeModal={closeModal} />
-          )}
-          {paymentmethod === "pronite" && (
-            <ProniteModal isModalOpen={isModalOpen} closeModal={closeModal} />
-          )}
+      {paymentmethod === "register" && (
+        <Modal isModalOpen={isModalOpen} closeModal={closeModal} />
+      )}
+      {paymentmethod === "workshop" && (
+        <WorkshopModal isModalOpen={isModalOpen} closeModal={closeModal} />
+      )}
+      {paymentmethod === "pronite" && (
+        <ProniteModal isModalOpen={isModalOpen} closeModal={closeModal} />
+      )}
 
+      {/* {(userData.payment_status === "Success") && (
+        <button onClick={handleOpenModal} className="passeButton">Download Pass</button>
+      )} */}
+      <Passes isPassOpen={isPassOpen} closePass={closePass} />
     </div>
   );
 };
