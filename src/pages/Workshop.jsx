@@ -54,15 +54,14 @@ const [category, setCategory] = useState("All");
     setEventsData(eventsDataTemp)
   }, []);
 
-  // useEffect(() => {
-  //   const fetchEvents = async () => {
-  //     const { data } = await axios.get('https://devluplabs.iitj.ac.in/ftadmin/past-team/');
-  //     setEventsData(data);
-  //     console.log(data);
-  //   };
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const { data } = await axios.get('https://api.prometeo.in/events/workshops/');
+      setEventsData(data.workshops);
+    };
 
-  //   fetchEvents();
-  // }, []);
+    fetchEvents();
+  }, []);
 
   const element = document.getElementById("filter___id");
 

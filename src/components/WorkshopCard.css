@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Gemunu+Libre:wght@200..800&display=swap');
 .work-card {
   width: 20.545rem;
-  height: 29.0625rem;
+  height: 35.0625rem;
   gap: 20px;
   opacity: 0px;
   display: flex;
@@ -53,7 +53,17 @@
   align-items: center;
   cursor: pointer;
 }
-
+.contain{
+  font-family: Gemunu Libre;
+  font-size: 2rem; /* 38px -> 2.375rem */
+  font-weight: 700;
+  line-height: 2.575rem; /* 41.19px -> 2.575rem */
+  letter-spacing: 0.07em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ECB9DA;
+}
 .work-card__container {
   width: 20.54rem; /* 328.72px / 16 */
   height: 4.375rem; /* 258px / 16 */
@@ -194,6 +204,9 @@
 @media (max-width: 450px) {
   .fas {
     display: none;
+  }
+  .contain{
+    margin-top: -150px;
   }
   /* .work-btn{
     display: none;

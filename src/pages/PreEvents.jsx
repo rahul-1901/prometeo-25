@@ -21,17 +21,17 @@ function createEntry(e) {
   );
 }
 function createEntryForWorkshop(e) {
-
   
   return (
     <FadeInContent key={e.id}>
       <WorkshopCard
-        imgURL={bplan}
+        imgURL={e.image}
         eventName={e.name}
         eventTime={e.date}
-        eventRegister={e.external_link}
+        eventRegister={e.link}
         eventButton={e.prize ? e.prize : "Coming soon..."}
         workshop={e.type === "informal"}
+        discription={e.description}
 
       />
     </FadeInContent>
