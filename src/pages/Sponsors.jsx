@@ -11,6 +11,8 @@ import FadeInContent from "../components/FadeInContent";
 import Heading from "../components/Heading";
 import bg_first from "../assets/sponsors/spBg.jpg";
 
+
+
 const Sponsors = () => {
   const [sponsors, setSponsors] = useState({}); 
   const [loading, setLoading] = useState(true);
@@ -50,16 +52,17 @@ const Sponsors = () => {
 
       const fetchProfileData = async () => {
         try {
-          const response = await api.get(`${API_BASE_URL}accounts/userdata/`);
+          const response = await axios.get("https://api.prometeo.in/home/sponsors/");
+          // console.log('API Response:', response.data);
           setIsProfileCompleted(response.data.isProfileCompleted);
-          setSponsors(response.data.sponsors || {}); 
+          setSponsors(response.data.Sponsors || {}); 
         } catch (error) {
           console.error("Error fetching profile data:", error);
         }
       };
 
     fetchProfileData();
-  }, [api]);
+  }, []);
 
   return (
     <>
@@ -67,18 +70,22 @@ const Sponsors = () => {
         <PageLoader />
       ) : (
         <FadeIn>
-          <div className="sponsorsPage">
+          <div className="sponsorsPage" style={{ backgroundImage: `url(${bg_first})` }}>
             <div
               className="container-spos"
-              style={{ backgroundImage: `url(${bg_first})` }}
+              
               >
               <div className="sponsors-title-main">
-                <p className="title-sponsors">Past Sponsors</p>
+                <p className="title-sponsors">Current Sponsors</p>
+                
+             
               </div>
+
+             
             </div>
 
             
-            {Object.keys(sponsors).map((spos, index) => (
+           {/* {Object.keys(sponsors).map((spos, index) => (
               <FadeInContent key={index}>
                 <div className="spos">
                   <div className="spos-title">
@@ -97,7 +104,35 @@ const Sponsors = () => {
                 </div>
                 <hr />
               </FadeInContent>
-            ))}
+            ))} */}
+      {Object.keys(sponsors).map((category, index) => (
+  <FadeInContent key={index}>
+    <div className="spos"  >
+      <div className="spos-title">
+        <h1>{category}</h1>
+      </div>
+      <div className="spos-image" style={{display:"flex",flexDirection:"row" , alignItems:"center"
+    }}>
+        {sponsors[category] && sponsors[category].map((sponsor) => (
+          <div key={sponsor.id} className="sponsor-item">
+             <a href={sponsor.sponsor_link} target="_blank" rel="noopener noreferrer">
+            <img
+              src={`https://api.prometeo.in${sponsor.image}`}
+              alt={sponsor.name}
+              className="sponsor-image"
+            />
+              </a>
+            {/* <div className="sponsor-info">
+              <p>{sponsor.name}</p>
+            </div> */}
+          </div>
+        ))}
+      </div>
+    </div>
+    
+  </FadeInContent>
+))}
+          
           </div>
         </FadeIn>
       )}
