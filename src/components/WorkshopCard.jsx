@@ -14,40 +14,36 @@ const WorkshopCard = ({
   eventButton,
   eventRegister,
   workshop,
+  discription
 }) => {
+  const handleClick = () => {
+    if (!eventRegister) {
+      notify("Workshop Coming soon!!");
+    } else {
+      window.open(eventRegister);
+    }
+  }
+
   return (
     <div className='work-card' aria-labelledby="event card">
       <div className="event-card__filter membre">
         <div className="register-btn-div px-5 ml-2">
           <button className="work-btn">
-            Details of the workshop
-            Brief of Workshop
-            Details of the workshop
-            Brief of Workshop
-            Details of the workshop
-            Brief of Workshop
-            Details of the workshop
-            Brief of Workshop
+            {discription}
           </button>
         </div>
         <a href={eventRegister}>
           <div className="member-img " >
             <div className="background-overlay " style={{ backgroundImage: `url(${imageBox})` }}   ></div>
-            <img src={imgURL.replace(
-              "http://localhost:8000",
-              API_BASE_URL
-            )} alt="" />
+            <img src={`${API_BASE_URL}${imgURL}`} alt="" />
           </div>
         </a>
       </div>
+      <div className="contain">{eventName}</div>
       <div className="work-card__container ">
-        <div className="btn-container">
+        <div className="btn-container" onClick={handleClick} >
           <img src={btn1} className="btn1" alt="" />
           <img src={btn1h} className="btn1-hov" alt="" />
-        </div>
-        <div className="btn-container">
-          <img src={btn2} className="btn1" alt="" />
-          <img src={btn2h} className="btn1-hov" alt="" />
         </div>
 
       </div>
