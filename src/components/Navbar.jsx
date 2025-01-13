@@ -32,10 +32,10 @@ const navlinks = [
     path: "/workshop",
     name: "Workshop",
   },
-  // {
-  //   path: "/sponsors",
-  //   name: "Sponsors",
-  // },
+  {
+    path: "/sponsors",
+    name: "Sponsors",
+  },
   {/*{
       path: "/informals",
        name: "Informals",
