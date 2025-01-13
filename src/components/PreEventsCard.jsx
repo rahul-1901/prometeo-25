@@ -55,8 +55,14 @@ const PreEventsCard = ({
     if (!rule) {
       notify("Rulebook Coming soon!!");
     } else {
-      window.open(rule, "_blank"); 
+      let secureRule = rule;
+      if (secureRule.startsWith("http:")) {
+        secureRule = secureRule.replace("http:", "https:");
+      }
+  
+      window.open(secureRule, "_blank");
     }
+    // console.log(typeof rule)
   }
   
   return (
