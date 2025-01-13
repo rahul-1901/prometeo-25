@@ -39,9 +39,9 @@
 }
 /* Nav Links Container */
 .nav-links-container {
-  width: 800px;
+  width: 876px;
   height: 10%;
-  padding: 6px 5px;
+  padding: 6px 4px;
   border-radius: 90px;
   background: rgba(255, 255, 255, 0.15); /* Slightly transparent white background */
   backdrop-filter: blur(30px);   
@@ -50,6 +50,7 @@
   align-items: center;
   justify-content: space-evenly;
   opacity: 0.9;
+  gap: 2px;
 }
 .nav-links-container > * {
   flex-shrink: 0; /* Prevent items from shrinking */
