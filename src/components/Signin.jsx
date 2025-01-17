@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef, useState } from "react";
 import {
   GoogleOAuthProvider,
   GoogleLogin,
@@ -8,9 +8,13 @@ import jwt_decode from "jwt-decode";
 import toast from "react-hot-toast";
 import AuthContext from "../context/AuthContext";
 import "./Signin.css";
+import axios from "axios";
 
 const Signin = ({ handleSignup }) => {
   const { loginUser, loginGoogleUser } = useContext(AuthContext);
+  const emailRef = useRef(null)
+  const [showPass, setshowPass] = useState(true)
+  const [showForgotSub, setshowForgotSub] = useState(false)
   // var csrf_token = document.cookie.split("=")[1];
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -61,6 +65,41 @@ const Signin = ({ handleSignup }) => {
   function onGoogleLoginFailure(res) {
     console.log("Failure:", res);
   }
+ const handleShowPass=()=>{
+  setshowForgotSub(true);
+  setshowPass(false)
+ }
+  const handleForgot = async () => {
+    const email = emailRef.current.value;
+    if(email==""){
+      toast.error("Enter email!")
+      return
+    }
+    emailRef.current.value = ""; // Clear input field
+    
+    try {
+      const response = await axios.post(
+        "https://api.prometeo.in/accounts/password-reset/",
+        { email },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      // console.log(response.data);
+
+      // Show success notification
+      toast.success("Password reset link sent successfully!");
+    } catch (error) {
+      // Show error notification
+      toast.error(
+        error.response?.data?.message || "User does not exist"
+      );
+    }
+    
+  };
 
   return (
     <div className="login-container-right">
@@ -72,16 +111,26 @@ const Signin = ({ handleSignup }) => {
           placeholder="Email"
           name="email"
           autoComplete="username"
+          ref={emailRef}
           required
         />
-        <input
+        {showPass && <input
           type="password"
           placeholder="Password"
           name="password"
           autoComplete="current-password"
           required
-        />
-        <input type="submit" value="Submit" id="login-form-submit" />
+        />}
+        <div>
+          {showPass && <input type="submit" value="Submit" id="login-form-submit" />}
+          {!showForgotSub &&  <button className="ml-3" onClick={()=> handleShowPass()} type="button">
+          Forgot password ?
+          </button>}
+          {showForgotSub && <button className="ml-3 forgot-pass-btn" onClick={()=> handleForgot()} type="button" >
+            Submit
+          </button>}
+        </div>
+        <br />
         <br />
         <div className="w-8 h-5 svg-container">
           <svg width="33" height="24" viewBox="0 0 33 24" fill="none" xmlns="http://www.w3.org/2000/svg">

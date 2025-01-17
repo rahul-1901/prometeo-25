@@ -59,6 +59,7 @@
 
 #login-form-submit{
   width: 10.625rem;
+  height: auto;
   padding: 7px 45px 7px 45px;
   gap: 10px;
   border-radius: 100px;
@@ -73,7 +74,23 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   transition: all 0.3s ease;
-  
+}
+.forgot-pass-btn{
+  width: 10.625rem;
+  padding: 7px 45px 7px 45px;
+  gap: 10px;
+  border-radius: 100px;
+  opacity: 0px;
+  background: #FFFFFFFA;
+  color: #1E8B80;
+
+  font-family: Changa;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  transition: all 0.3s ease;
 }
 #google-login-form-submit {
   width: 40%;

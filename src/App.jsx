@@ -32,6 +32,7 @@ import { PlayProvider } from "./components/landing/Play.jsx";
 import Chatbot from './components/Chatbot.jsx';
 import Landing from "./pages/Landing.jsx";
 import ShowNavbar from "./components/ShowNavbar.jsx";
+import ResetPassword from "./pages/ResetPassword.jsx";
 function App() {
   return (
     <>
@@ -64,6 +65,7 @@ function App() {
             </Route>
             <Route path="/edit-profile" element={<Edit_profile />} />
             <Route path="/business-darbar" element={<Darbar />} />
+            <Route path="/reset-password/" element={<ResetPassword />} />
           </Routes>
           <Chatbot />
           <Toaster />
